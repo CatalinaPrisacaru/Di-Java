@@ -4,10 +4,13 @@
   border-collapse: collapse;
   empty-cells: show;
   border: 1px solid #7a7;
+  margin:auto;
+  margin-top:10vh;
+  height:80vh;
+  width:400px;
 }
 
-
-#demo-table > caption {
+.caption{
   text-align: left;
   font-weight: bold;
   font-size: 200%;
@@ -15,39 +18,11 @@
   margin-bottom: .5em;
 }
 
-
-/* basic shared rules */
-#demo-table th,
-#demo-table td {
-  text-align: right;
-  padding: 30px 30px 30px 30px;
+.centeredText{
+	text-align:center;
+	padding-top:40px;
 }
-
-#demo-table th {
-  font-weight: bold;
-  padding-left: .5em;
-}
-
-
-/* header */
-#demo-table > thead > tr, th, td {
-  font-style: bold;
-  color: blue;
-}
-
-
-/* fix size of superscript */
-#demo-table sup {
-  font-size: 75%;
-}
-
-/* body */
-#demo-table td {
-  background-color: #cee;
-  padding: 0.5em 0.5em 0.5em 3em;
-}
-
-span {
-    display: inline-block;
-    background: #efe;
+.button{
+	padding-top:30px;
+	text-align:center;
 }

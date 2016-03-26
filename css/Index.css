@@ -1,18 +1,24 @@
 .credentials{
 	text-align:right;
-	font-size:2vw;
+	font-size:1vw;
 }
 .centeredFields{
-	padding-top:10vh;
+	padding-top:2vh;
 	text-align:center;
-	font-size:2vw;
+	font-size:1.2vw;
 }
 .logo{
 	margin:auto;
 	width:40vh;
 	height:40vh;
-	padding-top:1vw;
 	overflow:hidden;
+}
+#myCarousel{
+	margin-top:6vh;
+	height:12vw; width:55vw;margin:auto; overflow:hidden;
+	-webkit-box-shadow: -2px -3px 19px 10px rgba(144,158,245,0.64);
+	-moz-box-shadow: -2px -3px 19px 10px rgba(144,158,245,0.64);
+	box-shadow: -2px -3px 19px 10px rgba(144,158,245,0.64);
 }
 #divtoshow {
 	position:absolute;
