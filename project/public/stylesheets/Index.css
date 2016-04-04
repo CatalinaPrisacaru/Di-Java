@@ -1,0 +1,101 @@
+.credentials{
+	text-align:right;
+	font-size:1vw;
+	position:relative;
+	float:right;
+}
+/*.box{
+	display:inline-block;
+}*/
+.btn-menu{
+    vertical-align: top; 
+    margin: 5px; 
+    width: 6vh; 
+    height: 6vh;
+}
+.centeredFields{
+	padding-top:2vh;
+	text-align:center;
+	font-size:1.2vw;
+}
+.content{
+    overflow:hidden;
+}
+.logo{
+    width:22vw;
+    height:22vw;
+    margin:auto;
+}
+#myCarousel{
+	margin-top:7vh;
+	height:12vw; width:55vw;margin:auto; overflow:hidden;
+	-webkit-box-shadow: -2px -3px 19px 10px rgba(144,158,245,0.64);
+	-moz-box-shadow: -2px -3px 19px 10px rgba(144,158,245,0.64);
+	box-shadow: -2px -3px 19px 10px rgba(144,158,245,0.64);
+}
+#divtoshow {
+	position:absolute;
+	color:blue;
+	-webkit-text-stroke: 1px black;
+}
+#onme {
+	cursor:pointer
+}
+#checkPlane{
+	display:none;
+}
+nav {
+    display: none;
+}
+.mm-menu {
+    max-width: 350px; 
+}
+     
+/**
+ * add more vendor prefixes
+ * depending on the browsers you're targeting
+ */
+ 
+@media all and (min-width: 550px) {
+    html.mm-opening .mm-slideout {
+        transform: translate(350px, 0); 
+    } 
+}
+     
+/**
+ * override this rule
+ * in case you're building a right menu
+ */
+ 
+@media all and (min-width: 550px) {
+    html.mm-right.mm-opening .mm-slideout {
+        transform: translate(-350px, 0);
+    }
+}
+.mm-menu {
+    background: darken($main-color, 10%);
+}
+     
+.mm-listview > li > a {
+    color: $text-color;
+    padding: 20px;
+}
+ 
+.mm-listview > li > a:hover,
+.mm-listview .mm-next.mm-fullsubopen:hover + a {
+    color: $highlight-color;
+}
+ 
+.mm-listview > li > a:hover span {
+    color: $text-color;
+}
+ 
+.mm-menu .mm-listview > li.mm-selected > a:not(.mm-next) {
+    background: transparent url(arrows_check.svg) no-repeat center right 10px;
+    background-size: 30px 30px;
+    text-decoration: line-through;
+}
+
+.html, body {
+  overflow: hidden;
+}

@@ -1,0 +1,97 @@
+@(maybeLogin:String)(maybeLogo:String)(renderWhat:String)
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Di Java</title>
+</head>
+<body onload="isMobile()">
+        
+	<div class="content">
+            <input type="image" id='onme' class="btn-menu" src="@routes.Assets.at("images/menu.png")" name="image">
+                
+                @if(maybeLogin.equals("yesLogin")){
+                    <!--formurile pentru user+parola-->
+                        <div class="credentials">
+                                <span style="display:inline-block">
+                                        <!--<label for=bar  style="display:block">Label 2</label>-->
+                                        <input type="text" name="username" placeholder="Nume utilizator"/>
+                                </span>
+                                <span style="display:inline-block">
+                                        <!--<label for=foo style="display:block">Label 1</label>-->
+                                        <input type="text" name="password" placeholder="Parola"/>
+                                </span><br>
+                                <a href="Inregistrare.html">Inregistrare</a>
+                        </div>
+                }else{
+                    <p class="credentials">Welcome dear Mr. Loged</p>
+                } 
+            @if(maybeLogo.equals("yesLogo")) {
+                <!--logo centrat-->
+                <div class="logo">
+                    <img class="logo" src="@routes.Assets.at("images/logo.png")" alt="Our logo">
+                </div>
+            }
+	</div>
+
+        <!--render content-->
+        @if(renderWhat.equals("Cautari")){
+            @Index()
+            @Cautari()
+        }
+        @if(renderWhat.equals("Index")){
+            @Index()
+        }
+
+	<!--cursor urmarit de text: sugerat un motto care sa apara doar pe home page-->
+	<div>
+		<div id="divtoshow" style="padding-right:100px">
+			<div id="checkPlane">
+				<img src="@routes.Assets.at("images/airplane.png")" alt="Airplane" style="width:15vh;height:5vh;">
+			</div>
+		</div>
+		<br/>
+		<div onMouseover='document.getElementById(divName).style.display="block"' onMouseout='document.getElementById(divName).style.display="none"'> <!--id='onme' -->
+		</div>
+	</div>
+
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/css/jquery.mmenu.all.min.css'>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/js/jquery.mmenu.min.all.min.js'></script>
+
+        <!--menu script-->
+        <nav id="menu">
+		<ul>
+			<li>
+				<a href='@routes.Application.index()'>Home</a>
+			</li>
+			<li>
+				<a href='@routes.Application.cautari()'>Inregistrare</a>
+			</li>
+			<li>
+				<a href="Cautari.html">Cautare ruta</a>
+			</li>
+			<!-- more list items here -->
+		</ul>
+	</nav>	
+
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/Index.css")">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" property='stylesheet' crossorigin="anonymous">
+	
+	
+	<script type="text/javascript">
+            var $menu = $('#menu'); var $btnMenu = $('.btn-menu'); var $img = $('img');
+            $menu.mmenu({ // configuration settings here 
+            });
+            var api = $menu.data("mmenu");
+
+            $btnMenu.click(function() {api.open();});
+            $menu.find( ".mm-next" ).addClass("mm-fullsubopen");
+            api.bind('opening', function() {
+            });
+            api.bind('closing', function() {
+            });
+	</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 
 	var divName = 'divtoshow'; // div that is to follow the mouse (must be position:absolute)
-	var offX = 15;          // X offset from mouse position
+	var offX = 30;          // X offset from mouse position
 	var offY = 10;          // Y offset from mouse position
 
 	function mouseX(evt) {

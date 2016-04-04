@@ -1,0 +1,14 @@
+@(title:String)(message:String)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@title</title>
+    </head>
+    <body>
+        <h1 style="color:red">@message</h1>
+        <form action="@routes.Application.index()">
+            <input type="submit" value="Inapoi">
+        </form>
+    </body>
+</html>
