@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>mgCoord3dTransform</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgCoord3dTransform><H1 CLASS="APISYMBOL">mgCoord3dTransform</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgCoord3dTransform</B> - transforms a double precision 
+coordinate using a specified matrix.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgcoord3d <B>mgCoord3dTransform</B> (</TD><TD>const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A></TD><TD><I>matrix</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A></TD><TD><I>coord</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgCoord3dTransform</B> applies the specified <I>matrix</I> to the 
+specified 3D double precision floating point coordinate <I>coord</I> and 
+returns the resulting coordinate.</P></DD><DD><P>The original coordinate <I>coord</I> is not affected.</P></DD><DD><P>Note: For efficiency, <I>matrix</I> and <I>coord</I> are not verified 
+before being dereferenced.  You must not pass either of these as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>matrix</I></DT><DD>matrix to apply to <I>coord</I></DD><DT><I>coord</I></DT><DD>coordinate to transform</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the transformed double precision 3D coordinate record.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A>, <A HREF=mgCoord3fTransform.htm#mgCoord3fTransform>mgCoord3fTransform</A> 
+<A HREF=mgVectordTransform.htm#mgVectordTransform>mgVectordTransform</A>, <A HREF=mgVectorfTransform.htm#mgVectorfTransform>mgVectorfTransform</A></DD></DL></BODY>
+
+</HTML>

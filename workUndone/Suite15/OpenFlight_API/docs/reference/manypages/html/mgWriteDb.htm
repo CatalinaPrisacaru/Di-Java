@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>mgWriteDb</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgWriteDb><H1 CLASS="APISYMBOL">mgWriteDb</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgWriteDb</B> - writes an OpenFlight database to disk.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgWriteDb</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given the database, <I>db</I>, <B>mgWriteDb</B> writes this 
+database to disk using the file name stored in the database header. 
+The file name must first be opened and initialized with either the 
+<A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A> or <A HREF=mgNewDb.htm#mgNewDb>mgNewDb</A> functions, which associate the database 
+with a file name.</P></DD><DD><P>Note: If you call this function in Creator, it will fail if <I>db</I> 
+is open on the Creator desktop.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to write</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec *db1, *db2;
+db1 = mgOpenDb ("file1.flt");
+db2 = mgNewDb ("newfile.flt");
+
+// make some changes to the databases...
+
+mgWriteDb (db1);
+mgWriteDb (db2);
+
+mgCloseDb (db1);
+mgCloseDb (db2);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A>, <A HREF=mgNewDb.htm#mgNewDb>mgNewDb</A>, <A HREF=mgCloseDb.htm#mgCloseDb>mgCloseDb</A>, <A HREF=mgSaveAsDb.htm#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=mgExportDb.htm#mgExportDb>mgExportDb</A></DD></DL></BODY>
+
+</HTML>

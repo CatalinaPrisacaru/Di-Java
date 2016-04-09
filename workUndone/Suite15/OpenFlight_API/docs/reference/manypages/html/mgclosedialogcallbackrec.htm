@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgclosedialogcallbackrec</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgclosedialogcallbackrec><H1 CLASS="APISYMBOL">mgclosedialogcallbackrec</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgclosedialogcallbackrec</B> - callback structure for editor close dialog functions<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;int buttonEvent;
+} mgclosedialogcallbackrec;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>buttonEvent</B><DD>int - if your editor close dialog function 
+returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A>, this is the button 
+event you want sent to the dialog button function 
+for your editor tool</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>If you have assigned a close dialog function for you editor tool 
+and the user clicks the Close Box, the close dialog function is called. 
+The close dialog function is passed a pointer to a record of this type 
+in the <I>callData</I> parameter.</P></DD><DD><P>This record contains a field that your tool fills in and returns 
+if a dialog is required by your tool.  If your 
+editor tool needs to display a dialog to continue its work, it must 
+set the <I>dialogRequired</I> field to <A HREF=mgbool.htm#mgbool>MG_TRUE</A>.  Additionally, 
+you can fill in the <I>toolData</I> field with tool defined data that 
+is passed to subsequent editor interactions while your tool 
+is active on the desktop.</P></DD><DD><P>If you do not need to display a dialog, set the 
+<I>dialogRequired</I> field to <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, <A HREF=mgEditorSetCloseDialogFunc.htm#mgEditorSetCloseDialogFunc>mgEditorSetCloseDialogFunc</A>, <A HREF=mgeditorclosedialogfunc.htm#mgeditorclosedialogfunc>mgeditorclosedialogfunc</A></DD></DL></BODY>
+
+</HTML>

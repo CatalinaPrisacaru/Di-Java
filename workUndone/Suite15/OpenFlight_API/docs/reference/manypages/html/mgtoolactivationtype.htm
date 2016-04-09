@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>mgtoolactivationtype</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgtoolactivationtype><H1 CLASS="APISYMBOL">mgtoolactivationtype</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgtoolactivationtype</B> - Tool Activation Type<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgtoolactivationtype {
+&#32;&#32;&#32;MTAT_UNKNOWN,
+&#32;&#32;&#32;MTAT_NORMAL,
+&#32;&#32;&#32;MTAT_REPEAT,
+&#32;&#32;&#32;MTAT_SCRIPT,
+&#32;&#32;&#32;MTAT_PROCESS,
+} mgtoolactivationtype;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MTAT_UNKNOWN</B><DD>Tool Activation Unknown.  Unknown tool activation type. 
+This typically indicates an error condition.<DT><B>MTAT_NORMAL</B><DD>Tool Activation Normal.  This indicates that the tool 
+was launched normally by the user from within the interactive 
+Creator modeling environment.<DT><B>MTAT_REPEAT</B><DD>Tool Activation Repeat.  This indicates that the 
+tool was launched by the user from the interactive 
+Creator modeling environment using the Repeat Last command.<DT><B>MTAT_SCRIPT</B><DD>Tool Activation Script.  This indicates that the 
+tool was launched from a Creator script.  When this is the 
+case, the tool should perform its actions "silently" without 
+displaying a dialog.<DT><B>MTAT_PROCESS</B><DD>Tool Activation Process.  This indicates that the 
+tool was launched by an external process (normally Terra Vista). 
+When this is the case, the tool should perform its actions 
+accordingly.  Internal use only by Presagis.</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This enumerated type is used to indicate the activation type for a 
+tool activation object.  A plug-in tool may use this activation type to 
+alter its behavior depending on how it was launched.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetActivationType.htm#mgGetActivationType>mgGetActivationType</A></DD></DL></BODY>
+
+</HTML>

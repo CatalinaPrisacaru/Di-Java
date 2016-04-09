@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>MATRIXFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=MATRIXFUNC><H1>Matrix Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeMatrix.htm#mgFreeMatrix><B>mgFreeMatrix</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixCompose.htm#mgMatrixCompose><B>mgMatrixCompose</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>xAxis</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>yAxis</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>zAxis</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>translation</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixCopy.htm#mgMatrixCopy><B>mgMatrixCopy</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>dstMatrix</I>, const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>srcMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixEqual.htm#mgMatrixEqual><B>mgMatrixEqual</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrixA</I>, const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrixB</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormNormal.htm#mgMatrixFormNormal><B>mgMatrixFormNormal</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>geomMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormPitchDown90.htm#mgMatrixFormPitchDown90><B>mgMatrixFormPitchDown90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormPitchUp90.htm#mgMatrixFormPitchUp90><B>mgMatrixFormPitchUp90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormQuadToQuad.htm#mgMatrixFormQuadToQuad><B>mgMatrixFormQuadToQuad</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>from1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>from2</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>from3</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>from4</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>to1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>to2</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>to3</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>to4</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormReflect.htm#mgMatrixFormReflect><B>mgMatrixFormReflect</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormReflectX.htm#mgMatrixFormReflectX><B>mgMatrixFormReflectX</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormReflectY.htm#mgMatrixFormReflectY><B>mgMatrixFormReflectY</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormReflectZ.htm#mgMatrixFormReflectZ><B>mgMatrixFormReflectZ</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormRollLeft90.htm#mgMatrixFormRollLeft90><B>mgMatrixFormRollLeft90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormRollRight90.htm#mgMatrixFormRollRight90><B>mgMatrixFormRollRight90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormRotate.htm#mgMatrixFormRotate><B>mgMatrixFormRotate</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, double <I>theta</I>, double <I>a</I>, double <I>b</I>, double <I>c</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormRotateX.htm#mgMatrixFormRotateX><B>mgMatrixFormRotateX</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, double <I>theta</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormRotateY.htm#mgMatrixFormRotateY><B>mgMatrixFormRotateY</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, double <I>theta</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormRotateZ.htm#mgMatrixFormRotateZ><B>mgMatrixFormRotateZ</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, double <I>theta</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormScale.htm#mgMatrixFormScale><B>mgMatrixFormScale</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormTranslate.htm#mgMatrixFormTranslate><B>mgMatrixFormTranslate</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixFormXYZToUV.htm#mgMatrixFormXYZToUV><B>mgMatrixFormXYZToUV</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>, int <I>layer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormYawLeft90.htm#mgMatrixFormYawLeft90><B>mgMatrixFormYawLeft90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixFormYawRight90.htm#mgMatrixFormYawRight90><B>mgMatrixFormYawRight90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgMatrixGetTranslation.htm#mgMatrixGetTranslation><B>mgMatrixGetTranslation</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgMatrixGetXAxis.htm#mgMatrixGetXAxis><B>mgMatrixGetXAxis</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgMatrixGetYAxis.htm#mgMatrixGetYAxis><B>mgMatrixGetYAxis</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgMatrixGetZAxis.htm#mgMatrixGetZAxis><B>mgMatrixGetZAxis</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixIdentity.htm#mgMatrixIdentity><B>mgMatrixIdentity</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixInvert.htm#mgMatrixInvert><B>mgMatrixInvert</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixIsIdentity.htm#mgMatrixIsIdentity><B>mgMatrixIsIdentity</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixMultiply.htm#mgMatrixMultiply><B>mgMatrixMultiply</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrixA</I>, const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrixB</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixPitchDown90.htm#mgMatrixPitchDown90><B>mgMatrixPitchDown90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixPitchUp90.htm#mgMatrixPitchUp90><B>mgMatrixPitchUp90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixReflect.htm#mgMatrixReflect><B>mgMatrixReflect</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixReflectX.htm#mgMatrixReflectX><B>mgMatrixReflectX</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixReflectY.htm#mgMatrixReflectY><B>mgMatrixReflectY</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixReflectZ.htm#mgMatrixReflectZ><B>mgMatrixReflectZ</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixRollLeft90.htm#mgMatrixRollLeft90><B>mgMatrixRollLeft90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixRollRight90.htm#mgMatrixRollRight90><B>mgMatrixRollRight90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixRotateX.htm#mgMatrixRotateX><B>mgMatrixRotateX</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, double <I>theta</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixRotateY.htm#mgMatrixRotateY><B>mgMatrixRotateY</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, double <I>theta</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixRotateZ.htm#mgMatrixRotateZ><B>mgMatrixRotateZ</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, double <I>theta</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixScale.htm#mgMatrixScale><B>mgMatrixScale</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixSetTranslation.htm#mgMatrixSetTranslation><B>mgMatrixSetTranslation</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixSetXAxis.htm#mgMatrixSetXAxis><B>mgMatrixSetXAxis</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixSetYAxis.htm#mgMatrixSetYAxis><B>mgMatrixSetYAxis</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixSetZAxis.htm#mgMatrixSetZAxis><B>mgMatrixSetZAxis</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixTranslate.htm#mgMatrixTranslate><B>mgMatrixTranslate</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixTranspose.htm#mgMatrixTranspose><B>mgMatrixTranspose</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>resultMatrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixYawLeft90.htm#mgMatrixYawLeft90><B>mgMatrixYawLeft90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgMatrixYawRight90.htm#mgMatrixYawRight90><B>mgMatrixYawRight90</B></A> (<A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <TD><A HREF=mgNewMatrix.htm#mgNewMatrix><B>mgNewMatrix</B></A> (void) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgCopyTexture</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgCopyTexture><H1 CLASS="APISYMBOL">mgCopyTexture</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgCopyTexture</B> - makes a copy of a texture palette entry.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgCopyTexture</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>dstDb</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>srcDb</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>newTextureName</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>srcIndex</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgCopyTexture</B> makes a new texture palette entry from a source database 
+<I>srcDb</I>, and index <I>srcIndex</I>, and loads it in the destination database&#146s 
+<I>dstDb</I> texture palette using the first available index and the given 
+texture name <I>newTextureName</I>.</P></DD><DD><P>The texture can be copied from one database to another, or it can be 
+copied to a new index in the same database by specifying the same database 
+for <I>dstDb</I> and <I>srcDb</I>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>dstDb</I></DT><DD>the destination database node</DD><DT><I>srcDb</I></DT><DD>the source database node</DD><DT><I>newTextureName</I></DT><DD>the name of the new entry (the copy)</DD><DT><I>srcIndex</I></DT><DD>the index of the texture palette entry 
+to be copied</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the index of the new entry.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgCopyTexturePalette.htm#mgCopyTexturePalette>mgCopyTexturePalette</A></DD></DL></BODY>
+
+</HTML>

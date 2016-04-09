@@ -26,8 +26,13 @@ public class Application extends Controller {
         int validateRes = FastForm.validate(fastForm);
         
         if(validateRes==1)
-            return ok();
+            return ok(BadRequest.render("Formular validat!",sb.toString()));
         else
             return ok(BadRequest.render("Bad Request", "Argumente invalide! Te rog reincearca!"));
     }
+
+    public static Result inregistrare() {
+        return ok(Template.render("yesLogin","yesLogo","Inregistrare"));
+    }
+
 }

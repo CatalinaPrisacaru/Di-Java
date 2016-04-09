@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>mgpExit</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgpExit><H1 CLASS="APISYMBOL">mgpExit</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgpExit</B> - plug-in termination function.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>MGPIDECLARE(void) <B>mgpExit</B> (</TD><TD><A HREF=mgplugin.htm#mgplugin>mgplugin</A></TD><TD><I>plugin</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This is the plug-in termination function required for all plug-in 
+modules.  You must supply this function so that your plug-in is 
+properly recognized.</P></DD><DD><P>You must declare 
+this function exactly as shown here, using the <A HREF=MGPIDECLARE.htm#MGPIDECLARE>MGPIDECLARE</A> macro, so 
+that it is properly exported from your plug-in module library.</P></DD><DD><P>This function will be called by the plug-in runtime environment at 
+termination.  In this function, a plug-in module will perform any termination 
+processing required.  Typically a plug-in module will unregister any 
+registered plug-in tools and/or data extensions and unload any loaded resources.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugin</I></DT><DD>the plug-in module being exited</DD></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Declared by Plug-in Module</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgpInit.htm#mgpInit>mgpInit</A>, <A HREF=mgDeclarePlugin.htm#mgDeclarePlugin>mgDeclarePlugin</A>, <A HREF=mgUnregisterAllTools.htm#mgUnregisterAllTools>mgUnregisterAllTools</A>, 
+<A HREF=mgUnloadResource.htm#mgUnloadResource>mgUnloadResource</A></DD></DL></BODY>
+
+</HTML>

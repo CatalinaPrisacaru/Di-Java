@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>mgLessDetail</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgLessDetail><H1 CLASS="APISYMBOL">mgLessDetail</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgLessDetail</B> - changes the level of detail (LOD) for a database to the next lower level.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgLessDetail</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgLessDetail</B> changes the current switch-in distance of the database to a larger value (effectively 
+moving the eyepoint farther from the model) such that the next lower level of detail becomes visible in the scene. 
+The function then changes the visibility of each LOD node according to whether or not it would be 
+visible at this new switch-in (eyepoint) distance.  The visibility of the LOD node is 
+set or unset using the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltIOn>fltIOn</A>
+ attribute of the node.</P></DD><DD><P><B>mgLessDetail</B> returns <A HREF=mgbool.htm#mgbool>MG_FALSE</A> if there is no lower level of detail or if the <I>db</I> 
+provided is not a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+ node.  If the database does not contain any LOD nodes, the first call 
+to <B>mgLessDetail</B> returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A>, while subsequent calls return <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> if there is no lower level 
+of detail or if <I>db</I> is not a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+ node.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how you might use <A HREF=mgMoreDetail.htm#mgMoreDetail>mgMoreDetail</A> to determine 
+which nodes are visible in the scene at each level of detail.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">static mgbool
+PrintNodeNameInLOD (mgrec* db, mgrec* parent, mgrec* rec, void* userData)
+{
+   // prints the name of each node visited.
+   int* lodNumPtr = (int*) userData;
+   int lodNum = *lodNumPtr;
+
+   char* name = mgGetName (rec);
+   printf ("Node: %s, is part of LOD %d", name, lodNum);
+   mgFree (name);
+   return (MG_TRUE);
+}
+
+// first count the LODs
+mgLeastDetail (db);
+int numLODs = 0;
+while (mgMoreDetail (db)) {
+   numLODs++;
+}
+
+// start at the highest level of detail
+int lodNumber = numLODs;
+mgMostDetail (db);
+// print names of nodes that are "visible" in this level of detail
+mgWalk (db, PrintNodeNameInLOD, MG_NULL, &lodNumber, MWALK_ON);
+
+// go to next lower level of detail
+while (mgLessDetail (db)) {
+   lodNumber--;
+   // print names of nodes that are "visible" in this level of detail
+   mgWalk (db, PrintNodeNameInLOD, MG_NULL, &lodNumber, MWALK_ON);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">def PrintNodeNameInLOD (db, parent, rec, lodNum):
+   # prints the name of each node visited.
+   name = mgGetName (rec)
+   print "Node:", name, "is part of LOD", lodNum
+   return MG_TRUE
+
+# first count the LODs
+db = mgGetCurrentDb()
+mgLeastDetail (db)
+numLODs = 0
+while (mgMoreDetail (db)):
+   numLODs = numLODs + 1
+
+# start at the highest level of detail
+lodNumber = numLODs
+mgMostDetail (db)
+# print names of nodes that are "visible" in this level of detail
+mgWalk (db, PrintNodeNameInLOD, None, lodNumber, MWALK_ON)
+
+# go to next lower level of detail
+while (mgLessDetail (db)):
+   lodNumber = lodNumber - 1
+   # print names of nodes that are "visible" in this level of detail
+   mgWalk (db, PrintNodeNameInLOD, None, lodNumber, MWALK_ON)</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgLeastDetail.htm#mgLeastDetail>mgLeastDetail</A>, <A HREF=mgMoreDetail.htm#mgMoreDetail>mgMoreDetail</A>, <A HREF=mgMostDetail.htm#mgMostDetail>mgMostDetail</A>, <A HREF=mgWalk.htm#mgWalk>mgWalk</A>, <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A></DD></DL></BODY>
+
+</HTML>

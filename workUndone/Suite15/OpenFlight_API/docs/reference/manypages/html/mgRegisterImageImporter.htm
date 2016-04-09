@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>mgRegisterImageImporter</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRegisterImageImporter><H1 CLASS="APISYMBOL">mgRegisterImageImporter</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRegisterImageImporter</B> - registers an image importer tool.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgplugintool <B>mgRegisterImageImporter</B> (</TD><TD><A HREF=mgplugin.htm#mgplugin>mgplugin</A></TD><TD><I>plugin</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>toolName</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>importFlags</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgimageopenfunc.htm#mgimageopenfunc>mgimageopenfunc</A></TD><TD><I>openFunc</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgimageclosefunc.htm#mgimageclosefunc>mgimageclosefunc</A></TD><TD><I>closeFunc</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgimagegetinfofunc.htm#mgimagegetinfofunc>mgimagegetinfofunc</A></TD><TD><I>getInfoFunc</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgimagegettexelsfunc.htm#mgimagegettexelsfunc>mgimagegettexelsfunc</A></TD><TD><I>getTexelsFunc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRegisterImageImporter</B> registers an image importer tool for 
+the specified plug-in module <I>plugin</I> with the specified tool attributes.</P></DD><DD><P>The required tool attributes include the name of the tool <I>toolName</I>, 
+a start function for the tool, <I>startFunc</I> and user defined callback data, 
+<I>userData</I> (may be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>) that is passed to the start function 
+when it is called.</P></DD><DD><P>Additional required tool attributes include 
+<A HREF=MTA_FILTER.htm#MTA_FILTER>MTA_FILTER</A> and <A HREF=MTA_FILETYPE.htm#MTA_FILETYPE>MTA_FILETYPE</A>.  Additional optional tool attributes 
+include <A HREF=MTA_VERSION.htm#MTA_VERSION>MTA_VERSION</A> and <A HREF=MTA_HELPCONTEXT.htm#MTA_HELPCONTEXT>MTA_HELPCONTEXT</A>.  These additional tool attributes 
+are passed using variable argument style and must be terminated with 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugin</I></DT><DD>the plug-in module registering the tool</DD><DT><I>toolName</I></DT><DD>the name of the tool</DD><DT><I>importFlags</I></DT><DD>image importer capability flags (reserved 
+for future enhancement)</DD><DT><I>openFunc</I></DT><DD>open callback function for image importer</DD><DT><I>closeFunc</I></DT><DD>close callback function for image importer</DD><DT><I>getInfoFunc</I></DT><DD>get info callback function for image importer</DD><DT><I>getTexelsFunc</I></DT><DD>get texels callback function for image importer</DD><DT><I>userData</I></DT><DD>user defined data that will be passed to 
+your import action functions <I>openFunc</I>, 
+<I>closeFunc</I>, <I>getInfoFunc</I> and 
+<I>getTexelsFunc</I> when they are called</DD><DT><I>...</I></DT><DD>additional viewer tool 
+specific attributes in variable argument style</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Pointer to plug-in tool registered if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> 
+otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetReadImageGeoInfoFunc.htm#mgSetReadImageGeoInfoFunc>mgSetReadImageGeoInfoFunc</A></DD></DL></BODY>
+
+</HTML>

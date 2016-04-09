@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>mgpInit</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgpInit><H1 CLASS="APISYMBOL">mgpInit</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgpInit</B> - plug-in initialization function.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>MGPIDECLARE(mgbool) <B>mgpInit</B> (</TD><TD><A HREF=mgplugin.htm#mgplugin>mgplugin</A></TD><TD><I>plugin</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>argc</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>argv []</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This is the plug-in initialization function required for all plug-in 
+modules.  You must supply this function so that your plug-in is 
+properly recognized.</P></DD><DD><P>You must declare 
+this function exactly as shown here, using the <A HREF=MGPIDECLARE.htm#MGPIDECLARE>MGPIDECLARE</A> macro, so 
+that it is properly exported from your plug-in module library.</P></DD><DD><P>This function is called by the plug-in runtime environment at 
+startup.  In this function a plug-in module performs any initialization 
+processing required.  Typically, a plug-in module registers plug-in tools 
+and/or data extensions for the runtime environment as well as load a 
+resource containing GUI definitions required by the plug-in.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugin</I></DT><DD>the plug-in module being initialized</DD><DT><I>argc</I></DT><DD>a pointer to the number of arguments contained in argv</DD><DT><I>argv []</I></DT><DD>array of arguments passed to the program when it 
+was started</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Return <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the plug-in was successfully initialized, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Declared by Plug-in Module</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgpExit.htm#mgpExit>mgpExit</A>, <A HREF=mgDeclarePlugin.htm#mgDeclarePlugin>mgDeclarePlugin</A>, <A HREF=mgRegisterImporter.htm#mgRegisterImporter>mgRegisterImporter</A>, 
+<A HREF=mgRegisterExporter.htm#mgRegisterExporter>mgRegisterExporter</A>, <A HREF=mgRegisterViewer.htm#mgRegisterViewer>mgRegisterViewer</A>, <A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, 
+<A HREF=mgRegisterImageImporter.htm#mgRegisterImageImporter>mgRegisterImageImporter</A>, <A HREF=mgRegisterSite.htm#mgRegisterSite>mgRegisterSite</A>, <A HREF=mgRegisterInputDevice.htm#mgRegisterInputDevice>mgRegisterInputDevice</A>, 
+<A HREF=mgLoadResource.htm#mgLoadResource>mgLoadResource</A></DD></DL></BODY>
+
+</HTML>

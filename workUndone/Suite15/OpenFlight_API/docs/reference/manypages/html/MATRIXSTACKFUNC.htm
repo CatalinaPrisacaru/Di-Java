@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>MATRIXSTACKFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=MATRIXSTACKFUNC><H1>Matrix Stack Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeMatrixStack.htm#mgFreeMatrixStack><B>mgFreeMatrixStack</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackGetMatrix.htm#mgMatrixStackGetMatrix><B>mgMatrixStackGetMatrix</B></A> (const <A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackIsIdentity.htm#mgMatrixStackIsIdentity><B>mgMatrixStackIsIdentity</B></A> (const <A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackLoadIdentity.htm#mgMatrixStackLoadIdentity><B>mgMatrixStackLoadIdentity</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackLoadMatrix.htm#mgMatrixStackLoadMatrix><B>mgMatrixStackLoadMatrix</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackMultiply.htm#mgMatrixStackMultiply><B>mgMatrixStackMultiply</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackPop.htm#mgMatrixStackPop><B>mgMatrixStackPop</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackPush.htm#mgMatrixStackPush><B>mgMatrixStackPush</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackRotate.htm#mgMatrixStackRotate><B>mgMatrixStackRotate</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, double <I>theta</I>, double <I>a</I>, double <I>b</I>, double <I>c</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackRotateX.htm#mgMatrixStackRotateX><B>mgMatrixStackRotateX</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, double <I>theta</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackRotateY.htm#mgMatrixStackRotateY><B>mgMatrixStackRotateY</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, double <I>theta</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackRotateZ.htm#mgMatrixStackRotateZ><B>mgMatrixStackRotateZ</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, double <I>theta</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackScale.htm#mgMatrixStackScale><B>mgMatrixStackScale</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgMatrixStackTransformCoord.htm#mgMatrixStackTransformCoord><B>mgMatrixStackTransformCoord</B></A> (const <A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgMatrixStackTransformVector.htm#mgMatrixStackTransformVector><B>mgMatrixStackTransformVector</B></A> (const <A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMatrixStackTranslate.htm#mgMatrixStackTranslate><B>mgMatrixStackTranslate</B></A> (<A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <I>matrixStack</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgmatrixstack.htm#mgmatrixstack>mgmatrixstack</A> <TD><A HREF=mgNewMatrixStack.htm#mgNewMatrixStack><B>mgNewMatrixStack</B></A> (void) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

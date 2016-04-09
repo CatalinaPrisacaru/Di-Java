@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgtextactivatereason</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgtextactivatereason><H1 CLASS="APISYMBOL">mgtextactivatereason</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgtextactivatereason</B> - Text activate reason type<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgtextactivatereason {
+&#32;&#32;&#32;MTEXT_LOSTFOCUS,
+&#32;&#32;&#32;MTEXT_TEXTCHANGED,
+} mgtextactivatereason;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MTEXT_LOSTFOCUS</B><DD>Text control lost focus. This indicates that the event was sent 
+because the text control lost focus. By default, this is the only reason 
+the activate control event is sent to a text control.<DT><B>MTEXT_TEXTCHANGED</B><DD>Text control text changed. This indicates that the event was sent 
+because the user typed in the text control. Note that the user may not 
+have finished typing when this event is sent. By default, the activate 
+control event is not sent for this reason. To enable this for a specific 
+text control, use <A HREF=mgControlSetAttribute.htm#mgControlSetAttribute>mgControlSetAttribute</A> to set the <B>MCA_TEXTACTIVATEONCHANGED</B> 
+attribute on the text control.</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This enumerated type is used when the activate control event is sent to text controls.</P></DD></DT></DL></BODY>
+
+</HTML>

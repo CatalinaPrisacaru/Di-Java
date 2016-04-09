@@ -1,0 +1,446 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "bld"=.\bld.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name color1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name color2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name material1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name material2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name xform1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texture1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name new1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name getattr1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name light1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name walk1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dof1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texture2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texture3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texture4
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texture5
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texture6
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name io1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name struct1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name struct2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name xref1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name switch1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name eyepoint1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name eyepoint2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name lightpoint
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name lightpoint25
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sound1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name texturemapping
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "color1"=.\color1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "color2"=.\color2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "dof1"=.\dof1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "eyepoint1"=.\eyepoint1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "eyepoint2"=.\eyepoint2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "getattr1"=.\getattr1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "io1"=.\io1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "light1"=.\light1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "lightpoint"=.\lightpoint.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "lightpoint25"=.\lightpoint25.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "material1"=.\material1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "material2"=.\material2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "new1"=.\new1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "setattr1"=.\setattr1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "sound1"=.\sound1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "struct1"=.\struct1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "struct2"=.\struct2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "switch1"=.\switch1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texture1"=.\texture1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texture2"=.\texture2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texture3"=.\texture3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texture4"=.\texture4.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texture5"=.\texture5.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texture6"=.\texture6.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "texturemapping"=.\texturemapping.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "walk1"=.\walk1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "xform1"=.\xform1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "xref1"=.\xref1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

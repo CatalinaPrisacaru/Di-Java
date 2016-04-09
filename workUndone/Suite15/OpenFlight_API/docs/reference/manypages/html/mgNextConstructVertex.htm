@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgNextConstructVertex</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNextConstructVertex><H1 CLASS="APISYMBOL">mgNextConstructVertex</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNextConstructVertex</B> - gets the next construction vertex 
+node associated with an active editor tool instance.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgNextConstructVertex</B> (</TD><TD><A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A></TD><TD><I>editorContext</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>constructVtx</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgNextConstructVertex</B> gets the construction vertex node 
+that follows the specified construction node, <I>constructVtx</I>, 
+associated with the editor tool instance identified by 
+editor context, <I>editorContext</I>.</P></DD><DD><P>After calling <A HREF=mgFirstConstructVertex.htm#mgFirstConstructVertex>mgFirstConstructVertex</A> to get the first 
+construction vertex node associated with an editor tool instance, you 
+can call <B>mgNextConstructVertex</B> to get successive construction 
+vertex nodes.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>editorContext</I></DT><DD>the editor context from which to 
+get the next construction vertex node</DD><DT><I>constructVtx</I></DT><DD>the construction vertex node 
+to get next construction vertex for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the next construction vertex node if found, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewConstructVertex.htm#mgNewConstructVertex>mgNewConstructVertex</A>, <A HREF=mgFirstConstructVertex.htm#mgFirstConstructVertex>mgFirstConstructVertex</A></DD></DL></BODY>
+
+</HTML>

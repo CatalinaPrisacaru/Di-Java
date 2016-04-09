@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetAbsoluteFilename</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetAbsoluteFilename><H1 CLASS="APISYMBOL">mgGetAbsoluteFilename</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetAbsoluteFilename</B> - gets the absolute path of a file 
+relative to a database.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetAbsoluteFilename</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>relFilename</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>absFilename</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>maxLen</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, absFilename <B>mgGetAbsoluteFilename</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>relFilename</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a database <I>db</I>, and a relative filename <I>relFilename</I>, 
+<B>mgGetAbsoluteFilename</B> forms and returns the absolute filename for the file. 
+The file does not have to exist.</P></DD><DD><P>The following table shows the forms the relative filename <I>relFilename</I> can take 
+and the absolute path results for <I>db</I> located in <SPAN CLASS="MONOSPACE">C:/folder1/folder2/db.flt</SPAN>:<BR> 
+<TABLE CLASS="SIMPLE">
+ 
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ Relative Filename </TD>
+ 
+<TD CLASS="BORDER">
+ Absolute Path Returned </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">../path1/file.ext</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">C:/folder1/path1/file.ext</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">./file.ext</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">C:/folder1/folder2/file.ext</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">./path1/file.ext</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">C:/folder1/folder2/path1/file.ext</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">../../path1/path2/file.ext</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">C:/path1/path2/file.ext</SPAN> </TD>
+ 
+</TR>
+<P>
+</TABLE>
+</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to which <I>relFilename</I> is relative</DD><DT><I>relFilename</I></DT><DD>the relative file name</DD><DT><I>absFilename</I></DT><DD>the address of string to receive absolute filename</DD><DT><I>maxLen</I></DT><DD>maximum number of characters to store in 
+<I>absFilename</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the absolute filename can be formed, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>absFilename</DT><DD>If function is successful,this contains the absolute 
+filename, otherwise it is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgExtRefSetLocatorFunc.htm#mgExtRefSetLocatorFunc>mgExtRefSetLocatorFunc</A>, <A HREF=mgTextureGetLocatorFunc.htm#mgTextureGetLocatorFunc>mgTextureGetLocatorFunc</A>, <A HREF=mgIsDbUntitled.htm#mgIsDbUntitled>mgIsDbUntitled</A>, 
+<A HREF=mgShaderGetLocatorFunc.htm#mgShaderGetLocatorFunc>mgShaderGetLocatorFunc</A>, <A HREF=mgfilelocatorfunc.htm#mgfilelocatorfunc>mgfilelocatorfunc</A></DD></DL></BODY>
+
+</HTML>

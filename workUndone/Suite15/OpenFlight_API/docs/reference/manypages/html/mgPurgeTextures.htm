@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>mgPurgeTextures</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPurgeTextures><H1 CLASS="APISYMBOL">mgPurgeTextures</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPurgeTextures</B> - purges the OpenFlight API texture cache.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD> void <B>mgPurgeTextures</B> ( void ) </DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPurgeTextures</B> purges the texture cache used by the OpenFlight API 
+to store information about recently open texture files.</P></DD><DD><P>The OpenFlight API maintains a texture cache containing information 
+about all the textures referenced by any database that has ever been open. 
+It does this during the Creator modeling session as well as during the lifetime 
+of your stand-alone application.  If you open multiple databases that each 
+reference the same "texture set", this cache can reduce the time it takes 
+a database to open as textures referenced (that are already in the cache) 
+will not have to be re-loaded when the database is loaded.</P></DD><DD><P>While this cache can help reduce database "load time", as the cache 
+gets larger and larger, it takes up more and more memory.  This can eventually 
+degrade performance and may cause Creator or your stand-alone application 
+to run out of memory.</P></DD><DD><P>To address this problem, your stand-alone application can call 
+<B>mgPurgeTextures</B> periodically to clear the texture cache and effectively 
+reclaim the memory associated with it.</P></DD><DD><P>Note: You can only call this from your stand-alone application and not 
+from a plug-in.  The user has control of the texture cache in Creator and decides 
+if and when it is cleared during the modeling session.  Furthermore, when used 
+in your stand-alone application, you can only call <B>mgPurgeTextures</B> when no 
+databases are currently open.  If you call this function when one or more 
+databases are open, it will do nothing.</P></DD></DT></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example processes several databases.  It purges the texture 
+cache as it is done processing each database.</DT><DT><PRE CLASS="EXAMPLE">mgrec* db;
+mgbool moreFiles = MG_TRUE;
+while (moreFiles == MG_TRUE)
+{
+   const char* nextFile = GetNextFileToProcess ();
+   if (nextFile == NULL) {
+      moreFiles = MG_FALSE;
+   }
+   else {
+      db = mgOpenDb (nextFile);
+
+      // do something with this database, then write and close it
+
+      mgWriteDb (db);
+      mgCloseDb (db);
+
+      // purge the texture cache
+      mgPurgeTextures ();
+   }
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL></BODY>
+
+</HTML>

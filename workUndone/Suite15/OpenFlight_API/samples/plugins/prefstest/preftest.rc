@@ -1,0 +1,151 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+PLUGINDIALOG DIALOG DISCARDABLE  0, 0, 198, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    EDITTEXT        IDC_PREFVAL1,63,15,122,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PREFVAL2,63,31,122,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TOOLPREFVAL1,63,47,122,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TOOLPREFVAL2,63,65,122,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INTPREFVAL,63,90,122,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLOATPREFVAL,63,106,122,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DOUBLEPREFVAL,63,122,122,14,ES_AUTOHSCROLL
+    EDITTEXT        MESSAGE_TEXT,14,173,171,14,ES_AUTOHSCROLL
+    CONTROL         "Status",MSG_STATUS,"Button",BS_AUTORADIOBUTTON,13,157,
+                    35,10
+    CONTROL         "Warning",MSG_WARNING,"Button",BS_AUTORADIOBUTTON,49,157,
+                    40,10
+    CONTROL         "Error",MSG_ERROR,"Button",BS_AUTORADIOBUTTON,94,157,31,
+                    10
+    PUSHBUTTON      "Send Message",SEND_MESSAGE_B,129,155,56,14
+    DEFPUSHBUTTON   "OK",MGID_OK,143,197,50,14
+    LTEXT           "Plugin Key 1:",IDC_STATIC,13,18,43,8
+    LTEXT           "Tool Key 1:",IDC_STATIC,13,50,43,8
+    LTEXT           "Plugin Key 2:",IDC_STATIC,13,34,43,8
+    LTEXT           "Tool Key 2:",IDC_STATIC,13,68,43,8
+    LTEXT           "Integer:",IDC_STATIC,16,93,43,8
+    LTEXT           "Float:",IDC_STATIC,16,109,43,8
+    LTEXT           "Double:",IDC_STATIC,16,125,43,8
+    GROUPBOX        "Preferences",IDC_STATIC,5,4,188,137
+    GROUPBOX        "Messages",IDC_STATIC,5,144,188,48
+END
+
+MODELINGPREFDIALOG DIALOG DISCARDABLE  0, 0, 213, 393
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modeling Preferences Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    GROUPBOX        "Modeling Preferences",IDC_STATIC,5,4,203,365
+    LTEXT           "Select a Preference",IDC_STATIC,13,18,68,8
+    PUSHBUTTON      "Update",IDC_UPDATE,149,15,50,14
+    LISTBOX         IDC_PREFLIST,13,32,187,275,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Preference:",IDC_STATIC,13,315,43,8
+    EDITTEXT        IDC_PREFKEY,61,313,139,14,ES_AUTOHSCROLL
+    LTEXT           "Integer:",IDC_STATIC,13,333,43,8
+    EDITTEXT        IDC_INTPREFVAL,61,330,139,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Double:",IDC_STATIC,13,351,43,8
+    EDITTEXT        IDC_DOUBLEPREFVAL,61,348,139,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    DEFPUSHBUTTON   "OK",MGID_OK,158,375,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    PLUGINDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 193
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 211
+    END
+
+    MODELINGPREFDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 208
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 389
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

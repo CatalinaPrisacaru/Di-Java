@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetNthRecInList</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetNthRecInList><H1 CLASS="APISYMBOL">mgGetNthRecInList</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetNthRecInList</B> - returns the nth item in the record list.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgGetNthRecInList</B> (</TD><TD><A HREF=mgreclist.htm#mgreclist>mgreclist</A></TD><TD><I>recList</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A></TD><TD><I>matrix</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>nth</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec, mgmatrix <B>mgGetNthRecInList</B> (</TD><TD><A HREF=mgreclist.htm#mgreclist>mgreclist</A></TD><TD><I>recList</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>nth</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetNthRecInList</B> returns the item in the specified record list 
+<I>recList</I> that is at position <I>nth</I>.  The first item is at position 1.</P></DD><DD><P>This function does not affect the traversal pointer of the record list.</P></DD><DD><P>If this function is successful and the output parameter <I>matrix</I> 
+is not <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, it is loaded with the composite matrix representing 
+the cumulative transformations applied to this item.  If you do not need 
+this matrix, you may specify <I>matrix</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>recList</I></DT><DD>the record list to traverse</DD><DT><I>matrix</I></DT><DD>the address of a matrix to receive 
+the composite of all transformations above 
+the returned record list item</DD><DT><I>nth</I></DT><DD>the position in the list of the 
+item to get, 1 (one) is the first item</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgrec</DT><DD>The nth item in the record list, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if 
+nth item is not in the list.</DD><DT>mgmatrix</DT><DD>If an item is returned, the output parameter 
+<I>matrix</I> (if specified) is loaded with the composite matrix representing 
+the cumulative transformations applied to this item.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgResetRecList.htm#mgResetRecList>mgResetRecList</A>, <A HREF=mgGetNextRecInList.htm#mgGetNextRecInList>mgGetNextRecInList</A>, <A HREF=mgIsRecInList.htm#mgIsRecInList>mgIsRecInList</A></DD></DL></BODY>
+
+</HTML>

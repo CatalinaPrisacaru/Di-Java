@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>mgvertexinputdata</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgvertexinputdata><H1 CLASS="APISYMBOL">mgvertexinputdata</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgvertexinputdata</B> - 3D Vertex Mouse Input data<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgmousestate mouseEvent;
+&#32;&#32;&#32;unsigned&#32int keyboardFlags;
+&#32;&#32;&#32;unsigned int buttonFlags;
+&#32;&#32;&#32;mgvertexreftype refType;
+&#32;&#32;&#32;mgcoord3d* thisPoint;
+&#32;&#32;&#32;mgcoord3d* firstPoint;
+&#32;&#32;&#32;mgvertexrefdata refData;
+&#32;&#32;&#32;mginputdevice inputDevice;
+&#32;&#32;&#32;mgmatrix refXform;
+} mgvertexinputdata;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>mouseEvent</B><DD><A HREF=mgmousestate.htm#mgmousestate>mgmousestate</A> - the vertex input sequence state</DD></DT><DT><B>keyboardFlags</B><DD><A HREF=#unsigned&#32int>unsigned&#32int</A> - the state of the <I>Alt</I>, <I>Ctrl</I>, and <I>Shift</I> keys - 
+the value of this field will be a bitwise combination 
+of <A HREF=MKB_ALTKEY.htm#MKB_ALTKEY>MKB_ALTKEY</A>, <A HREF=MKB_CTRLKEY.htm#MKB_CTRLKEY>MKB_CTRLKEY</A> and <A HREF=MKB_SHIFTKEY.htm#MKB_SHIFTKEY>MKB_SHIFTKEY</A></DD></DT><DT><B>buttonFlags</B><DD>unsigned int - the state of the <I>Left</I>, <I>Middle</I> and <I>Right</I> 
+mouse buttons - the value of this field will be a bitwise 
+combination of <A HREF=MMB_LEFTMOUSE.htm#MMB_LEFTMOUSE>MMB_LEFTMOUSE</A>, <A HREF=MMB_MIDDLEMOUSE.htm#MMB_MIDDLEMOUSE>MMB_MIDDLEMOUSE</A> and 
+<A HREF=MMB_RIGHTMOUSE.htm#MMB_RIGHTMOUSE>MMB_RIGHTMOUSE</A></DD></DT><DT><B>refType</B><DD><A HREF=mgvertexreftype.htm#mgvertexreftype>mgvertexreftype</A> - vertex Input reference type</DD></DT><DT><B>thisPoint</B><DD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> - address of 3D coordinate for the current 
+vertex being reported in this sequence</DD></DT><DT><B>firstPoint</B><DD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> - address of 3D coordinate for the first 
+vertex reported in this sequence</DD></DT><DT><B>refData</B><DD><A HREF=mgvertexrefdata.htm#mgvertexrefdata>mgvertexrefdata</A> - vertex Input reference data</DD></DT><DT><B>inputDevice</B><DD><A HREF=mginputdevice.htm#mginputdevice>mginputdevice</A> - input device that generated this input</DD></DT><DT><B>refXform</B><DD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> - cumulative transform above the referenced Face</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>When 3D vertex mouse input is reported to an editor tool via 
+the corresponding 3D vertex input function, a pointer to a record 
+of this type is passed to the vertex function that describes 
+the vertex input.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, <A HREF=mgEditorSetVertexFunc.htm#mgEditorSetVertexFunc>mgEditorSetVertexFunc</A></DD></DL></BODY>
+
+</HTML>

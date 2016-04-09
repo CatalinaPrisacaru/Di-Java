@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetChildNth</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetChildNth><H1 CLASS="APISYMBOL">mgGetChildNth</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetChildNth</B> - gets the nth child of a node.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgGetChildNth</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>nth</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetChildNth</B> returns the nth child node of the 
+specified node <B>parent</B>.  The first child is specified by <I>nth</I> equal to 1.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the parent node</DD><DT><I>nth</I></DT><DD>which child to return from the list of children</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the <I>nth</I> child node if it exists, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec *db, *node, *parent, *child;
+int i;
+db = mgOpenDb ("file1.flt");
+node = UserGetNodeRecFunc (db);
+parent = mgGetParent (node);
+for (i = 1 ; child = mgGetChildNth (parent, i); i++) {
+   if (child == node) {
+      printf ("node is child number %d of parent", i);
+      return;
+   }
+}
+printf ("node is not a child of parent");</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgCountChild.htm#mgCountChild>mgCountChild</A>, <A HREF=mgGetChild.htm#mgGetChild>mgGetChild</A>, <A HREF=mgGetNext.htm#mgGetNext>mgGetNext</A>, <A HREF=mgGetParent.htm#mgGetParent>mgGetParent</A></DD></DL></BODY>
+
+</HTML>

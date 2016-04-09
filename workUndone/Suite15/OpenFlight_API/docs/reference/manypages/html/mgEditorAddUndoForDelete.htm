@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+<TITLE>mgEditorAddUndoForDelete</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgEditorAddUndoForDelete><H1 CLASS="APISYMBOL">mgEditorAddUndoForDelete</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgEditorAddUndoForDelete</B> - registers undo/redo callback 
+actions for an editor tool instance that deletes geometry from the scene.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgEditorAddUndoForDelete</B> (</TD><TD><A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A></TD><TD><I>editorContext</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>menuLabel</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>node</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgEditorAddUndoForDelete</B> and <A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A> 
+deletes <I>node</I> from the scene and performs all the undo/redo actions 
+automatically for an editor tool instance.</P></DD><DD><P>When an editor tool instance wants to delete geometry from the scene, 
+it can register this action using <B>mgEditorAddUndoForDelete</B> or 
+<A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A>.  Doing so deletes <I>node</I> and causes all 
+the processing required for undo/redo of the node deletion to be performed 
+by the modeling system automatically.  This can greatly reduce the amount of 
+undo/redo support code you must write for your editor tool.</P></DD><DD><P>After calling <B>mgEditorAddUndoForDelete</B>, <I>node</I> is deleted and 
+an undo entry is created in the Edit->Undo menu with the specified label 
+string <I>menuLabel</I>.  If <A HREF=MUML_USETOOLNAME.htm#MUML_USETOOLNAME>MUML_USETOOLNAME</A> is specified for <I>menuLabel</I>, 
+the name of the editor tool is used as the menu label string.</P></DD><DD><P>When this undo entry is selected by the user, the specified 
+<I>node</I> is un-deleted and attached back into the scene and a redo entry is 
+created in the Edit->Redo menu with the same label as that used for 
+the undo entry.  When this redo entry is selected, <I>node</I> will be 
+re-deleted and removed from the scene, at which point another undo 
+entry will be created.  As long as the user selects undo/redo of this 
+action, the proper actions will be automatically performed by the 
+modeling system with no further action required of the editor tool.</P></DD><DD><P>For <B>mgEditorAddUndoForDelete</B> and <A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A> 
+to work correctly, they must be called <B>instead of</B> deleting the <I>node</I> 
+from the scene.  This is required so the information required by 
+the undo/redo can be captured correctly before the node is deleted. Note 
+that this is different from the requirements of <A HREF=mgEditorAddUndoForCreate.htm#mgEditorAddUndoForCreate>mgEditorAddUndoForCreate</A> 
+which must be called <B>after</B> the node is created and attached.</P></DD><DD><P>Both <B>mgEditorAddUndoForDelete</B> and <A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A> 
+can be used in combination with the other automatic and non-automatic 
+undo/redo functions.  So, for example, if your editor tool deletes one 
+node and creates another, you could call <B>mgEditorAddUndoForDelete</B> 
+to automatically handle the undo/redo for the deleted node, then call 
+<A HREF=mgEditorAppendUndoForCreate.htm#mgEditorAppendUndoForCreate>mgEditorAppendUndoForCreate</A> to handle the undo/redo for the node 
+you created.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>editorContext</I></DT><DD>the editor context to 
+register automatic undo/redo 
+for node deletion action</DD><DT><I>menuLabel</I></DT><DD>the text of the undo/redo 
+menu items to display</DD><DT><I>node</I></DT><DD>the node to delete and 
+perform undo/redo for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>In the following example, an editor tool deletes one node from 
+the scene and replaces it with a new node.  The example shows how 
+the editor tool might register the undo/redo for these actions.</DT><DT><PRE CLASS="EXAMPLE">mgrec* newGroup;
+mgrec* newObj;
+mgrec* newPoly;
+mgrec* parent;
+
+// Create a new group:
+//
+//    newGroup
+//       |
+//    newObj
+//       |
+//    newPoly
+//
+// to replace an existing group in the scene
+
+// Build up new group hierarchy
+newGroup = mgNewRec (fltGroup);
+newObj = mgNewRec (fltObject);
+newPoly = mgNewRec (fltPolygon);
+
+mgAttach (newGroup, newObj);
+mgAttach (newObj, newPoly);
+
+// We will delete the existing group first, then attach the new
+// group to the same parent.  Remember the parent for later.
+parent = mgGetParent (existingGroup);
+
+// Set up undo/redo for node deletion.  You only need to register the
+// "root" node that you want to delete.  All children are accounted for
+// automatically.  Use mgEditorAddUndoForDelete because this is the
+// first undo-able action performed by the editor tool. Remember, you
+// must register the undo instead of deleting the nodes from the scene.
+mgEditorAddUndoForDelete (editorContext, "Replace Geometry", existingGroup);
+
+// DO NOT delete the existing group, mgEditorAddUndoForDelete will do it !!
+
+// Now attach the new group to the old parent
+mgAttach (parent, newGroup);
+
+// Set up undo/redo for node creation, only need to register the
+// "root" node that you created.  Since newObj and newPoly are
+// children of newGroup, you don't need to register them separately.
+// Use mgEditorAppendUndoForCreate to "append" this undo callback
+// action to the existing undo menu entry created above by
+// mgEditorAddUndoForDelete.  Note that you could call
+// mgEditorAddUndoForCreate instead if you wanted the deletion
+// and creation actions to be undo-able individually. And again,
+// remember to register the undo for node creation after you
+// attach new nodes into the scene.
+mgEditorAppendUndoForCreate (editorContext, newGroup);
+
+// The undo entry labeled "Replace Geometry", when selected by the
+// user, will un-delete existingGroup and un-create newGroup. When
+// that happens, a redo entry labeled "Replace Geometry" will be
+// automatically created in the Edit-&gtRedo menu.  When that redo
+// entry is selected by the user, existingGroup will re-deleted and
+// newGroup will be re-created and attached into the scene and yet
+// another undo entry will be automatically created, and so forth.</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, 
+<A HREF=mgEditorAddUndo.htm#mgEditorAddUndo>mgEditorAddUndo</A>, <A HREF=mgEditorAppendUndo.htm#mgEditorAppendUndo>mgEditorAppendUndo</A>, <A HREF=mgEditorResetUndo.htm#mgEditorResetUndo>mgEditorResetUndo</A>, 
+<A HREF=mgEditorAddRedo.htm#mgEditorAddRedo>mgEditorAddRedo</A>, <A HREF=mgEditorAddUndoForRedo.htm#mgEditorAddUndoForRedo>mgEditorAddUndoForRedo</A>, 
+<A HREF=mgEditorAddUndoForCreate.htm#mgEditorAddUndoForCreate>mgEditorAddUndoForCreate</A>, <A HREF=mgEditorAppendUndoForCreate.htm#mgEditorAppendUndoForCreate>mgEditorAppendUndoForCreate</A>, 
+<A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A>, 
+<A HREF=mgEditorAddUndoForMove.htm#mgEditorAddUndoForMove>mgEditorAddUndoForMove</A>, <A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A></DD></DL></BODY>
+
+</HTML>

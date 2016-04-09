@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetTextureGeoProjection</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetTextureGeoProjection><H1 CLASS="APISYMBOL">mgGetTextureGeoProjection</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetTextureGeoProjection</B> - gets map projection from 
+a georeference info object.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetTextureGeoProjection</B> (</TD><TD><A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A></TD><TD><I>geoInfo</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>projection</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, projection <B>mgGetTextureGeoProjection</B> (</TD><TD><A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A></TD><TD><I>geoInfo</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetTextureGeoProjection</B> gets the map projection from the 
+specified georeference info object <I>geoInfo</I>.</P></DD><DD><P>Valid values for the projection attribute 
+are <A HREF=MIMG_GEOPROJ_GEODETIC.htm#MIMG_GEOPROJ_GEODETIC>MIMG_GEOPROJ_GEODETIC</A>, and <A HREF=MIMG_GEOPROJ_UTM.htm#MIMG_GEOPROJ_UTM>MIMG_GEOPROJ_UTM</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>geoInfo</I></DT><DD>the georeference info object</DD><DT><I>projection</I></DT><DD>address of integer to receive 
+projection value</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if projection retrieved successfully, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>projection</DT><DD>If function is successful, projection contains the retrieved projection, otherwise 
+projection is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgReadImageGeoInfo.htm#mgReadImageGeoInfo>mgReadImageGeoInfo</A>, <A HREF=mgGetTextureGeoType.htm#mgGetTextureGeoType>mgGetTextureGeoType</A>, 
+<A HREF=mgGetTextureGeoEarthModel.htm#mgGetTextureGeoEarthModel>mgGetTextureGeoEarthModel</A>, <A HREF=mgGetTextureGeoUTMZone.htm#mgGetTextureGeoUTMZone>mgGetTextureGeoUTMZone</A>, 
+<A HREF=mgGetTextureGeoUTMHemisphere.htm#mgGetTextureGeoUTMHemisphere>mgGetTextureGeoUTMHemisphere</A>, <A HREF=mgGetTextureGeoImageOrigin.htm#mgGetTextureGeoImageOrigin>mgGetTextureGeoImageOrigin</A>, 
+<A HREF=mgGetTextureGeoNumCtlPts.htm#mgGetTextureGeoNumCtlPts>mgGetTextureGeoNumCtlPts</A>, <A HREF=mgGetTextureGeoCtlPt.htm#mgGetTextureGeoCtlPt>mgGetTextureGeoCtlPt</A>, 
+<A HREF=mgFreeImageGeoInfo.htm#mgFreeImageGeoInfo>mgFreeImageGeoInfo</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>mgscaleactivatecallbackrec</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgscaleactivatecallbackrec><H1 CLASS="APISYMBOL">mgscaleactivatecallbackrec</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgscaleactivatecallbackrec</B> - callback structure for the activate control 
+event sent to scale controls<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgguicalldatatype callDataType;
+&#32;&#32;&#32;mgmousestate mouseState;
+} mgscaleactivatecallbackrec;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>callDataType</B><DD><A HREF=mgguicalldatatype.htm#mgguicalldatatype>mgguicalldatatype</A> - call data type that indicates the 
+type of call data this object really is - 
+will always be <A HREF=mgguicalldatatype.htm#mgguicalldatatype>MGCD_SCALEACTIVATE</A></DD></DT><DT><B>mouseState</B><DD><A HREF=mgmousestate.htm#mgmousestate>mgmousestate</A> - state of mouse when event was triggered - 
+possible values are: <BR> 
+<A HREF=mgmousestate.htm#mgmousestate>MMSS_START</A> - The mouse state will be set to this 
+value under either of the following conditons: <BR> 
+When the user first presses the left mouse button on the thumb or 
+the trough of the scale control. -- or -- <BR> 
+When the user first presses (and then holds) the left mouse button 
+on either arrow button of the spin buddy control associated to the 
+scale control.  Note: If the user clicks the left mouse button on the 
+spin buddy control (without holding it down), the event will be treated 
+like a single event and <A HREF=mgmousestate.htm#mgmousestate>MMSS_NONE</A> will be used. 
+<BR> 
+<A HREF=mgmousestate.htm#mgmousestate>MMSS_CONTINUE</A> - The mouse state is set to this value 
+as long as the user continues to hold the left mouse button down on the 
+thumb or the trough of the scale control, or on either arrow of an 
+associated spin buddy control. 
+<BR> 
+<A HREF=mgmousestate.htm#mgmousestate>MMSS_STOP</A> - The mouse state is set to this value when 
+the user releases the left mouse button after dragging the mouse on the 
+thumb or the trough of the scale control, or after holding down either 
+arrow of an associated spin buddy control. 
+<BR> 
+<A HREF=mgmousestate.htm#mgmousestate>MMSS_NONE</A> - The mouse state will be set to this value 
+under either of the following conditons: <BR> 
+When the user enters a numeric value into the text buddy control 
+of the associated scale control. -- or -- <BR> 
+When the user clicks (but does not hold) the left mouse button on 
+either arrow of the spin buddy control associated to the scale control.</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>When the <A HREF=MGCB_ACTIVATE.htm#MGCB_ACTIVATE>MGCB_ACTIVATE</A> control event is sent to 
+a scale control via its <A HREF=mgguifunc.htm#mgguifunc>mgguifunc</A>, the <I>calldata</I> parameter passed in will point 
+to an object of this type.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgguifunc.htm#mgguifunc>mgguifunc</A></DD></DL></BODY>
+
+</HTML>

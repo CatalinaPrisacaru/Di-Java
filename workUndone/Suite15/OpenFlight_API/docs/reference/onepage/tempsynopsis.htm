@@ -1,0 +1,46 @@
+
+
+<HR>
+<A NAME=POINTERARRAYFUNC><H1>Dynamic Array/Stack Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void>void</A> <TD><A HREF=#mgFreePtrArray><B>mgFreePtrArray</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void>void</A> <TD><A HREF=#mgFreePtrStack><B>mgFreePtrStack</B></A> (<A HREF=#mgptrstack>mgptrstack</A> <I>ptrStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#mgptrarray>mgptrarray</A> <TD><A HREF=#mgNewPtrArray><B>mgNewPtrArray</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#mgptrstack>mgptrstack</A> <TD><A HREF=#mgNewPtrStack><B>mgNewPtrStack</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#int>int</A> <TD><A HREF=#mgPtrArrayAppend><B>mgPtrArrayAppend</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#void*>void*</A> <I>item</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#mgbool>mgbool</A> <TD><A HREF=#mgPtrArrayBSearch><B>mgPtrArrayBSearch</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#void*>void*</A> <I>key</I>, <A HREF=#mgptrarraycomparefunc>mgptrarraycomparefunc</A> <I>compareFunc</I>, <A HREF=#int*>int*</A> <I>pos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void>void</A> <TD><A HREF=#mgPtrArrayClear><B>mgPtrArrayClear</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void*>void*</A> <TD><A HREF=#mgPtrArrayGet><B>mgPtrArrayGet</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#int>int</A> <I>pos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void>void</A> <TD><A HREF=#mgPtrArrayInsert><B>mgPtrArrayInsert</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#int>int</A> <I>pos</I>, <A HREF=#void*>void*</A> <I>item</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#int>int</A> <TD><A HREF=#mgPtrArrayLength><B>mgPtrArrayLength</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void*>void*</A> <TD><A HREF=#mgPtrArrayRemove><B>mgPtrArrayRemove</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#int>int</A> <I>pos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void>void</A> <TD><A HREF=#mgPtrArrayReplace><B>mgPtrArrayReplace</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#int>int</A> <I>pos</I>, <A HREF=#void*>void*</A> <I>item</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#int>int</A> <TD><A HREF=#mgPtrArraySearch><B>mgPtrArraySearch</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#void*>void*</A> <I>key</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#int>int</A> <TD><A HREF=#mgPtrArraySort><B>mgPtrArraySort</B></A> (<A HREF=#mgptrarray>mgptrarray</A> <I>ptrArray</I>, <A HREF=#mgptrarraycomparefunc>mgptrarraycomparefunc</A> <I>compareFunc</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void>void</A> <TD><A HREF=#mgPtrStackClear><B>mgPtrStackClear</B></A> (<A HREF=#mgptrstack>mgptrstack</A> <I>ptrStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#int>int</A> <TD><A HREF=#mgPtrStackLength><B>mgPtrStackLength</B></A> (<A HREF=#mgptrstack>mgptrstack</A> <I>ptrStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void*>void*</A> <TD><A HREF=#mgPtrStackPop><B>mgPtrStackPop</B></A> (<A HREF=#mgptrstack>mgptrstack</A> <I>ptrStack</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#int>int</A> <TD><A HREF=#mgPtrStackPush><B>mgPtrStackPush</B></A> (<A HREF=#mgptrstack>mgptrstack</A> <I>ptrStack</I>, <A HREF=#void*>void*</A> <I>item</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=#void*>void*</A> <TD><A HREF=#mgPtrStackTop><B>mgPtrStackTop</B></A> (<A HREF=#mgptrstack>mgptrstack</A> <I>ptrStack</I>) ;</TR>
+</TABLE>
+<BR>
+

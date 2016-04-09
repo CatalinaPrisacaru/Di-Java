@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<TITLE>mgtabruleroption</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgtabruleroption><H1 CLASS="APISYMBOL">mgtabruleroption</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgtabruleroption</B> - tab ruler control Options<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgtabruleroption {
+&#32;&#32;&#32;MTRUL_ORIENTATION,
+&#32;&#32;&#32;MTRUL_TABBAROFFSET,
+&#32;&#32;&#32;MTRUL_LABELOFFSET,
+&#32;&#32;&#32;MTRUL_SCALEBAROFFSET,
+&#32;&#32;&#32;MTRUL_MARGINWIDTH,
+&#32;&#32;&#32;MTRUL_TICHEIGHT,
+&#32;&#32;&#32;MTRUL_AUTOTICS,
+&#32;&#32;&#32;MTRUL_LABELEDTICSEVERY,
+&#32;&#32;&#32;MTRUL_TICSEVERY,
+&#32;&#32;&#32;MTRUL_SCALEMIN,
+&#32;&#32;&#32;MTRUL_SCALEMAX,
+&#32;&#32;&#32;MTRUL_ELASTICMIN,
+&#32;&#32;&#32;MTRUL_ELASTICMAX,
+} mgtabruleroption;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MTRUL_ORIENTATION</B><DD>Tab Orientation, either <A HREF=MTRUL_HORIZONTAL.htm#MTRUL_HORIZONTAL>MTRUL_HORIZONTAL</A> or <A HREF=MTRUL_VERTICAL.htm#MTRUL_VERTICAL>MTRUL_VERTICAL</A>. 
+The Default is horizontal.<DT><B>MTRUL_TABBAROFFSET</B><DD>Tab Bar Offset in pixels 
+The Default is 0.<DT><B>MTRUL_LABELOFFSET</B><DD>Tab Label Offset in pixels 
+The Default is 0.<DT><B>MTRUL_SCALEBAROFFSET</B><DD>Scale Bar Offset in pixels 
+The Default is 0.<DT><B>MTRUL_MARGINWIDTH</B><DD>Margin Width in pixels 
+The Default is 0.<DT><B>MTRUL_TICHEIGHT</B><DD>Tic Height specifies the height in pixels of the largest tic-marks on the 
+tab ruler control.  The tab ruler automatically decrements for finer level tics. 
+The default is 10.<DT><B>MTRUL_AUTOTICS</B><DD>Auto Calculate Tics uses an algorithm to automatically generate tic marks 
+for the tab ruler control. 
+This parameter cannot be used in conjunction with <B>MTRUL_TICKSEVERY</B><DT><B>MTRUL_LABELEDTICSEVERY</B><DD>Labeled Tics Every specifies the labeled tic frequency for the tab ruler control. 
+Setting this value turns off <B>MTRUL_AUTOTICS</B><DT><B>MTRUL_TICSEVERY</B><DD>Tics Every specifies the unlabeled tic frequency for the tab ruler control. 
+Setting this value turns off <B>MTRUL_AUTOTICS</B><DT><B>MTRUL_SCALEMIN</B><DD>Scale Min specifies the minimum value of the scale extents of the tab ruler control. 
+The default is 0.<DT><B>MTRUL_SCALEMAX</B><DD>Scale Max specifies the maximum value of the scale extents of the tab ruler control. 
+The default is 100.<DT><B>MTRUL_ELASTICMIN</B><DD>Elastic Minimum specifies whether the scale extents of the tab ruler control should 
+grow when a tab is dragged outside the current scale minimum. 
+Default is to assign the same value as <B>MTRUL_SCALEMIN</B>.<DT><B>MTRUL_ELASTICMAX</B><DD>Elastic Maximum specifies whether the scale extents of the tab ruler control should 
+grow when a tab is dragged outside the current scale maximum. 
+Default is to assign the same values as <B>MTRUL_SCALEMAX</B>.</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This type is used to set the options for a new tab ruler control created 
+using the <A HREF=mgNewTabRuler.htm#mgNewTabRuler>mgNewTabRuler</A> function.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgTabRulerSetOptions.htm#mgTabRulerSetOptions>mgTabRulerSetOptions</A></DD></DL></BODY>
+
+</HTML>

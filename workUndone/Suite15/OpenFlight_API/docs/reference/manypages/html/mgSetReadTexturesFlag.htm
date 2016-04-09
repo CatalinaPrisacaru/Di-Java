@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetReadTexturesFlag</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetReadTexturesFlag><H1 CLASS="APISYMBOL">mgSetReadTexturesFlag</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetReadTexturesFlag</B> - sets the preference that determines if 
+<A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A> reads texture files referenced by database files being opened.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void <B>mgSetReadTexturesFlag</B> (</TD><TD><A HREF=mgbool.htm#mgbool>mgbool</A></TD><TD><I>flag</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSetReadTexturesFlag</B> tells <A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A> how to act when it finds 
+a texture file in the palette of a database being opened. If <I>flag</I> is 
+<A HREF=mgbool.htm#mgbool>MG_TRUE</A>, <A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A> will read the texture and its attributes into 
+memory. If <I>flag</I> is <A HREF=mgbool.htm#mgbool>MG_FALSE</A>, <A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A> will not read the texture 
+into memory. When a texture is read into memory, both its texels and attributes 
+will be accessible by your stand-alone application, plug-in or script. If a texture 
+is not read into memory and you try to access its attributes, you will get incorrect 
+results.</P></DD><DD><P>Note that reading textures can consume both processing and memory resources. 
+Unless your application explicitly needs to access the texels or attributes of a texture, 
+it is much more efficient to set this preference to <A HREF=mgbool.htm#mgbool>MG_FALSE</A>. When you do this, 
+<A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A> will run much faster and will require less memory resources for your database.</P></DD><DD><P>The default value for this preference is <A HREF=mgbool.htm#mgbool>MG_TRUE</A> in the stand-alone 
+application environment, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> for plug-ins and scripts run in the 
+Creator modeling environment.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>flag</I></DT><DD>whether or not to read textures</DD></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A>, <A HREF=mgSetReadExtFlag.htm#mgSetReadExtFlag>mgSetReadExtFlag</A></DD></DL></BODY>
+
+</HTML>

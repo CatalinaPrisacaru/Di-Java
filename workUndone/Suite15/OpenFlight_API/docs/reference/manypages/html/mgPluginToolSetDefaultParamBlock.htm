@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>mgPluginToolSetDefaultParamBlock</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPluginToolSetDefaultParamBlock><H1 CLASS="APISYMBOL">mgPluginToolSetDefaultParamBlock</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPluginToolSetDefaultParamBlock</B> - sets the default tool 
+parameter block for an editor plug-in tool.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgPluginToolSetDefaultParamBlock</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>pluginTool</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPluginToolSetDefaultParamBlock</B> sets the default parameter 
+block for the editor plug-in tool <I>pluginTool</I>.</P></DD><DD><P>A scriptable editor plug-in tool that normally displays a dialog to 
+gather additional data from the user to continue its work must create and 
+assign a default parameter block for itself.  This parameter block defines 
+the data that the user will set and pass to the plug-in tool when invoking 
+the tool via the Creator Script interface, using <A HREF=mgExecute.htm#mgExecute>mgExecute</A>.</P></DD><DD><P>Note: By passing a parameter block to this function, you transfer 
+ownership of that parameter block to the OpenFlight API and you should 
+NOT deallocate the block.  The OpenFlight API will automatically dispose 
+of the memory when it is appropriate to do so.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the plug-in tool</DD><DT><I>paramBlock</I></DT><DD>the parameter block</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Return <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example creates the default parameter block for the 
+Calculate Shading plug-in tool <B>calculateShadingTool</B>.</DT><DT><PRE CLASS="EXAMPLE">mgparamblock paramBlock;
+mgparam param;
+
+// create the default param block for the Calculate Shading command
+paramBlock = mgNewParamBlock();
+
+// add the "Shading Model" parameter
+param = mgParamAddInteger (paramBlock, "Shading Model", 2);
+
+// its possible values are these enumerants:
+mgParamSetEnumerant (param, 0, "Flat");
+mgParamSetEnumerant (param, 1, "Gouraud");
+mgParamSetEnumerant (param, 2, "Lit");
+mgParamSetEnumerant (param, 3, "Lit Gouraud");
+
+// add several boolean (checkbox) parameters
+param = mgParamAddBool (paramBlock, "Update Vertex Normals", MG_TRUE);
+param = mgParamAddBool (paramBlock, "Update Vertex Colors", MG_TRUE);
+param = mgParamAddBool (paramBlock, "Triangle Area Weighting", MG_FALSE);
+param = mgParamAddBool (paramBlock, "Use Face Color Intensities", MG_TRUE);
+param = mgParamAddBool (paramBlock, "Use Face Color Intensities", MG_TRUE);
+
+// add the "Angular Tolerance" parameter...
+param = mgParamAddDouble (paramBlock, "Angular Tolerance", 89.0);
+
+// ... its value must be greater than or equal to 0.0 ...
+mgParamSetDoubleMinGE (param, 0.0);
+// ... and less than 360.0
+mgParamSetDoubleMaxLT (param, 360.0);
+
+// add the "Sampling Tolerance" parameter...
+param = mgParamAddDouble (paramBlock, "Sampling Tolerance", 0.01);
+
+// ... its value must be greater than or equal to 0.0
+mgParamSetDoubleMinGE (param, 0.0);
+
+// assign this param block as the default for this tool
+mgPluginToolSetDefaultParamBlock (calculateShadingTool, paramBlock);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, <A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A>, 
+<A HREF=mgParamAddInteger.htm#mgParamAddInteger>mgParamAddInteger</A>, <A HREF=mgParamAddDouble.htm#mgParamAddDouble>mgParamAddDouble</A>, <A HREF=mgParamAddFloat.htm#mgParamAddFloat>mgParamAddFloat</A>, 
+<A HREF=mgParamAddString.htm#mgParamAddString>mgParamAddString</A>, <A HREF=mgParamAddBool.htm#mgParamAddBool>mgParamAddBool</A></DD></DL></BODY>
+
+</HTML>

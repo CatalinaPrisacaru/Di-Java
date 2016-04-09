@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>mgMeshPrimitiveGetType</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMeshPrimitiveGetType><H1 CLASS="APISYMBOL">mgMeshPrimitiveGetType</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMeshPrimitiveGetType</B> - gets the type of a mesh primitive.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgMeshPrimitiveGetType</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>primNo</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This function gets the type for mesh primitive number <I>primNo</I> 
+in mesh <I>rec</I>.  A mesh node is composed of one or more mesh primitives. 
+Each mesh primitive is one of four types:</P></DD><DD><P><A HREF=MPRIM_TRI_STRIP.htm#MPRIM_TRI_STRIP>MPRIM_TRI_STRIP</A> - Triangle Strip<BR> 
+<A HREF=MPRIM_TRI_FAN.htm#MPRIM_TRI_FAN>MPRIM_TRI_FAN</A> - Triangle Fan<BR> 
+<A HREF=MPRIM_QUAD_STRIP.htm#MPRIM_QUAD_STRIP>MPRIM_QUAD_STRIP</A> - Quadrilateral Strip<BR> 
+<A HREF=MPRIM_INDEXED_POLY.htm#MPRIM_INDEXED_POLY>MPRIM_INDEXED_POLY</A> - Indexed Polygon</P></DD><DD><P>The first mesh primitive 
+in a mesh is number 0.  The <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMeshNumPrimitives</A>
+ attribute of a 
+mesh node specifies how many primitives are contained in the mesh.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ node</DD><DT><I>primNo</I></DT><DD>the mesh primitive number starting from 0</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the type for mesh primitive <I>primNo</I> if successful, 
+0 otherwise.  This function will fail if <I>rec</I> is 
+not a valid mesh node or if <I>primNo</I> does not specify a valid 
+mesh primitive number.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMeshNumPrimitives</A>
+, <A HREF=mgMeshPrimitiveGetNumVtx.htm#mgMeshPrimitiveGetNumVtx>mgMeshPrimitiveGetNumVtx</A>, 
+<A HREF=mgMeshPrimitiveGetVtxIndexArray.htm#mgMeshPrimitiveGetVtxIndexArray>mgMeshPrimitiveGetVtxIndexArray</A>, 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA>mgMeshGetVtxColorRGBA</A>, <A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A>, <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A>, <A HREF=mgMeshPrimitiveSetType.htm#mgMeshPrimitiveSetType>mgMeshPrimitiveSetType</A></DD></DL></BODY>
+
+</HTML>

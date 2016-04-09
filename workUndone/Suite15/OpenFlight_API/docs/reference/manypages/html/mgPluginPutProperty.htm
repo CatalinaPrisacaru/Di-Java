@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>mgPluginPutProperty</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPluginPutProperty><H1 CLASS="APISYMBOL">mgPluginPutProperty</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPluginPutProperty</B> - associates user defined data with a 
+plug-in.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgPluginPutProperty</B> (</TD><TD><A HREF=mgplugin.htm#mgplugin>mgplugin</A></TD><TD><I>plugin</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A></TD><TD><I>propName</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A></TD><TD><I>propValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPluginPutProperty</B> allows you to associate data of 
+any type, <I>propValue</I>, with a plug-in module.  The user-defined data 
+is associated with the plug-in module, <I>plugin</I>, and identified by a 
+property name string, <I>propName</I>, allowing any number of data records 
+to be associated with the plug-in module, as long as all property names 
+are unique.</P></DD><DD><P>After using this function to associate user data to a plug-in, use 
+the function <A HREF=mgPluginGetProperty.htm#mgPluginGetProperty>mgPluginGetProperty</A> to retrieve the data.  Then when you 
+no longer need the data associated to the plug-in, use 
+<A HREF=mgPluginDeleteProperty.htm#mgPluginDeleteProperty>mgPluginDeleteProperty</A> to disassociate the data from the plug-in. 
+Note that <A HREF=mgPluginDeleteProperty.htm#mgPluginDeleteProperty>mgPluginDeleteProperty</A> does not free or otherwise affect 
+the actual data that was associated.  If this data was dynamically 
+allocated, it is the callers responsibility to deallocate it.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugin</I></DT><DD>the plug-in module to which the data 
+is to be associated</DD><DT><I>propName</I></DT><DD>the name of the property to assign</DD><DT><I>propValue</I></DT><DD>the value of the property to assign</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Return <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example associates a string property to a plug-in, 
+retrieves the string and prints it out.  Finally, it deletes the 
+property from the plug-in.</DT><DT><PRE CLASS="EXAMPLE">#define PROPERTY_NAME   "My String Property"
+#define USER_STRING     "This String is associated to my plug-in"
+
+char* string;
+
+// allocate the string to be associated to the plug-in
+string = mgMalloc (strlen (USER_STRING) + 1);
+strcpy (string, USER_STRING);
+
+// associate the string as a property of the plug-in
+mgPluginPutProperty (plugin, PROPERTY_NAME, string);
+
+// Then later, retrieve the string property, print it out
+
+char* string;
+
+// Retrieve the string property from the plug-in
+string = (char*) mgPluginGetProperty (plugin, PROPERTY_NAME);
+printf ("%s: %s", PROPERTY_NAME, string);
+
+// Output is:
+// My String Property: This String is associated to my plug-in
+
+// Then finally, when you no longer need the string to be
+// associated to the plug-in
+
+char* string;
+
+// Retrieve the string property from the plug-in (need to free it)
+string = (char*) mgPluginGetProperty (plugin, PROPERTY_NAME);
+mgFree (string);
+mgPluginDeleteProperty (plugin, PROPERTY_NAME);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPluginGetProperty.htm#mgPluginGetProperty>mgPluginGetProperty</A>, <A HREF=mgPluginDeleteProperty.htm#mgPluginDeleteProperty>mgPluginDeleteProperty</A>, 
+<A HREF=mgPluginToolPutProperty.htm#mgPluginToolPutProperty>mgPluginToolPutProperty</A>, <A HREF=mgPluginToolGetProperty.htm#mgPluginToolGetProperty>mgPluginToolGetProperty</A>, 
+<A HREF=mgPluginToolDeleteProperty.htm#mgPluginToolDeleteProperty>mgPluginToolDeleteProperty</A></DD></DL></BODY>
+
+</HTML>

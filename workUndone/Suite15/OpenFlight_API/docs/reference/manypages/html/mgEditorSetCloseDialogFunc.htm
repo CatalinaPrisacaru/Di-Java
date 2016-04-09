@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>mgEditorSetCloseDialogFunc</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgEditorSetCloseDialogFunc><H1 CLASS="APISYMBOL">mgEditorSetCloseDialogFunc</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgEditorSetCloseDialogFunc</B> - sets the close dialog function for 
+an editor tool.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgEditorSetCloseDialogFunc</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>editorPluginTool</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgeditorclosedialogfunc.htm#mgeditorclosedialogfunc>mgeditorclosedialogfunc</A></TD><TD><I>closeDialogFunc</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgEditorSetCloseDialogFunc</B> assigns a close dialog function 
+to the specified editor tool <I>editorPluginTool</I>.</P></DD><DD><P>Close dialog functions are called to notify your editor tool when the user 
+has clicked the Close Box in the title bar of the editor tool dialog. By convention, 
+when the user clicks the Close Box of your dialog, this indicates that they want to 
+close the dialog and "cancel" any changes they have made. This is equivalent to 
+pressing the Cancel button in the tool dialog.</P></DD><DD><P>Normally, when the user clicks the 
+Close Box, Creator simply sends the <A HREF=MBT_CANCEL.htm#MBT_CANCEL>MBT_CANCEL</A> event to the button function of 
+your editor tool. In this way, however, your tool is unable to distinguish 
+between the user pressing the Cancel button and the user clicking the Close Box. 
+If you want to change this default behavior or have more control, you can 
+assign a close dialog function for your tool. When you do this and the user clicks 
+the Close Box, your close dialog function is called before proceeding.</P></DD><DD><P>If your function returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A>, Creator proceeds by first sending 
+a button event to your button function and then closing the dialog and terminating the 
+tool instance. You specify which button event is sent in the <I>buttonEvent</I> field of 
+the <A HREF=mgclosedialogcallbackrec.htm#mgclosedialogcallbackrec>mgclosedialogcallbackrec</A> record passed to the close dialog function. Supported 
+button events include <A HREF=MBT_CANCEL.htm#MBT_CANCEL>MBT_CANCEL</A> and <A HREF=MBT_DONE.htm#MBT_DONE>MBT_DONE</A>.</P></DD><DD><P>If your close dialog function returns <A HREF=mgbool.htm#mgbool>MG_FALSE</A>, no event is sent 
+to your button function, the dialog is not closed and the tool instance is not terminated.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>editorPluginTool</I></DT><DD>the editor plug-in tool</DD><DT><I>closeDialogFunc</I></DT><DD>the close dialog function</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following is a typical close dialog function.</DT><DT><PRE CLASS="EXAMPLE">mgEditorSetCloseDialogFunc (pluginTool, CloseDialogFunc);
+
+static mgbool CloseDialogFunc (mgplugintool pluginTool,
+&#32 mgclosedialogcallbackrec* callData,
+&#32 void* toolData)
+{
+   toolrec* toolRec = (toolrec*) toolData;
+
+   // ask the user if they really want to cancel
+   int answer = mgMessageDialog (toolRec-&gtdialog, "Confirm",
+&#32       "Are you sure you want to cancel without saving changes?",
+&#32       MMBX_YESNOCANCEL);
+
+   if (answer == 1) {
+      // user answered Yes, they want to cancel but not save changes
+      // tell Creator to send the &ltp Cancel&gt button event
+      callData-&gtbuttonEvent = MBT_CANCEL;
+   }
+   return answer == 1 ? MG_TRUE : MG_FALSE;
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, <A HREF=mgtoolterminationreason.htm#mgtoolterminationreason>mgtoolterminationreason</A>, <A HREF=mgeditorclosedialogfunc.htm#mgeditorclosedialogfunc>mgeditorclosedialogfunc</A>, 
+<A HREF=mgclosedialogcallbackrec.htm#mgclosedialogcallbackrec>mgclosedialogcallbackrec</A>, <A HREF=mgResourceGetDialog.htm#mgResourceGetDialog>mgResourceGetDialog</A></DD></DL></BODY>
+
+</HTML>

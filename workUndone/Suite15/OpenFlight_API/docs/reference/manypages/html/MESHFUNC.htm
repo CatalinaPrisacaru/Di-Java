@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<TITLE>MESHFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=MESHFUNC><H1>Mesh Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshCreatePrimitives.htm#mgMeshCreatePrimitives><B>mgMeshCreatePrimitives</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, unsigned int <I>num</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void* <TD><A HREF=mgMeshCreateVtxPool.htm#mgMeshCreateVtxPool><B>mgMeshCreateVtxPool</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, unsigned int <I>mask</I>, unsigned int <I>num</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor><B>mgMeshGetVtxColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, int* <I>index</I>, float* <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha><B>mgMeshGetVtxColorAlpha</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, short* <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB><B>mgMeshGetVtxColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA><B>mgMeshGetVtxColorRGBA</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>, short* <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord><B>mgMeshGetVtxCoord</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, double* <I>x</I>, double* <I>y</I>, double* <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">unsigned int <TD><A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask><B>mgMeshGetVtxMask</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal><B>mgMeshGetVtxNormal</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, float* <I>i</I>, float* <I>j</I>, float* <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgMeshGetVtxOffset.htm#mgMeshGetVtxOffset><B>mgMeshGetVtxOffset</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, unsigned int <I>bit</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void* <TD><A HREF=mgMeshGetVtxPool.htm#mgMeshGetVtxPool><B>mgMeshGetVtxPool</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">unsigned int <TD><A HREF=mgMeshGetVtxStride.htm#mgMeshGetVtxStride><B>mgMeshGetVtxStride</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV><B>mgMeshGetVtxUV</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, int <I>layer</I>, float* <I>u</I>, float* <I>v</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgMeshPrimitiveGetNumVtx.htm#mgMeshPrimitiveGetNumVtx><B>mgMeshPrimitiveGetNumVtx</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>primNo</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgMeshPrimitiveGetType.htm#mgMeshPrimitiveGetType><B>mgMeshPrimitiveGetType</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>primNo</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgMeshPrimitiveGetVtxIndexArray.htm#mgMeshPrimitiveGetVtxIndexArray><B>mgMeshPrimitiveGetVtxIndexArray</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>primNo</I>, int* <I>indexArray</I>, int <I>maxLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgMeshPrimitiveSetType.htm#mgMeshPrimitiveSetType><B>mgMeshPrimitiveSetType</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>primNo</I>, int <I>type</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgMeshPrimitiveSetVtxIndexArray.htm#mgMeshPrimitiveSetVtxIndexArray><B>mgMeshPrimitiveSetVtxIndexArray</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>primNo</I>, int* <I>indexArray</I>, int <I>numVtx</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxColor.htm#mgMeshSetVtxColor><B>mgMeshSetVtxColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, int <I>color</I>, float <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxColorAlpha.htm#mgMeshSetVtxColorAlpha><B>mgMeshSetVtxColorAlpha</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, short <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxColorRGB.htm#mgMeshSetVtxColorRGB><B>mgMeshSetVtxColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxColorRGBA.htm#mgMeshSetVtxColorRGBA><B>mgMeshSetVtxColorRGBA</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>, short <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxCoord.htm#mgMeshSetVtxCoord><B>mgMeshSetVtxCoord</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxMask.htm#mgMeshSetVtxMask><B>mgMeshSetVtxMask</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, unsigned int <I>newVtxMask</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxNormal.htm#mgMeshSetVtxNormal><B>mgMeshSetVtxNormal</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, float <I>i</I>, float <I>j</I>, float <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMeshSetVtxUV.htm#mgMeshSetVtxUV><B>mgMeshSetVtxUV</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>vtxIndex</I>, int <I>layer</I>, float <I>u</I>, float <I>v</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

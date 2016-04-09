@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>mgUnRemove</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgUnRemove><H1 CLASS="APISYMBOL">mgUnRemove</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgUnRemove</B> - unremoves a node record that was 
+temporarily delete using <A HREF=mgRemove.htm#mgRemove>mgRemove</A>.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgUnRemove</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><A HREF=mgRemove.htm#mgRemove>mgRemove</A> unremoves the specified node record 
+<I>rec</I> that was previously removed by calling <A HREF=mgRemove.htm#mgRemove>mgRemove</A>.</P></DD><DD><P>Records that are unremoved in this way cannot be re-attached 
+in the database.  It is the caller's responsibility to attach the record 
+back into the hierarchy at the appropriate place.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record to unremove</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <I>rec</I> if  <I>rec</I> could be successfully unremoved, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRemove.htm#mgRemove>mgRemove</A>, <A HREF=mgDelete.htm#mgDelete>mgDelete</A>, <A HREF=mgDetach.htm#mgDetach>mgDetach</A></DD></DL></BODY>
+
+</HTML>

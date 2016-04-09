@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgReference</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgReference><H1 CLASS="APISYMBOL">mgReference</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgReference</B> - changes an existing node record into an instance node record.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgReference</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>refRec</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given an existing node record <I>rec</I>, <B>mgReference</B> causes <I>rec</I> to become an instance 
+of the reference node record <I>refRec</I>.</P></DD><DD><P>Alternatively, you can use <A HREF=mgAttach.htm#mgAttach>mgAttach</A> to attach a child as the first child of a parent or 
+<A HREF=mgAppend.htm#mgAppend>mgAppend</A> to attach a child as the last child of a parent.</P></DD><DD><P>The node <I>refRec</I> must not be a child node of any node in the database.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>a node record, which will be an instance of the reference node</DD><DT><I>refRec</I></DT><DD>a reference node record.</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgDeReference.htm#mgDeReference>mgDeReference</A>, <A HREF=mgAttach.htm#mgAttach>mgAttach</A>, <A HREF=mgAppend.htm#mgAppend>mgAppend</A>, <A HREF=mgInsert.htm#mgInsert>mgInsert</A></DD></DL></BODY>
+
+</HTML>

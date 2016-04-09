@@ -1,0 +1,197 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+STRUCTUREVIEWER DIALOGEX 0, 0, 193, 240
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Structure Navigator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Navigator",IDC_STATIC,6,6,180,182
+    CTEXT           "Static",SUPERID,12,16,53,8
+    CTEXT           "Static",UPID,69,16,53,8
+    PUSHBUTTON      "Static",SUPERNODE,12,26,53,14
+    PUSHBUTTON      "Static",UPNODE,69,26,53,14
+    CTEXT           "Static",PREVID,12,46,53,8
+    CTEXT           "Static",CURRENTID,69,46,53,8
+    CTEXT           "Static",NEXTID,126,46,53,8
+    PUSHBUTTON      "Static",PREVNODE,12,56,53,14
+    PUSHBUTTON      "Static",CURRENTNODE,69,56,53,14
+    PUSHBUTTON      "Static",NEXTNODE,126,56,53,14
+    CTEXT           "Static",ATTRID,12,75,53,8
+    CTEXT           "Static",CHILDID,69,75,53,8
+    CTEXT           "Static",SUBID,125,75,53,8
+    PUSHBUTTON      "Static",ATTRNODE,12,85,53,14
+    PUSHBUTTON      "Static",CHILDNODE,69,85,53,14
+    PUSHBUTTON      "Static",SUBNODE,126,85,53,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,9,102,174,1
+    PUSHBUTTON      "Button2",SUPERARROWBUTTON2,42,107,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",SUPERARROWBUTTON,58,122,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",UPARROWBUTTON2,88,107,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",UPARROWBUTTON,88,122,15,14,BS_BITMAP
+    PUSHBUTTON      "Set Parent",SETPARENTBUTTON,126,113,53,14
+    PUSHBUTTON      "Button2",LARROWBUTTON2,14,138,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",LARROWBUTTON,30,138,15,14,BS_BITMAP
+    CTEXT           "Static",CURRENTID2,66,141,57,8
+    PUSHBUTTON      "Button2",RARROWBUTTON,147,138,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",RARROWBUTTON2,163,138,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",ATTRARROWBUTTON,58,155,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",DOWNARROWBUTTON,88,155,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",SUBARROWBUTTON,120,155,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",DOWNARROWBUTTON2,88,170,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",SUBARROWBUTTON2,136,170,15,14,BS_BITMAP
+    LTEXT           "mgCountChild:",IDC_STATIC,6,193,46,8
+    EDITTEXT        MGCOUNTCHILD,80,190,40,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "mgCountNestedChild:",IDC_STATIC,6,209,69,8
+    EDITTEXT        MGCOUNTNESTEDCHILD,80,206,40,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "mgCountAttrChild:",IDC_STATIC,6,225,57,8
+    EDITTEXT        MGCOUNTATTRCHILD,80,222,40,14,ES_AUTOHSCROLL | ES_READONLY
+    DEFPUSHBUTTON   "Close",MGID_OK,136,222,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,48,138,97,14,WS_EX_TRANSPARENT
+END
+
+STRUCTUREEDITOR DIALOG  0, 0, 199, 172
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Structure Editor"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Duplicate",DUPLICATEPB,142,56,50,14
+    LISTBOX         SELECTLIST,6,20,130,121,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Delete",DELETEPB,142,20,50,14
+    PUSHBUTTON      "Detach",DETACHPB,142,38,50,14
+    PUSHBUTTON      "No Action",NOACTIONPB,142,128,50,14
+    PUSHBUTTON      "Cancel",MGID_CANCEL,142,154,50,14
+    DEFPUSHBUTTON   "OK",MGID_OK,86,154,50,14
+    LTEXT           "Static",MGID_PROMPT,6,6,186,10,SS_SUNKEN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,6,148,186,1
+    PUSHBUTTON      "Attach",ATTACHPB,142,74,50,14
+    PUSHBUTTON      "Append",APPENDPB,142,92,50,14
+    PUSHBUTTON      "DeReference",DEREFERENCEPB,142,110,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    STRUCTUREVIEWER, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 186
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 236
+    END
+
+    STRUCTUREEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 192
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 168
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+RARROW                  BITMAP                  "rarrow.bmp"
+LARROW                  BITMAP                  "larrow.bmp"
+RARROW2                 BITMAP                  "rarrow2.bmp"
+LARROW2                 BITMAP                  "larrow2.bmp"
+UPARROW                 BITMAP                  "uparrow.bmp"
+DOWNARROW               BITMAP                  "downarrow.bmp"
+DOWNARROW2              BITMAP                  "downarrow2.bmp"
+UPARROW2                BITMAP                  "uparrow2.bmp"
+SUPERARROW              BITMAP                  "superarrow.bmp"
+SUPERARROW2             BITMAP                  "superarrow2.bmp"
+SUBARROW                BITMAP                  "subarrow.bmp"
+SUBARROW2               BITMAP                  "subarrow2.bmp"
+UPARROW2_D              BITMAP                  "uparrow2_disabled.bmp"
+DOWNARROW2_D            BITMAP                  "downarrow2_disabled.bmp"
+LARROW_D                BITMAP                  "larrow_disabled.bmp"
+LARROW2_D               BITMAP                  "larrow2_disabled.bmp"
+RARROW_D                BITMAP                  "rarrow_disabled.bmp"
+RARROW2_D               BITMAP                  "rarrow2_disabled.bmp"
+SUBARROW_D              BITMAP                  "subarrow_disabled.bmp"
+SUBARROW2_D             BITMAP                  "subarrow2_disabled.bmp"
+SUPERARROW_D            BITMAP                  "superarrow_disabled.bmp"
+SUPERARROW2_D           BITMAP                  "superarrow2_disabled.bmp"
+UPARROW_D               BITMAP                  "uparrow_disabled.bmp"
+DOWNARROW_D             BITMAP                  "downarrow_disabled.bmp"
+ATTRARROW               BITMAP                  "attrarrow.bmp"
+ATTRARROW_D             BITMAP                  "attrarrow_disabled.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

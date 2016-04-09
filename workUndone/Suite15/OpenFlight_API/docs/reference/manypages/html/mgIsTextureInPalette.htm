@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgIsTextureInPalette</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgIsTextureInPalette><H1 CLASS="APISYMBOL">mgIsTextureInPalette</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgIsTextureInPalette</B> - determines if a texture is in a 
+palette.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgIsTextureInPalette</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>textureName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgIsTextureInPalette</B> determines whether or not the named texture 
+palette entry <I>textureName</I> is contained in the texture palette of the 
+database <I>db</I>. For convenience, <I>textureName</I> need not be the full path. 
+In cases where an ambiguity may occur, you may avoid it by specifying the 
+full path.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>textureName</I></DT><DD>the name of the texture palette entry 
+to lookup</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the texture palette entry is found, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgIsTextureDefault.htm#mgIsTextureDefault>mgIsTextureDefault</A>, <A HREF=mgGetTextureCount.htm#mgGetTextureCount>mgGetTextureCount</A>, <A HREF=mgIsTextureIndexInPalette.htm#mgIsTextureIndexInPalette>mgIsTextureIndexInPalette</A>, 
+<A HREF=mgGetTextureIndex.htm#mgGetTextureIndex>mgGetTextureIndex</A></DD></DL></BODY>
+
+</HTML>

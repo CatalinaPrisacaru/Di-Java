@@ -1,0 +1,128 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "mgapires.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BUILD_SKYSCRAPER DIALOG DISCARDABLE  0, 0, 137, 166
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Build Skyscraper"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",MGID_OK,25,145,50,14
+    PUSHBUTTON      "Cancel",MGID_CANCEL,80,145,50,14
+    LTEXT           "Height:",IDC_STATIC,5,8,24,8
+    EDITTEXT        IDC_HEIGHT,80,5,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,120,5,11,14
+    LTEXT           "Antenna Height:",IDC_STATIC,5,28,52,8
+    EDITTEXT        IDC_ANTENNA_HEIGHT,80,25,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_ANTENNA_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,120,25,11,14
+    LTEXT           "X Light Count:",IDC_STATIC,5,48,46,8
+    EDITTEXT        IDC_X_LIGHT_COUNT,80,45,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_X_LIGHT_COUNT_SPIN,"msctls_updown32",
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,120,45,11,14
+    LTEXT           "Y Light Count:",IDC_STATIC,5,68,46,8
+    EDITTEXT        IDC_Y_LIGHT_COUNT,80,65,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_Y_LIGHT_COUNT_SPIN,"msctls_updown32",
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,120,65,11,14
+    LTEXT           "Z Light Count:",IDC_STATIC,5,88,46,8
+    EDITTEXT        IDC_Z_LIGHT_COUNT,80,85,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_Z_LIGHT_COUNT_SPIN,"msctls_updown32",
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,120,85,11,14
+    LTEXT           "Antenna Light Count:",IDC_STATIC,5,108,68,8
+    EDITTEXT        IDC_ANTENNA_LIGHT_COUNT,80,105,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_ANTENNA_LIGHT_COUNT_SPIN,"msctls_updown32",
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,120,105,11,14
+    CONTROL         "Use Palette",IDC_PALETTE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,125,53,10
+    CONTROL         "Use Strings",IDC_STRINGS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,80,125,52,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,140,125,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BUILD_SKYSCRAPER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""mgapires.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

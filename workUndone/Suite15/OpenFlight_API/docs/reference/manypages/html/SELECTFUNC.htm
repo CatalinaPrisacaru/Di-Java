@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>SELECTFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=SELECTFUNC><H1>Select List Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgAppendRecList.htm#mgAppendRecList><B>mgAppendRecList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeselectAll.htm#mgDeselectAll><B>mgDeselectAll</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeselectOne.htm#mgDeselectOne><B>mgDeselectOne</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeRecList.htm#mgFreeRecList><B>mgFreeRecList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=dep_mgselectlist.htm#dep_mgselectlist>mgselectlist</A> <TD><A HREF=mgGetConstructList.htm#mgGetConstructList><B>mgGetConstructList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetNextRecInList.htm#mgGetNextRecInList><B>mgGetNextRecInList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetNthRecInList.htm#mgGetNthRecInList><B>mgGetNthRecInList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>, int <I>nth</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetRecListCount.htm#mgGetRecListCount><B>mgGetRecListCount</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=mgGetRecListLevel.htm#mgGetRecListLevel><B>mgGetRecListLevel</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgreclist.htm#mgreclist>mgreclist</A> <TD><A HREF=mgGetSelectList.htm#mgGetSelectList><B>mgGetSelectList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsRecInList.htm#mgIsRecInList><B>mgIsRecInList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsSelected.htm#mgIsSelected><B>mgIsSelected</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsSelectedEdge.htm#mgIsSelectedEdge><B>mgIsSelectedEdge</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgreclist.htm#mgreclist>mgreclist</A> <TD><A HREF=mgNewRecList.htm#mgNewRecList><B>mgNewRecList</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgResetRecList.htm#mgResetRecList><B>mgResetRecList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSelectList.htm#mgSelectList><B>mgSelectList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>list</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSelectOne.htm#mgSelectOne><B>mgSelectOne</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSelectOneEdge.htm#mgSelectOneEdge><B>mgSelectOneEdge</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSelectOneEx.htm#mgSelectOneEx><B>mgSelectOneEx</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, unsigned int <I>flags</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

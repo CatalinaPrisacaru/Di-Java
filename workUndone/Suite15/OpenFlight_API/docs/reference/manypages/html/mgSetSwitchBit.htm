@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetSwitchBit</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetSwitchBit><H1 CLASS="APISYMBOL">mgSetSwitchBit</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetSwitchBit</B> - sets the on/off status of a specific 
+bit within a switch mask.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgSetSwitchBit</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>maskNo</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>bitNo</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgbool.htm#mgbool>mgbool</A></TD><TD><I>on</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node, <I>rec</I>, <B>mgSetSwitchBit</B> sets 
+the value of the bit specified by <I>bitNo</I> within the mask <I>maskNo</I> 
+on or off based on the value of <I>on</I>.</P></DD><DD><P>The value of <I>bitNo</I> must be between 0 and the number of 
+children of <I>rec</I> minus 1 (the first child is <I>bitNo</I> 0). 
+Similarly, the value of <I>maskNo</I> must be between 0 and the 
+number of masks of <I>rec</I> minus 1 (the first mask is <I>maskNo</I> 0).</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node</DD><DT><I>maskNo</I></DT><DD>mask index starting from 0</DD><DT><I>bitNo</I></DT><DD>bit number starting from 0</DD><DT><I>on</I></DT><DD>value to set bits to</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise. 
+This function will fail if <I>maskNo</I> does not specify a valid mask of <I>rec</I>.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetSwitchMaskCount.htm#mgGetSwitchMaskCount>mgGetSwitchMaskCount</A>, 
+<A HREF=mgGetSwitchMaskNo.htm#mgGetSwitchMaskNo>mgGetSwitchMaskNo</A>, 
+<A HREF=mgGetSwitchBit.htm#mgGetSwitchBit>mgGetSwitchBit</A>, 
+<A HREF=mgGetSwitchMaskName.htm#mgGetSwitchMaskName>mgGetSwitchMaskName</A>, 
+<A HREF=mgAddSwitchMask.htm#mgAddSwitchMask>mgAddSwitchMask</A>, 
+<A HREF=mgDeleteSwitchMask.htm#mgDeleteSwitchMask>mgDeleteSwitchMask</A>, 
+<A HREF=mgInitSwitchMask.htm#mgInitSwitchMask>mgInitSwitchMask</A>, 
+<A HREF=mgSetSwitchMaskName.htm#mgSetSwitchMaskName>mgSetSwitchMaskName</A></DD></DL></BODY>
+
+</HTML>

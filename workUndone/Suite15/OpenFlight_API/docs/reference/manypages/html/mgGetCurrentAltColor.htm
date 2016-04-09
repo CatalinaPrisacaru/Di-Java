@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetCurrentAltColor</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetCurrentAltColor><H1 CLASS="APISYMBOL">mgGetCurrentAltColor</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetCurrentAltColor</B> - returns color index and intensity for 
+the current alternate modeling color.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetCurrentAltColor</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int*</TD><TD><I>index</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>intensity</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, index, intensity <B>mgGetCurrentAltColor</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetCurrentAltColor</B> returns the color 
+palette <I>index</I> and <I>intensity</I> corresponding to 
+the current alternate modeling color selected for database <I>db</I>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>index</I></DT><DD>address of value to receive index of current 
+alternate modeling color</DD><DT><I>intensity</I></DT><DD>address of value to receive intensity of current 
+alternate modeling color</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if current alternate modeling color for <I>db</I> 
+could be determined, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>index</DT><DD>If function is successful, index contains the retrieved color index, otherwise 
+index is undefined.</DD><DT>intensity</DT><DD>If function is successful, intensity contains the retrieved color intensity, otherwise 
+intensity is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetCurrentAltColor.htm#mgSetCurrentAltColor>mgSetCurrentAltColor</A>, <A HREF=mgGetCurrentAltColorRGB.htm#mgGetCurrentAltColorRGB>mgGetCurrentAltColorRGB</A>, <A HREF=mgGetCurrentColor.htm#mgGetCurrentColor>mgGetCurrentColor</A></DD></DL></BODY>
+
+</HTML>

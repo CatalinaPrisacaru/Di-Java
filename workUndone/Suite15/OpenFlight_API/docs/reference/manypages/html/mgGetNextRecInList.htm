@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetNextRecInList</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetNextRecInList><H1 CLASS="APISYMBOL">mgGetNextRecInList</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetNextRecInList</B> - returns the next item in the record list.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgGetNextRecInList</B> (</TD><TD><A HREF=mgreclist.htm#mgreclist>mgreclist</A></TD><TD><I>recList</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A></TD><TD><I>matrix</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec, mgmatrix <B>mgGetNextRecInList</B> (</TD><TD><A HREF=mgreclist.htm#mgreclist>mgreclist</A></TD><TD><I>recList</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetNextRecInList</B> returns the item in the specified record 
+list <I>recList</I> that corresponds to the current position of 
+the traversal pointer.</P></DD><DD><P>Before this function returns, it advances the position of the 
+traversal pointer of the record list so that the next call 
+to <B>mgGetNextRecInList</B> returns the proper list node.</P></DD><DD><P>If this function is successful and the output parameter <I>matrix</I> 
+is not <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, it is loaded with the composite matrix representing 
+the cumulative transformations applied to this item.  If you do not need 
+this matrix, you may specify <I>matrix</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>recList</I></DT><DD>the record list to traverse</DD><DT><I>matrix</I></DT><DD>address of a matrix to receive 
+the composite of all transformations above 
+the returned record list item</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgrec</DT><DD>The next item in the record list, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if 
+no more items are in the list.</DD><DT>mgmatrix</DT><DD>If an item is returned, the output parameter 
+<I>matrix</I> (if specified) is loaded with the composite matrix representing 
+the cumulative transformations applied to this item.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgResetRecList.htm#mgResetRecList>mgResetRecList</A>, <A HREF=mgGetNthRecInList.htm#mgGetNthRecInList>mgGetNthRecInList</A>, <A HREF=mgIsRecInList.htm#mgIsRecInList>mgIsRecInList</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,256 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIEWPOINT DIALOG DISCARDABLE  0, 0, 229, 284
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Viewpoint Attributes - Check Active!"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Get Current Eyepoint",IDC_UPDATEFROM,7,7,215,15
+    GROUPBOX        "Eyepoint",IDC_STATIC,7,26,215,160
+    LTEXT           "Yaw:",IDC_STATIC,11,35,37,10
+    EDITTEXT        IDC_EDITYAW,53,35,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITYAWSPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,95,34,11,16
+    CONTROL         "Active",IDC_ISACTIVE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,112,35,42,12
+    CONTROL         "Ortho",IDC_ORTHO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    166,35,49,12
+    LTEXT           "Pitch:",IDC_STATIC,11,54,37,10
+    EDITTEXT        IDC_EDITPITCH,53,52,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITPITCHSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,51,11,
+                    16
+    LTEXT           "Near Clip:",IDC_STATIC,112,54,37,10
+    EDITTEXT        IDC_EDITNEARCLIP,165,52,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITNEARCLIPSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,51,11,
+                    16
+    LTEXT           "Roll:",IDC_STATIC,11,73,37,10
+    EDITTEXT        IDC_EDITROLL,53,71,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITROLLSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,69,11,
+                    16
+    LTEXT           "Far Clip:",IDC_STATIC,112,73,37,10
+    EDITTEXT        IDC_EDITFARCLIP,165,71,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITFARCLIPSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,69,11,
+                    16
+    LTEXT           "FOV:",IDC_STATIC,11,92,37,10
+    EDITTEXT        IDC_EDITFOV,53,90,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITFOVSPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,95,88,11,16
+    LTEXT           "Scale:",IDC_STATIC,112,92,37,10
+    EDITTEXT        IDC_EDITSCALE,165,90,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITSCALESPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,88,11,
+                    16
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,12,106,
+                    206,1
+    LTEXT           "Look From:",IDC_STATIC,11,112,37,10
+    EDITTEXT        IDC_EDITLFROMX,53,111,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITLFROMXSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,109,11,
+                    16
+    EDITTEXT        IDC_EDITLFROMY,109,111,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITLFROMYSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,109,
+                    11,16
+    EDITTEXT        IDC_EDITLFROMZ,165,111,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITLFROMZSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,109,
+                    11,16
+    LTEXT           "Rot Center:",IDC_STATIC,11,130,37,10
+    EDITTEXT        IDC_EDITRCENX,53,128,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITRCENXSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,126,11,
+                    16
+    EDITTEXT        IDC_EDITRCENY,109,128,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITRCENYSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,126,
+                    11,16
+    EDITTEXT        IDC_EDITRCENZ,165,128,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITRCENZSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,126,
+                    11,16
+    LTEXT           "Eye Dir:",IDC_STATIC,11,147,37,10
+    EDITTEXT        IDC_EDITEYEDIRX,53,145,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITEYEDIRXSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,143,9,
+                    16
+    EDITTEXT        IDC_EDITEYEDIRY,109,145,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITEYEDIRYSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,143,9,
+                    16
+    EDITTEXT        IDC_EDITEYEDIRZ,165,145,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITEYEDIRZSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,143,9,
+                    16
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,11,161,
+                    205,1
+    PUSHBUTTON      "Save Current at:",IDC_SAVEEYE,11,165,64,15
+    COMBOBOX        IDC_EYEINDEX,81,166,64,96,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Load Current from:",IDC_LOADEYE,154,165,64,15
+    GROUPBOX        "Look At",IDC_STATIC,7,187,215,60
+    LTEXT           "Eye Position:",IDC_STATIC,11,198,41,10
+    EDITTEXT        IDC_EDITEYEPOSX,53,196,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITEYEPOSXSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,195,11,
+                    16
+    EDITTEXT        IDC_EDITEYEPOSY,109,196,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITEYEPOSYSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,195,
+                    11,16
+    EDITTEXT        IDC_EDITEYEPOSZ,165,196,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITEYEPOSZSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,195,
+                    11,16
+    LTEXT           "Center:",IDC_STATIC,11,214,37,10
+    EDITTEXT        IDC_EDITLOOKATX,53,214,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITLOOKATXSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,212,11,
+                    16
+    EDITTEXT        IDC_EDITLOOKATY,109,214,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITLOOKATYSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,212,
+                    11,16
+    EDITTEXT        IDC_EDITLOOKATZ,165,214,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITLOOKATZSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,212,
+                    11,16
+    LTEXT           "Up Vector:",IDC_STATIC,11,233,37,10
+    EDITTEXT        IDC_EDITUPVECX,53,231,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITUPVECXSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,229,11,
+                    16
+    EDITTEXT        IDC_EDITUPVECY,109,231,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITUPVECYSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,229,
+                    11,16
+    EDITTEXT        IDC_EDITUPVECZ,165,231,49,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EDITUPVECZSPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,207,229,
+                    11,16
+    GROUPBOX        "Track Plane",IDC_STATIC,7,249,215,30
+    PUSHBUTTON      "Current Track Plane:",IDC_UPDATETRPL,13,259,71,15
+    EDITTEXT        IDC_TRACKPLANE,91,260,122,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_VIEWPOINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 279
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIEWPOINT DLGINIT
+BEGIN
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0031, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0032, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0033, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0034, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0035, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0036, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0037, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0038, 
+    IDC_EYEINDEX, 0x403, 6, 0
+0x7945, 0x2065, 0x0039, 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

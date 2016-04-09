@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>mgResourceGetPixmap</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgResourceGetPixmap><H1 CLASS="APISYMBOL">mgResourceGetPixmap</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgResourceGetPixmap</B> - retrieves a pixmap from 
+a resource.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgpixmap <B>mgResourceGetPixmap</B> (</TD><TD><A HREF=mgresource.htm#mgresource>mgresource</A></TD><TD><I>resource</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgpixmapid.htm#mgpixmapid>mgpixmapid</A></TD><TD><I>pixmapId</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgResourceGetPixmap</B> retrieves a pixmap corresponding to 
+a specified pixmap identifier <I>pixmapId</I> from the <I>resource</I>.</P></DD><DD><P>On Windows, both bitmaps and icons can be extracted as pixmaps. 
+This function provides an abstraction layer for both types of images and 
+will behave accordingly based on the contents of the resource file from 
+which the image is being extracted.</P></DD><DD><P>The OpenFlight API provides several predefined pixmaps.  To use 
+one of these predefined pixmaps, set <I>resource</I> to <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> and 
+set <I>pixmapId</I> to one of the following values:</P></DD><DD><P><A HREF=MPIXMAP_NEWFILE.htm#MPIXMAP_NEWFILE>MPIXMAP_NEWFILE</A><BR> 
+<A HREF=MPIXMAP_OPENFILE.htm#MPIXMAP_OPENFILE>MPIXMAP_OPENFILE</A><BR> 
+<A HREF=MPIXMAP_SAVEFILE.htm#MPIXMAP_SAVEFILE>MPIXMAP_SAVEFILE</A><BR> 
+<A HREF=MPIXMAP_CUT.htm#MPIXMAP_CUT>MPIXMAP_CUT</A><BR> 
+<A HREF=MPIXMAP_COPY.htm#MPIXMAP_COPY>MPIXMAP_COPY</A><BR> 
+<A HREF=MPIXMAP_PASTE.htm#MPIXMAP_PASTE>MPIXMAP_PASTE</A><BR> 
+<A HREF=MPIXMAP_DELETE.htm#MPIXMAP_DELETE>MPIXMAP_DELETE</A><BR> 
+<A HREF=MPIXMAP_EDIT.htm#MPIXMAP_EDIT>MPIXMAP_EDIT</A><BR> 
+<A HREF=MPIXMAP_TEST.htm#MPIXMAP_TEST>MPIXMAP_TEST</A><BR> 
+<A HREF=MPIXMAP_UNDO.htm#MPIXMAP_UNDO>MPIXMAP_UNDO</A><BR> 
+<A HREF=MPIXMAP_REDO.htm#MPIXMAP_REDO>MPIXMAP_REDO</A><BR> 
+<A HREF=MPIXMAP_ROTATEVIEW.htm#MPIXMAP_ROTATEVIEW>MPIXMAP_ROTATEVIEW</A><BR> 
+<A HREF=MPIXMAP_PANVIEW.htm#MPIXMAP_PANVIEW>MPIXMAP_PANVIEW</A><BR> 
+<A HREF=MPIXMAP_ZOOMVIEW.htm#MPIXMAP_ZOOMVIEW>MPIXMAP_ZOOMVIEW</A><BR> 
+<A HREF=MPIXMAP_ARROW.htm#MPIXMAP_ARROW>MPIXMAP_ARROW</A><BR> 
+<A HREF=MPIXMAP_FENCE.htm#MPIXMAP_FENCE>MPIXMAP_FENCE</A><BR> 
+<A HREF=MPIXMAP_LASSO.htm#MPIXMAP_LASSO>MPIXMAP_LASSO</A><BR> 
+<A HREF=MPIXMAP_FITONFENCE.htm#MPIXMAP_FITONFENCE>MPIXMAP_FITONFENCE</A><BR></P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>resource</I></DT><DD>the resource containing the pixmap</DD><DT><I>pixmapId</I></DT><DD>the pixmap identifier</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>If the pixmap is found in the resource, the abstract representation 
+of the pixmap is returned, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgLoadResource.htm#mgLoadResource>mgLoadResource</A>, <A HREF=mgResourceGetString.htm#mgResourceGetString>mgResourceGetString</A>, <A HREF=mgGetPixmapHandle.htm#mgGetPixmapHandle>mgGetPixmapHandle</A>, 
+<A HREF=mgResourceGetDialog.htm#mgResourceGetDialog>mgResourceGetDialog</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>mgprojcoord</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgprojcoord><H1 CLASS="APISYMBOL">mgprojcoord</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgprojcoord</B> - A projection coordinate expressed in latitude, longitude and height<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct mgprojcoord {
+&#32;&#32;&#32;double lat;
+&#32;&#32;&#32;double lon;
+&#32;&#32;&#32;double height;
+} mgprojcoord;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>lat</B><DD>double - the latitude in degrees, positive is north</DD></DT><DT><B>lon</B><DD>double - the longitude in degrees, positive is east</DD></DT><DT><B>height</B><DD>double - the elevation above mean sea level in meters</DD></DT></DL></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgProject.htm#mgProject>mgProject</A>, <A HREF=mgUnproject.htm#mgUnproject>mgUnproject</A>, 
+<A HREF=mgProjectionConvertLLEtoXYZ.htm#mgProjectionConvertLLEtoXYZ>mgProjectionConvertLLEtoXYZ</A>, <A HREF=mgProjectionConvertXYZtoLLE.htm#mgProjectionConvertXYZtoLLE>mgProjectionConvertXYZtoLLE</A></DD></DL></BODY>
+
+</HTML>

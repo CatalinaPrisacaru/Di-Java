@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>mgWalkEx</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgWalkEx><H1 CLASS="APISYMBOL">mgWalkEx</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgWalkEx</B> - walks a node hierarchy and performs an action at each node.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgWalkEx</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>node</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A></TD><TD><I>startMatrix</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A></TD><TD><I>preAction</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A></TD><TD><I>postAction</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>flags</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgWalkEx</B> performs the same function as <A HREF=mgWalk.htm#mgWalk>mgWalk</A>, but in addition, it allows you 
+to specify a starting matrix, <I>startMatrix</I>, to use when accumulating a matrix stack during 
+the traversal.</P></DD><DD><P>Note: If <I>flags</I> does not specify <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A>, <I>startMatrix</I> is ignored 
+and no matrix stack is accumulated during traversal.</P></DD><DD><P>For more information on <B>mgWalkEx</B>, see <A HREF=mgWalk.htm#mgWalk>mgWalk</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>node</I></DT><DD>the starting node of the traversal</DD><DT><I>startMatrix</I></DT><DD>the starting matrix to use when accumulating a matrix 
+stack during the traversal - ignored if <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A> 
+is not specified in <I>flags</I></DD><DT><I>preAction</I></DT><DD>the function that is invoked 
+before any of the node's children have been visited</DD><DT><I>postAction</I></DT><DD>the function that is invoked 
+after all the node's children have been visited</DD><DT><I>userData</I></DT><DD>pointer to user defined data that will be passed to 
+<I>preAction</I> and <I>postAction</I> callback functions</DD><DT><I>flags</I></DT><DD>traversal modifiers that allow you to select 
+certain types of nodes for visiting. 
+This parameter is the bitwise combination of the following masks:<BR> 
+<A HREF=MWALK_NEXT.htm#MWALK_NEXT>MWALK_NEXT</A><BR> <A HREF=MWALK_VERTEX.htm#MWALK_VERTEX>MWALK_VERTEX</A><BR> <A HREF=MWALK_MASTER.htm#MWALK_MASTER>MWALK_MASTER</A><BR> 
+<A HREF=MWALK_MASTERALL.htm#MWALK_MASTERALL>MWALK_MASTERALL</A><BR> <A HREF=MWALK_ON.htm#MWALK_ON>MWALK_ON</A><BR> <A HREF=MWALK_NOREADONLY.htm#MWALK_NOREADONLY>MWALK_NOREADONLY</A><BR> 
+<A HREF=MWALK_NONESTED.htm#MWALK_NONESTED>MWALK_NONESTED</A><BR> <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if traversal successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> if 
+traversal unsuccessful or if terminated by one of the action functions.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgWalk.htm#mgWalk>mgWalk</A>, <A HREF=mgWalkRecList.htm#mgWalkRecList>mgWalkRecList</A>, <A HREF=mgWalkGetMatrix.htm#mgWalkGetMatrix>mgWalkGetMatrix</A>, <A HREF=mgGetNext.htm#mgGetNext>mgGetNext</A>, <A HREF=mgGetPrevious.htm#mgGetPrevious>mgGetPrevious</A>, 
+<A HREF=mgGetParent.htm#mgGetParent>mgGetParent</A>, <A HREF=mgGetChild.htm#mgGetChild>mgGetChild</A>, <A HREF=mgGetNestedParent.htm#mgGetNestedParent>mgGetNestedParent</A>, <A HREF=mgGetNestedChild.htm#mgGetNestedChild>mgGetNestedChild</A>, 
+<A HREF=mgGetReference.htm#mgGetReference>mgGetReference</A>, <A HREF=mgGetChildNth.htm#mgGetChildNth>mgGetChildNth</A>, <A HREF=mgGetAttrChild.htm#mgGetAttrChild>mgGetAttrChild</A>, 
+<A HREF=mgFind.htm#mgFind>mgFind</A>, <A HREF=mgFindEx.htm#mgFindEx>mgFindEx</A>, <A HREF=mgIterateRecList.htm#mgIterateRecList>mgIterateRecList</A></DD></DL></BODY>
+
+</HTML>

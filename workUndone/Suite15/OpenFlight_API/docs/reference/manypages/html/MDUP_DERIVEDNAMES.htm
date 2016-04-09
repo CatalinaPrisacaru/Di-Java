@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>MDUP_DERIVEDNAMES</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=MDUP_DERIVEDNAMES><H1 CLASS="APISYMBOL">MDUP_DERIVEDNAMES</H1></A></LEFT>
+<DL>
+<DT><H3>NAME</H3></DT>
+<DD><B>MDUP_DERIVEDNAMES</B> - Assign Derived Names<P></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Setting this mask causes <A HREF=mgDuplicateEx.htm#mgDuplicateEx>mgDuplicateEx</A> 
+or <A HREF=mgDuplicateToDbEx.htm#mgDuplicateToDbEx>mgDuplicateToDbEx</A> 
+to assign names "derived" from the original nodes 
+to all new nodes created.</P></DD><DD><P>The form of a derived name is "name_N" where 
+<B>name</B> is the name of the original node and <B>N</B> 
+is an integer such that "name_N" is unique in the 
+database.</P></DD><DD><P>The alternative to derived names is standard 
+names in which case you let the OpenFlight API choose a 
+suitable default name for the duplicate nodes.</P></DD><DD><P>Note that assigning derived names is slower 
+than assigning standard names.</P></DD><DD><P>By default, standard names are assigned 
+to nodes created.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=MDUP_NODEONLY.htm#MDUP_NODEONLY>MDUP_NODEONLY</A></DD></DL></BODY>
+
+</HTML>

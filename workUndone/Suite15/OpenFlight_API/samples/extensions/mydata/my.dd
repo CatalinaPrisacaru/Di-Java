@@ -1,0 +1,162 @@
+/******************** Version info for extension ***************/
+dataDef mySiteId { MTYPE_TEXT, LABEL="Site ID", LEN=6, DEF=MYDATA, NOEDIT }
+dataDef myVersion { MTYPE_FLOAT, LABEL="Version", DEF=1.0 }
+dataDef myBdIndex1 { MTYPE_INT, LABEL="Ext. Bead Index 1", DEF=0 }
+dataDef myBdIndex2 { MTYPE_INT, LABEL="Ext. Bead Index 2", DEF=0 }
+recordDef myHeader { MTYPE_REC, myHeader, XCODE=fltHeader }
+struct myHeader {
+	mySiteId;
+	myVersion;
+	myBdIndex1;		//required by Multigen for auto next bead id 
+	myBdIndex2;		//required by Multigen for auto next bead id 
+}
+
+
+/******************** Special Flags for Polygon ****************/
+dataDef mySpecialFlag0 { MTYPE_FLAG, LABEL="Enum 0", DEF=0, ENUM }
+dataDef mySpecialFlag1 { MTYPE_FLAG, LABEL="Enum 1", DEF=1, ENUM }
+dataDef mySpecialFlag2 { MTYPE_FLAG, LABEL="Enum 2", DEF=0, ENUM }
+dataDef mySpecialFlag3 { MTYPE_FLAG, LABEL="Enum 3", DEF=0, ENUM }
+dataDef mySpecialFlag4 { MTYPE_FLAG, LABEL="Enum 4", DEF=0, ENUM }
+
+/******************** More Special Flags for Polygon ****************/
+dataDef myMoreSpecialFlag0 { MTYPE_FLAG, LABEL="Flag 0", DEF=0}
+dataDef myMoreSpecialFlag1 { MTYPE_FLAG, LABEL="Flag 1", DEF=1}
+// NODISP is used with the next flag so that it isn't shown on the attribute page
+dataDef myMoreSpecialFlag2 { MTYPE_FLAG, LABEL="Flag 2", DEF=0, NODISP}
+dataDef myMoreSpecialFlag3 { MTYPE_FLAG, LABEL="Flag 3", DEF=1}
+dataDef myMoreSpecialFlag4 { MTYPE_FLAG, LABEL="Flag 4", DEF=0}
+
+recordDef myEnums { MTYPE_REC, myEnums, LABEL="Special Enums",XCODE=fltPolygon }
+struct myEnums {
+	mySpecialFlag0;
+	mySpecialFlag1;
+	mySpecialFlag2;
+	mySpecialFlag3;
+	mySpecialFlag4;
+}
+
+recordDef myFlags { MTYPE_REC, myFlags, LABEL="Special Flags",XCODE=fltPolygon }
+struct myFlags {
+	myMoreSpecialFlag0;
+	myMoreSpecialFlag1;
+	myMoreSpecialFlag2;
+	myMoreSpecialFlag3;
+	myMoreSpecialFlag4;
+}
+
+recordDef myPolyExt { MTYPE_REC, myPolyExt, LABEL="My Poly Extension",XCODE=fltPolygon }
+struct myPolyExt {
+	myObjFloat;
+	myObjText;
+}
+
+/******************** Special fields for Object *****************/
+dataDef myObjInt { MTYPE_INT, LABEL="Obj. Ext. Int", DEF=10, MAX=10, MIN=-10 }
+dataDef myObjFloat { MTYPE_FLOAT, LABEL="Obj. Ext. Float", DEF=5.12345, MIN=3, MAX=10 }
+dataDef myObjText { MTYPE_TEXT, LABEL="Obj. Ext. Text", LEN=16, DEF="Obj.Text" }
+recordDef myObjExt { MTYPE_REC, myObjExt, LABEL="Object Ext's",XCODE=fltObject }
+struct myObjExt {
+	myObjInt;
+	myObjFloat;
+	myObjText;
+}
+
+/******************** Special fields for Vertex *****************/
+dataDef myVtxInt { MTYPE_INT, LABEL="Vtx. Ext. Int", DEF=10, MAX=10, MIN=-10 }
+dataDef myVtxFloat { MTYPE_FLOAT, LABEL="Vtx. Ext. Float", DEF=5.12345, MIN=3, MAX=10 }
+dataDef myVtxText { MTYPE_TEXT, LABEL="Vtx. Ext. Text", LEN=16, DEF="Vtx.Text" }
+recordDef myVtxExt { MTYPE_REC, myVtxExt, LABEL="Vertex Ext's",XCODE=fltVertex }
+struct myVtxExt {
+	myVtxInt;
+	myVtxFloat;
+	myVtxText;
+}
+
+/******************** Special fields for Light Point Appearance Palette *****************/
+dataDef myLpaInt { MTYPE_INT, LABEL="Lpa. Ext. Int", DEF=10, MAX=10, MIN=-10 }
+dataDef myLpaFloat { MTYPE_FLOAT, LABEL="Lpa. Ext. Float", DEF=5.12345, MIN=3, MAX=10 }
+dataDef myLpaText { MTYPE_TEXT, LABEL="Lpa. Ext. Text", LEN=16, DEF="Lpa.Text" }
+recordDef myLpaExt { MTYPE_REC, myLpaExt, LABEL="LPA Ext's",XCODE=fltLpAppearancePalette }
+struct myLpaExt {
+	myLpaInt;
+	myLpaFloat;
+	myLpaText;
+}
+
+/******************** Special fields for Light Source Palette *****************/
+dataDef myLpsInt { MTYPE_INT, LABEL="Lps. Ext. Int", DEF=10, MAX=10, MIN=-10 }
+dataDef myLpsFloat { MTYPE_FLOAT, LABEL="Lps. Ext. Float", DEF=5.12345, MIN=3, MAX=10 }
+dataDef myLpsText { MTYPE_TEXT, LABEL="Lps. Ext. Text", LEN=16, DEF="Lps.Text" }
+recordDef myLpsExt { MTYPE_REC, myLpsExt, LABEL="LPS Ext's",XCODE=fltLightSourcePalette }
+struct myLpsExt {
+	myLpsInt;
+	myLpsFloat;
+	myLpsText;
+}
+
+/******************** Special fields for Light Point *****************/
+dataDef myLpInt { MTYPE_INT, LABEL="Lp. Ext. Int", DEF=10, MAX=10, MIN=-10 }
+dataDef myLpFloat { MTYPE_FLOAT, LABEL="Lp. Ext. Float", DEF=5.12345, MIN=3, MAX=10 }
+dataDef myLpText { MTYPE_TEXT, LABEL="Lp. Ext. Text", LEN=16, DEF="Lp.Text" }
+recordDef myLpExt { MTYPE_REC, myLpExt, LABEL="LP Ext's",XCODE=fltLightPoint }
+struct myLpExt {
+	myLpInt;
+	myLpFloat;
+	myLpText;
+}
+
+/******************** Create my own bead type *******************/
+/********The bead will have an inline rec and an ptr rec ********/
+dataDef myInlineInt { MTYPE_INT, LABEL="Inline Int", DEF=10, MAX=25, MIN=-25 }
+dataDef myInlineFloat { MTYPE_FLOAT, LABEL="Inline Float", DEF=1.23 }
+dataDef myInlineText { MTYPE_TEXT, LABEL="Inline Text", DEF="Inline Text", LEN=16 }
+recordDef myInlineRec { MTYPE_REC, myInlineRec, LABEL="Inline Rec"}
+struct myInlineRec {
+	myInlineInt;
+	myInlineFloat;
+	myInlineText;
+}
+
+dataDef myPtrRecInt { MTYPE_INT, LABEL="Ptr Rec Int", DEF=10 }
+dataDef myPtrRecFloat { MTYPE_FLOAT, LABEL="Ptr Rec Float", DEF=5.4321 }
+dataDef myPtrRecText { MTYPE_TEXT, LABEL="Ptr Rec Text", DEF="Ptr Rec Text", LEN=16 }
+recordDef myPtrRec { MTYPE_REC, myPtrRec, LABEL="Ptr Rec"}
+struct myPtrRec {
+	myPtrRecInt;
+	myPtrRecFloat;
+	myPtrRecText;
+}
+
+
+dataDef myInt { MTYPE_INT, LABEL="Int", DEF=0 }
+dataDef myFloat { MTYPE_FLOAT, LABEL="Float", DEF=0.0 }
+dataDef myText { MTYPE_TEXT, LABEL="Text", DEF="Text",LEN=16 }	//important: need to specify text LEN
+recordDef myBead1 { MTYPE_BEAD, myBead1, LABEL="Extension Bead 1", PREFIX=myBd1, PARENT=myBd_Parent, CHILD=myBd_Child }
+struct myBead1 {
+	myInt;
+	myFloat;
+	myText;
+	myInlineRec;
+	myPtrRec, PTR;
+}
+
+recordDef myBead2 { MTYPE_BEAD, myBead2, LABEL="Extension Bead 2", PREFIX=myBd2, PARENT=myBd_Parent, CHILD=myBd_Child }
+struct myBead2 {
+	myInt;
+	myFloat;
+	myText;
+	myInlineRec;
+	myPtrRec, PTR;
+}
+
+//Only have group as a parent
+parent myBd_Parent {
+	fltGroup;
+}
+
+//Only have Object and Polygon as children
+child myBd_Child {
+	fltObject;
+	fltPolygon;
+}

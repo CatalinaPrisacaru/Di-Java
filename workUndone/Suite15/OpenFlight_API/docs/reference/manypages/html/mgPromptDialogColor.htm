@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>mgPromptDialogColor</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPromptDialogColor><H1 CLASS="APISYMBOL">mgPromptDialogColor</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPromptDialogColor</B> - prompts the user to select a color 
+using a standard color chooser.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgPromptDialogColor</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>inR</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>inG</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>inB</I>,</TD></TR>
+<TR><TD></TD><TD>short*</TD><TD><I>outR</I>,</TD></TR>
+<TR><TD></TD><TD>short*</TD><TD><I>outG</I>,</TD></TR>
+<TR><TD></TD><TD>short*</TD><TD><I>outB</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, outR, outG, outB <B>mgPromptDialogColor</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>inR</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>inG</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>inB</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPromptDialogColor</B> displays a modal color chooser dialog in 
+which the user is prompted to select a color.</P></DD><DD><P>When the dialog is initially displayed, it will present the color 
+specified by the input parameters <I>inR</I>, <I>inG</I>, and <I>inB</I>. 
+The input and output color values are in the range 0 to 255.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The dialog is created as a child of the specified dialog <I>parent</I>. 
+If you specify <I>parent</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the Creator main window.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the color dialog</DD><DT><I>inR</I></DT><DD>the red component of the initial color</DD><DT><I>inG</I></DT><DD>the green component of the initial color</DD><DT><I>inB</I></DT><DD>the blue component of the initial color</DD><DT><I>outR</I></DT><DD>the red component of the selected color</DD><DT><I>outG</I></DT><DD>the green component of the selected color</DD><DT><I>outB</I></DT><DD>the blue component of the selected color</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success. 
+Success indicates that the user selected and accepted a color.</DD><DT>outR</DT><DD>If function 
+is successful, outR contains the corresponding color value, otherwise 
+outR is undefined.</DD><DT>outG</DT><DD>If function 
+is successful, outG contains the corresponding color value, otherwise 
+outG is undefined.</DD><DT>outB</DT><DD>If function 
+is successful, outB contains the corresponding color value, otherwise 
+outB is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>, <A HREF=mgPromptDialogFolder.htm#mgPromptDialogFolder>mgPromptDialogFolder</A>, <A HREF=mgPromptDialogTexture.htm#mgPromptDialogTexture>mgPromptDialogTexture</A></DD></DL></BODY>
+
+</HTML>

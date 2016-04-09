@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>mgMeshGetVtxNormal</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMeshGetVtxNormal><H1 CLASS="APISYMBOL">mgMeshGetVtxNormal</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMeshGetVtxNormal</B> - retrieves the normal vector for 
+a vertex in a mesh.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgMeshGetVtxNormal</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>vtxIndex</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>i</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>j</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>k</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, i, j, k <B>mgMeshGetVtxNormal</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>vtxIndex</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This function retrieves the <I>i</I>, <I>j</I>, and <I>k</I> values of the 
+normal vector of the vertex at index <I>vtxIndex</I> in the vertex pool of 
+mesh node <I>rec</I>.</P></DD><DD><P>You do not have to provide addresses for all <I>i</I>, <I>j</I>, and <I>k</I> values.  For 
+example, if you only want to receive the i and j components (but not k), specify valid 
+addresses for <I>i</I> and <I>j</I> and leave <I>k</I> NULL.</P></DD><DD><P>Note: The first vertex in the mesh vertex pool is at index 0.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ node</DD><DT><I>vtxIndex</I></DT><DD>the vertex number in the mesh starting at 0</DD><DT><I>i</I></DT><DD>address of value to receive i component of normal vector</DD><DT><I>j</I></DT><DD>address of value to receive j component of normal vector</DD><DT><I>k</I></DT><DD>address of value to receive k component of normal vector</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the vertex data was retrieved 
+successfully, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.  This function will fail 
+if <I>rec</I> is not a valid mesh node, if the vertex at <I>vtxIndex</I> 
+does not exist in the mesh, or if the vertices in the mesh do not 
+color values.</DD><DT>i</DT><DD>If function is successful, i contains the retrieved i coordinate, otherwise 
+i is undefined.</DD><DT>j</DT><DD>If function is successful, j contains the retrieved j coordinate, otherwise 
+j is undefined.</DD><DT>k</DT><DD>If function is successful, k contains the retrieved k coordinate, otherwise 
+k is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask>mgMeshGetVtxMask</A>, <A HREF=mgMeshPrimitiveGetNumVtx.htm#mgMeshPrimitiveGetNumVtx>mgMeshPrimitiveGetNumVtx</A>, 
+<A HREF=mgMeshPrimitiveGetVtxIndexArray.htm#mgMeshPrimitiveGetVtxIndexArray>mgMeshPrimitiveGetVtxIndexArray</A>, 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA>mgMeshGetVtxColorRGBA</A>, <A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A>, <A HREF=mgMeshSetVtxNormal.htm#mgMeshSetVtxNormal>mgMeshSetVtxNormal</A></DD></DL></BODY>
+
+</HTML>

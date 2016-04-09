@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgDestroyDialog</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgDestroyDialog><H1 CLASS="APISYMBOL">mgDestroyDialog</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgDestroyDialog</B> - destroys a dialog.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgDestroyDialog</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>dialog</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgDestroyDialog</B> destroys a dialog.</P></DD><DD><P>If the dialog is currently displayed, it is first hidden 
+and then destroyed.</P></DD><DD><P>If the destroy dialog event has been selected for the dialog function, 
+it is sent.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>dialog</I></DT><DD>dialog to destroy</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgDestroyDialogCallback.htm#mgDestroyDialogCallback>mgDestroyDialogCallback</A>, <A HREF=mgShowDialog.htm#mgShowDialog>mgShowDialog</A>, <A HREF=mgHideDialog.htm#mgHideDialog>mgHideDialog</A>, 
+<A HREF=mgRefreshDialog.htm#mgRefreshDialog>mgRefreshDialog</A></DD></DL></BODY>
+
+</HTML>

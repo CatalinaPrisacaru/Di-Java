@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>mgGeoCoordGet</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGeoCoordGet><H1 CLASS="APISYMBOL">mgGeoCoordGet</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGeoCoordGet</B> - gets the geospecific coordinates from a 
+texture attribute record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgGeoCoordGet</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>imgRec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mggeocoorddata.htm#mggeocoorddata>mggeocoorddata</A></TD><TD><I>geoCoordData[]</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>arrayLen</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>numGeoCoords, geoCoordData <B>mgGeoCoordGet</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>imgRec</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGeoCoordGet</B> gets the geospecific coordinates of the specified 
+texture attribute record <I>imgRec</I> (of type <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltImage>fltImage</A>
+).</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P><B>mgGeoCoordGet</B> writes the data into the output parameter <I>subTextureData</I>. 
+The size of the array is specified by <I>arrayLen</I>.  The number of geospecific coordinates 
+actually written into the array is returned.  You can determine the actual number of 
+geospecific coordinates contained in a texture attribute record by querying the 
+attribute <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltTxtGeoCoordLst>fltTGNumCoords</A>
+.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P><B>mgGeoCoordGet</B> returns the geospecific coordinate data. The number 
+of geospecific coordinates included is also returned.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>imgRec</I></DT><DD>the texture attribute record</DD><DT><I>geoCoordData[]</I></DT><DD>the array of geospecific coordinates to be filled in</DD><DT><I>arrayLen</I></DT><DD>the size of the array <I>geoCoordData</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>numGeoCoords</DT><DD>The number of geospecific coordinate records being returned.</DD><DT>geoCoordData</DT><DD>The records returned.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* imgRec = mgGetTextureAttributes (db, textureIndex);
+int numCoords = mgGeoCoordCount (imgRec);
+if (numCoords &gt 0) {
+   int num;
+   mggeocoorddata gcData[10];
+   num = mgGeoCoordGet (imgRec, gcData, 10);
+   // num will be minimum of 10 and numCoords
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">imgRec = mgGetTextureAttributes (db, textureIndex)
+num,geoCoords = mgGeoCoordGet (imgRec)
+print "Number of Geo Coords:",num
+for i in range (0, num):
+   print "GeoCoord",i+1,":"
+   geoCoord = geoCoords[i]
+   print "   u,v,lat,lon:",geoCoord.u,geoCoord.v,geoCoord.lat,geoCoord.lon</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGeoCoordAdd.htm#mgGeoCoordAdd>mgGeoCoordAdd</A>, <A HREF=mgGeoCoordDelete.htm#mgGeoCoordDelete>mgGeoCoordDelete</A>, <A HREF=mgGeoCoordCount.htm#mgGeoCoordCount>mgGeoCoordCount</A></DD></DL></BODY>
+
+</HTML>

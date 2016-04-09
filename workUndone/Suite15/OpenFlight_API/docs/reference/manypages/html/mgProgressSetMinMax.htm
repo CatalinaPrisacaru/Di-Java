@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>mgProgressSetMinMax</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgProgressSetMinMax><H1 CLASS="APISYMBOL">mgProgressSetMinMax</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgProgressSetMinMax</B> - sets the minimum and maximum logical 
+values for a progress control.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgProgressSetMinMax</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>control</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>min</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>max</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgProgressSetMinMax</B> sets the range of logical values valid for the 
+specified progress <I>control</I>.  The minimum value is specified 
+by <I>min</I>, the maximum by <I>max</I>.</P></DD><DD><P>The default minimum and maximum values for a progress control are 0 
+and 100 respectively.</P></DD><DD><P>If the current progress value is outside the new range, the progress value 
+will be clamped to the new maximum or minimum value.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>control</I></DT><DD>the progress control</DD><DT><I>min</I></DT><DD>the minimum value for the control</DD><DT><I>max</I></DT><DD>the maximum value for the control</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgProgressGetMinMax.htm#mgProgressGetMinMax>mgProgressGetMinMax</A>, <A HREF=mgProgressSetValue.htm#mgProgressSetValue>mgProgressSetValue</A>, <A HREF=mgProgressGetValue.htm#mgProgressGetValue>mgProgressGetValue</A>, 
+<A HREF=mgProgressStepValue.htm#mgProgressStepValue>mgProgressStepValue</A>, <A HREF=mgProgressSetStepIncrement.htm#mgProgressSetStepIncrement>mgProgressSetStepIncrement</A></DD></DL></BODY>
+
+</HTML>

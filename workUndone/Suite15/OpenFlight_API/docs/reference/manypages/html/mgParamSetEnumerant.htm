@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamSetEnumerant</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamSetEnumerant><H1 CLASS="APISYMBOL">mgParamSetEnumerant</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamSetEnumerant</B> - defines an enumerant for an integer 
+parameter in a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgParamSetEnumerant</B> (</TD><TD><A HREF=mgparam.htm#mgparam>mgparam</A></TD><TD><I>param</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>value</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>string</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamSetEnumerant</B> defines an enumerant (value and string pair) 
+for the integer parameter <I>param</I>.  An enumerant defines an integer value 
+<I>value</I> and corresponding string value <I>string</I>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>param</I></DT><DD>the parameter to set</DD><DT><I>value</I></DT><DD>the integer value for this enumerant</DD><DT><I>string</I></DT><DD>the string value corresponding to <I>value</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example defines several enumerants for an integer parameter 
+and shows how to get and set its value in different ways.</DT><DT><PRE CLASS="EXAMPLE">mgparamblock paramBlock;
+mgparam param;
+
+// create a parameter block
+paramBlock = mgNewParamBlock();
+
+// add an integer parameter called "User Choices"
+// default value is 5
+param = mgParamAddInteger (paramBlock, "User Choices", 5);
+
+// define the enumerants for this parameter -
+// note how the values do not have to be contiguous
+mgParamSetEnumerant (param, -1, "Choice 1");
+mgParamSetEnumerant (param,  0, "Choice 2");
+mgParamSetEnumerant (param,  5, "Choice 3");
+mgParamSetEnumerant (param, 10, "Choice 4");
+
+// after an enumerated integer parameter is added,
+// it can be "set" by integer or by string as shown below:
+
+// the following two lines are equivalent:
+mgParamSetInteger (paramBlock, "User Choices", 5);
+mgParamSetString (paramBlock, "User Choices", "Choice 3");
+
+// as are:
+mgParamSetInteger (paramBlock, "User Choices", -1);
+mgParamSetString (paramBlock, "User Choices", "Choice 1");
+
+// similarly, when you "get" an enumerated integer parameter,
+// you can get it by integer or string as shown below:
+
+int intVal;
+char stringVal[200];
+
+// if the current value of "User Choices" parameter is -1...
+
+// intVal will be -1
+mgParamGetInteger (paramBlock, "User Choices", &intVal, 0);
+
+// stringVal will be "Choice 1"
+mgParamGetString (paramBlock, "User Choices", stringVal, 200, "");</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamAddInteger.htm#mgParamAddInteger>mgParamAddInteger</A>, 
+<A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A>, <A HREF=mgParamGetInteger.htm#mgParamGetInteger>mgParamGetInteger</A>, 
+<A HREF=mgParamSetString.htm#mgParamSetString>mgParamSetString</A>, <A HREF=mgParamGetString.htm#mgParamGetString>mgParamGetString</A>, 
+<A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A></DD></DL></BODY>
+
+</HTML>

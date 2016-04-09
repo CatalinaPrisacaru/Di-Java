@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<TITLE>mgLightPointAnimationSequenceGet</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgLightPointAnimationSequenceGet><H1 CLASS="APISYMBOL">mgLightPointAnimationSequenceGet</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgLightPointAnimationSequenceGet</B> - gets the sequence items from 
+a light point animation record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgLightPointAnimationSequenceGet</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>lpaRec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mglightpointanimationsequencedata.htm#mglightpointanimationsequencedata>mglightpointanimationsequencedata</A></TD><TD><I>sequenceData[]</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>arrayLen</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>numSequences, sequenceData <B>mgLightPointAnimationSequenceGet</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>lpaRec</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgLightPointAnimationSequenceGet</B> gets the animation sequence data 
+of the specified light point animation record (of type <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltLpAnimationPalette>fltLpAnimationPalette</A>
+).</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P><B>mgLightPointAnimationSequenceGet</B> writes the data into the output 
+parameter <I>sequenceData</I>. The size of the array is specified by <I>arrayLen</I>. 
+The number of sequences actually written into the array is returned.  You can 
+determine the actual number of  sequences contained in a light point 
+animation record by querying the attribute <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltLpAnimationPalette>fltLpSequenceLength</A>
+.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P><B>mgLightPointAnimationSequenceGet</B> returns the animation sequence data. 
+The number of sequences included is also returned.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>lpaRec</I></DT><DD>the light point animation attribute record</DD><DT><I>sequenceData[]</I></DT><DD>the array of sequence records to be filled in</DD><DT><I>arrayLen</I></DT><DD>the size of the array <I>sequenceData</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>numSequences</DT><DD>The number of sequence records being returned.</DD><DT>sequenceData</DT><DD>The records returned.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* lpaRec = mgGetLightPointAnimation (db, lpaIndex);
+int seqLength;
+mgGetAttList (lpaRec, fltLpSequenceLength, &seqLength, MG_NULL);
+if ( seqLength &gt 0 ) {
+   int num;
+   mglightpointanimationsequencedata* seqData;
+   seqData = (mglightpointanimationsequencedata*)
+      mgMalloc (seqLength * sizeof(mglightpointanimationsequencedata));
+   num = mgLightPointAnimationSequenceGet (lpaRec, seqData, seqLength);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">lpaRec = mgGetLightPointAnimation (db, lpaIndex)
+num,sequences = mgLightPointAnimationSequenceGet (lpaRec)
+print "Number of Light Point Animation Sequences:",num
+for i in range (0, num):
+   print "Light Point Animation Sequence",i+1,":"
+   sequence = sequences[i]
+   print "   state,duration,colorIndex,colorIntensity:", \\
+      sequence.state, sequence.duration, \\
+      sequence.colorIndex, sequence.colorIntensity</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgLightPointAnimationSequenceSet.htm#mgLightPointAnimationSequenceSet>mgLightPointAnimationSequenceSet</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>mgpreeditfunc</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgpreeditfunc><H1 CLASS="APISYMBOL">mgpreeditfunc</H1></A></LEFT>
+<DL>
+<DT><H3>CALLBACK NAME</H3></DT>
+<DD><B>mgpreeditfunc</B> - Data Field Pre-Edit function<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool (*<B>mgpreeditfunc</B>) ( <TD><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><I>rec</I>, 
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><I>code</I>, 
+<TR><TD></TD><TD>void* <TD><I>val</I> );</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This is the signature for data field pre-edit action functions. 
+You can define a pre-edit action function for the data fields you 
+define in your data extension of this form.  Data field pre-edit 
+functions are called before a modification to a field value is 
+committed.  Data fields can be modified interactively by the modeler 
+in the attribute pages and/or programmatically by calling 
+<A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A>.</P></DD><DD><P>You can disallow the edit by returning <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record that is being modified</DD><DT><I>code</I></DT><DD>the code of the field being modified</DD><DT><I>val</I></DT><DD>the address of the value that is about to 
+be committed - depending on the type of the data field, 
+this is the address of an object of the appropriate 
+type</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Return <A HREF=mgbool.htm#mgbool>MG_TRUE</A> to allow edit, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> to 
+disallow edit.
+</DD></DL><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterSite.htm#mgRegisterSite>mgRegisterSite</A>, <A HREF=mgposteditfunc.htm#mgposteditfunc>mgposteditfunc</A></DD></DL></BODY>
+
+</HTML>

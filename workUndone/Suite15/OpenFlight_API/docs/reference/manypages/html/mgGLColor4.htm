@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>mgGLColor4</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGLColor4><H1 CLASS="APISYMBOL">mgGLColor4</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGLColor4</B> - specifies a color for GL rendering.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGLColor4</B> (</TD><TD><A HREF=mgglcontext.htm#mgglcontext>mgglcontext</A></TD><TD><I>glContext</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>red</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>green</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>blue</I>,</TD></TR>
+<TR><TD></TD><TD>short</TD><TD><I>alpha</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGLColor4</B> sets the current color for GL rendering to that 
+specified by the <I>red</I>, <I>green</I>, <I>blue</I> and <I>alpha</I> color 
+components.</P></DD><DD><P>This function loads the specified red, green, blue and alpha color 
+components in preparation for rendering into GL controls.  It is 
+the equivalent of calling the OpenGL routine <B>glColor4*()</B>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>glContext</I></DT><DD>Gl rendering context into which color 
+is to be loaded</DD><DT><I>red</I></DT><DD>red component of color to load</DD><DT><I>green</I></DT><DD>green component of color to load</DD><DT><I>blue</I></DT><DD>blue component of color to load</DD><DT><I>alpha</I></DT><DD>alpha component of color to load</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if color could be loaded successfully, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGLColor3.htm#mgGLColor3>mgGLColor3</A>, <A HREF=mgGLColorIndex.htm#mgGLColorIndex>mgGLColorIndex</A>, <A HREF=mgGLMaterialIndex.htm#mgGLMaterialIndex>mgGLMaterialIndex</A>, 
+<A HREF=mgGLTextureIndex.htm#mgGLTextureIndex>mgGLTextureIndex</A>, <A HREF=mgSetGuiCallback.htm#mgSetGuiCallback>mgSetGuiCallback</A>, <A HREF=MGCB_DRAW.htm#MGCB_DRAW>MGCB_DRAW</A>, 
+<A HREF=mgGetCurrentColorRGB.htm#mgGetCurrentColorRGB>mgGetCurrentColorRGB</A>, <A HREF=mgGetCurrentAltColorRGB.htm#mgGetCurrentAltColorRGB>mgGetCurrentAltColorRGB</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>mgMeshSetVtxMask</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMeshSetVtxMask><H1 CLASS="APISYMBOL">mgMeshSetVtxMask</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMeshSetVtxMask</B> - sets the vertex mask for a mesh.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgMeshSetVtxMask</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>newVtxMask</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This function sets the vertex mask for mesh <I>rec</I> to the 
+value specified by <I>newVtxMask</I>, allocates a new vertex pool for 
+the mesh according to mask bits set and repacks this new vertex 
+pool accordingly.</P></DD><DD><P>Mesh vertex data is efficiently packed in the vertex pool 
+according to what kind of data is present for the mesh vertices. 
+For example, if a mesh only has coordinate position (x,y,z) data, 
+then only enough memory is allocated in the vertex pool for 
+three consecutive double precision values per vertex. 
+If you need to change what kind of vertex data is defined in 
+the vertex pool, you must call this function with the mask representing 
+the desired data.  The value of <I>newVtxMask</I> is a bitwise combination 
+of Mesh Vertex Mask Bits specifying what kind of data to allocate 
+for each vertex in the pool.</P></DD><DD><P>Mesh Vertex Mask Bits include:<BR> 
+<A HREF=MMESH_VTXCOORD.htm#MMESH_VTXCOORD>MMESH_VTXCOORD</A><BR> 
+<A HREF=MMESH_VTXCOLOR.htm#MMESH_VTXCOLOR>MMESH_VTXCOLOR</A><BR> 
+<A HREF=MMESH_VTXCOLORRGB.htm#MMESH_VTXCOLORRGB>MMESH_VTXCOLORRGB</A><BR> 
+<A HREF=MMESH_VTXNORMAL.htm#MMESH_VTXNORMAL>MMESH_VTXNORMAL</A><BR> 
+<A HREF=MMESH_VTXUV0.htm#MMESH_VTXUV0>MMESH_VTXUV0</A><BR> 
+<A HREF=MMESH_VTXUV1.htm#MMESH_VTXUV1>MMESH_VTXUV1</A><BR> 
+<A HREF=MMESH_VTXUV2.htm#MMESH_VTXUV2>MMESH_VTXUV2</A><BR> 
+<A HREF=MMESH_VTXUV3.htm#MMESH_VTXUV3>MMESH_VTXUV3</A><BR> 
+<A HREF=MMESH_VTXUV4.htm#MMESH_VTXUV4>MMESH_VTXUV4</A><BR> 
+<A HREF=MMESH_VTXUV5.htm#MMESH_VTXUV5>MMESH_VTXUV5</A><BR> 
+<A HREF=MMESH_VTXUV6.htm#MMESH_VTXUV6>MMESH_VTXUV6</A><BR> 
+<A HREF=MMESH_VTXUV7.htm#MMESH_VTXUV7>MMESH_VTXUV7</A></P></DD><DD><P>See <A HREF=mgMeshCreateVtxPool.htm#mgMeshCreateVtxPool>mgMeshCreateVtxPool</A> for a complete description of these 
+mask bits.</P></DD><DD><P>If the mask you specify to this function is identical to the current 
+vertex mask of the mesh, this function will do nothing.  If the mask you 
+specify is different from the current vertex mask, then this function will 
+allocate a new vertex pool of size required by <I>newVtxMask</I>, initialize 
+the new vertex pool as described below and then delete the original vertex 
+pool.</P></DD><DD><P>The following paragraphs describe how the new vertex pool is initialized 
+under different circumstances:</P></DD><DD><P>For each kind of vertex data that was specified by both the original 
+vertex mask and the new vertex mask, the corresponding vertex data from the 
+original vertex pool is copied to the correct locations in the new vertex 
+pool.  In this way, existing vertex data is preserved in the mesh.</P></DD><DD><P>For each kind of vertex data that was specified by the original vertex 
+mask but not by the new vertex mask, the corresponding vertex data from the 
+original vertex pool is discarded.</P></DD><DD><P>For each kind of vertex data that was specified by the new vertex 
+mask but not by the original vertex mask, the corresponding vertex data in the 
+new vertex pool is left uninitialized. It is the caller's responsibility to assign 
+values for this new vertex data in the vertex pool using functions such as 
+<A HREF=mgMeshSetVtxColor.htm#mgMeshSetVtxColor>mgMeshSetVtxColor</A>, <A HREF=mgMeshSetVtxCoord.htm#mgMeshSetVtxCoord>mgMeshSetVtxCoord</A>, <A HREF=mgMeshSetVtxColor.htm#mgMeshSetVtxColor>mgMeshSetVtxColor</A>, 
+<A HREF=mgMeshSetVtxColorRGB.htm#mgMeshSetVtxColorRGB>mgMeshSetVtxColorRGB</A>, <A HREF=mgMeshSetVtxNormal.htm#mgMeshSetVtxNormal>mgMeshSetVtxNormal</A>, <A HREF=mgMeshSetVtxUV.htm#mgMeshSetVtxUV>mgMeshSetVtxUV</A>, etc.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ node</DD><DT><I>newVtxMask</I></DT><DD>the mask specifying what 
+kind of data is defined for the 
+vertices in the mesh</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the vertex mask was set 
+successfully, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.  This function will fail 
+if <I>rec</I> is not a valid mesh node, or <I>newVtxMask</I> is 0 or 
+does not specify a valid set of bits.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how to add texture data (UVs) in layer 0 
+to a mesh that previously may or may not have been textured.</DT><DT><PRE CLASS="EXAMPLE">// since we want to preserve any existing vertex data, we
+// will get the value of the current vertex mask and "OR"
+// MMESH_VTXUV0 into it to form the value of the new mask
+unsigned int oldMask = mgMeshGetVtxMask (mesh);
+unsigned int newMask = oldMask | MMESH_VTXUV0;
+
+// we don't have to do this check, mgMeshSetVtxMask will
+// return immediately if old and new masks are identical
+if (oldMask != newMask)
+{
+   // mgMeshSetVtxMask will preserve any existing vertex
+   // data and allocate a new vertex pool with space for
+   // our UVs for layer 0
+   mgMeshSetVtxMask (mesh, newMask);
+
+   // remember, you still have to call mgMeshSetVtxUV to
+   // assign UVs for each vertex in the mesh
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgMeshCreateVtxPool.htm#mgMeshCreateVtxPool>mgMeshCreateVtxPool</A>, <A HREF=mgMeshCreatePrimitives.htm#mgMeshCreatePrimitives>mgMeshCreatePrimitives</A>, 
+<A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask>mgMeshGetVtxMask</A>, <A HREF=mgMeshPrimitiveGetNumVtx.htm#mgMeshPrimitiveGetNumVtx>mgMeshPrimitiveGetNumVtx</A>, 
+<A HREF=mgMeshPrimitiveGetVtxIndexArray.htm#mgMeshPrimitiveGetVtxIndexArray>mgMeshPrimitiveGetVtxIndexArray</A>, 
+<A HREF=mgMeshSetVtxCoord.htm#mgMeshSetVtxCoord>mgMeshSetVtxCoord</A>, <A HREF=mgMeshSetVtxColor.htm#mgMeshSetVtxColor>mgMeshSetVtxColor</A>, 
+<A HREF=mgMeshSetVtxColorRGBA.htm#mgMeshSetVtxColorRGBA>mgMeshSetVtxColorRGBA</A>, <A HREF=mgMeshSetVtxColorRGB.htm#mgMeshSetVtxColorRGB>mgMeshSetVtxColorRGB</A>, <A HREF=mgMeshSetVtxColorAlpha.htm#mgMeshSetVtxColorAlpha>mgMeshSetVtxColorAlpha</A>, 
+<A HREF=mgMeshSetVtxNormal.htm#mgMeshSetVtxNormal>mgMeshSetVtxNormal</A>, <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A></DD></DL></BODY>
+
+</HTML>

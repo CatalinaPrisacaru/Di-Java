@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>ddGetUCode</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=ddGetUCode><H1 CLASS="APISYMBOL">ddGetUCode</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>ddGetUCode</B> - composes a unique code from a local code 
+and Site ID.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgcode <B>ddGetUCode</B> (</TD><TD>const char*</TD><TD><I>siteId</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>localCode</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>ddGetUCode</B> returns a unique code from the specified local 
+code <I>localCode</I> and Site ID <I>siteId</I>.</P></DD><DD><P>This function is the inverse of <A HREF=ddGetMyCode.htm#ddGetMyCode>ddGetMyCode</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>siteId</I></DT><DD>the extension site&#146s ID string</DD><DT><I>localCode</I></DT><DD>the extension site&#146s own code</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the unique code if valid, 0 otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=ddGetMyCode.htm#ddGetMyCode>ddGetMyCode</A></DD></DL></BODY>
+
+</HTML>

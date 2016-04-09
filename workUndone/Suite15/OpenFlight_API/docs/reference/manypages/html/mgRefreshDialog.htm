@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>mgRefreshDialog</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRefreshDialog><H1 CLASS="APISYMBOL">mgRefreshDialog</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRefreshDialog</B> - refreshes a dialog.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgRefreshDialog</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>gui</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRefreshDialog</B> refreshes the dialog associated to the specified 
+<I>gui</I>.  The parameter <I>gui</I> may be any control contained in the dialog 
+or may be the dialog itself.</P></DD><DD><P>If the refresh dialog event has been selected for the dialog function 
+of the intended dialog, the refresh event is first sent to the dialog. 
+Then, for all controls contained in the dialog that have selected the 
+refresh control event, the event is sent.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>gui</I></DT><DD>any control in the dialog (or the dialog itself)</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRefreshDialogCallback.htm#mgRefreshDialogCallback>mgRefreshDialogCallback</A>, <A HREF=mgShowDialog.htm#mgShowDialog>mgShowDialog</A>, 
+<A HREF=mgHideDialog.htm#mgHideDialog>mgHideDialog</A>, <A HREF=mgDestroyDialog.htm#mgDestroyDialog>mgDestroyDialog</A>, <A HREF=mgRefreshControl.htm#mgRefreshControl>mgRefreshControl</A></DD></DL></BODY>
+
+</HTML>

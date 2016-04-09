@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgtabrulercallbackreason</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgtabrulercallbackreason><H1 CLASS="APISYMBOL">mgtabrulercallbackreason</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgtabrulercallbackreason</B> - Tab ruler callback reason type<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgtabrulercallbackreason {
+&#32;&#32;&#32;MTRUL_TAB_SELECTED,
+&#32;&#32;&#32;MTRUL_TAB_DESELECTED,
+&#32;&#32;&#32;MTRUL_TAB_DRAGGED,
+&#32;&#32;&#32;MTRUL_TAB_BUMPED,
+&#32;&#32;&#32;MTRUL_TAB_CHANGED,
+&#32;&#32;&#32;MTRUL_TAB_CREATED,
+&#32;&#32;&#32;MTRUL_TAB_DELETED,
+&#32;&#32;&#32;MTRUL_TAB_RELEASED,
+} mgtabrulercallbackreason;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MTRUL_TAB_SELECTED</B><DD>The tab selected state.  This indicates that the 
+associated event was due to a tab getting selected.<DT><B>MTRUL_TAB_DESELECTED</B><DD>The tab deselected state.  This indicates that the 
+associated event was due to a tab getting deselected.<DT><B>MTRUL_TAB_DRAGGED</B><DD>The tab moved state.  This indicates that the 
+associated event was due to a tab getting moved. Specifically the tab 
+was dragged.<DT><B>MTRUL_TAB_BUMPED</B><DD>The tab selected state.  This indicates that the 
+associated event was due to a tab getting moved. Specifically the tab 
+was bumped by dragging another tab.<DT><B>MTRUL_TAB_CHANGED</B><DD>The tab selected state.  This indicates that the 
+associated event was due to a tab getting moved. Specifically the tab's 
+value was changed by entering a new value in the tab's text box.<DT><B>MTRUL_TAB_CREATED</B><DD>The tab created state.  This indicates that a new tab was created.<DT><B>MTRUL_TAB_DELETED</B><DD>The tab deleted state.  This indicates that a tab was deleted.<DT><B>MTRUL_TAB_RELEASED</B><DD>The tab released state.  This indicates the mouse up event occurred.</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This enumerated type is used when calling the tab ruler control callback function.</P></DD></DT></DL></BODY>
+
+</HTML>

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgglmousemotiondatarec</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgglmousemotiondatarec><H1 CLASS="APISYMBOL">mgglmousemotiondatarec</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgglmousemotiondatarec</B> - callback structure for the GL mouse 
+motion action sent to GL controls<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgglmousedatatype callDataType;
+&#32;&#32;&#32;unsigned int keyboardFlags;
+&#32;&#32;&#32;mgcoord2i* thisPoint;
+} mgglmousemotiondatarec;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>callDataType</B><DD><A HREF=mgglmousedatatype.htm#mgglmousedatatype>mgglmousedatatype</A> - call data type that indicates 
+the type of call data this object really is - 
+will always be <A HREF=mgglmousedatatype.htm#mgglmousedatatype>MGMCD_MOTIONDATA</A></DD></DT><DT><B>keyboardFlags</B><DD>unsigned int - the state of the <I>Alt</I>, <I>Ctrl</I>, and <I>Shift</I> keys - 
+the value of this field will be a bitwise combination 
+of <A HREF=MKB_ALTKEY.htm#MKB_ALTKEY>MKB_ALTKEY</A>, <A HREF=MKB_CTRLKEY.htm#MKB_CTRLKEY>MKB_CTRLKEY</A> and <A HREF=MKB_SHIFTKEY.htm#MKB_SHIFTKEY>MKB_SHIFTKEY</A></DD></DT><DT><B>thisPoint</B><DD><A HREF=mgcoord2i.htm#mgcoord2i>mgcoord2i*</A> - address of 2D coordinate record for motion 
+reported</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>When the <A HREF=MGMA_MOTION.htm#MGMA_MOTION>MGMA_MOTION</A> mouse action is reported to a GL control via its 
+<A HREF=mgglmousefunc.htm#mgglmousefunc>mgglmousefunc</A>, the <I>calldata</I> parameter passed in will point to an object 
+of this type.</P></DD><DD><P>The coordinates of mouse button input are reported relative 
+to the lower left corner of the GL control in which the input 
+was received.  That is, if the point reported is at the lower left 
+corner of the control, it will be reported as (0, 0).</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgglmousefunc.htm#mgglmousefunc>mgglmousefunc</A>, <A HREF=mgGLSetMouseFunc.htm#mgGLSetMouseFunc>mgGLSetMouseFunc</A></DD></DL></BODY>
+
+</HTML>

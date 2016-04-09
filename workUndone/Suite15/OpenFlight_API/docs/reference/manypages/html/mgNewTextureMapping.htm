@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<TITLE>mgNewTextureMapping</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNewTextureMapping><H1 CLASS="APISYMBOL">mgNewTextureMapping</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNewTextureMapping</B> - allocates a new record for an entry 
+into a database&#146s texture mapping palette.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgNewTextureMapping</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>type</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>name</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>index</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec, index <B>mgNewTextureMapping</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>type</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>name</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a database node <I>db</I>, a texture mapping type <I>type</I>, 
+and a texture mapping entry name <I>name</I>, 
+<B>mgNewTextureMapping</B> allocates a record containing a new texture mapping 
+palette entry of the specified type, adds it to the database&#146s texture 
+mapping palette, and returns the record.  The index of the new texture 
+mapping entry is returned in <I>index</I>.</P></DD><DD><P>Texture mapping entries can be any of these types:</P></DD><DL><DT></DT><DD>1 = 3 point put <BR> 
+2 = 4 point put <BR> 
+4 = Spherical project <BR> 
+5 = Radial project <BR> 
+6 = Environment <BR></DD></DL>
+<DD><P>The texture mapping properties can be set by using <A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A> 
+with the returned texture mapping record.</P></DD><DD><P>Note: After setting or modifying any field of a texture mapping palette 
+entry, you must call <A HREF=mgUpdateTextureMapping.htm#mgUpdateTextureMapping>mgUpdateTextureMapping</A> to make sure the internal data 
+in the mapping entry is updated properly.</P></DD><DD><P>The code of the record returned will be <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltTextureMapping>fltTextureMapping</A>
+.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>type</I></DT><DD>the type of the new texture mapping</DD><DT><I>name</I></DT><DD>the name of the new texture mapping 
+(may be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> )</DD><DT><I>index</I></DT><DD>pointer to receive the index assigned to the 
+new texture mapping palette entry record</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgrec</DT><DD>Returns the new texture mapping palette entry record if successful, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.</DD><DT>index</DT><DD>If a palette record is returned, its index will be 
+returned in index, otherwise index is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgDeleteTextureMapping.htm#mgDeleteTextureMapping>mgDeleteTextureMapping</A></DD></DL></BODY>
+
+</HTML>

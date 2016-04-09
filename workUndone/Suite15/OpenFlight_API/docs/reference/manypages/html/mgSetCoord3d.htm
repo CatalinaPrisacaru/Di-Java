@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetCoord3d</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetCoord3d><H1 CLASS="APISYMBOL">mgSetCoord3d</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetCoord3d</B> - sets all three attribute values in a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgSetCoord3d</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>code</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>x</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>y</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>z</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a record <I>rec</I>, and the name of one of its <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ attribute records, <I>code</I>, 
+<B>mgSetCoord3d</B> sets the x, y, z attribute values in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ attribute record 
+<I>code</I>.</P></DD><DD><P>For setting vertex coordinates, it is much more efficient to call the 
+convenience function <A HREF=mgSetVtxCoord.htm#mgSetVtxCoord>mgSetVtxCoord</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record whose <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record is to be set</DD><DT><I>code</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ attribute record code</DD><DT><I>x</I></DT><DD>the x value to set in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ attribute record</DD><DT><I>y</I></DT><DD>the y value to set in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ attribute record</DD><DT><I>z</I></DT><DD>the z value to set in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ attribute record</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetCoord3f.htm#mgSetCoord3f>mgSetCoord3f</A>, <A HREF=mgSetCoord2i.htm#mgSetCoord2i>mgSetCoord2i</A>, <A HREF=mgSetVtxCoord.htm#mgSetVtxCoord>mgSetVtxCoord</A></DD></DL></BODY>
+
+</HTML>

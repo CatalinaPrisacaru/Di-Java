@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgTextGetFloat</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgTextGetFloat><H1 CLASS="APISYMBOL">mgTextGetFloat</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgTextGetFloat</B> - retrieves single precision floating point 
+value from text a control.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgTextGetFloat</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>control</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>floatVal</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgTextGetFloat</B> attempts to interpret the text value displayed 
+in the specified text <I>control</I> as a single precision floating point value.</P></DD><DD><P>If the text displayed 
+represents a single precision floating point value, the value is 
+returned in the parameter <I>floatVal</I>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>control</I></DT><DD>the text control</DD><DT><I>floatVal</I></DT><DD>address of float value to receive numeric value 
+from text control</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.  If function 
+is successful, <I>floatVal</I> contains the corresponding numeric value, otherwise 
+<I>floatVal</I> is undefined.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgTextSetFloat.htm#mgTextSetFloat>mgTextSetFloat</A>, 
+<A HREF=mgTextGetString.htm#mgTextGetString>mgTextGetString</A>, <A HREF=mgTextGetInteger.htm#mgTextGetInteger>mgTextGetInteger</A>, <A HREF=mgTextGetDouble.htm#mgTextGetDouble>mgTextGetDouble</A>, <A HREF=mgTextGetDMS.htm#mgTextGetDMS>mgTextGetDMS</A></DD></DL></BODY>
+
+</HTML>

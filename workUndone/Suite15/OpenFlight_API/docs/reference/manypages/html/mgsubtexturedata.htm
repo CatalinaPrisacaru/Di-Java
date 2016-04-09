@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>mgsubtexturedata</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgsubtexturedata><H1 CLASS="APISYMBOL">mgsubtexturedata</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgsubtexturedata</B> - Subtexture Definition data<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;char name[MIMG_MAXNAMELEN];
+&#32;&#32;&#32;int l;
+&#32;&#32;&#32;int b;
+&#32;&#32;&#32;int r;
+&#32;&#32;&#32;int t;
+} mgsubtexturedata;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>name[MIMG_MAXNAMELEN]</B><DD>char - name of subtexture in image</DD></DT><DT><B>l</B><DD>int - lower left x coordinate of subtexture in image</DD></DT><DT><B>b</B><DD>int - lower left y coordinate of subtexture in image</DD></DT><DT><B>r</B><DD>int - upper right x coordinate of subtexture in image</DD></DT><DT><B>t</B><DD>int - upper right y coordinate of subtexture in image</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Use an array of <A HREF=mgsubtexturedata.htm#mgsubtexturedata>mgsubtexturedata</A> to add and get subtexture 
+records.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSubTextureGet.htm#mgSubTextureGet>mgSubTextureGet</A>, <A HREF=mgSubTextureAdd.htm#mgSubTextureAdd>mgSubTextureAdd</A></DD></DL></BODY>
+
+</HTML>

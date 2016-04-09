@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetTextureTexels</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetTextureTexels><H1 CLASS="APISYMBOL">mgSetTextureTexels</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetTextureTexels</B> - sets the texels of a texture palette entry.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void <B>mgSetTextureTexels</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>index</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned char*</TD><TD><I>texels</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSetTextureTexels</B> sets the texels for the texture palette 
+entry specified by <I>index</I>.  The width, height, and type of the new 
+image must match the width, height, and type of the original image.</P></DD><DD><P>Note: The OpenFlight API will take ownership of the texels you pass in so 
+after you call <B>mgSetTextureTexels</B>, you should not further modify them, free 
+them  or assign these texels to yet another texture in the database.  Furthermore, 
+the texels you pass here should not be those returned from <A HREF=mgGetTextureTexels.htm#mgGetTextureTexels>mgGetTextureTexels</A>. 
+Doing any of these will lead to unexpected results and may cause a crash.</P></DD><DD><P>See <A HREF=mgReadImage.htm#mgReadImage>mgReadImage</A> for a description of the memory layout 
+for the texels expected.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>index</I></DT><DD>the index of the texture palette entry</DD><DT><I>texels</I></DT><DD>a pointer to the new texels</DD></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetTextureTexels.htm#mgGetTextureTexels>mgGetTextureTexels</A>, <A HREF=mgReadImage.htm#mgReadImage>mgReadImage</A></DD></DL></BODY>
+
+</HTML>

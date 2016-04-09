@@ -1,0 +1,200 @@
+<HTML>
+<HEAD>
+<TITLE>ATTRIBUTEFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=ATTRIBUTEFUNC><H1>Attribute Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A> <TD><A HREF=mgConvexHullBuilderClose.htm#mgConvexHullBuilderClose><B>mgConvexHullBuilderClose</B></A> (<A HREF=mgconvexhullbuilder.htm#mgconvexhullbuilder>mgconvexhullbuilder</A> <I>hullBuilder</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgConvexHullBuilderExpandCoord3d.htm#mgConvexHullBuilderExpandCoord3d><B>mgConvexHullBuilderExpandCoord3d</B></A> (<A HREF=mgconvexhullbuilder.htm#mgconvexhullbuilder>mgconvexhullbuilder</A> <I>hullBuilder</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>c</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgConvexHullGetTriangleCount.htm#mgConvexHullGetTriangleCount><B>mgConvexHullGetTriangleCount</B></A> (<A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A> <I>hull</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgConvexHullGetTriangleNth.htm#mgConvexHullGetTriangleNth><B>mgConvexHullGetTriangleNth</B></A> (<A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A> <I>hull</I>, int <I>nth</I>, <A HREF=mgconvexhulltriangle.htm#mgconvexhulltriangle>mgconvexhulltriangle*</A> <I>triangle</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgDeleteComment.htm#mgDeleteComment><B>mgDeleteComment</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeConvexHull.htm#mgFreeConvexHull><B>mgFreeConvexHull</B></A> (<A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A> <I>hull</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeConvexHullBuilder.htm#mgFreeConvexHullBuilder><B>mgFreeConvexHullBuilder</B></A> (<A HREF=mgconvexhullbuilder.htm#mgconvexhullbuilder>mgconvexhullbuilder</A> <I>hullBuilder</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetAttBuf.htm#mgGetAttBuf><B>mgGetAttBuf</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>fcode</I>, void* <I>buf</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetAttList.htm#mgGetAttList><B>mgGetAttList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=#></A> <I>< attrCode ></I>, <A HREF=#></A> <I>< attrValAddr ></I>, <A HREF=#></A> <I>...</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetAttRec.htm#mgGetAttRec><B>mgGetAttRec</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>recOut</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetBounds.htm#mgGetBounds><B>mgGetBounds</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetBoundsForRecList.htm#mgGetBoundsForRecList><B>mgGetBoundsForRecList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>list</I>, <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetBoundsForSelect.htm#mgGetBoundsForSelect><B>mgGetBoundsForSelect</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetColorRGBA.htm#mgGetColorRGBA><B>mgGetColorRGBA</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>colorRGBACode</I>, float* <I>red</I>, float* <I>green</I>, float* <I>blue</I>, float* <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetComment.htm#mgGetComment><B>mgGetComment</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A> <TD><A HREF=mgGetConvexHull.htm#mgGetConvexHull><B>mgGetConvexHull</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCoord2i.htm#mgGetCoord2i><B>mgGetCoord2i</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, int* <I>x</I>, int* <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCoord3d.htm#mgGetCoord3d><B>mgGetCoord3d</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, double* <I>x</I>, double* <I>y</I>, double* <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCoord3f.htm#mgGetCoord3f><B>mgGetCoord3f</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, float* <I>x</I>, float* <I>y</I>, float* <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetExtRec.htm#mgGetExtRec><B>mgGetExtRec</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetMatrix.htm#mgGetMatrix><B>mgGetMatrix</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>matrixCode</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetMatTextureLayer.htm#mgGetMatTextureLayer><B>mgGetMatTextureLayer</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>matTextureCode</I>, int* <I>textureIndex</I>, int* <I>textureLayer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetName.htm#mgGetName><B>mgGetName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetNormColor.htm#mgGetNormColor><B>mgGetNormColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>normColorCode</I>, float* <I>red</I>, float* <I>green</I>, float* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetPlane.htm#mgGetPlane><B>mgGetPlane</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>planeCode</I>, double* <I>a</I>, double* <I>b</I>, double* <I>c</I>, double* <I>d</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetPolyAltColorName.htm#mgGetPolyAltColorName><B>mgGetPolyAltColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetPolyAltColorRGB.htm#mgGetPolyAltColorRGB><B>mgGetPolyAltColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetPolyColorName.htm#mgGetPolyColorName><B>mgGetPolyColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetPolyColorRGB.htm#mgGetPolyColorRGB><B>mgGetPolyColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetPolyNormal.htm#mgGetPolyNormal><B>mgGetPolyNormal</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, double* <I>i</I>, double* <I>j</I>, double* <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetTextString.htm#mgGetTextString><B>mgGetTextString</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void* <TD><A HREF=mgGetUserData.htm#mgGetUserData><B>mgGetUserData</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVector.htm#mgGetVector><B>mgGetVector</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>vectorCode</I>, float* <I>i</I>, float* <I>j</I>, float* <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVectord.htm#mgGetVectord><B>mgGetVectord</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>vectorCode</I>, double* <I>i</I>, double* <I>j</I>, double* <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVtxBackColorRGB.htm#mgGetVtxBackColorRGB><B>mgGetVtxBackColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetVtxColorName.htm#mgGetVtxColorName><B>mgGetVtxColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVtxColorRGB.htm#mgGetVtxColorRGB><B>mgGetVtxColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVtxColorRGBA.htm#mgGetVtxColorRGBA><B>mgGetVtxColorRGBA</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>, short* <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVtxCoord.htm#mgGetVtxCoord><B>mgGetVtxCoord</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, double* <I>x</I>, double* <I>y</I>, double* <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetVtxNormal.htm#mgGetVtxNormal><B>mgGetVtxNormal</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, float* <I>i</I>, float* <I>j</I>, float* <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgHasAtt.htm#mgHasAtt><B>mgHasAtt</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>parentRec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsPolyConcave.htm#mgIsPolyConcave><B>mgIsPolyConcave</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsPolyCoplanar.htm#mgIsPolyCoplanar><B>mgIsPolyCoplanar</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgconvexhullbuilder.htm#mgconvexhullbuilder>mgconvexhullbuilder</A> <TD><A HREF=mgNewConvexHullBuilder.htm#mgNewConvexHullBuilder><B>mgNewConvexHullBuilder</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgRecDeleteProperty.htm#mgRecDeleteProperty><B>mgRecDeleteProperty</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>pluginTool</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A> <I>propName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A> <TD><A HREF=mgRecGetProperty.htm#mgRecGetProperty><B>mgRecGetProperty</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>pluginTool</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A> <I>propName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgRecPutProperty.htm#mgRecPutProperty><B>mgRecPutProperty</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>pluginTool</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A> <I>propName</I>, <A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A> <I>propValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgRemoveVtxNormal.htm#mgRemoveVtxNormal><B>mgRemoveVtxNormal</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetAttBuf.htm#mgSetAttBuf><B>mgSetAttBuf</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>fcode</I>, void* <I>buf</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgSetAttList.htm#mgSetAttList><B>mgSetAttList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=#></A> <I>< attrCode ></I>, <A HREF=#></A> <I>< attrVal ></I>, <A HREF=#></A> <I>...</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetColorRGBA.htm#mgSetColorRGBA><B>mgSetColorRGBA</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>colorRgbaCode</I>, float <I>red</I>, float <I>green</I>, float <I>blue</I>, float <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetComment.htm#mgSetComment><B>mgSetComment</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const char* <I>comment</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCoord2i.htm#mgSetCoord2i><B>mgSetCoord2i</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, int <I>x</I>, int <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCoord3d.htm#mgSetCoord3d><B>mgSetCoord3d</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCoord3f.htm#mgSetCoord3f><B>mgSetCoord3f</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, float <I>x</I>, float <I>y</I>, float <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetMatrix.htm#mgSetMatrix><B>mgSetMatrix</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>matrixCode</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetMatTextureLayer.htm#mgSetMatTextureLayer><B>mgSetMatTextureLayer</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>matTextureCode</I>, int <I>textureIndex</I>, int <I>textureLayer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetName.htm#mgSetName><B>mgSetName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetNameUnique.htm#mgSetNameUnique><B>mgSetNameUnique</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetNormColor.htm#mgSetNormColor><B>mgSetNormColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>normColorCode</I>, float <I>red</I>, float <I>green</I>, float <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPlane.htm#mgSetPlane><B>mgSetPlane</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>, double <I>a</I>, double <I>b</I>, double <I>c</I>, double <I>d</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyAltColorName.htm#mgSetPolyAltColorName><B>mgSetPolyAltColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyAltColorRGB.htm#mgSetPolyAltColorRGB><B>mgSetPolyAltColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyColorName.htm#mgSetPolyColorName><B>mgSetPolyColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyColorRGB.htm#mgSetPolyColorRGB><B>mgSetPolyColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyCurrentAltColor.htm#mgSetPolyCurrentAltColor><B>mgSetPolyCurrentAltColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyCurrentColor.htm#mgSetPolyCurrentColor><B>mgSetPolyCurrentColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyCurrentMaterial.htm#mgSetPolyCurrentMaterial><B>mgSetPolyCurrentMaterial</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyCurrentShader.htm#mgSetPolyCurrentShader><B>mgSetPolyCurrentShader</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyCurrentTexture.htm#mgSetPolyCurrentTexture><B>mgSetPolyCurrentTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>layer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPolyCurrentTextureMapping.htm#mgSetPolyCurrentTextureMapping><B>mgSetPolyCurrentTextureMapping</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, int <I>layer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgSetTextString.htm#mgSetTextString><B>mgSetTextString</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetUserData.htm#mgSetUserData><B>mgSetUserData</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, void* <I>ptr</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVector.htm#mgSetVector><B>mgSetVector</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>vectorCode</I>, float <I>i</I>, float <I>j</I>, float <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVectord.htm#mgSetVectord><B>mgSetVectord</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>vectorCode</I>, double <I>i</I>, double <I>j</I>, double <I>k</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVtxBackColorRGB.htm#mgSetVtxBackColorRGB><B>mgSetVtxBackColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVtxColorName.htm#mgSetVtxColorName><B>mgSetVtxColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVtxColorRGB.htm#mgSetVtxColorRGB><B>mgSetVtxColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVtxColorRGBA.htm#mgSetVtxColorRGBA><B>mgSetVtxColorRGBA</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>vtx</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>, short <I>alpha</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVtxCoord.htm#mgSetVtxCoord><B>mgSetVtxCoord</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetVtxNormal.htm#mgSetVtxNormal><B>mgSetVtxNormal</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, float <I>i</I>, float <I>j</I>, float <I>k</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

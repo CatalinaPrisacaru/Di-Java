@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<TITLE>mgPromptDialogFolder</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPromptDialogFolder><H1 CLASS="APISYMBOL">mgPromptDialogFolder</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPromptDialogFolder</B> - prompts the user to select a 
+folder using a standard folder browser.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgPromptDialogFolder</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>title</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>initialFolderName</I>,</TD></TR>
+<TR><TD></TD><TD>char**</TD><TD><I>selectedFolderName</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, selectedFolderName <B>mgPromptDialogFolder</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>title</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>initialFolderName</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPromptDialogFolder</B> displays a modal dialog in which the 
+user is prompted to select a folder.</P></DD><DD><P>The dialog displays the directory structure using a tree control and 
+three push button controls - OK, Cancel and New Folder.  The tree control is 
+used to select the directory.  The initial folder selected in the tree control 
+is specified through the parameter <I>initialFolderName</I>.  The OK and Cancel 
+buttons are used to accept and cancel the selected folder, respectively, and 
+dismiss the dialog.  The New Folder button is used to create a new folder 
+below the currently selected folder in the dialog.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The dialog is created as a child of the specified dialog <I>parent</I>. 
+If you specify <I>parent</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the Creator main window.  If function is successful, the 
+output parameter <I>selectedFolderName</I> contains the corresponding 
+folder name, otherwise <I>selectedFolderName</I> is undefined. 
+The string returned for <I>selectedFolderName</I> 
+is dynamically allocated and must be deallocated by the caller when it 
+is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window. It is not necessary to free the string 
+returned for <I>selectedFolderName</I> in Python.</P></DD><DD><P>If function is successful, the selected folder is returned. Otherwise 
+<I>selectedFolderName</I> will be <B>None</B>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the prompt dialog</DD><DT><I>title</I></DT><DD>the title string for the dialog</DD><DT><I>initialFolderName</I></DT><DD>the initial folder that the user wants to go to</DD><DT><I>selectedFolderName</I></DT><DD>on selection and choosing OK button, this parameter 
+contains the selected folder name</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.  Success 
+indicates that the folder selected was a valid folder&#32and the user dismissed 
+the dialog using the OK push button.</DD><DT>selectedFolderName</DT><DD>If function is successful, 
+contains the folder selected by the user.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) illustrate the 
+use of <B>mgPromptDialogFolder</B> with the initial folder 'C:/gallery/models'.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">char* selectedFolder;
+mgstatus status;
+
+status = mgPromptDialogFolder (
+   parent, "Choose Folder",
+   "C:/gallery/models" &selectedFolder);
+
+if (MSTAT_ISOK (status)) {
+   printf ("Selected Folder: %s", selectedFolder);
+   // free allocated memory when done with folder
+   mgFree (selectedFolder);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">outs = mgPromptDialogFolder (None,
+&#32 "Choose Folder",
+&#32 "C:/gallery/models")
+
+status = outs[0]
+if (MSTAT_ISOK (status)):
+   selectedFolder = outs[1]
+   print "Selected Folder:",selectedFolder</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>, <A HREF=mgPromptDialogTexture.htm#mgPromptDialogTexture>mgPromptDialogTexture</A></DD></DL></BODY>
+
+</HTML>

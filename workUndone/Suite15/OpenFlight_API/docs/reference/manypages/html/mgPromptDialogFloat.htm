@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>mgPromptDialogFloat</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPromptDialogFloat><H1 CLASS="APISYMBOL">mgPromptDialogFloat</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPromptDialogFloat</B> - prompts the user to enter single 
+precision floating point value.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgPromptDialogFloat</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>messageText</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>value</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, number <B>mgPromptDialogFloat</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>messageText</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>value</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPromptDialogFloat</B> displays a modal dialog in which the 
+user is asked to enter a single precision floating point value.</P></DD><DD><P>The dialog displays a text message and contain a text control as well 
+as two push button controls - OK and Cancel.  The text control is used 
+to enter the numeric value.  The initial value displayed in the text control 
+is the numeric value contained in the parameter <I>value</I>. 
+The OK and Cancel push button controls are used to dismiss the dialog.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The dialog is created as a child of the specified dialog <I>parent</I>. 
+If you specify <I>parent</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the Creator main window.  If the user enters a valid numeric 
+value and chooses the OK button to dismiss the dialog, the value is returned 
+in the parameter <I>value</I>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window.  If the user enters a valid numeric 
+value and chooses the OK button to dismiss the dialog, the value is returned.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the prompt dialog</DD><DT><I>messageText</I></DT><DD>a text string that is displayed in the dialog 
+as a message to the user</DD><DT><I>value</I></DT><DD>on input, the address of the initial float 
+value to display in the text control, on output 
+receives the float value entered</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success. 
+Success indicates that the value entered was a valid floating point value 
+and the user dismissed the dialog using the OK push button.</DD><DT>number</DT><DD>If function is successful, contains the number entered by the user.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) prompt the user to enter 
+a single precision floating point number (default value 3.0).</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">float number = 3.0f;
+mgstatus status = mgPromptDialogFloat (MG_NULL, "Enter Number", &number);
+if (MSTAT_ISOK (status)) {
+   printf ("Number: %f", number);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">status,number = mgPromptDialogFloat (None, "Enter Number", 3.0)
+if (MSTAT_ISOK (status)):
+   print "Number:", number</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPromptDialogString.htm#mgPromptDialogString>mgPromptDialogString</A>, <A HREF=mgPromptDialogInteger.htm#mgPromptDialogInteger>mgPromptDialogInteger</A>, <A HREF=mgPromptDialogDouble.htm#mgPromptDialogDouble>mgPromptDialogDouble</A></DD></DL></BODY>
+
+</HTML>

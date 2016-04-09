@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgIsDbUntitled</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgIsDbUntitled><H1 CLASS="APISYMBOL">mgIsDbUntitled</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgIsDbUntitled</B> - checks if a database has a valid name.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgIsDbUntitled</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgIsDbUntitled</B> determines whether the database <I>db</I> has yet 
+been "named".  In Creator, when a user creates a new database, it does not 
+have a valid name until it has been saved to disk.</P></DD><DD><P>Prior to being saved, the name of the database (returned by 
+<A HREF=mgRec2Filename.htm#mgRec2Filename>mgRec2Filename</A>) is a "temporary" one and should not be used for 
+locating relative textures, external references, and shaders.  Only after a 
+database has been saved to an explicit file will its name be valid.</P></DD><DD><P>Note: This function is only applicable in the Creator modeler environment. 
+Since databases in the stand-alone application environment are always explicitly 
+named, this function will always return <A HREF=mgbool.htm#mgbool>MG_FALSE</A> when called by a 
+stand-alone application.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to check</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the specified database has not yet 
+been named, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.  This function will also return 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> if <I>db</I> is not a valid database node.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRec2Filename.htm#mgRec2Filename>mgRec2Filename</A>, <A HREF=mgIsDbModified.htm#mgIsDbModified>mgIsDbModified</A>, <A HREF=mgIsFileOnDesktop.htm#mgIsFileOnDesktop>mgIsFileOnDesktop</A></DD></DL></BODY>
+
+</HTML>

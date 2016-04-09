@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetConvexHull</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetConvexHull><H1 CLASS="APISYMBOL">mgGetConvexHull</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetConvexHull</B> - builds and returns a convex hull 
+object around a node record.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgconvexhull <B>mgGetConvexHull</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>node</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetConvexHull</B> builds a convex hull object surrounding <I>node</I>. 
+The convex hull is composed of a set of triangles that form an object that 
+completely "envelops" the geometry of the <I>node</I>.</P></DD><DD><P>Use the function <A HREF=mgConvexHullGetTriangleCount.htm#mgConvexHullGetTriangleCount>mgConvexHullGetTriangleCount</A> to query the convex 
+hull for the number of triangles it contains.  Use <A HREF=mgConvexHullGetTriangleNth.htm#mgConvexHullGetTriangleNth>mgConvexHullGetTriangleNth</A> 
+to get each of these triangles.</P></DD><DD><P>Use the function <A HREF=mgFreeConvexHull.htm#mgFreeConvexHull>mgFreeConvexHull</A> to dispose of the convex hull 
+object when you are through using it.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>node</I></DT><DD>the node to build convex hull for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the convex hull object if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how to build and examine a convex hull 
+for the a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+ node <I>groupRec</I>.</DT><DT><PRE CLASS="EXAMPLE">// calculate the hull around the group node
+int numTriangles, i;
+mgconvexhull hull = mgGetConvexHull (groupRec);
+if (hull)
+{
+   // get the number of triangles in the convex hull
+   int numTriangles = mgConvexHullGetTriangleCount (hull);
+
+   if (numTriangles &gt 0)
+   {
+
+      // loop over each triangle in the convex hull
+      // remember, first triangle is index 1
+      for (i = 1; i &lt= numTriangles; ++i)
+      {
+&#32 mgconvexhulltriangle triangle;
+&#32 if (mgConvexHullGetTriangleNth (hull, i, &triangle) == MG_TRUE)
+&#32 {
+&#32    // triangle contains the ith triangle of the hull
+&#32 }
+      }
+   }
+   mgFreeConvexHull (hull);      // must free it to avoid a memory leak
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgConvexHullGetTriangleCount.htm#mgConvexHullGetTriangleCount>mgConvexHullGetTriangleCount</A>, <A HREF=mgConvexHullGetTriangleNth.htm#mgConvexHullGetTriangleNth>mgConvexHullGetTriangleNth</A>, 
+<A HREF=mgFreeConvexHull.htm#mgFreeConvexHull>mgFreeConvexHull</A>, <A HREF=mgNewConvexHullBuilder.htm#mgNewConvexHullBuilder>mgNewConvexHullBuilder</A></DD></DL></BODY>
+
+</HTML>

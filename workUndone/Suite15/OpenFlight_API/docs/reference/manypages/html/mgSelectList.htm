@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgSelectList</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSelectList><H1 CLASS="APISYMBOL">mgSelectList</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSelectList</B> - selects all node in a record list.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgSelectList</B> (</TD><TD><A HREF=mgreclist.htm#mgreclist>mgreclist</A></TD><TD><I>list</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSelectList</B> selects all nodes in <I>list</I>.  Any node that was 
+currently selected remains selected.  If you want only the nodes in <I>list</I> 
+to be selected, call <A HREF=mgDeselectAll.htm#mgDeselectAll>mgDeselectAll</A> before calling <B>mgSelectList</B>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>list</I></DT><DD>the record list containg the nodes to select</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSelectOne.htm#mgSelectOne>mgSelectOne</A>, <A HREF=mgSelectOneEx.htm#mgSelectOneEx>mgSelectOneEx</A>, <A HREF=mgSelectOneEdge.htm#mgSelectOneEdge>mgSelectOneEdge</A>, <A HREF=mgDeselectOne.htm#mgDeselectOne>mgDeselectOne</A>, 
+<A HREF=mgIsSelected.htm#mgIsSelected>mgIsSelected</A>, <A HREF=mgIsSelectedEdge.htm#mgIsSelectedEdge>mgIsSelectedEdge</A>, <A HREF=mgDeselectAll.htm#mgDeselectAll>mgDeselectAll</A></DD></DL></BODY>
+
+</HTML>

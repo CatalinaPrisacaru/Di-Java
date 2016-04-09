@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>mgPluginToolPrefSetString</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPluginToolPrefSetString><H1 CLASS="APISYMBOL">mgPluginToolPrefSetString</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPluginToolPrefSetString</B> - sets a string preference value 
+in the plug-in tool preferences.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgPluginToolPrefSetString</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>plugintool</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>prefName</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>prefValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPluginToolPrefSetString</B> stores a string value for a 
+named preference key, <I>prefName</I> for <I>pluginTool</I>. 
+If the key <I>prefName</I> does not exist for the <I>pluginTool</I>, it 
+is created with a value of <I>prefValue</I>.</P></DD><DD><P>Preference keys created using this function are stored relative 
+to the individual plug-in tools within the plug-in library, and are 
+separate from the keys used for entire plug-in library.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugintool</I></DT><DD>the plug-in tool handle</DD><DT><I>prefName</I></DT><DD>the preference key name</DD><DT><I>prefValue</I></DT><DD>value to store for <I>prefName</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPluginToolPrefGetString.htm#mgPluginToolPrefGetString>mgPluginToolPrefGetString</A>, <A HREF=mgPluginPrefSetString.htm#mgPluginPrefSetString>mgPluginPrefSetString</A></DD></DL></BODY>
+
+</HTML>

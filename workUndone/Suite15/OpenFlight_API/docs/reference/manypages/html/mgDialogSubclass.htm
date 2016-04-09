@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>mgDialogSubclass</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgDialogSubclass><H1 CLASS="APISYMBOL">mgDialogSubclass</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgDialogSubclass</B> - sets the Windows dialog function for a dialog<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgDialogSubclass</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>gui</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgguiwindowfunc.htm#mgguiwindowfunc>mgguiwindowfunc</A></TD><TD><I>dialogProc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgDialogSubclass</B> allows you to "subclass" the Windows dialog associated 
+with a plug-in dialog.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>gui</I></DT><DD>the control whose window procedure is to be set</DD><DT><I>dialogProc</I></DT><DD>the dialog procedure</DD><DT><I>userData</I></DT><DD>user data to be passed to window procedurewhen it is called</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how you might subclass a plug-in dialog. 
+It includes some common Windows messages that might be sent to the Windows 
+dialog.</DT><DT><PRE CLASS="EXAMPLE">static int MyDialogFunc (mggui dialog, mgcontrolid controlId,
+&#32       mgguihandle hDlg, int msg, int wParam, mgsize_t lParam,
+&#32       void* dialogProc, void* userData)
+{
+   mydata* myData = (mydata*) userData;
+   int answer;
+
+   // here are some common messages that are sent to dialogs that you
+   // might want to handle - see Windows documentation for complete list
+
+   switch (msg) {
+   case WM_LBUTTONDOWN:
+      break;
+   case WM_LBUTTONUP:
+      break;
+   case WM_MOUSEMOVE:
+      break;
+   case WM_COMMAND:
+      break;
+   case WM_SIZE:
+      break;
+   case WM_PAINT:
+      break;
+   case WM_CLOSE:
+      // verify user  really wantS to close
+      answer = mgMessageDialog (dialog, "Warning",
+&#32    "Do you really want to close?",
+&#32    MMBX_QUESTION|MMBX_YESNOCANCEL);
+      // if user cancels, return 0 so window is not close
+      if (answer != 1) return 0;
+      break;
+   case WM_DESTROY:
+      break;
+   case WM_NOTIFY:
+      break;
+   }
+   // if our function did not handle the message, call Creator's Dialog function
+   return CallWindowProc ((WNDPROC) dialogProc, (HWND)hDlg, (UINT)msg, (WPARAM)wParam, (LPARAM)lParam);
+}
+
+static void InitDialog (mggui dialog, mydata* myData)
+{
+   mgControlSubclass (dialog, MyDialogFunc, myData);
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetGuiHandle.htm#mgGetGuiHandle>mgGetGuiHandle</A>, <A HREF=mgControlSubclass.htm#mgControlSubclass>mgControlSubclass</A></DD></DL></BODY>
+
+</HTML>

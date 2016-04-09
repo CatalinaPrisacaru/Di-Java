@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>mgMessageDialog</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMessageDialog><H1 CLASS="APISYMBOL">mgMessageDialog</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMessageDialog</B> - displays modal message dialog.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgMessageDialog</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>title</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>messageText</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>flags</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgMessageDialog</B> displays a modal dialog that contains a text 
+message, an icon and any combination of push button controls. You 
+specify which icon and which combination of push buttons 
+using the parameter <I>flags</I>.  The value of <I>flags</I> is the bitwise 
+combination of masks as described here.</P></DD><DD><P>Choose one mask from the following group 
+to specify which icon to display.</P></DD><DD><P><A HREF=MMBX_STATUS.htm#MMBX_STATUS>MMBX_STATUS</A> displays an informational icon (lower case i in a circle). 
+<BR><A HREF=MMBX_WARNING.htm#MMBX_WARNING>MMBX_WARNING</A> displays a warning icon (exclamation point). 
+<BR><A HREF=MMBX_ERROR.htm#MMBX_ERROR>MMBX_ERROR</A> displays a warning icon (stop sign). 
+<BR><A HREF=MMBX_QUESTION.htm#MMBX_QUESTION>MMBX_QUESTION</A> displays a warning icon (question mark).</P></DD><DD><P>Choose one mask from the following group to specify which 
+combination of push buttons to display.</P></DD><DD><P><A HREF=MMBX_OK.htm#MMBX_OK>MMBX_OK</A> displays a single button "OK". 
+<BR><A HREF=MMBX_OKCANCEL.htm#MMBX_OKCANCEL>MMBX_OKCANCEL</A> displays two buttons "OK" and "Cancel". 
+<BR><A HREF=MMBX_YESNO.htm#MMBX_YESNO>MMBX_YESNO</A> displays two buttons "Yes" and "No". 
+<BR><A HREF=MMBX_YESNOCANCEL.htm#MMBX_YESNOCANCEL>MMBX_YESNOCANCEL</A> displays three buttons "Yes", "No" and "Cancel".</P></DD><DD><P>You must select one and only one mask from each group listed above.  If 
+you do not select a mask from each group or select more than one from either group, 
+the results are undefined.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The dialog is created as a child of the specified dialog <I>parent</I>. 
+If you specify <I>parent</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the Creator main window.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the prompt dialog</DD><DT><I>title</I></DT><DD>the title string for the dialog</DD><DT><I>messageText</I></DT><DD>the message text to display in the dialog</DD><DT><I>flags</I></DT><DD>flags to specify which icon and push button 
+controls to display in the dialog</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns integer value indicating which push button was pressed by the user 
+to dismiss the dialog.  The return value depends on the push button combination 
+you specified in the <I>flags</I> parameter. <BR>
+For <A HREF=MMBX_OK.htm#MMBX_OK>MMBX_OK</A>, the return value 
+is always 1 (OK).  <BR>
+For <A HREF=MMBX_OKCANCEL.htm#MMBX_OKCANCEL>MMBX_OKCANCEL</A>, the return value is 
+either 1 (OK) or 2 (Cancel).  <BR>
+For <A HREF=MMBX_YESNO.htm#MMBX_YESNO>MMBX_YESNO</A>, the return value 
+is either 1 (Yes) or 2 (No).  <BR>
+For <A HREF=MMBX_YESNOCANCEL.htm#MMBX_YESNOCANCEL>MMBX_YESNOCANCEL</A>, 
+the return value is either 1 (Yes), 2 (No), or 3 (Cancel).
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL></BODY>
+
+</HTML>

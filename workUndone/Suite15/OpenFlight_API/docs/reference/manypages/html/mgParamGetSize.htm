@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamGetSize</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamGetSize><H1 CLASS="APISYMBOL">mgParamGetSize</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamGetSize</B> - gets the current dimension of a 
+parameter in a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>unsigned int <B>mgParamGetSize</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamGetSize</B> gets the number of items currently contained in 
+the parameter named <I>paramValue</I> in the parameter block <I>paramBlock</I>.</P></DD><DD><P>When a parameter is defined, it is assigned a maximum dimension 
+which is the maximum number of items that the parameter can contain. 
+When a parameter is in use, it contains a certain number of parameters 
+at a specific time.  <B>mgParamGetSize</B> returns the number of values 
+currently contained in the parameter.</P></DD><DD><P>Note that <A HREF=mgParamGetDimension.htm#mgParamGetDimension>mgParamGetDimension</A> returns the maximum number of 
+values a parameter can contain and <B>mgParamGetSize</B> returns the number 
+of values a parameter currently does contain.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>paramBlock</I></DT><DD>the parameter block</DD><DT><I>paramName</I></DT><DD>the parameter name</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the current dimension of the parameter named <I>paramValue</I>. 
+This value is always 1 or greater for parameters that exist.  If the parameter 
+does not exist, this function will return 0.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how to get the values of an array 
+type parameter in a parameter block.</DT><DT><PRE CLASS="EXAMPLE">unsigned int i, numCoords;
+mgcoord3d coords;
+
+// "Coords" parameter is an array type, each element is double3
+// first, determine how many elements are in the parameter array
+numCoords = mgParamGetSize (paramBlock, "Coords");
+
+// then allocate space to receive the elements in the array
+coords = mgMalloc (numCoords * sizeof(mgcoord3d));
+
+// finally, loop through each element of the parameter array and
+// load its value into our allocated array
+for (i = 1; i &lt= numCoords; ++i) {
+   mgParamGetDouble3Nth (paramBlock, "Coords", i,
+      &coords[i].x, &coords[i].y, &coords[i].z,
+      0.0, 0.0, 0.0);
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL></BODY>
+
+</HTML>

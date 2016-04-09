@@ -1,0 +1,224 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MOUSEINPUTDIALOG DIALOG DISCARDABLE  0, 0, 208, 326
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mouse Input Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "None",DONOINPUT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    8,12,34,8
+    CONTROL         "3D Vertex",DOVERTEXINPUT,"Button",BS_AUTORADIOBUTTON,44,
+                    12,45,8
+    CONTROL         "2D Point",DOPOINTINPUT,"Button",BS_AUTORADIOBUTTON,91,
+                    12,40,8
+    CONTROL         "Device",DODEVICEINPUT,"Button",BS_AUTORADIOBUTTON,133,
+                    12,36,8
+    CONTROL         "Pick",DOPICKINPUT,"Button",BS_AUTORADIOBUTTON,171,12,30,
+                    8
+    CONTROL         "On Start",UPDATETRACKONSTART,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,130,43,10
+    CONTROL         "On Continue",UPDATETRACKONCONTINUE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,80,130,59,10
+    CONTROL         "On Stop",UPDATETRACKONSTOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,158,130,43,10
+    DEFPUSHBUTTON   "OK",MGID_OK,81,309,50,14
+    PUSHBUTTON      "Cancel",MGID_CANCEL,154,309,50,14
+    LTEXT           "x:",IDC_STATIC,13,88,8,8
+    LTEXT           "y:",IDC_STATIC,13,98,8,8
+    LTEXT           "z:",IDC_STATIC,13,108,8,8
+    LTEXT           "",FIRSTINPUTX_V,36,88,66,8
+    LTEXT           "",FIRSTINPUTY_V,36,98,66,8
+    LTEXT           "",FIRSTINPUTZ_V,36,108,66,8
+    LTEXT           "Mouse:",IDC_STATIC,11,44,24,8
+    LTEXT           "",MOUSESTATE_V,41,44,40,8
+    GROUPBOX        "Mouse Input",IDC_STATIC,4,2,200,22
+    LTEXT           "",REFSTATE,150,44,51,8
+    LTEXT           "Keyboard:",IDC_STATIC,110,53,33,8
+    LTEXT           "Buttons:",IDC_STATIC,11,53,27,8
+    LTEXT           "",BUTTONSTATE_V,41,53,37,8
+    LTEXT           "",KEYBOARDSTATE_V,150,53,51,8
+    LTEXT           "First Point",IDC_STATIC,36,76,32,8
+    LTEXT           "This Point",IDC_STATIC,123,76,32,8
+    LTEXT           "",INPUTX_V,123,88,66,8
+    LTEXT           "",INPUTY_V,123,98,66,8
+    LTEXT           "",INPUTZ_V,123,108,66,8
+    GROUPBOX        "Update Track Reference Point",IDC_STATIC,4,121,200,23
+    GROUPBOX        "Mouse/Keyboard States",IDC_STATIC,4,34,200,33
+    GROUPBOX        "Coordinates",IDC_STATIC,4,68,200,51
+    LTEXT           "Reference:",IDC_STATIC,110,44,36,8
+    LTEXT           "Mouse:",IDC_STATIC,9,165,24,8
+    LTEXT           "",MOUSESTATE_P,38,165,36,8
+    LTEXT           "Keyboard:",IDC_STATIC,133,165,31,8
+    LTEXT           "Buttons:",IDC_STATIC,77,165,27,8
+    LTEXT           "",BUTTONSTATE_P,107,165,22,8
+    LTEXT           "",KEYBOARDSTATE_P,170,165,33,8
+    GROUPBOX        "Mouse/Keyboard States",IDC_STATIC,4,154,200,23
+    LTEXT           "x:",IDC_STATIC,16,200,8,8
+    LTEXT           "y:",IDC_STATIC,16,210,8,8
+    LTEXT           "",FIRSTINPUTX_P,36,200,66,8
+    LTEXT           "",FIRSTINPUTY_P,36,210,66,8
+    LTEXT           "First Point",IDC_STATIC,36,187,32,8
+    LTEXT           "This Point",IDC_STATIC,123,187,32,8
+    LTEXT           "",INPUTX_P,123,200,66,8
+    LTEXT           "",INPUTY_P,123,210,66,8
+    GROUPBOX        "Coordinates",IDC_STATIC,4,178,200,44
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,6,197,
+                    197,1
+    CTEXT           "3D Vertex Input",IDC_STATIC,4,25,200,8
+    CTEXT           "2D Point Input",IDC_STATIC,4,146,200,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,6,85,
+                    197,1
+    LTEXT           "Pick Input",IDC_STATIC,29,228,35,8
+    LISTBOX         PICKLIST,110,226,94,53,LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "",NUMPICKED,29,241,48,8
+    LTEXT           "Keyboard:",IDC_STATIC,10,263,33,8
+    LTEXT           "Buttons:",IDC_STATIC,10,252,27,8
+    LTEXT           "",BUTTONSTATE_S,45,252,38,8
+    LTEXT           "",KEYBOARDSTATE_S,45,263,45,8
+    LTEXT           "Name:",IDC_STATIC,9,288,21,8
+    GROUPBOX        "Device State",IDC_STATIC,4,277,200,26
+    LTEXT           "",DEVICESTATE_D,35,288,46,8
+    LTEXT           "Button:",IDC_STATIC,89,288,23,8
+    LTEXT           "",BUTTONSTATE_D,116,288,12,8
+    LTEXT           "State:",IDC_STATIC,134,288,18,8
+    LTEXT           "",MOUSESTATE_D,155,288,41,8
+END
+
+CONSTRUCTIONDIALOG DIALOG DISCARDABLE  0, 0, 190, 295
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Construction Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Vertex",MAKEVERTEX,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,29,34,8
+    CONTROL         "Edge",MAKEEDGE,"Button",BS_AUTORADIOBUTTON,44,29,31,8
+    CONTROL         "Select New Constructions",SELECTNEW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,28,96,10
+    PUSHBUTTON      "Delete",DELETE_V,10,73,29,14
+    PUSHBUTTON      "Delete All",DELETEALL_V,41,73,35,14
+    CONTROL         "New",MAKENEW_V,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    117,70,39,10
+    CONTROL         "Modify Selected",MODIFYSELECTED_V,"Button",
+                    BS_AUTORADIOBUTTON,117,80,63,10
+    LISTBOX         VERTEXLIST,9,92,171,72,LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Delete",DELETE_E,10,188,29,14
+    PUSHBUTTON      "Delete All",DELETEALL_E,41,188,35,14
+    CONTROL         "New",MAKENEW_E,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    117,185,31,10
+    CONTROL         "Modify Selected",MODIFYSELECTED_E,"Button",
+                    BS_AUTORADIOBUTTON,117,195,64,10
+    PUSHBUTTON      "Cancel",MGID_CANCEL,136,278,50,14
+    DEFPUSHBUTTON   "OK",MGID_OK,80,278,50,14
+    GROUPBOX        "Construction Type",IDC_STATIC,4,18,182,40
+    GROUPBOX        "Construction Vertices",IDC_STATIC,4,61,182,112
+    LISTBOX         EDGELIST,9,206,171,66,LBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Construction Edges",IDC_STATIC,4,176,182,99
+    LTEXT           "Enter Construction Vertex",MGID_PROMPT,4,4,182,10,
+                    SS_SUNKEN
+    PUSHBUTTON      "Select",SELECT_V,78,73,35,14
+    PUSHBUTTON      "Select",SELECT_E,78,188,35,14
+    CONTROL         "Snap To Selected Construction Edge",SNAPLINE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,161,169,10
+    COMBOBOX        CONSTRUCTIONCOLORS,105,41,76,93,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Color for New Constructions:",IDC_STATIC,11,43,90,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    MOUSEINPUTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 204
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 323
+    END
+
+    CONSTRUCTIONDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 186
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 292
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

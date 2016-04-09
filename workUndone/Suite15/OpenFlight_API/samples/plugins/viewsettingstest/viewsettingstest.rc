@@ -1,0 +1,122 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIEWSETTINGS DIALOG DISCARDABLE  0, 0, 230, 304
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Graphics View Settings"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Graphics View Settings:",IDC_STATIC,5,8,76,8
+    CONTROL         "Set All",IDC_SETALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,94,9,36,8
+    PUSHBUTTON      "Update",IDC_UPDATE,141,5,40,14
+    PUSHBUTTON      "Close",IDC_CLOSE,185,5,40,14
+    LISTBOX         IDC_SETTINGLIST,5,24,220,189,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_SETTINGLABEL,5,220,137,8
+    EDITTEXT        IDC_SETTINGVALUE,148,217,77,14,ES_AUTOHSCROLL
+    GROUPBOX        "Grid",IDC_GRIDBOX,5,233,220,66
+    CTEXT           "Origin",IDC_ORIGINLABEL,23,243,64,8
+    CTEXT           "X Axis",IDC_XAXISLABEL,91,243,64,8
+    CTEXT           "Third",IDC_THIRDLABEL,160,243,64,8
+    RTEXT           "X:",IDC_XLABEL,10,256,8,8
+    EDITTEXT        IDC_ORIGINX,23,254,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORIGINY,23,268,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ORIGINZ,23,282,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_XAXISX,91,254,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_XAXISY,91,268,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_XAXISZ,91,282,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_THIRDX,160,254,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_THIRDY,160,268,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_THIRDZ,160,282,64,12,ES_AUTOHSCROLL
+    RTEXT           "Y:",IDC_YLABEL,10,270,8,8
+    RTEXT           "Z:",IDC_ZLABEL,10,284,8,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_VIEWSETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 225
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 299
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

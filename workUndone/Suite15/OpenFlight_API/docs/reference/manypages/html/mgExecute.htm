@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<TITLE>mgExecute</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExecute><H1 CLASS="APISYMBOL">mgExecute</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExecute</B> - executes a Creator command.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgExecute</B> (</TD><TD>const char*</TD><TD><I>toolName</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>params</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExecute</B> executes a Creator command.</P></DD><DD><P>This function allows your plug-in tool or OpenFlight Script to 
+execute tools in the Creator modeler environment.</P></DD><DD><P>Note: This function is not available in the stand-alone application 
+environment.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>toolName</I></DT><DD>the Creator command to execute</DD><DT><I>params</I></DT><DD>the parameters to pass to the command</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how you might use 
+<B>mgExecute</B> to execute the Creator Tool <B>Calculate Shading</B> :</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// create a parameter block for the Calculate Shading command
+// the parameter block is initialized with default values
+mgparamblock paramBlock = mgGetParamBlock ("Calculate Shading");
+
+// set the values for each parameter in the block
+mgParamSetDouble (paramBlock, "Angular Tolerance", 89.0);
+mgParamSetDouble (paramBlock, "Sampling Tolerance", 0.01);
+mgParamSetString (paramBlock, "Shading Model", "Lit");
+mgParamSetBool (paramBlock, "Triangle Area Weighting", MG_FALSE);
+mgParamSetBool (paramBlock, "Update Vertex Colors", MG_TRUE);
+mgParamSetBool (paramBlock, "Update Vertex Normals", MG_TRUE);
+mgParamSetBool (paramBlock, "Use Face Color Intensities", MG_TRUE);
+
+// execute the Calculate Shading command using the parameters set
+mgExecute ("Calculate Shading", paramBlock);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># create a parameter block for the Calculate Shading command
+# the parameter block is initialized with default values
+paramBlock = mgGetParamBlock ("Calculate Shading")
+
+# set the values for each parameter in the block
+mgParamSetDouble (paramBlock, "Angular Tolerance", 89.0)
+mgParamSetDouble (paramBlock, "Sampling Tolerance", 0.01)
+mgParamSetString (paramBlock, "Shading Model", "Lit")
+mgParamSetBool (paramBlock, "Triangle Area Weighting", MG_FALSE)
+mgParamSetBool (paramBlock, "Update Vertex Colors", MG_TRUE)
+mgParamSetBool (paramBlock, "Update Vertex Normals", MG_TRUE)
+mgParamSetBool (paramBlock, "Use Face Color Intensities", MG_TRUE)
+
+# execute the Calculate Shading command using the parameters set
+mgExecute ("Calculate Shading", paramBlock)</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetParamBlock.htm#mgGetParamBlock>mgGetParamBlock</A>, <A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A>, <A HREF=mgFreeParamBlock.htm#mgFreeParamBlock>mgFreeParamBlock</A>, 
+<A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A>, <A HREF=mgParamSetDouble.htm#mgParamSetDouble>mgParamSetDouble</A>, <A HREF=mgParamSetFloat.htm#mgParamSetFloat>mgParamSetFloat</A>, 
+<A HREF=mgParamSetBool.htm#mgParamSetBool>mgParamSetBool</A>, <A HREF=mgParamSetString.htm#mgParamSetString>mgParamSetString</A></DD></DL></BODY>
+
+</HTML>

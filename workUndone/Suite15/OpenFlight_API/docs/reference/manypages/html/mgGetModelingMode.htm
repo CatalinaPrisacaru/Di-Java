@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetModelingMode</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetModelingMode><H1 CLASS="APISYMBOL">mgGetModelingMode</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetModelingMode</B> - returns current modeling mode.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgcode <B>mgGetModelingMode</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetModelingMode</B> returns the current modeling mode 
+for the specified database <I>db</I>.</P></DD><DD><P>Note that the edge modeling mode is a special case of vertex mode. 
+Since there is no "edge" type in OpenFlight, you must interpret the return 
+value of this function carefully to differentiate between vertex and edge 
+mode. In both vertex and edge modes, this function will return <B>fltVertex</B>. 
+To know if the modeling mode is really edge mode, call <A HREF=mgIsModelingModeEdge.htm#mgIsModelingModeEdge>mgIsModelingModeEdge</A>. 
+It will return <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the modeling mode is really edge, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> if the modeling mode is truly vertex.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to get modeling mode for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns current modeling mode for database if valid, 0 (zero) otherwise.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to use this 
+function for different modeling modes:</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgcode mode;
+
+mode = mgGetModelingMode (db);
+if (mode == fltGroup) {
+   printf ("modeling mode is group&#92;n");
+}
+else if (mode == fltVertex) {
+   // modeling mode is vertex OR edge
+   mgbool isEdge = mgIsModelingModeEdge (db);
+   if (isEdge == MG_TRUE) {
+      printf ("modeling mode is edge&#92;n")
+   }
+   else {
+      printf ("modeling mode is really vertex&#92;n")
+   }
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mode = mgGetModelingMode (db)
+if (mode == fltGroup):
+   print "modeling mode is group"
+elif (mode == fltVertex:
+   # modeling mode is vertex OR edge
+   isEdge = mgIsModelingModeEdge (db)
+   if (isEdge == MG_TRUE):
+      print "modeling mode is edge"
+   else:
+      print "modeling mode is really vertex"</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetActivationDb.htm#mgGetActivationDb>mgGetActivationDb</A>, 
+<A HREF=mgSetModelingMode.htm#mgSetModelingMode>mgSetModelingMode</A>, <A HREF=mgIsModelingModeEdge.htm#mgIsModelingModeEdge>mgIsModelingModeEdge</A>, <A HREF=mgSetModelingModeEdge.htm#mgSetModelingModeEdge>mgSetModelingModeEdge</A>, 
+<A HREF=mgGetModelingParent.htm#mgGetModelingParent>mgGetModelingParent</A>, <A HREF=mgGetModelingParentMatrix.htm#mgGetModelingParentMatrix>mgGetModelingParentMatrix</A>, <A HREF=mgGetDefaultModelingParent.htm#mgGetDefaultModelingParent>mgGetDefaultModelingParent</A>, 
+<A HREF=mgSetModelingParent.htm#mgSetModelingParent>mgSetModelingParent</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>GENERALCONTROLFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=GENERALCONTROLFUNC><H1>General Controls</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgClearCaption.htm#mgClearCaption><B>mgClearCaption</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgControlSetAttribute.htm#mgControlSetAttribute><B>mgControlSetAttribute</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, <A HREF=mgcontrolattribute.htm#mgcontrolattribute>mgcontrolattribute</A> <I>controlAttr</I>, int <I>attrValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgControlSubclass.htm#mgControlSubclass><B>mgControlSubclass</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, <A HREF=mgguiwindowfunc.htm#mgguiwindowfunc>mgguiwindowfunc</A> <I>windowProc</I>, void* <I>userData</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mggui.htm#mggui>mggui</A> <TD><A HREF=mgFindGuiById.htm#mgFindGuiById><B>mgFindGuiById</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, <A HREF=mgcontrolid.htm#mgcontrolid>mgcontrolid</A> <I>controlId</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGetCaption.htm#mgGetCaption><B>mgGetCaption</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, char* <I>string</I>, int <I>maxLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgGuiDeleteProperty.htm#mgGuiDeleteProperty><B>mgGuiDeleteProperty</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A> <I>propName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcontrolid.htm#mgcontrolid>mgcontrolid</A> <TD><A HREF=mgGuiGetId.htm#mgGuiGetId><B>mgGuiGetId</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGuiGetPos.htm#mgGuiGetPos><B>mgGuiGetPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, int* <I>left</I>, int* <I>top</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A> <TD><A HREF=mgGuiGetProperty.htm#mgGuiGetProperty><B>mgGuiGetProperty</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A> <I>propName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGuiGetSize.htm#mgGuiGetSize><B>mgGuiGetSize</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, int* <I>width</I>, int* <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGuiGetViewSize.htm#mgGuiGetViewSize><B>mgGuiGetViewSize</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, int* <I>width</I>, int* <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGuiPutProperty.htm#mgGuiPutProperty><B>mgGuiPutProperty</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A> <I>propName</I>, <A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A> <I>propValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGuiSetFixedFont.htm#mgGuiSetFixedFont><B>mgGuiSetFixedFont</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGuiSetPos.htm#mgGuiSetPos><B>mgGuiSetPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, int <I>left</I>, int <I>top</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGuiSetSize.htm#mgGuiSetSize><B>mgGuiSetSize</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>gui</I>, int <I>width</I>, int <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsEnabled.htm#mgIsEnabled><B>mgIsEnabled</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsVisible.htm#mgIsVisible><B>mgIsVisible</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetCaption.htm#mgSetCaption><B>mgSetCaption</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>string</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetEnabled.htm#mgSetEnabled><B>mgSetEnabled</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>enabled</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetFocus.htm#mgSetFocus><B>mgSetFocus</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetGuiCallback.htm#mgSetGuiCallback><B>mgSetGuiCallback</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, unsigned int <I>callbackMask</I>, <A HREF=mgguifunc.htm#mgguifunc>mgguifunc</A> <I>callback</I>, void* <I>userData</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetPixmap.htm#mgSetPixmap><B>mgSetPixmap</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, <A HREF=mgpixmap.htm#mgpixmap>mgpixmap</A> <I>pixmap</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetVisible.htm#mgSetVisible><B>mgSetVisible</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>visible</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

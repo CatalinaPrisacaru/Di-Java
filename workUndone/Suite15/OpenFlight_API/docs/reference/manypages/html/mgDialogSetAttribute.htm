@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>mgDialogSetAttribute</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgDialogSetAttribute><H1 CLASS="APISYMBOL">mgDialogSetAttribute</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgDialogSetAttribute</B> - sets the attribute values of a dialog.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgDialogSetAttribute</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>dialog</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgdialogattribute.htm#mgdialogattribute>mgdialogattribute</A></TD><TD><I>dialogAttr</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>attrValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgDialogSetAttribute</B> sets the specified dialog attribute <I>dialogAttr</I> 
+for the <I>dialog</I> to the specified value <I>attrValue</I>.</P></DD><DD><P>Dialog attributes define how dialogs behave in different situations. 
+The dialog attributes and a brief description of each are listed below. 
+These are the possible values for  <I>dialogAttr</I>.  For more information 
+on the meaning of each attribute, see the description of that particular 
+attribute.</P></DD><DD><P><A HREF=mgdialogattribute.htm#mgdialogattribute>MDA_RESIZEWIDTH</A> - specifies whether or not the 
+dialog's width can be resized.</P></DD><DD><P><A HREF=mgdialogattribute.htm#mgdialogattribute>MDA_RESIZEHEIGHT</A> - specifies whether or not the 
+dialog's height can be resized.</P></DD><DD><P><A HREF=mgdialogattribute.htm#mgdialogattribute>MDA_MINWIDTH</A> - specifies the minimum width 
+the dialog can be sized.</P></DD><DD><P><A HREF=mgdialogattribute.htm#mgdialogattribute>MDA_MAXWIDTH</A> - specifies the maximum width 
+the dialog can be sized.</P></DD><DD><P><A HREF=mgdialogattribute.htm#mgdialogattribute>MDA_MINHEIGHT</A> - specifies the minimum height 
+the dialog can be sized.</P></DD><DD><P><A HREF=mgdialogattribute.htm#mgdialogattribute>MDA_MAXHEIGHT</A> - specifies the maximum height 
+the dialog can be sized.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>dialog</I></DT><DD>the dialog whose attribute is to be set</DD><DT><I>dialogAttr</I></DT><DD>the dialog attribute to set</DD><DT><I>attrValue</I></DT><DD>the value to which the attribute is set</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example sets the minimum size the user can resize a 
+dialog to be its current dimentions.  This would be done, most likely, 
+when the <A HREF=MGCB_INIT.htm#MGCB_INIT>MGCB_INIT</A> dialog event is handled by the dialog function.</DT><DT><PRE CLASS="EXAMPLE">mggui dialog;
+int dlgW, dlgH;
+
+mgGuiGetSize (dialog, &dlgW, &dlgH);
+mgDialogSetAttribute (dialog, MDA_MINWIDTH, dlgW);
+mgDialogSetAttribute (dialog, MDA_MINHEIGHT, dlgH);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgResourceGetDialog.htm#mgResourceGetDialog>mgResourceGetDialog</A>, <A HREF=mgShowDialog.htm#mgShowDialog>mgShowDialog</A>, <A HREF=mgdialogattribute.htm#mgdialogattribute>mgdialogattribute</A>, 
+<A HREF=MGCB_SIZE.htm#MGCB_SIZE>MGCB_SIZE</A>, <A HREF=mgControlSetAttribute.htm#mgControlSetAttribute>mgControlSetAttribute</A></DD></DL></BODY>
+
+</HTML>

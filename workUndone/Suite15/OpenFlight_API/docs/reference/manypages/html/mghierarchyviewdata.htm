@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>mghierarchyviewdata</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mghierarchyviewdata><H1 CLASS="APISYMBOL">mghierarchyviewdata</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mghierarchyviewdata</B> - Hierarchy View data<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgglcontext glContext;
+&#32;&#32;&#32;unsigned int left;
+&#32;&#32;&#32;unsigned int bottom;
+&#32;&#32;&#32;unsigned int right;
+&#32;&#32;&#32;unsigned int top;
+} mghierarchyviewdata;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>glContext</B><DD><A HREF=mgglcontext.htm#mgglcontext>mgglcontext</A> - Gl rendering context associated to this 
+hierarchy view</DD></DT><DT><B>left</B><DD>unsigned int - left position of extension node rectangle</DD></DT><DT><B>bottom</B><DD>unsigned int - bottom position of extension node rectangle</DD></DT><DT><B>right</B><DD>unsigned int - right position of extension node rectangle</DD></DT><DT><B>top</B><DD>unsigned int - top position of extension node rectangle</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>The hierarchy draw function for an extension node will be passed a pointer 
+to an object of this type.  This record contains a GL rendering context object and 
+the extents of the rectangle in which the extension node is to be drawn.  The draw 
+function should not draw outside the bounds of this rectangle.  The coordinates 
+of this rectangle are measured relative to the lower left corner (0,0) of the 
+enclosing hierarchy view.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterHierarchyDraw.htm#mgRegisterHierarchyDraw>mgRegisterHierarchyDraw</A>, <A HREF=mghierarchydrawfunc.htm#mghierarchydrawfunc>mghierarchydrawfunc</A></DD></DL></BODY>
+
+</HTML>

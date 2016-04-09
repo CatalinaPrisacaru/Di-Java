@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>mgRegisterSite</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRegisterSite><H1 CLASS="APISYMBOL">mgRegisterSite</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRegisterSite</B> - registers a data extension site.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgpluginsite <B>mgRegisterSite</B> (</TD><TD><A HREF=mgplugin.htm#mgplugin>mgplugin</A></TD><TD><I>plugin</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>siteId</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#record_def*>record_def*</A></TD><TD><I>recordDefTbl</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode*</A></TD><TD><I>recordCodeMap</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>recordOffset</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>recordMax</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#data_def*>data_def*</A></TD><TD><I>dataDefTbl</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode*</A></TD><TD><I>dataCodeMap</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>dataOffset</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>dataMax</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRegisterSite</B> registers a data extension site for 
+the specified plug-in module <I>plugin</I> with the specified extension 
+site attributes.</P></DD><DD><P>The required extension site attributes include the name of the 
+site <I>siteId</I> and several attributes that describe the contents of 
+the data extension.  The values provides for these attributes 
+are contained in the auto-generated header files for your data extension.</P></DD><DD><P><I>recordDefTbl</I> - &RecordDefTable[0] <BR> 
+<I>recordCodeMap</I> - [<I>Prefix</I>]RecordCodeMap <BR> 
+<I>recordOffset</I> - [<I>PREFIX</I>]OP_RECORD_OFFSET <BR> 
+<I>recordMax</I> - [<I>PREFIX</I>]_RECORD_MAX <BR> 
+<I>dataDefTbl</I> - &DataDefTable[0] <BR> 
+<I>dataCodeMap</I> - [<I>Prefix</I>]DataCodeMap <BR> 
+<I>dataOffset</I> - [<I>PREFIX</I>]OP_DATA_OFFSET <BR> 
+<I>dataMax</I> - [<I>PREFIX</I>]_DATA_MAX <BR></P></DD><DD><P>[<I>Prefix</I>] is your site's prefix with the first letter capitalized, 
+and [<I>PREFIX</I>] is your site's prefix with all letters capitalized.</P></DD><DD><P>Additional optional extension site attributes include <A HREF=MTA_VERSION.htm#MTA_VERSION>MTA_VERSION</A> 
+and <A HREF=MTA_HELPCONTEXT.htm#MTA_HELPCONTEXT>MTA_HELPCONTEXT</A>.</P></DD><DD><P>All additional (required and optional) extension site attributes 
+are passed using variable argument style and must be terminated with 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugin</I></DT><DD>the plug-in module registering the data 
+extension</DD><DT><I>siteId</I></DT><DD>the name of the extension site</DD><DT><I>recordDefTbl</I></DT><DD>the address of the record definition table for the site</DD><DT><I>recordCodeMap</I></DT><DD>the address of the record code map for the site</DD><DT><I>recordOffset</I></DT><DD>the index of the first record defined by the site</DD><DT><I>recordMax</I></DT><DD>the number of records defined by the site</DD><DT><I>dataDefTbl</I></DT><DD>the address of the data definition table for the site</DD><DT><I>dataCodeMap</I></DT><DD>the address of the data code map for the site</DD><DT><I>dataOffset</I></DT><DD>the index of the first data field defined by the site</DD><DT><I>dataMax</I></DT><DD>the number of data fields defined by the site</DD><DT><I>...</I></DT><DD>additional extension site 
+attributes in variable argument style</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the data extension site registered if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> 
+otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterGetMaxId.htm#mgRegisterGetMaxId>mgRegisterGetMaxId</A>, <A HREF=mgRegisterSetMaxId.htm#mgRegisterSetMaxId>mgRegisterSetMaxId</A>, 
+<A HREF=mgRegisterGetHeaderCode.htm#mgRegisterGetHeaderCode>mgRegisterGetHeaderCode</A>, 
+<A HREF=mgRegisterPreEdit.htm#mgRegisterPreEdit>mgRegisterPreEdit</A>, <A HREF=mgRegisterPostEdit.htm#mgRegisterPostEdit>mgRegisterPostEdit</A></DD></DL></BODY>
+
+</HTML>

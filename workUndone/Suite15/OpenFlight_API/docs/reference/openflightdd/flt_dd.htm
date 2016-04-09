@@ -1,0 +1,3823 @@
+<HTML>
+<HEAD>
+<TITLE>Record Codes</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<A NAME=top></A><TABLE CELLSPACING="0" CELLPADDING="3">
+<TR><TD>alias</TD><TD COLSPAN="3"><A NAME=Alias_fltXformPtr><B>Alias_fltXformPtr</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD>record <A HREF=#fltXmTranslate>fltXmTranslate</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD></TD>
+<TD>record <A HREF=#fltXmScale>fltXmScale</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD></TD>
+<TD>record <A HREF=#fltXmRotate>fltXmRotate</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD></TD>
+<TD>record <A HREF=#fltXmPut>fltXmPut</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD></TD>
+<TD>record <A HREF=#fltXmGeneral>fltXmGeneral</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD></TD>
+<TD>record <A HREF=#fltXmRotateEdge>fltXmRotateEdge</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD></TD>
+<TD>record <A HREF=#fltXmScaleToPoint>fltXmScaleToPoint</A></TD>
+<TD></TD><TD></TD>
+</TR><TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltAlphaEx><B>fltAlphaEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltAlphaExQuality><B>fltAlphaExQuality</B></A></TD><TD VALIGN=TOP>Quality of Extended Material Alpha component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltAlphaExAlpha><B>fltAlphaExAlpha</B></A></TD><TD VALIGN=TOP>Alpha value of Extended Material Alpha component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAlphaExLayer1</B></TD><TD VALIGN=TOP>Extended Material Alpha Texture Layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAlphaExLayer2</B></TD><TD VALIGN=TOP>Extended Material Alpha Texture Layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAlphaExLayer3</B></TD><TD VALIGN=TOP>Extended Material Alpha Texture Layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAlphaExLayer4</B></TD><TD VALIGN=TOP>Extended Material Alpha Texture Layer 4 </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltAmbientEx><B>fltAmbientEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltAmbientExColor</B></TD><TD VALIGN=TOP>Extended Material Ambient color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAmbientExLayer1</B></TD><TD VALIGN=TOP>Extended Material Ambient Texture Layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAmbientExLayer2</B></TD><TD VALIGN=TOP>Extended Material Ambient Texture Layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAmbientExLayer3</B></TD><TD VALIGN=TOP>Extended Material Ambient Texture Layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltAmbientExLayer4</B></TD><TD VALIGN=TOP>Extended Material Ambient Texture Layer 4 </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBoundingBox><B>fltBoundingBox</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBox>fltBox</A> *</TD>
+<TD VALIGN=TOP><B>fltBox</B></TD><TD VALIGN=TOP>Bounding box opcode 74 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltFreezeBox><B>fltFreezeBox</B></A></TD><TD VALIGN=TOP>Freeze bounding volume - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltBoundingType><B>fltBoundingType</B></A></TD><TD VALIGN=TOP>Bounding volume type <BR>
+			0 = Box <BR>
+			1 = Sphere <BR>
+			2 = Cylinder  <BR>
+			3 = Convex Hull <BR>
+			4 = Histogram </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBoundingCenter>fltBoundingCenter</A> *</TD>
+<TD VALIGN=TOP><B>fltBoundingCenter</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBoundingOrientation>fltBoundingOrientation</A> *</TD>
+<TD VALIGN=TOP><B>fltBoundingOrientation</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBoundingSphere>fltBoundingSphere</A> *</TD>
+<TD VALIGN=TOP><B>fltBoundingSphere</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBoundingCylinder>fltBoundingCylinder</A> *</TD>
+<TD VALIGN=TOP><B>fltBoundingCylinder</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBoundingCenter><B>fltBoundingCenter</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBoundingCenterX><B>fltBoundingCenterX</B></A></TD><TD VALIGN=TOP>Bounding volume center point (X) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBoundingCenterY><B>fltBoundingCenterY</B></A></TD><TD VALIGN=TOP>Bounding volume center point (Y) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBoundingCenterZ><B>fltBoundingCenterZ</B></A></TD><TD VALIGN=TOP>Bounding volume center point (Z) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBoundingCylinder><B>fltBoundingCylinder</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBCRadius><B>fltBCRadius</B></A></TD><TD VALIGN=TOP>Bounding cylinder radius of base </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBCHeight><B>fltBCHeight</B></A></TD><TD VALIGN=TOP>Bounding cylinder height </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBoundingOrientation><B>fltBoundingOrientation</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBYaw><B>fltBYaw</B></A></TD><TD VALIGN=TOP>Yaw angle </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBPitch><B>fltBPitch</B></A></TD><TD VALIGN=TOP>Pitch angle </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBRoll><B>fltBRoll</B></A></TD><TD VALIGN=TOP>Roll angle </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBoundingSphere><B>fltBoundingSphere</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBSRadius><B>fltBSRadius</B></A></TD><TD VALIGN=TOP>Bounding sphere radius </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBox><B>fltBox</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBottomLeftFrontX><B>fltBottomLeftFrontX</B></A></TD><TD VALIGN=TOP>X coordinate of lowest corner </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBottomLeftFrontY><B>fltBottomLeftFrontY</B></A></TD><TD VALIGN=TOP>Y coordinate of lowest corner </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltBottomLeftFrontZ><B>fltBottomLeftFrontZ</B></A></TD><TD VALIGN=TOP>Z coordinate of lowest corner </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTopRightBackX><B>fltTopRightBackX</B></A></TD><TD VALIGN=TOP>X coordinate of highest corner </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTopRightBackY><B>fltTopRightBackY</B></A></TD><TD VALIGN=TOP>Y coordinate of highest corner </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTopRightBackZ><B>fltTopRightBackZ</B></A></TD><TD VALIGN=TOP>Z coordinate of highest corner </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBsp><B>fltBsp</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDPlane>fltDPlane</A> </TD>
+<TD VALIGN=TOP><B>fltDPlane</B></TD><TD VALIGN=TOP>Plane coefficients record (A,B,C,D) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltBumpMapEx><B>fltBumpMapEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltBumpMapExTangentLayer><B>fltBumpMapExTangentLayer</B></A></TD><TD VALIGN=TOP>Tangent vector layer of Extended Material Bump Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltBumpMapExBinormalLayer><B>fltBumpMapExBinormalLayer</B></A></TD><TD VALIGN=TOP>Binormal vector layer of Extended Material Bump Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltBumpMapExTexture</B></TD><TD VALIGN=TOP>Extended Material Bump Map Texture Layer </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltCat><B>fltCat</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCatInfrared><B>fltCatInfrared</B></A></TD><TD VALIGN=TOP>IR Color Code </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltCatDrawType><B>fltCatDrawType</B></A></TD><TD VALIGN=TOP>How to draw the cat node  <BR>
+			0 = Draw solid backfaced <BR>
+			1 = Draw solid no backface <BR>
+			2 = Draw closed wireframe <BR>
+			3 = Draw wireframe and not closed </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltCatTexture><B>fltCatTexture</B></A></TD><TD VALIGN=TOP>Texture pattern index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltCatDetailTexture><B>fltCatDetailTexture</B></A></TD><TD VALIGN=TOP>Detail texture pattern index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltCatMaterial><B>fltCatMaterial</B></A></TD><TD VALIGN=TOP>Material index  (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltCatSmc><B>fltCatSmc</B></A></TD><TD VALIGN=TOP>Surface material code (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltCatTexmap><B>fltCatTexmap</B></A></TD><TD VALIGN=TOP>Texture mapping index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCatPrimeColor><B>fltCatPrimeColor</B></A></TD><TD VALIGN=TOP>Primary Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCatPrimeIntensity><B>fltCatPrimeIntensity</B></A></TD><TD VALIGN=TOP>Primary Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCatAltColor><B>fltCatAltColor</B></A></TD><TD VALIGN=TOP>Alternate Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCatAltIntensity><B>fltCatAltIntensity</B></A></TD><TD VALIGN=TOP>Alternate Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCatIrMaterial><B>fltCatIrMaterial</B></A></TD><TD VALIGN=TOP>IR Material codes </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltClip><B>fltClip</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltClipV0</B></TD><TD VALIGN=TOP>Coordinate of first clipping polygon point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltClipV1</B></TD><TD VALIGN=TOP>Coordinate of second clipping polygon point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltClipV2</B></TD><TD VALIGN=TOP>Coordinate of third clipping polygon point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltClipV3</B></TD><TD VALIGN=TOP>Coordinate of fourth clipping polygon point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltClipPlane0Enabled><B>fltClipPlane0Enabled</B></A></TD><TD VALIGN=TOP>First clipping plane is enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltClipPlane1Enabled><B>fltClipPlane1Enabled</B></A></TD><TD VALIGN=TOP>Second clipping plane is enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltClipPlane2Enabled><B>fltClipPlane2Enabled</B></A></TD><TD VALIGN=TOP>Third clipping plane is enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltClipPlane3Enabled><B>fltClipPlane3Enabled</B></A></TD><TD VALIGN=TOP>Fourth clipping plane is enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltClipPlane4Enabled><B>fltClipPlane4Enabled</B></A></TD><TD VALIGN=TOP>Back clipping plane is enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDPlane>fltDPlane</A> </TD>
+<TD VALIGN=TOP><B>fltClipPlane0</B></TD><TD VALIGN=TOP>Equation for clipping plane through first and second clipping polygon points </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDPlane>fltDPlane</A> </TD>
+<TD VALIGN=TOP><B>fltClipPlane1</B></TD><TD VALIGN=TOP>Equation for clipping plane through second and third clipping polygon points </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDPlane>fltDPlane</A> </TD>
+<TD VALIGN=TOP><B>fltClipPlane2</B></TD><TD VALIGN=TOP>Equation for clipping plane through third and fourth clipping polygon points </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDPlane>fltDPlane</A> </TD>
+<TD VALIGN=TOP><B>fltClipPlane3</B></TD><TD VALIGN=TOP>Equation for clipping plane through fourth and first clipping polygon points </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDPlane>fltDPlane</A> </TD>
+<TD VALIGN=TOP><B>fltClipPlane4</B></TD><TD VALIGN=TOP>Equation for back clipping plane through all clipping polygon points </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltColorRGBA><B>fltColorRGBA</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltColorR><B>fltColorR</B></A></TD><TD VALIGN=TOP>Red color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltColorG><B>fltColorG</B></A></TD><TD VALIGN=TOP>Green color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltColorB><B>fltColorB</B></A></TD><TD VALIGN=TOP>Blue color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltColorA><B>fltColorA</B></A></TD><TD VALIGN=TOP>Alpha (transparency) color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltCoord2i><B>fltCoord2i</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord2iX><B>fltCoord2iX</B></A></TD><TD VALIGN=TOP>X component of coordinate </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord2iY><B>fltCoord2iY</B></A></TD><TD VALIGN=TOP>Y component of coordinate </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltCoord3d><B>fltCoord3d</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord3dX><B>fltCoord3dX</B></A></TD><TD VALIGN=TOP>X component of coordinate </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord3dY><B>fltCoord3dY</B></A></TD><TD VALIGN=TOP>Y component of coordinate </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord3dZ><B>fltCoord3dZ</B></A></TD><TD VALIGN=TOP>Z component of coordinate </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltCoord3f><B>fltCoord3f</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord3fX><B>fltCoord3fX</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord3fY><B>fltCoord3fY</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCoord3fZ><B>fltCoord3fZ</B></A></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltCurve><B>fltCurve</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltCurveType><B>fltCurveType</B></A></TD><TD VALIGN=TOP>Type of curve <BR>
+			4 = BSpline <BR>
+			5 = Cardinal <BR>
+			6 = Bezier </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltCylinder><B>fltCylinder</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRadius><B>fltRadius</B></A></TD><TD VALIGN=TOP>Radius of cylinder base </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltHeight><B>fltHeight</B></A></TD><TD VALIGN=TOP>Height of cylinder </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltDPlane><B>fltDPlane</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDPlaneA><B>fltDPlaneA</B></A></TD><TD VALIGN=TOP>First plane equation coefficient (a) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDPlaneB><B>fltDPlaneB</B></A></TD><TD VALIGN=TOP>Second plane equation coefficient (b) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDPlaneC><B>fltDPlaneC</B></A></TD><TD VALIGN=TOP>Third plane equation coefficient (c) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDPlaneD><B>fltDPlaneD</B></A></TD><TD VALIGN=TOP>Fourth plane equation coefficient (d) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltDiffuseEx><B>fltDiffuseEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltDiffuseExColor</B></TD><TD VALIGN=TOP>Extended Material Diffuse color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltDiffuseExLayer1</B></TD><TD VALIGN=TOP>Extended Material Diffuse Texture Layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltDiffuseExLayer2</B></TD><TD VALIGN=TOP>Extended Material Diffuse Texture Layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltDiffuseExLayer3</B></TD><TD VALIGN=TOP>Extended Material Diffuse Texture Layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltDiffuseExLayer4</B></TD><TD VALIGN=TOP>Extended Material Diffuse Texture Layer 4 </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltDof><B>fltDof</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutAnchorX><B>fltDofPutAnchorX</B></A></TD><TD VALIGN=TOP>Origin of DOF's LCS (X) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutAnchorY><B>fltDofPutAnchorY</B></A></TD><TD VALIGN=TOP>Origin of DOF's LCS (Y) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutAnchorZ><B>fltDofPutAnchorZ</B></A></TD><TD VALIGN=TOP>Origin of DOF's LCS (Z) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutAlignX><B>fltDofPutAlignX</B></A></TD><TD VALIGN=TOP>Point on X-axis of DOF's LCS (X) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutAlignY><B>fltDofPutAlignY</B></A></TD><TD VALIGN=TOP>Point on X-axis of DOF's LCS (Y) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutAlignZ><B>fltDofPutAlignZ</B></A></TD><TD VALIGN=TOP>Point on X-axis of DOF's LCS (Z) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutTrackX><B>fltDofPutTrackX</B></A></TD><TD VALIGN=TOP>Point in XY plane of DOF's LCS (X) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutTrackY><B>fltDofPutTrackY</B></A></TD><TD VALIGN=TOP>Point in XY plane of DOF's LCS (Y) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofPutTrackZ><B>fltDofPutTrackZ</B></A></TD><TD VALIGN=TOP>Point in XY plane of DOF's LCS (Z) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinX><B>fltDofMinX</B></A></TD><TD VALIGN=TOP>Minimum X value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxX><B>fltDofMaxX</B></A></TD><TD VALIGN=TOP>Maximum X value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurX><B>fltDofCurX</B></A></TD><TD VALIGN=TOP>Current X value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncX><B>fltDofIncX</B></A></TD><TD VALIGN=TOP>Increment in X </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitX><B>fltDofLimitX</B></A></TD><TD VALIGN=TOP>X translation is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinY><B>fltDofMinY</B></A></TD><TD VALIGN=TOP>Minimum Y value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxY><B>fltDofMaxY</B></A></TD><TD VALIGN=TOP>Maximum Y value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurY><B>fltDofCurY</B></A></TD><TD VALIGN=TOP>Current Y value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncY><B>fltDofIncY</B></A></TD><TD VALIGN=TOP>Increment in Y </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitY><B>fltDofLimitY</B></A></TD><TD VALIGN=TOP>Y translation is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinZ><B>fltDofMinZ</B></A></TD><TD VALIGN=TOP>Minimum Z value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxZ><B>fltDofMaxZ</B></A></TD><TD VALIGN=TOP>Maximum Z value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurZ><B>fltDofCurZ</B></A></TD><TD VALIGN=TOP>Current Z value with respect to the LCS </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncZ><B>fltDofIncZ</B></A></TD><TD VALIGN=TOP>Increment in Z </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitZ><B>fltDofLimitZ</B></A></TD><TD VALIGN=TOP>Z translation is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinXRot><B>fltDofMinXRot</B></A></TD><TD VALIGN=TOP>Minimum pitch (rotation about local X-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxXRot><B>fltDofMaxXRot</B></A></TD><TD VALIGN=TOP>Maximum pitch (rotation about local X-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurXRot><B>fltDofCurXRot</B></A></TD><TD VALIGN=TOP>Current pitch (rotation about local X-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncXRot><B>fltDofIncXRot</B></A></TD><TD VALIGN=TOP>Increment in pitch (rotation about local X-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitXRot><B>fltDofLimitXRot</B></A></TD><TD VALIGN=TOP>Pitch rotation (about local X axis) is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinYRot><B>fltDofMinYRot</B></A></TD><TD VALIGN=TOP>Minimum roll (rotation about local Y-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxYRot><B>fltDofMaxYRot</B></A></TD><TD VALIGN=TOP>Maximum roll (rotation about local Y-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurYRot><B>fltDofCurYRot</B></A></TD><TD VALIGN=TOP>Current roll (rotation about local Y-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncYRot><B>fltDofIncYRot</B></A></TD><TD VALIGN=TOP>Increment in roll (rotation about local Y-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitYRot><B>fltDofLimitYRot</B></A></TD><TD VALIGN=TOP>Roll rotation (about local Y axis) is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinZRot><B>fltDofMinZRot</B></A></TD><TD VALIGN=TOP>Minimum yaw (rotation about local Z-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxZRot><B>fltDofMaxZRot</B></A></TD><TD VALIGN=TOP>Maximum yaw (rotation about local Z-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurZRot><B>fltDofCurZRot</B></A></TD><TD VALIGN=TOP>Current yaw (rotation about local Z-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncZRot><B>fltDofIncZRot</B></A></TD><TD VALIGN=TOP>Increment in yaw (rotation about local Z-axis) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitZRot><B>fltDofLimitZRot</B></A></TD><TD VALIGN=TOP>Yaw rotation (about local Z axis) is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinXScale><B>fltDofMinXScale</B></A></TD><TD VALIGN=TOP>Minimum X scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxXScale><B>fltDofMaxXScale</B></A></TD><TD VALIGN=TOP>Maximum X scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurXScale><B>fltDofCurXScale</B></A></TD><TD VALIGN=TOP>Current X scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncXScale><B>fltDofIncXScale</B></A></TD><TD VALIGN=TOP>Increment for scale in X </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitXScale><B>fltDofLimitXScale</B></A></TD><TD VALIGN=TOP>X scale is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinYScale><B>fltDofMinYScale</B></A></TD><TD VALIGN=TOP>Minimum Y scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxYScale><B>fltDofMaxYScale</B></A></TD><TD VALIGN=TOP>Maximum Y scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurYScale><B>fltDofCurYScale</B></A></TD><TD VALIGN=TOP>Current Y scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncYScale><B>fltDofIncYScale</B></A></TD><TD VALIGN=TOP>Increment for scale in Y </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitYScale><B>fltDofLimitYScale</B></A></TD><TD VALIGN=TOP>Y scale is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMinZScale><B>fltDofMinZScale</B></A></TD><TD VALIGN=TOP>Minimum Z scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMaxZScale><B>fltDofMaxZScale</B></A></TD><TD VALIGN=TOP>Maximum Z scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofCurZScale><B>fltDofCurZScale</B></A></TD><TD VALIGN=TOP>Current Z scale (about local origin) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDofIncZScale><B>fltDofIncZScale</B></A></TD><TD VALIGN=TOP>Increment for scale in Z </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofLimitZScale><B>fltDofLimitZScale</B></A></TD><TD VALIGN=TOP>Z scale is limited </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofTxtRepeat><B>fltDofTxtRepeat</B></A></TD><TD VALIGN=TOP>Repeating texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltDofMembrane><B>fltDofMembrane</B></A></TD><TD VALIGN=TOP>Texture stretches unequally in each direction </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltEmissiveEx><B>fltEmissiveEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltEmissiveExColor</B></TD><TD VALIGN=TOP>Extended Material Emissive color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltEmissiveExLayer1</B></TD><TD VALIGN=TOP>Extended Material Emissive Texture Layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltEmissiveExLayer2</B></TD><TD VALIGN=TOP>Extended Material Emissive Texture Layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltEmissiveExLayer3</B></TD><TD VALIGN=TOP>Extended Material Emissive Texture Layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltEmissiveExLayer4</B></TD><TD VALIGN=TOP>Extended Material Emissive Texture Layer 4 </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltEyePoint><B>fltEyePoint</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltEyeRotCenter</B></TD><TD VALIGN=TOP>eyepoint rotation center </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeYaw><B>fltEyeYaw</B></A></TD><TD VALIGN=TOP>eyepoint yaw </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyePitch><B>fltEyePitch</B></A></TD><TD VALIGN=TOP>eyepoint pitch </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeRoll><B>fltEyeRoll</B></A></TD><TD VALIGN=TOP>eyepoint roll </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltEyeRotMatrix</B></TD><TD VALIGN=TOP>cumulative rotation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeFov><B>fltEyeFov</B></A></TD><TD VALIGN=TOP>eyepoint field of view </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeScale><B>fltEyeScale</B></A></TD><TD VALIGN=TOP>eyepoint scale </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeNearClip><B>fltEyeNearClip</B></A></TD><TD VALIGN=TOP>eyepoint near clipping plane coefficient </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeFarClip><B>fltEyeFarClip</B></A></TD><TD VALIGN=TOP>eyepoint far clipping plane coefficient </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltEyeLookFrom</B></TD><TD VALIGN=TOP>current position of eye in db </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltVector>fltVector</A> </TD>
+<TD VALIGN=TOP><B>fltEyeEyeDir</B></TD><TD VALIGN=TOP>current direction of eye </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeOrthoFlag><B>fltEyeOrthoFlag</B></A></TD><TD VALIGN=TOP>TRUE for ortho display </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltEyeActive><B>fltEyeActive</B></A></TD><TD VALIGN=TOP>flags whether this structure has been used </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltFMaterial><B>fltFMaterial</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltIMaterial>fltIMaterial</A> </TD>
+<TD VALIGN=TOP><B>fltIMaterial</B></TD><TD VALIGN=TOP>Material components </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (12)</TD>
+<TD VALIGN=TOP><A NAME=fltMatName><B>fltMatName</B></A></TD><TD VALIGN=TOP>Material name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMatIndex><B>fltMatIndex</B></A></TD><TD VALIGN=TOP>Material index </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltFPoint><B>fltFPoint</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltFPointX><B>fltFPointX</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltFPointY><B>fltFPointY</B></A></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltGrid><B>fltGrid</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltGridOrigin</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltGridAlign</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltGridTrack</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGridIntervalX><B>fltGridIntervalX</B></A></TD><TD VALIGN=TOP>Number of grid intervals along X axis </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGridIntervalY><B>fltGridIntervalY</B></A></TD><TD VALIGN=TOP>Number of grid intervals along Y axis </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltGridIncludeEdges><B>fltGridIncludeEdges</B></A></TD><TD VALIGN=TOP>Include Edges flag </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltGridType><B>fltGridType</B></A></TD><TD VALIGN=TOP>Grid Type <BR>
+			0 = Edge <BR>
+			1 = Point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGridInvisible><B>fltGridInvisible</B></A></TD><TD VALIGN=TOP>Grid is invisible </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltGroup><B>fltGroup</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpPrio><B>fltGrpPrio</B></A></TD><TD VALIGN=TOP>Group relative priority </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpAnimation><B>fltGrpAnimation</B></A></TD><TD VALIGN=TOP>Forward animation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpAnimationB><B>fltGrpAnimationB</B></A></TD><TD VALIGN=TOP>Backward animation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpAnimationFB><B>fltGrpAnimationFB</B></A></TD><TD VALIGN=TOP>Swing animation - if TRUE Forward animations play forward then backward, Backward animations play backward then forward </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpLoopCount><B>fltGrpLoopCount</B></A></TD><TD VALIGN=TOP>Number of loops for animations <BR>
+			0 for infinite looping  <BR>
+			positive value for finite number of loops </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpLoopDuration><B>fltGrpLoopDuration</B></A></TD><TD VALIGN=TOP>Duration of one loop for animations in seconds  <BR>
+			0.0 for "as fast as possible" <BR>
+			positive value for finite duration </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpLastFrameDuration><B>fltGrpLastFrameDuration</B></A></TD><TD VALIGN=TOP>Duration to hold last frame after loop is complete in seconds </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpBoxed><B>fltGrpBoxed</B></A></TD><TD VALIGN=TOP>TRUE if group has bounding box </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpFreezeBox><B>fltGrpFreezeBox</B></A></TD><TD VALIGN=TOP>Freeze bounding box </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpPreserveAtRuntime><B>fltGrpPreserveAtRuntime</B></A></TD><TD VALIGN=TOP>TRUE if group is significant in runtime and must not be optimized or collapsed away </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpSpecial1><B>fltGrpSpecial1</B></A></TD><TD VALIGN=TOP>Special effects ID 1 - defined by real time </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpSpecial2><B>fltGrpSpecial2</B></A></TD><TD VALIGN=TOP>Special effects ID 2 - defined by real time </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpSignificance><B>fltGrpSignificance</B></A></TD><TD VALIGN=TOP>Significance Flags </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltGrpLayer><B>fltGrpLayer</B></A></TD><TD VALIGN=TOP>Layer Number </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBoundingBox>fltBoundingBox</A> *</TD>
+<TD VALIGN=TOP><B>fltBoundingBox</B></TD><TD VALIGN=TOP>Bounding box </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltRepCnt><B>fltRepCnt</B></A></TD><TD VALIGN=TOP>Replication count </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltHeader><B>fltHeader</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrFormatRev><B>fltHdrFormatRev</B></A></TD><TD VALIGN=TOP>OpenFlight format revision level, encoded as an integer in the form: <BR>
+			1640 = OpenFlight 16.4 <BR>
+			1630 = OpenFlight 16.3 <BR>
+			1620 = OpenFlight 16.2 <BR>
+			1610 = OpenFlight 16.1	 <BR>
+			etc </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrDbRev><B>fltHdrDbRev</B></A></TD><TD VALIGN=TOP>This database revision level </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (32)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrLastDate><B>fltHdrLastDate</B></A></TD><TD VALIGN=TOP>Date and time of last revision </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrUnits><B>fltHdrUnits</B></A></TD><TD VALIGN=TOP>Vertex coordinate units <BR>
+			0 = Meters <BR>
+			1 = Kilometers <BR>
+			4 = Feet <BR>
+			5 = Inches <BR>
+			8 = Nautical miles </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrTexWhite><B>fltHdrTexWhite</B></A></TD><TD VALIGN=TOP>if TRUE set texwhite on new polygons </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrSaveVtxNorms><B>fltHdrSaveVtxNorms</B></A></TD><TD VALIGN=TOP>Save vertex normals flag </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrRgbMode><B>fltHdrRgbMode</B></A></TD><TD VALIGN=TOP>Database colors stored as rgb values </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltProjection><B>fltProjection</B></A></TD><TD VALIGN=TOP>Projection Type <BR>
+			0 = Flat Earth <BR>
+			1 = Trapezoidal <BR>
+			2 = Round Earth <BR>
+			3 = Lambert <BR>
+			4 = UTM <BR>
+			5 = Geodetic <BR>
+			6 = Geocentric </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltSWIfmtX><B>fltSWIfmtX</B></A></TD><TD VALIGN=TOP>South West Corner X </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltSWIfmtY><B>fltSWIfmtY</B></A></TD><TD VALIGN=TOP>South West Corner Y </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTerTransX><B>fltTerTransX</B></A></TD><TD VALIGN=TOP>X offset of the terrain tile origin from database origin </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTerTransY><B>fltTerTransY</B></A></TD><TD VALIGN=TOP>Y offset of the terrain tile origin from database origin </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTerTransZ><B>fltTerTransZ</B></A></TD><TD VALIGN=TOP>Z offset of the terrain tile origin from database origin </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltDBRadius><B>fltDBRadius</B></A></TD><TD VALIGN=TOP>Radius from the terrain tile origin to the farthest bbox corner </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltSWCornerLat1><B>fltSWCornerLat1</B></A></TD><TD VALIGN=TOP>the south west corner latitude </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltSWCornerLong1><B>fltSWCornerLong1</B></A></TD><TD VALIGN=TOP>the south west corner longitude </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltNECornerLat1><B>fltNECornerLat1</B></A></TD><TD VALIGN=TOP>the north east corner latitude </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltNECornerLong1><B>fltNECornerLong1</B></A></TD><TD VALIGN=TOP>the north east corner longitude </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltOriginLat1><B>fltOriginLat1</B></A></TD><TD VALIGN=TOP>origin latitude - 0, 0 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltOriginLong1><B>fltOriginLong1</B></A></TD><TD VALIGN=TOP>origin longitude - 0, 0 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltUpperLat1><B>fltUpperLat1</B></A></TD><TD VALIGN=TOP>Lambert upper latitude </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltLowerLat1><B>fltLowerLat1</B></A></TD><TD VALIGN=TOP>Lambert lower latitude </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrEarthModel><B>fltHdrEarthModel</B></A></TD><TD VALIGN=TOP>Earth Ellipsoid Model <BR>
+			0 = WGS 1984 <BR>
+			1 = WGS 1972 <BR>
+			2 = Bessel <BR>
+			3 = Clark <BR>
+			4 = NAD 1927 <BR>
+		  -1 = User defined ellipsoid </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltUTMZone><B>fltUTMZone</B></A></TD><TD VALIGN=TOP>The UTM zone for UTM projections - Negative = S Positive = N </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrEarthMajorAxis><B>fltHdrEarthMajorAxis</B></A></TD><TD VALIGN=TOP>Earth major axis (for user defined ellipsoid) in meters</TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltHdrEarthMinorAxis><B>fltHdrEarthMinorAxis</B></A></TD><TD VALIGN=TOP>Earth minor axis (for user defined ellipsoid) in meters</TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltHelper><B>fltHelper</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltHelperOrigin</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltHelperAlign1</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltHelperAlign2</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltHelperSnapRange><B>fltHelperSnapRange</B></A></TD><TD VALIGN=TOP>Snap range </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltHelperType><B>fltHelperType</B></A></TD><TD VALIGN=TOP>Helper type <BR>
+			0 = Point <BR>
+			1 = Point-Align <BR>
+			2 = Point-Dual Align (Weld) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltHelperPointTarget><B>fltHelperPointTarget</B></A></TD><TD VALIGN=TOP>Target attribute name for Point type helper </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltHelperAlignTarget><B>fltHelperAlignTarget</B></A></TD><TD VALIGN=TOP>Target attribute name for Align type helper </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltHelperWeldTarget><B>fltHelperWeldTarget</B></A></TD><TD VALIGN=TOP>Target attribute name for Weld type helper </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltHelperInvisible><B>fltHelperInvisible</B></A></TD><TD VALIGN=TOP>Helper is invisible </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltIMaterial><B>fltIMaterial</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltAmbient</B></TD><TD VALIGN=TOP>Ambient component of material </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltDiffuse</B></TD><TD VALIGN=TOP>Diffuse component of material </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltSpecular</B></TD><TD VALIGN=TOP>Specular component of material </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltEmissive</B></TD><TD VALIGN=TOP>Emissive component of material </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShininess><B>fltShininess</B></A></TD><TD VALIGN=TOP>Shininess - (0.0-128.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMatAlpha><B>fltMatAlpha</B></A></TD><TD VALIGN=TOP>Alpha - (0.0-1.0) where 1.0 is opaque </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMatType><B>fltMatType</B></A></TD><TD VALIGN=TOP>Material Type  <BR>
+			0 = Standard Material <BR>
+			1 = Extended Material </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMatShadeModel><B>fltMatShadeModel</B></A></TD><TD VALIGN=TOP>Extended Material Shade Model  <BR>
+			0 = Flat Shading <BR>
+			1 = Per Vertex Phong <BR>
+			2 = Per Fragment Phong </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltAmbientEx>fltAmbientEx</A> *</TD>
+<TD VALIGN=TOP><B>fltAmbientEx</B></TD><TD VALIGN=TOP>Extended Material Ambient component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltDiffuseEx>fltDiffuseEx</A> *</TD>
+<TD VALIGN=TOP><B>fltDiffuseEx</B></TD><TD VALIGN=TOP>Extended Material Diffuse component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltSpecularEx>fltSpecularEx</A> *</TD>
+<TD VALIGN=TOP><B>fltSpecularEx</B></TD><TD VALIGN=TOP>Extended Material Specular component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltEmissiveEx>fltEmissiveEx</A> *</TD>
+<TD VALIGN=TOP><B>fltEmissiveEx</B></TD><TD VALIGN=TOP>Extended Material Emissive component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltAlphaEx>fltAlphaEx</A> *</TD>
+<TD VALIGN=TOP><B>fltAlphaEx</B></TD><TD VALIGN=TOP>Extended Material Alpha component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltBumpMapEx>fltBumpMapEx</A> *</TD>
+<TD VALIGN=TOP><B>fltBumpMapEx</B></TD><TD VALIGN=TOP>Extended Material Bump Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormalMapEx>fltNormalMapEx</A> *</TD>
+<TD VALIGN=TOP><B>fltNormalMapEx</B></TD><TD VALIGN=TOP>Extended Material Normal Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltLightMapEx>fltLightMapEx</A> *</TD>
+<TD VALIGN=TOP><B>fltLightMapEx</B></TD><TD VALIGN=TOP>Extended Material Light Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltShadowMapEx>fltShadowMapEx</A> *</TD>
+<TD VALIGN=TOP><B>fltShadowMapEx</B></TD><TD VALIGN=TOP>Extended Material Shadow Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltReflectionMapEx>fltReflectionMapEx</A> *</TD>
+<TD VALIGN=TOP><B>fltReflectionMapEx</B></TD><TD VALIGN=TOP>Extended Material Reflection Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltPhysicalMaterialMapEx>fltPhysicalMaterialMapEx</A> *</TD>
+<TD VALIGN=TOP><B>fltPhysicalMaterialMapEx</B></TD><TD VALIGN=TOP>Extended Material Physical Material Map component </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltImage><B>fltImage</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgWidth><B>fltImgWidth</B></A></TD><TD VALIGN=TOP>Number of texels in u direction </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgHeight><B>fltImgHeight</B></A></TD><TD VALIGN=TOP>Number of texels in v direction </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord2i>fltCoord2i</A> </TD>
+<TD VALIGN=TOP><B>fltImgUp</B></TD><TD VALIGN=TOP>Up vector </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgType><B>fltImgType</B></A></TD><TD VALIGN=TOP>File format type <BR>
+			-1 = Not used <BR>
+			0 = AT&T image 8 pattern <BR>
+			1 = AT&T image 8 template <BR>
+			2 = SGI intensity modulation <BR>
+			3 = SGI intensity w/alpha <BR>
+			4 = SGI RGB <BR>
+			5 = SGI RGB w/alpha </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgTextureType><B>fltImgTextureType</B></A></TD><TD VALIGN=TOP>Texture Type <BR>
+			0 = 2D Texture <BR>
+			1 = Cube Map </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgMinFilter><B>fltImgMinFilter</B></A></TD><TD VALIGN=TOP>Minification filter type <BR>
+			0 = Point <BR>
+			1 = Bilinear <BR>
+			2 = Mipmap (Obsolete) <BR>
+			3 = Mipmap Point <BR>
+			4 = Mipmap Linear <BR>
+			5 = Mipmap Bilinear <BR>
+			6 = Mipmap Trilinear <BR>
+			7 = None <BR>
+			8 = Bicubic <BR>
+			9 = Bilinear greater/equal (not in OpenGL) <BR>
+			10 = Bilinear less/equal (not in OpenGL) <BR>
+			11 = Bicubic greater/equal (not in OpenGL) <BR>
+			12 = Bicubic less/equal (not in OpenGL) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgMagFilter><B>fltImgMagFilter</B></A></TD><TD VALIGN=TOP>Magnification filter type <BR>
+			0 = Point <BR>
+			1 = Bilinear <BR>
+			2 = None <BR>
+			3 = Bicubic <BR>
+			4 = Sharpen <BR>
+			5 = Add Detail <BR>
+			6 = Modulate Detail (not in OpenGL) <BR>
+			7 = Bilinear greater/equal (not in OpenGL) <BR>
+			8 = Bilinear less/equal (not in OpenGL) <BR>
+			9 = Bicubic greater/equal (not in OpenGL) <BR>
+			10 = Bicubic less/equal (not in OpenGL) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgWrap><B>fltImgWrap</B></A></TD><TD VALIGN=TOP>Repetition type <BR>
+			0 = Repeat <BR>
+			1 = Clamp <BR>
+			4 = Mirrored Repeat </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgWrapU><B>fltImgWrapU</B></A></TD><TD VALIGN=TOP>Repetition type in u direction <BR>
+			0 = Repeat <BR>
+			1 = Clamp <BR>
+			3 = None <BR>
+			4 = Mirrored Repeat </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgWrapV><B>fltImgWrapV</B></A></TD><TD VALIGN=TOP>Repetition type in v direction <BR>
+			0 = Repeat <BR>
+			1 = Clamp <BR>
+			3 = None <BR>
+			4 = Mirrored Repeat </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord2i>fltCoord2i</A> </TD>
+<TD VALIGN=TOP><B>fltImgPivot</B></TD><TD VALIGN=TOP>Pivot point for rotating textures </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgEnvType><B>fltImgEnvType</B></A></TD><TD VALIGN=TOP>Environment type <BR>
+			0 = Modulate <BR>
+			1 = Blend <BR>
+			2 = Decal <BR>
+			3 = Replace <BR>
+			4 = Add </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgInAlpha><B>fltImgInAlpha</B></A></TD><TD VALIGN=TOP>TRUE if intensity pattern to be loaded in alpha with white in color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltImgRwSizeUf><B>fltImgRwSizeUf</B></A></TD><TD VALIGN=TOP>Real world size u for Floating point databases </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltImgRwSizeVf><B>fltImgRwSizeVf</B></A></TD><TD VALIGN=TOP>Real world size v for Floating point databases </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgInternalFormat><B>fltImgInternalFormat</B></A></TD><TD VALIGN=TOP>Internal Format type <BR>
+			0 = default <BR>
+			1 = TX_I_12A_4 <BR>
+			2 = TX_IA_8 <BR>
+			3 = TX_RGB_5 <BR>
+			4 = TX_RGBA_4 <BR>
+			5 = TX_IA_12 <BR>
+			6 = TX_RGBA_8 <BR>
+			7 = TX_RGBA_12 <BR>
+			8 = TX_I_16 (shadow mode only) <BR>
+			9 = TX_RGB_12 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgExternalFormat><B>fltImgExternalFormat</B></A></TD><TD VALIGN=TOP>External Format type <BR>
+			0 = default <BR>
+			1 = TX_PACK_8 <BR>
+			2 = TX_PACK_16 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgControlPoint><B>fltImgControlPoint</B></A></TD><TD VALIGN=TOP>Detail Texture Control - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod0><B>fltImgLod0</B></A></TD><TD VALIGN=TOP>LOD0 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale0><B>fltImgScale0</B></A></TD><TD VALIGN=TOP>SCALE0 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod1><B>fltImgLod1</B></A></TD><TD VALIGN=TOP>LOD1 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale1><B>fltImgScale1</B></A></TD><TD VALIGN=TOP>SCALE1 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod2><B>fltImgLod2</B></A></TD><TD VALIGN=TOP>LOD2 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale2><B>fltImgScale2</B></A></TD><TD VALIGN=TOP>SCALE2 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod3><B>fltImgLod3</B></A></TD><TD VALIGN=TOP>LOD3 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale3><B>fltImgScale3</B></A></TD><TD VALIGN=TOP>SCALE3 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod4><B>fltImgLod4</B></A></TD><TD VALIGN=TOP>LOD4 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale4><B>fltImgScale4</B></A></TD><TD VALIGN=TOP>SCALE4 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod5><B>fltImgLod5</B></A></TD><TD VALIGN=TOP>LOD5 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale5><B>fltImgScale5</B></A></TD><TD VALIGN=TOP>SCALE5 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod6><B>fltImgLod6</B></A></TD><TD VALIGN=TOP>LOD6 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale6><B>fltImgScale6</B></A></TD><TD VALIGN=TOP>SCALE6 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLod7><B>fltImgLod7</B></A></TD><TD VALIGN=TOP>LOD7 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScale7><B>fltImgScale7</B></A></TD><TD VALIGN=TOP>SCALE7 for Detail Texture Control </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgClamp><B>fltImgClamp</B></A></TD><TD VALIGN=TOP>clamp </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgMagFilterAlpha><B>fltImgMagFilterAlpha</B></A></TD><TD VALIGN=TOP>Magnification Filter for Alpha <BR>
+			0 = Point; <BR>
+			1 = Bilinear <BR>
+			2 = None <BR>
+			3 = Bicubic <BR>
+			4 = Sharpen <BR>
+			5 = Add Detail <BR>
+			6 = Modulate Detail <BR>
+			7 = Bilinear greater/equal <BR>
+			8 = Bilinear less/equal <BR>
+			9 = Bicubic greater/equal <BR>
+			10 = Bicubic less/equal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgMagFilterColor><B>fltImgMagFilterColor</B></A></TD><TD VALIGN=TOP>Magnification Filter for Color <BR>
+			0 = Point <BR>
+			1 = Bilinear <BR>
+			2 = None <BR>
+			3 = Bicubic <BR>
+			4 = Sharpen <BR>
+			5 = Add Detail <BR>
+			6 = Modulate Detail <BR>
+			7 = Bilinear greater/equal <BR>
+			8 = Bilinear less/equal <BR>
+			9 = Bicubic greater/equal <BR>
+			10 = Bicubic less/equal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLon0><B>fltImgLon0</B></A></TD><TD VALIGN=TOP>Lambert Conformal Conic Projection parameters </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLat0><B>fltImgLat0</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLat1><B>fltImgLat1</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLat2><B>fltImgLat2</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltNpscale><B>fltNpscale</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgDetail><B>fltImgDetail</B></A></TD><TD VALIGN=TOP>Detail Texture - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgJ><B>fltImgJ</B></A></TD><TD VALIGN=TOP>J argument for Detail Texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgK><B>fltImgK</B></A></TD><TD VALIGN=TOP>K argument for Detail Texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgM><B>fltImgM</B></A></TD><TD VALIGN=TOP>M argument for Detail Texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgN><B>fltImgN</B></A></TD><TD VALIGN=TOP>N argument for Detail Texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgScramble><B>fltImgScramble</B></A></TD><TD VALIGN=TOP>Scramble argument for Detail Texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgTile><B>fltImgTile</B></A></TD><TD VALIGN=TOP>Detail Texture Tile - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLowerLeftU><B>fltImgLowerLeftU</B></A></TD><TD VALIGN=TOP>Lower left u value for Detail Texture Tile </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgLowerLeftV><B>fltImgLowerLeftV</B></A></TD><TD VALIGN=TOP>Lower left v value for Detail Texture Tile </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgUpperRightU><B>fltImgUpperRightU</B></A></TD><TD VALIGN=TOP>Upper right u value for Detail Texture Tile </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgUpperRightV><B>fltImgUpperRightV</B></A></TD><TD VALIGN=TOP>Upper right v value for Detail Texture Tile </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgProjection><B>fltImgProjection</B></A></TD><TD VALIGN=TOP>Image Projection Type <BR>
+			0 = Geodetic <BR>
+			3 = Lambert <BR>
+			4 = UTM <BR>
+			7 = Pixels </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgEarthModel><B>fltImgEarthModel</B></A></TD><TD VALIGN=TOP>Image Earth Model <BR>
+			0 = WGS 1984 <BR>
+			1 = WGS 1972 <BR>
+			2 = Bessel <BR>
+			3 = Clark <BR>
+			4 = NAD 1927 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgUTMzone><B>fltImgUTMzone</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgImageOrigin><B>fltImgImageOrigin</B></A></TD><TD VALIGN=TOP>0 = Lower Left <BR>
+			1 = Upper Left </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgUnits><B>fltImgUnits</B></A></TD><TD VALIGN=TOP>feet, meters, inches, etc. </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPixelScaleUnits><B>fltPixelScaleUnits</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgHemisphere><B>fltImgHemisphere</B></A></TD><TD VALIGN=TOP>Hemisphere <BR>
+			0 = Southern <BR>
+			1 = Northern </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMirrorSmoothFlags><B>fltMirrorSmoothFlags</B></A></TD><TD VALIGN=TOP>Mirror and Smooth flags <BR>
+			1 = UMIRROR <BR>
+			2 = VMIRROR <BR>
+			4 = USMOOTH <BR>
+			8 = VSMOOTH </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (512)</TD>
+<TD VALIGN=TOP><A NAME=fltImgComment><B>fltImgComment</B></A></TD><TD VALIGN=TOP>Comments </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64Format><B>fltImgU64Format</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64PixSize><B>fltImgU64PixSize</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64ShrinkFlag><B>fltImgU64ShrinkFlag</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64Mipmap><B>fltImgU64Mipmap</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64MaxResDir><B>fltImgU64MaxResDir</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64GenS><B>fltImgU64GenS</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64GenT><B>fltImgU64GenT</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64WrapS><B>fltImgU64WrapS</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64WrapT><B>fltImgU64WrapT</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64Width><B>fltImgU64Width</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgU64Height><B>fltImgU64Height</B></A></TD><TD VALIGN=TOP>Nintendo 64 specific image attribute </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltImgVersion><B>fltImgVersion</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTxtGeoCoordLst>fltTxtGeoCoordLst</A> *</TD>
+<TD VALIGN=TOP><B>fltImgGeoCoords</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLightMapEx><B>fltLightMapEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLightMapExMaxIntensity><B>fltLightMapExMaxIntensity</B></A></TD><TD VALIGN=TOP>Max Intensity of Extended Material Light Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltLightMapExTexture</B></TD><TD VALIGN=TOP>Extended Material Light Map Texture Layer </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLightPoint><B>fltLightPoint</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAppearance><B>fltLpAppearance</B></A></TD><TD VALIGN=TOP>Light Point appearance index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAnimation><B>fltLpAnimation</B></A></TD><TD VALIGN=TOP>Light Point animation index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpDrawOrder><B>fltLpDrawOrder</B></A></TD><TD VALIGN=TOP>Calligraphic draw order - for rendering consistency </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltRepCnt><B>fltRepCnt</B></A></TD><TD VALIGN=TOP>Replication count </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLightPointSystem><B>fltLightPointSystem</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpsIntensity><B>fltLpsIntensity</B></A></TD><TD VALIGN=TOP>Intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpsAnimationState><B>fltLpsAnimationState</B></A></TD><TD VALIGN=TOP>Animation state <BR>
+		0 = Off <BR>
+		1 = On <BR>
+		2 = Random </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpsEnabled><B>fltLpsEnabled</B></A></TD><TD VALIGN=TOP>Enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLightSource><B>fltLightSource</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtsIndex><B>fltLtsIndex</B></A></TD><TD VALIGN=TOP>Index into light palette </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtsEnabled><B>fltLtsEnabled</B></A></TD><TD VALIGN=TOP>Enabled </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtsGlobal><B>fltLtsGlobal</B></A></TD><TD VALIGN=TOP>Global </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtsExport><B>fltLtsExport</B></A></TD><TD VALIGN=TOP>Export </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltLtsPosition</B></TD><TD VALIGN=TOP>XYZ coordinates </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtsYaw><B>fltLtsYaw</B></A></TD><TD VALIGN=TOP>Yaw </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtsPitch><B>fltLtsPitch</B></A></TD><TD VALIGN=TOP>Pitch </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLightSourcePalette><B>fltLightSourcePalette</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspPaletteId><B>fltLtspPaletteId</B></A></TD><TD VALIGN=TOP>Palette index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltColorRGBA>fltColorRGBA</A> </TD>
+<TD VALIGN=TOP><B>fltLtspAmbient</B></TD><TD VALIGN=TOP>Ambient RGBA (alpha component not used) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltColorRGBA>fltColorRGBA</A> </TD>
+<TD VALIGN=TOP><B>fltLtspDiffuse</B></TD><TD VALIGN=TOP>Diffuse RGBA (alpha component not used) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltColorRGBA>fltColorRGBA</A> </TD>
+<TD VALIGN=TOP><B>fltLtspSpecular</B></TD><TD VALIGN=TOP>Specular RGBA (alpha component not used) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspType><B>fltLtspType</B></A></TD><TD VALIGN=TOP>Light type  <BR>
+			0 = INFINITE <BR>
+			1 = LOCAL <BR>
+			2 = SPOT </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspSpotExp><B>fltLtspSpotExp</B></A></TD><TD VALIGN=TOP>Spot exponential dropoff term </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspSpotSpread><B>fltLtspSpotSpread</B></A></TD><TD VALIGN=TOP>Spot cutoff angle (in degrees) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspYaw><B>fltLtspYaw</B></A></TD><TD VALIGN=TOP>Azimuth </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspPitch><B>fltLtspPitch</B></A></TD><TD VALIGN=TOP>Elevation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspConstAtten><B>fltLtspConstAtten</B></A></TD><TD VALIGN=TOP>Constant attenuation coefficient </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspLinearAtten><B>fltLtspLinearAtten</B></A></TD><TD VALIGN=TOP>Linear attenuation coefficient </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspQuadAtten><B>fltLtspQuadAtten</B></A></TD><TD VALIGN=TOP>Quadratic attenuation coefficient </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLtspModeling><B>fltLtspModeling</B></A></TD><TD VALIGN=TOP>Modeling Light - TRUE/FALSE </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLineStylePalette><B>fltLineStylePalette</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLineStyleId><B>fltLineStyleId</B></A></TD><TD VALIGN=TOP>Palette index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLineStylePatternMask><B>fltLineStylePatternMask</B></A></TD><TD VALIGN=TOP>Pattern Mask </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLineStyleLineWidth><B>fltLineStyleLineWidth</B></A></TD><TD VALIGN=TOP>Line Width </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLod><B>fltLod</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltLodSwitchIn><B>fltLodSwitchIn</B></A></TD><TD VALIGN=TOP>Switch in distance </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltLodSwitchOut><B>fltLodSwitchOut</B></A></TD><TD VALIGN=TOP>Switch out distance </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLodSpecial1><B>fltLodSpecial1</B></A></TD><TD VALIGN=TOP>Special effects ID 1 - defined by real time </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLodSpecial2><B>fltLodSpecial2</B></A></TD><TD VALIGN=TOP>Special effects ID 2 - defined by real time </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLodUsePrevRange><B>fltLodUsePrevRange</B></A></TD><TD VALIGN=TOP>Use previous slant range </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLodAdditive><B>fltLodAdditive</B></A></TD><TD VALIGN=TOP>SPT flag: set to  <BR>
+			0 for replacement LOD <BR>
+			1 for additive LOD </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLodFreezeCenter><B>fltLodFreezeCenter</B></A></TD><TD VALIGN=TOP>Freeze center (do not recalculate) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltLodCenterPoint</B></TD><TD VALIGN=TOP>Center coordinate of LOD block </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltLodTransition><B>fltLodTransition</B></A></TD><TD VALIGN=TOP>Transition Range for Morphing </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltLodSignificantSize><B>fltLodSignificantSize</B></A></TD><TD VALIGN=TOP>Significant Size for LOD Switching </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLpAnimationPalette><B>fltLpAnimationPalette</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (256)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAnimationName><B>fltLpAnimationName</B></A></TD><TD VALIGN=TOP>Animation name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAnimationIndex><B>fltLpAnimationIndex</B></A></TD><TD VALIGN=TOP>Animation index in palette </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpPeriod><B>fltLpPeriod</B></A></TD><TD VALIGN=TOP>Animation period in seconds </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpPhaseDelay><B>fltLpPhaseDelay</B></A></TD><TD VALIGN=TOP>Animation phase delay in seconds </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpTimeOn><B>fltLpTimeOn</B></A></TD><TD VALIGN=TOP>Animation enabled period in seconds </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltVector>fltVector</A> </TD>
+<TD VALIGN=TOP><B>fltLpAnimationVector</B></TD><TD VALIGN=TOP>axis of rotation for rotating animation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFlashing><B>fltLpFlashing</B></A></TD><TD VALIGN=TOP>Flashing - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpRotating><B>fltLpRotating</B></A></TD><TD VALIGN=TOP>Rotating - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpRotateCCW><B>fltLpRotateCCW</B></A></TD><TD VALIGN=TOP>Rotate Counter Clockwise - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAnimationType><B>fltLpAnimationType</B></A></TD><TD VALIGN=TOP>Animation type <BR>
+		0 = Flashing <BR>
+		1 = Rotating <BR>
+		2 = Strobe <BR>
+		3 = Morse code </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpMorseTiming><B>fltLpMorseTiming</B></A></TD><TD VALIGN=TOP>Morse code timing <BR>
+		0 = Standard <BR>
+		1 = Farnsworth </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpWordRate><B>fltLpWordRate</B></A></TD><TD VALIGN=TOP>Word rate </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpCharacterRate><B>fltLpCharacterRate</B></A></TD><TD VALIGN=TOP>Character rate </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (1024)</TD>
+<TD VALIGN=TOP><A NAME=fltLpMorseString><B>fltLpMorseString</B></A></TD><TD VALIGN=TOP>Morse code string </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpSequenceLength><B>fltLpSequenceLength</B></A></TD><TD VALIGN=TOP>Number of items in a sequence of a light point animation (read only) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltLpAppearancePalette><B>fltLpAppearancePalette</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (256)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAppearanceName><B>fltLpAppearanceName</B></A></TD><TD VALIGN=TOP>Appearance name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAppearanceIndex><B>fltLpAppearanceIndex</B></A></TD><TD VALIGN=TOP>Appearance index in palette </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLpSmc><B>fltLpSmc</B></A></TD><TD VALIGN=TOP>Surface material code (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFid><B>fltLpFid</B></A></TD><TD VALIGN=TOP>Feature ID  (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpCreatorBackColor><B>fltLpCreatorBackColor</B></A></TD><TD VALIGN=TOP>Creator Back Color Index for bi-directional light points - encodes back color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpBackColor><B>fltLpBackColor</B></A></TD><TD VALIGN=TOP>Back Color Index for bi-directional light points  <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpBackColorIntensity><B>fltLpBackColorIntensity</B></A></TD><TD VALIGN=TOP>Back Color Intensity for bi-directional light points <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpBackIntensity><B>fltLpBackIntensity</B></A></TD><TD VALIGN=TOP>Scalar for Back Color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpDisplayMode><B>fltLpDisplayMode</B></A></TD><TD VALIGN=TOP>Display Mode <BR>
+			0 = Raster <BR>
+			1 = Calligraphic <BR>
+			2 = Either </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpMinDefocus><B>fltLpMinDefocus</B></A></TD><TD VALIGN=TOP>Minimum defocus (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpMaxDefocus><B>fltLpMaxDefocus</B></A></TD><TD VALIGN=TOP>Maximum defocus (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFadingMode><B>fltLpFadingMode</B></A></TD><TD VALIGN=TOP>Fading mode <BR>
+			0 = Enable perspective fading calculations <BR>
+			1 = Disable calculations </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFogPunchMode><B>fltLpFogPunchMode</B></A></TD><TD VALIGN=TOP>Fog punch <BR>
+			0 = Enable fog punch through calculations <BR>
+			1 = Disable calculations </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpDirectionalMode><B>fltLpDirectionalMode</B></A></TD><TD VALIGN=TOP>Directional mode <BR>
+			0 = Enable directional calculations <BR>
+			1 = Disable calculations </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpRangeMode><B>fltLpRangeMode</B></A></TD><TD VALIGN=TOP>Range mode <BR>
+			0 = Use depth (Z) buffer calculations <BR>
+			1 = Use slant range calculations </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpMinPixelSize><B>fltLpMinPixelSize</B></A></TD><TD VALIGN=TOP>Minimum diameter of points in pixels </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpMaxPixelSize><B>fltLpMaxPixelSize</B></A></TD><TD VALIGN=TOP>Maximum diameter of points in pixels </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpActualSize><B>fltLpActualSize</B></A></TD><TD VALIGN=TOP>Actual diameter of points in database coordinates </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpTransparentPixelSize><B>fltLpTransparentPixelSize</B></A></TD><TD VALIGN=TOP>Transparent falloff pixel size </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpTransparentFallOffExp><B>fltLpTransparentFallOffExp</B></A></TD><TD VALIGN=TOP>Transparent falloff exponent <BR>
+			>= 0 - falloff multiplier exponent (1.0 = linear falloff) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpTransparentScale><B>fltLpTransparentScale</B></A></TD><TD VALIGN=TOP>Transparent falloff scalar <BR>
+			> 0 - falloff multiplier scale factor </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpTransparentClamp><B>fltLpTransparentClamp</B></A></TD><TD VALIGN=TOP>Minimum permissable falloff multiplier result </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFogScale><B>fltLpFogScale</B></A></TD><TD VALIGN=TOP>Fog scalar <BR>
+			>= 0 - adjusts range of points for punch threw effect </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFogIntensity><B>fltLpFogIntensity</B></A></TD><TD VALIGN=TOP>Fog Intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpSizeThreshold><B>fltLpSizeThreshold</B></A></TD><TD VALIGN=TOP>Size Difference Threshold </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpDirectionalityType><B>fltLpDirectionalityType</B></A></TD><TD VALIGN=TOP>Direction Type <BR>
+			0 = Omnidirectional <BR>
+			1 = Unidirectional <BR>
+			2 = Bidirectional </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpHorizLobeAngle><B>fltLpHorizLobeAngle</B></A></TD><TD VALIGN=TOP>Horizontal lobe angle - total angle in degrees </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpVertLobeAngle><B>fltLpVertLobeAngle</B></A></TD><TD VALIGN=TOP>Vertical lobe angle - total angle in degrees </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpLobeRollAngle><B>fltLpLobeRollAngle</B></A></TD><TD VALIGN=TOP>Lobe roll angle - about local Y axis in degrees </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpLobeFallOff><B>fltLpLobeFallOff</B></A></TD><TD VALIGN=TOP>Directional falloff exponent <BR>
+			>= 0 - falloff multiplier (1.0 = linear falloff) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpAmbientIntensity><B>fltLpAmbientIntensity</B></A></TD><TD VALIGN=TOP>Ambient Intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpSignificance><B>fltLpSignificance</B></A></TD><TD VALIGN=TOP>Significance - drop out priority for RASCAL lights <BR>
+			0.0 - 1.0 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFrontIntensity><B>fltLpFrontIntensity</B></A></TD><TD VALIGN=TOP>Intensity for calligraphic light <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpNoBackColor><B>fltLpNoBackColor</B></A></TD><TD VALIGN=TOP>No back color <BR>
+			TRUE = do not use back color for bi-directional lights <BR>
+			FALSE = use back color for bi-directional lights </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpProximityOcculting><B>fltLpProximityOcculting</B></A></TD><TD VALIGN=TOP>Calligraphic proximity occulting (Debauching) <BR>
+			TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpReflective><B>fltLpReflective</B></A></TD><TD VALIGN=TOP>Reflective Only, non-emissive light point - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpRandomizeIntensity><B>fltLpRandomizeIntensity</B></A></TD><TD VALIGN=TOP>Random Intensity <BR>
+			0 = Never <BR>
+			1 = Low <BR>
+			2 = Medium <BR>
+			3 = High </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpPerspectiveMode><B>fltLpPerspectiveMode</B></A></TD><TD VALIGN=TOP>Perspective Mode - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpConforming><B>fltLpConforming</B></A></TD><TD VALIGN=TOP>Terrain Conforming </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpQuality><B>fltLpQuality</B></A></TD><TD VALIGN=TOP>Quality <BR>
+			0 = Low <BR>
+			1 = Medium <BR>
+			2 - High <BR>
+			3 - Undefined </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpDay><B>fltLpDay</B></A></TD><TD VALIGN=TOP>Visible during day - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpDusk><B>fltLpDusk</B></A></TD><TD VALIGN=TOP>Visible during dusk - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpNight><B>fltLpNight</B></A></TD><TD VALIGN=TOP>Visible during night - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpRange><B>fltLpRange</B></A></TD><TD VALIGN=TOP>Visibility range ( > 0 ) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFadeRangeRatio><B>fltLpFadeRangeRatio</B></A></TD><TD VALIGN=TOP>Fade range ratio <BR>
+		(0.0 - 1.0) - of total range at which light points start to fade </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFadeInTime><B>fltLpFadeInTime</B></A></TD><TD VALIGN=TOP>Fade in time - time in seconds it takes the light point to fade in when it is turned on </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpFadeOutTime><B>fltLpFadeOutTime</B></A></TD><TD VALIGN=TOP>Fade out time - time in seconds it takes the light point to fade out when it is turned off </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpLodRangeRatio><B>fltLpLodRangeRatio</B></A></TD><TD VALIGN=TOP>Lod range ratio <BR>
+		(0.0 - 1.0) - percentage of total range at which light point LODs are active </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLpLodScale><B>fltLpLodScale</B></A></TD><TD VALIGN=TOP>Lod scale - size of light point LOD polygon relative to light point diameter </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLpTexture><B>fltLpTexture</B></A></TD><TD VALIGN=TOP>Texture index for light point (-1 if none) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltMappingData><B>fltMappingData</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTM3PointPut>fltTM3PointPut</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PointPut</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTM4PointPut>fltTM4PointPut</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PointPut</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTMSphericalProject>fltTMSphericalProject</A> </TD>
+<TD VALIGN=TOP><B>fltTMSphericalProject</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTMRadialProject>fltTMRadialProject</A> </TD>
+<TD VALIGN=TOP><B>fltTMRadialProject</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltMatTextureLayer><B>fltMatTextureLayer</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMatTexture><B>fltMatTexture</B></A></TD><TD VALIGN=TOP>Material Texture Index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMatLayer><B>fltMatLayer</B></A></TD><TD VALIGN=TOP>Material Texture Layer </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltMatrix><B>fltMatrix</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix00><B>fltMatrix00</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix01><B>fltMatrix01</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix02><B>fltMatrix02</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix03><B>fltMatrix03</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix10><B>fltMatrix10</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix11><B>fltMatrix11</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix12><B>fltMatrix12</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix13><B>fltMatrix13</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix20><B>fltMatrix20</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix21><B>fltMatrix21</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix22><B>fltMatrix22</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix23><B>fltMatrix23</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix30><B>fltMatrix30</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix31><B>fltMatrix31</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix32><B>fltMatrix32</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltMatrix33><B>fltMatrix33</B></A></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltMesh><B>fltMesh</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMeshAttr>fltMeshAttr</A> </TD>
+<TD VALIGN=TOP><B>fltMeshAttr</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMeshNumPrimitives><B>fltMeshNumPrimitives</B></A></TD><TD VALIGN=TOP>Number of primitives contained in mesh (read only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMeshNumVtx><B>fltMeshNumVtx</B></A></TD><TD VALIGN=TOP>Number of vertices in vertex pool of mesh (read only) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltMeshAttr><B>fltMeshAttr</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyCreatorPrimeColor><B>fltPolyCreatorPrimeColor</B></A></TD><TD VALIGN=TOP>Creator Primary Color Index - encodes primary color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyPrimeColor><B>fltPolyPrimeColor</B></A></TD><TD VALIGN=TOP>Primary Color Index    <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyPrimeIntensity><B>fltPolyPrimeIntensity</B></A></TD><TD VALIGN=TOP>Primary Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyCreatorAltColor><B>fltPolyCreatorAltColor</B></A></TD><TD VALIGN=TOP>Creator Alternate Color Index - encodes alternate color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyAltColor><B>fltPolyAltColor</B></A></TD><TD VALIGN=TOP>Alternate Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyAltIntensity><B>fltPolyAltIntensity</B></A></TD><TD VALIGN=TOP>Alternate Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyMaterial><B>fltPolyMaterial</B></A></TD><TD VALIGN=TOP>Material index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyShader><B>fltPolyShader</B></A></TD><TD VALIGN=TOP>Shader index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTexture><B>fltPolyTexture</B></A></TD><TD VALIGN=TOP>Texture pattern index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyDetailTexture><B>fltPolyDetailTexture</B></A></TD><TD VALIGN=TOP>Detail texture pattern index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture1><B>fltLayerTexture1</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 1 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture2><B>fltLayerTexture2</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 2 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture3><B>fltLayerTexture3</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 3 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture4><B>fltLayerTexture4</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 4 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture5><B>fltLayerTexture5</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 5 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture6><B>fltLayerTexture6</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 6 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture7><B>fltLayerTexture7</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 7 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTexmap><B>fltPolyTexmap</B></A></TD><TD VALIGN=TOP>Texture mapping index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap1><B>fltLayerTexmap1</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 1 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap2><B>fltLayerTexmap2</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 2 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap3><B>fltLayerTexmap3</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 3 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap4><B>fltLayerTexmap4</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 4 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap5><B>fltLayerTexmap5</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 5 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap6><B>fltLayerTexmap6</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 6 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap7><B>fltLayerTexmap7</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 7 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect1><B>fltLayerEffect1</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect2><B>fltLayerEffect2</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect3><B>fltLayerEffect3</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect4><B>fltLayerEffect4</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 4 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect5><B>fltLayerEffect5</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 5 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect6><B>fltLayerEffect6</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 6 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect7><B>fltLayerEffect7</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 7 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData1><B>fltLayerData1</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData2><B>fltLayerData2</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData3><B>fltLayerData3</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData4><B>fltLayerData4</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 4 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData5><B>fltLayerData5</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 5 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData6><B>fltLayerData6</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 6 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData7><B>fltLayerData7</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 7 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyInfrared><B>fltPolyInfrared</B></A></TD><TD VALIGN=TOP>IR Color Code </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyIrMaterial><B>fltPolyIrMaterial</B></A></TD><TD VALIGN=TOP>IR Material code </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyPrio><B>fltPolyPrio</B></A></TD><TD VALIGN=TOP>Polygon relative priority </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyDrawType><B>fltPolyDrawType</B></A></TD><TD VALIGN=TOP>How to draw the polygon  <BR>
+			0 = Draw solid (front side only) <BR>
+			1 = Draw solid (both sides visible) <BR>
+			2 = Draw closed wireframe <BR>
+			3 = Draw wireframe (unclosed) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTexWhite><B>fltPolyTexWhite</B></A></TD><TD VALIGN=TOP>Draw Textured Polygon White - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTemplate><B>fltPolyTemplate</B></A></TD><TD VALIGN=TOP>Set template transparency <BR>
+			0 = Fixed With No Alpha <BR>
+			1 = Fixed With Alpha <BR>
+			2 = Axis With Alpha <BR>
+			4 = Point With Alpha </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTransparency><B>fltPolyTransparency</B></A></TD><TD VALIGN=TOP>Transparency <BR>
+			0 = opaque <BR>
+			0xffff = fully transparent </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolySmc><B>fltPolySmc</B></A></TD><TD VALIGN=TOP>Surface material code (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyFid><B>fltPolyFid</B></A></TD><TD VALIGN=TOP>Feature ID (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyLodControl><B>fltPolyLodControl</B></A></TD><TD VALIGN=TOP>Influences LOD Generation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyLineStyle><B>fltPolyLineStyle</B></A></TD><TD VALIGN=TOP>Linestyle Index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTerrain><B>fltPolyTerrain</B></A></TD><TD VALIGN=TOP>TRUE if geometry is terrain </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyNoPrimeColor><B>fltPolyNoPrimeColor</B></A></TD><TD VALIGN=TOP>TRUE if there is no primary color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyNoAltColor><B>fltPolyNoAltColor</B></A></TD><TD VALIGN=TOP>TRUE if there is no alternate color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyRgbMode><B>fltPolyRgbMode</B></A></TD><TD VALIGN=TOP>TRUE if color is RGB mode (read only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyFootprint><B>fltPolyFootprint</B></A></TD><TD VALIGN=TOP>TRUE if geometry is a footprint for CAT cutout </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyHidden><B>fltPolyHidden</B></A></TD><TD VALIGN=TOP>TRUE if geometry is hidden - not drawn </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyRoofline><B>fltPolyRoofline</B></A></TD><TD VALIGN=TOP>TRUE if geometry is part of a roofline as seen from above </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltGcLightMode><B>fltGcLightMode</B></A></TD><TD VALIGN=TOP>Polygon lighting mode <BR>
+			0 = None (Flat) <BR>
+			1 = Gouraud <BR>
+			2 = Dynamic (Lit) <BR>
+			3 = Dynamic Gouraud (Lit Gouraud) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltPolySmartPalette><B>fltPolySmartPalette</B></A></TD><TD VALIGN=TOP>Smart palette name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltIPln><B>fltIPln</B></A></TD><TD VALIGN=TOP>Polygon is BSP polygon - TRUE/FALSE, a polygon with this flag set will be drawn in the graphics view as the BSP polygon. <BR>
+This flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltNormColor><B>fltNormColor</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltNColorR><B>fltNColorR</B></A></TD><TD VALIGN=TOP>Red color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltNColorG><B>fltNColorG</B></A></TD><TD VALIGN=TOP>Green color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltNColorB><B>fltNColorB</B></A></TD><TD VALIGN=TOP>Blue color component (0.0 - 1.0) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltNormalMapEx><B>fltNormalMapEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltNormalMapExTexture</B></TD><TD VALIGN=TOP>Extended Material Normal Map Texture Layer </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltObject><B>fltObject</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjNoDay><B>fltObjNoDay</B></A></TD><TD VALIGN=TOP>Do not display in daylight </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjNoDusk><B>fltObjNoDusk</B></A></TD><TD VALIGN=TOP>Do not display at dusk </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjNoNight><B>fltObjNoNight</B></A></TD><TD VALIGN=TOP>Do not display at night </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjNoIllum><B>fltObjNoIllum</B></A></TD><TD VALIGN=TOP>Do not illuminate </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjNoShade><B>fltObjNoShade</B></A></TD><TD VALIGN=TOP>Flat shaded </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjShadow><B>fltObjShadow</B></A></TD><TD VALIGN=TOP>Object is group's shadow object </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltObjPreserveAtRuntime><B>fltObjPreserveAtRuntime</B></A></TD><TD VALIGN=TOP>TRUE if object is significant in runtime and must not be optimized or collapsed away </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltObjPrio><B>fltObjPrio</B></A></TD><TD VALIGN=TOP>Object relative priority </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltObjTransparency><B>fltObjTransparency</B></A></TD><TD VALIGN=TOP>Transparency <BR>
+			0 = opaque <BR>
+			0xffff = fully transparent </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltObjSpecial1><B>fltObjSpecial1</B></A></TD><TD VALIGN=TOP>Special effects ID 1 - defined by real time </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltObjSpecial2><B>fltObjSpecial2</B></A></TD><TD VALIGN=TOP>Special effects ID 2 - defined by real time </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltObjSignificance><B>fltObjSignificance</B></A></TD><TD VALIGN=TOP>Significance </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltPath><B>fltPath</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (120)</TD>
+<TD VALIGN=TOP><A NAME=fltPathName><B>fltPathName</B></A></TD><TD VALIGN=TOP>Name of Path </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltPathSpeedlimit><B>fltPathSpeedlimit</B></A></TD><TD VALIGN=TOP>Speed limit along this path </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPathNoPass><B>fltPathNoPass</B></A></TD><TD VALIGN=TOP>No passing flag </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPathType><B>fltPathType</B></A></TD><TD VALIGN=TOP>Path Type    <BR>
+			0 - vertices are sampled points whose normals represent the up vector at that point of the path <BR>
+			1 - vertices are sampled points whose normals represent the heading (i), pitch (j) and roll (k) at that point of the path </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltPhysicalMaterialMapEx><B>fltPhysicalMaterialMapEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltPhysicalMaterialMapExTexture</B></TD><TD VALIGN=TOP>Extended Material Physical Material Map Texture </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltPolygon><B>fltPolygon</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyCreatorPrimeColor><B>fltPolyCreatorPrimeColor</B></A></TD><TD VALIGN=TOP>Creator Primary Color Index - encodes primary color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyPrimeColor><B>fltPolyPrimeColor</B></A></TD><TD VALIGN=TOP>Primary Color Index    <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyPrimeIntensity><B>fltPolyPrimeIntensity</B></A></TD><TD VALIGN=TOP>Primary Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyCreatorAltColor><B>fltPolyCreatorAltColor</B></A></TD><TD VALIGN=TOP>Creator Alternate Color Index - encodes alternate color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyAltColor><B>fltPolyAltColor</B></A></TD><TD VALIGN=TOP>Alternate Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyAltIntensity><B>fltPolyAltIntensity</B></A></TD><TD VALIGN=TOP>Alternate Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyMaterial><B>fltPolyMaterial</B></A></TD><TD VALIGN=TOP>Material index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyShader><B>fltPolyShader</B></A></TD><TD VALIGN=TOP>Shader index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTexture><B>fltPolyTexture</B></A></TD><TD VALIGN=TOP>Texture pattern index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyDetailTexture><B>fltPolyDetailTexture</B></A></TD><TD VALIGN=TOP>Detail texture pattern index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture1><B>fltLayerTexture1</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 1 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture2><B>fltLayerTexture2</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 2 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture3><B>fltLayerTexture3</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 3 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture4><B>fltLayerTexture4</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 4 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture5><B>fltLayerTexture5</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 5 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture6><B>fltLayerTexture6</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 6 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexture7><B>fltLayerTexture7</B></A></TD><TD VALIGN=TOP>Texture pattern index for layer 7 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTexmap><B>fltPolyTexmap</B></A></TD><TD VALIGN=TOP>Texture mapping index (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap1><B>fltLayerTexmap1</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 1 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap2><B>fltLayerTexmap2</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 2 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap3><B>fltLayerTexmap3</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 3 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap4><B>fltLayerTexmap4</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 4 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap5><B>fltLayerTexmap5</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 5 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap6><B>fltLayerTexmap6</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 6 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerTexmap7><B>fltLayerTexmap7</B></A></TD><TD VALIGN=TOP>Texture mapping index for layer 7 (-1 if none) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect1><B>fltLayerEffect1</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect2><B>fltLayerEffect2</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect3><B>fltLayerEffect3</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect4><B>fltLayerEffect4</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 4 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect5><B>fltLayerEffect5</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 5 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect6><B>fltLayerEffect6</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 6 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerEffect7><B>fltLayerEffect7</B></A></TD><TD VALIGN=TOP>MultiTexture effect for layer 7 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData1><B>fltLayerData1</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData2><B>fltLayerData2</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData3><B>fltLayerData3</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData4><B>fltLayerData4</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 4 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData5><B>fltLayerData5</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 5 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData6><B>fltLayerData6</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 6 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerData7><B>fltLayerData7</B></A></TD><TD VALIGN=TOP>MultiTexture data for layer 7 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyInfrared><B>fltPolyInfrared</B></A></TD><TD VALIGN=TOP>IR Color Code </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyIrMaterial><B>fltPolyIrMaterial</B></A></TD><TD VALIGN=TOP>IR Material code </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyPrio><B>fltPolyPrio</B></A></TD><TD VALIGN=TOP>Polygon relative priority </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyDrawType><B>fltPolyDrawType</B></A></TD><TD VALIGN=TOP>How to draw the polygon  <BR>
+			0 = Draw solid (front side only) <BR>
+			1 = Draw solid (both sides visible) <BR>
+			2 = Draw closed wireframe <BR>
+			3 = Draw wireframe (unclosed) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTexWhite><B>fltPolyTexWhite</B></A></TD><TD VALIGN=TOP>Draw Textured Polygon White - TRUE/FALSE </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTemplate><B>fltPolyTemplate</B></A></TD><TD VALIGN=TOP>Set template transparency <BR>
+			0 = Fixed With No Alpha <BR>
+			1 = Fixed With Alpha <BR>
+			2 = Axis With Alpha <BR>
+			4 = Point With Alpha </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolySmc><B>fltPolySmc</B></A></TD><TD VALIGN=TOP>Surface material code (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyFid><B>fltPolyFid</B></A></TD><TD VALIGN=TOP>Feature ID (for DFAD) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned short (2)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTransparency><B>fltPolyTransparency</B></A></TD><TD VALIGN=TOP>Transparency <BR>
+			0 = opaque <BR>
+			0xffff = fully transparent </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyLodControl><B>fltPolyLodControl</B></A></TD><TD VALIGN=TOP>Influences LOD Generation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyLineStyle><B>fltPolyLineStyle</B></A></TD><TD VALIGN=TOP>Linestyle Index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyTerrain><B>fltPolyTerrain</B></A></TD><TD VALIGN=TOP>TRUE if geometry is terrain </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyNoPrimeColor><B>fltPolyNoPrimeColor</B></A></TD><TD VALIGN=TOP>TRUE if there is no primary color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyNoAltColor><B>fltPolyNoAltColor</B></A></TD><TD VALIGN=TOP>TRUE if there is no alternate color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyRgbMode><B>fltPolyRgbMode</B></A></TD><TD VALIGN=TOP>TRUE if color is RGB mode (read only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyFootprint><B>fltPolyFootprint</B></A></TD><TD VALIGN=TOP>TRUE if geometry is a footprint for CAT cutout </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyHidden><B>fltPolyHidden</B></A></TD><TD VALIGN=TOP>TRUE if geometry is hidden - not drawn </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltPolyRoofline><B>fltPolyRoofline</B></A></TD><TD VALIGN=TOP>TRUE if geometry is part of a roofline as seen from above </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltGcLightMode><B>fltGcLightMode</B></A></TD><TD VALIGN=TOP>Polygon lighting mode <BR>
+			0 = None (Flat) <BR>
+			1 = Gouraud <BR>
+			2 = Dynamic (Lit) <BR>
+			3 = Dynamic Gouraud (Lit Gouraud) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltPolySmartPalette><B>fltPolySmartPalette</B></A></TD><TD VALIGN=TOP>Smart palette name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltIPln><B>fltIPln</B></A></TD><TD VALIGN=TOP>Polygon is BSP polygon - TRUE/FALSE, a polygon with this flag set will be drawn in the graphics view as the BSP polygon. <BR>
+This flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltReflectionMapEx><B>fltReflectionMapEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltReflectionMapExColor</B></TD><TD VALIGN=TOP>Extended Material Reflection Map color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltReflectionMapExReflectionTexture</B></TD><TD VALIGN=TOP>Extended Material Reflection Map Reflection Texture </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltReflectionMapExEnvironmentTexture</B></TD><TD VALIGN=TOP>Extended Material Reflection Map Environment Texture </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltRoad><B>fltRoad</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadType><B>fltRoadType</B></A></TD><TD VALIGN=TOP>Type of road segment    <BR>
+			0 = curve    <BR>
+			1 = hill    <BR>
+			2 = straight </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadVersion><B>fltRoadVersion</B></A></TD><TD VALIGN=TOP>Road Tools version last modified with </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltRoadFirstControlPoint</B></TD><TD VALIGN=TOP>The first control point used to defined the road segment </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltRoadMiddleControlPoint</B></TD><TD VALIGN=TOP>The middle control point used to defined the road segment. This is only used for curve road segment.</TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltRoadLastControlPoint</B></TD><TD VALIGN=TOP>The last control point used to defined the road segment </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadEntranceSlope><B>fltRoadEntranceSlope</B></A></TD><TD VALIGN=TOP>Defines the slope at the first control point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadExitSlope><B>fltRoadExitSlope</B></A></TD><TD VALIGN=TOP>Defines the slope at last control point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadVertCurveLength><B>fltRoadVertCurveLength</B></A></TD><TD VALIGN=TOP>The horizontal distance covered by the vertical curve </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadMinCurveLength><B>fltRoadMinCurveLength</B></A></TD><TD VALIGN=TOP>The minimum curve length for calculating the parabola(s) used to build the vertical curve segment </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadSuperElevation><B>fltRoadSuperElevation</B></A></TD><TD VALIGN=TOP>Determines the maximum amount of bank in a curve, expressed as a slope (rise/run) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadArcRadius><B>fltRoadArcRadius</B></A></TD><TD VALIGN=TOP>Specifies the radius of the circle that defines the center line of the circular part of the curve </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadEntranceSpiralLength><B>fltRoadEntranceSpiralLength</B></A></TD><TD VALIGN=TOP>The distance through which the curvature and superelevation are introduced into a curve </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadExitSpiralLength><B>fltRoadExitSpiralLength</B></A></TD><TD VALIGN=TOP>The distance through which the curvature and superelevation are reduced when exiting a curve </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltRoadSpiralTwistType><B>fltRoadSpiralTwistType</B></A></TD><TD VALIGN=TOP>Type of twist of road segment  <BR>
+			0 - linear with length  <BR>
+			1 - linear with curve angle  <BR>
+			2 - cosine function with length </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltShaderPalette><B>fltShaderPalette</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderIndex><B>fltShaderIndex</B></A></TD><TD VALIGN=TOP>Shader index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderType><B>fltShaderType</B></A></TD><TD VALIGN=TOP>Shader type  <BR>
+			0 = Cg <BR>
+			1 = CgFX <BR>
+			2 = GLSL </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (1024)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderName><B>fltShaderName</B></A></TD><TD VALIGN=TOP>Shader name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (1024)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderVertexProgramFilename><B>fltShaderVertexProgramFilename</B></A></TD><TD VALIGN=TOP>File name of vertex program for shader (Cg only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (1024)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderFragmentProgramFilename><B>fltShaderFragmentProgramFilename</B></A></TD><TD VALIGN=TOP>File name of fragment program for shader (Cg only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (256)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderVertexEntryName><B>fltShaderVertexEntryName</B></A></TD><TD VALIGN=TOP>Entry point name of vertex program for shader (Cg only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (256)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderFragmentEntryName><B>fltShaderFragmentEntryName</B></A></TD><TD VALIGN=TOP>Entry point name of fragment program for shader (Cg only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderVertexProfile><B>fltShaderVertexProfile</B></A></TD><TD VALIGN=TOP>Vertex program profile (Cg only)  <BR>
+			Cg dependent values </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderFragmentProfile><B>fltShaderFragmentProfile</B></A></TD><TD VALIGN=TOP>Fragment program profile (Cg only) <BR>
+			Cg dependent values </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderNumVertexPrograms><B>fltShaderNumVertexPrograms</B></A></TD><TD VALIGN=TOP>Number of vertex programs </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShaderNumFragmentPrograms><B>fltShaderNumFragmentPrograms</B></A></TD><TD VALIGN=TOP>Number of fragment programs </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltShadowMapEx><B>fltShadowMapEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltShadowMapExMaxIntensity><B>fltShadowMapExMaxIntensity</B></A></TD><TD VALIGN=TOP>Max Intensity of Extended Material Shadow Map component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltShadowMapExTexture</B></TD><TD VALIGN=TOP>Extended Material Shadow Map Texture Layer </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltSound><B>fltSound</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndIndex><B>fltSndIndex</B></A></TD><TD VALIGN=TOP>Sound palette index value </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltSndOffset</B></TD><TD VALIGN=TOP>Offset from local origin </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltVector>fltVector</A> </TD>
+<TD VALIGN=TOP><B>fltSndNormal</B></TD><TD VALIGN=TOP>Sound direction wrt local coordinate axes </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndAmplitude><B>fltSndAmplitude</B></A></TD><TD VALIGN=TOP>Amplitude of sound </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndPitchBend><B>fltSndPitchBend</B></A></TD><TD VALIGN=TOP>Pitch bend of sound </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndPriority><B>fltSndPriority</B></A></TD><TD VALIGN=TOP>Priority of sound </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndFallOff><B>fltSndFallOff</B></A></TD><TD VALIGN=TOP>Falloff of sound </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndWidth><B>fltSndWidth</B></A></TD><TD VALIGN=TOP>Width of sound lobe </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndDoppler><B>fltSndDoppler</B></A></TD><TD VALIGN=TOP>Doppler effect on/off </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndAbsorption><B>fltSndAbsorption</B></A></TD><TD VALIGN=TOP>Sound absorption on/off </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndDelay><B>fltSndDelay</B></A></TD><TD VALIGN=TOP>Sound delay for distance on/off </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndDirection><B>fltSndDirection</B></A></TD><TD VALIGN=TOP>Direction Type <BR>
+			0 = Omnidirectional <BR>
+			1 = Unidirectional <BR>
+			2 = Bidirectional </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndActive><B>fltSndActive</B></A></TD><TD VALIGN=TOP>Sound played when database loaded </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltSoundPalette><B>fltSoundPalette</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSndIndex><B>fltSndIndex</B></A></TD><TD VALIGN=TOP>Sound palette index value </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (80)</TD>
+<TD VALIGN=TOP><A NAME=fltSndFilename><B>fltSndFilename</B></A></TD><TD VALIGN=TOP>Full path of sound </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltSpecularEx><B>fltSpecularEx</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSpecularExShininess><B>fltSpecularExShininess</B></A></TD><TD VALIGN=TOP>Shininess of Extended Material Specular component </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltNormColor>fltNormColor</A> </TD>
+<TD VALIGN=TOP><B>fltSpecularExColor</B></TD><TD VALIGN=TOP>Extended Material Specular color </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltSpecularExLayer1</B></TD><TD VALIGN=TOP>Extended Material Specular Texture Layer 1 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltSpecularExLayer2</B></TD><TD VALIGN=TOP>Extended Material Specular Texture Layer 2 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltSpecularExLayer3</B></TD><TD VALIGN=TOP>Extended Material Specular Texture Layer 3 </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatTextureLayer>fltMatTextureLayer</A> </TD>
+<TD VALIGN=TOP><B>fltSpecularExLayer4</B></TD><TD VALIGN=TOP>Extended Material Specular Texture Layer 4 </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltSurface><B>fltSurface</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltSurfaceAttribute><B>fltSurfaceAttribute</B></A></TD><TD VALIGN=TOP>Surface attribute name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltSurfaceParentLevel><B>fltSurfaceParentLevel</B></A></TD><TD VALIGN=TOP>Surface parent level <BR>
+			1 = Vertex <BR>
+			2 = Edge <BR>
+			3 = Polygon <BR>
+			18 = Grid </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltSwitch><B>fltSwitch</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSwCurMask><B>fltSwCurMask</B></A></TD><TD VALIGN=TOP>Index of current mask (0..fltSwMaxMask-1) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSwMaxMask><B>fltSwMaxMask</B></A></TD><TD VALIGN=TOP>Number of masks </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltSwCount><B>fltSwCount</B></A></TD><TD VALIGN=TOP>Number of 32 bit words required for each mask  <BR>
+			(num children / 32)      if (num children % 32) is 0 <BR>
+			(num children / 32) + 1  if (num children % 32) is not 0 <BR>
+			</TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTM3PointPut><B>fltTM3PointPut</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PtOriginUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PtAlignUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PtShearUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PtOriginXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PtAlignXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM3PtShearXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTM4PointPut><B>fltTM4PointPut</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtOriginUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtAlignUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtShearUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtPerspectiveUV</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtOriginXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtAlignXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtShearXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTM4PtPerspectiveXYZ</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTMRadialProject><B>fltTMRadialProject</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTMRadVertex1</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTMRadVertex2</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTMRadRepititions><B>fltTMRadRepititions</B></A></TD><TD VALIGN=TOP>Radial texture mapping number of repititions </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTMSphericalProject><B>fltTMSphericalProject</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltTMSphCenter</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTMSphRepititions><B>fltTMSphRepititions</B></A></TD><TD VALIGN=TOP>Spherical texture mapping number of repititions </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltText><B>fltText</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltRecDummy>fltRecDummy</A> *</TD>
+<TD VALIGN=TOP><B>fltTextText</B></TD><TD VALIGN=TOP>String drawn </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextType><B>fltTextType</B></A></TD><TD VALIGN=TOP>Text Type <BR>
+			0 = Static <BR>
+			1 = Text String <BR>
+			2 = Integer <BR>
+			3 = Float </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextDrawType><B>fltTextDrawType</B></A></TD><TD VALIGN=TOP>Draw Type <BR>
+			0 = Solid <BR>
+			1 = Closed Wireframe <BR>
+			2 = Unclosed Wireframe <BR>
+			3 = AltColor Wire/Solid</TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextJustify><B>fltTextJustify</B></A></TD><TD VALIGN=TOP>Justification <BR>
+			0 = Left <BR>
+			1 = Center <BR>
+			2 = Right </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTextFloatval><B>fltTextFloatval</B></A></TD><TD VALIGN=TOP>Float value (Text Type is Float) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextIntval><B>fltTextIntval</B></A></TD><TD VALIGN=TOP>Integer value (Text Type is Integer)</TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextCreatorColor><B>fltTextCreatorColor</B></A></TD><TD VALIGN=TOP>Creator Primary Color Index - encodes text primary color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextColor><B>fltTextColor</B></A></TD><TD VALIGN=TOP>Text Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextColorIntensity><B>fltTextColorIntensity</B></A></TD><TD VALIGN=TOP>Text Color Intensity  <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextCreatorAltColor><B>fltTextCreatorAltColor</B></A></TD><TD VALIGN=TOP>Creator Alternate Color Index - encodes text alternate color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextAltColor><B>fltTextAltColor</B></A></TD><TD VALIGN=TOP>Text Alternate Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextAltColorIntensity><B>fltTextAltColorIntensity</B></A></TD><TD VALIGN=TOP>Text Alternate Color Intensity <BR>
+			(0.0 - 1.0) - in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextMaterial><B>fltTextMaterial</B></A></TD><TD VALIGN=TOP>Text Material </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltIntMin><B>fltIntMin</B></A></TD><TD VALIGN=TOP>Lower bound for fltTextIntVal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltIntMax><B>fltIntMax</B></A></TD><TD VALIGN=TOP>Upper bound for fltTextIntVal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTextFloatMin><B>fltTextFloatMin</B></A></TD><TD VALIGN=TOP>Lower bound for fltTextFloatVal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTextFloatMax><B>fltTextFloatMax</B></A></TD><TD VALIGN=TOP>Upper bound for fltTextFloatVal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (120)</TD>
+<TD VALIGN=TOP><A NAME=fltTextFontname><B>fltTextFontname</B></A></TD><TD VALIGN=TOP>Font Name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextVertical><B>fltTextVertical</B></A></TD><TD VALIGN=TOP>Text Style <BR>
+			0 = Normal <BR>
+			1 = Vertical </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextBold><B>fltTextBold</B></A></TD><TD VALIGN=TOP>Text Style <BR>
+			0 = Normal <BR>
+			1 = Bold </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextItalic><B>fltTextItalic</B></A></TD><TD VALIGN=TOP>Text Style <BR>
+			0 = Normal <BR>
+			1 = Italic </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextUnderline><B>fltTextUnderline</B></A></TD><TD VALIGN=TOP>Text Style <BR>
+			0 = Normal <BR>
+			1 = Underlined </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextLinestyle><B>fltTextLinestyle</B></A></TD><TD VALIGN=TOP>Line Style </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTextDecimalPlaces><B>fltTextDecimalPlaces</B></A></TD><TD VALIGN=TOP>Number of decimal places for Float </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char (1)</TD>
+<TD VALIGN=TOP><A NAME=fltIOn><B>fltIOn</B></A></TD><TD VALIGN=TOP>Node Displayed - TRUE/FALSE, this flag is valid at runtime only and is not saved with the OpenFlight database file </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (variable)</TD>
+<TD VALIGN=TOP><A NAME=fltComment><B>fltComment</B></A></TD><TD VALIGN=TOP>Comment Text </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTextureMapping><B>fltTextureMapping</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMappingType><B>fltMappingType</B></A></TD><TD VALIGN=TOP>Texture mapping type (read only) <BR>
+			1 = 3 point put  <BR>
+			2 = 4 point put  <BR>
+			4 = Spherical project  <BR>
+			5 = Radial project <BR>
+			6 = Environment </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltMappingIndex><B>fltMappingIndex</B></A></TD><TD VALIGN=TOP>Texture mapping index </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMappingTransformMatrix</B></TD><TD VALIGN=TOP>Texture Mapping Transformation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMappingData>fltMappingData</A> </TD>
+<TD VALIGN=TOP><B>fltMappingData</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTorsion><B>fltTorsion</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (128)</TD>
+<TD VALIGN=TOP><A NAME=fltTorsionAttribute><B>fltTorsionAttribute</B></A></TD><TD VALIGN=TOP>Torsion attribute name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltVectord>fltVectord</A> </TD>
+<TD VALIGN=TOP><B>fltTorsionVector</B></TD><TD VALIGN=TOP>Torsion vector </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTxtGeoCoord><B>fltTxtGeoCoord</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTxtGeoCoord>fltTxtGeoCoord</A> *</TD>
+<TD VALIGN=TOP><B>fltTGNext</B></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTxtGeoCoordData>fltTxtGeoCoordData</A> </TD>
+<TD VALIGN=TOP><B>fltTGData</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTxtGeoCoordData><B>fltTxtGeoCoordData</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTGU><B>fltTGU</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTGV><B>fltTGV</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTGLat><B>fltTGLat</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltTGLon><B>fltTGLon</B></A></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltTxtGeoCoordLst><B>fltTxtGeoCoordLst</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltTGNumCoords><B>fltTGNumCoords</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltTxtGeoCoord>fltTxtGeoCoord</A> *</TD>
+<TD VALIGN=TOP><B>fltTGCoords</B></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltVector><B>fltVector</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVectorI><B>fltVectorI</B></A></TD><TD VALIGN=TOP>i component of vector </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVectorJ><B>fltVectorJ</B></A></TD><TD VALIGN=TOP>j component of vector </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVectorK><B>fltVectorK</B></A></TD><TD VALIGN=TOP>k component of vector </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltVectord><B>fltVectord</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltVectordI><B>fltVectordI</B></A></TD><TD VALIGN=TOP>i component of vector </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltVectordJ><B>fltVectordJ</B></A></TD><TD VALIGN=TOP>j component of vector </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltVectordK><B>fltVectordK</B></A></TD><TD VALIGN=TOP>k component of vector </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltVertex><B>fltVertex</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVHard><B>fltVHard</B></A></TD><TD VALIGN=TOP>TRUE if vertex to get face's normal </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVLeaveNorm><B>fltVLeaveNorm</B></A></TD><TD VALIGN=TOP>TRUE to leave normal alone when shading </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVHard2><B>fltVHard2</B></A></TD><TD VALIGN=TOP>TRUE if 2nd vertex of hardedge </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVRgbMode><B>fltVRgbMode</B></A></TD><TD VALIGN=TOP>Color is RGB Mode TRUE/FALSE (read only) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVCreatorColor><B>fltVCreatorColor</B></A></TD><TD VALIGN=TOP>Creator Color Index - encodes vertex color index and intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVColor><B>fltVColor</B></A></TD><TD VALIGN=TOP>Vertex Color Index <BR>
+			(0 - 1023) - (without intensity) in index mode </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVIntensity><B>fltVIntensity</B></A></TD><TD VALIGN=TOP>Vertex Color Intensity </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>unsigned int (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVAlpha><B>fltVAlpha</B></A></TD><TD VALIGN=TOP>vertex alpha (0 - 255) <BR>
+			0 = fully transparent <BR>
+			255 = opaque </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltCoord3d</B></TD><TD VALIGN=TOP>Double precision floating point coordinate X, Y, Z </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltVector>fltVector</A> </TD>
+<TD VALIGN=TOP><B>fltVNormal</B></TD><TD VALIGN=TOP>Vertex normal,if any </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVU><B>fltVU</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltVV><B>fltVV</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU1><B>fltLayerU1</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 1 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV1><B>fltLayerV1</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 1 (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU2><B>fltLayerU2</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 2 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV2><B>fltLayerV2</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 2 (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU3><B>fltLayerU3</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 3 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV3><B>fltLayerV3</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 3 (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU4><B>fltLayerU4</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 4 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV4><B>fltLayerV4</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 4 (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU5><B>fltLayerU5</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 5 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV5><B>fltLayerV5</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 5 (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU6><B>fltLayerU6</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 6 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV6><B>fltLayerV6</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 6 (V) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerU7><B>fltLayerU7</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 7 (U) </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltLayerV7><B>fltLayerV7</B></A></TD><TD VALIGN=TOP>Texture mapping coordinate for layer 7 (V) </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmGeneral><B>fltXmGeneral</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltMatrix>fltMatrix</A> </TD>
+<TD VALIGN=TOP><B>fltMatrix</B></TD><TD VALIGN=TOP>Transformation matrix </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmLimits><B>fltXmLimits</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltXmLimitCur><B>fltXmLimitCur</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltXmLimitMin><B>fltXmLimitMin</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltXmLimitMax><B>fltXmLimitMax</B></A></TD><TD></TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>double (8)</TD>
+<TD VALIGN=TOP><A NAME=fltXmLimitInc><B>fltXmLimitInc</B></A></TD><TD></TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmPut><B>fltXmPut</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmPutFromOrigin</B></TD><TD VALIGN=TOP>FROM origin </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmPutFromAlign</B></TD><TD VALIGN=TOP>FROM align </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmPutFromTrack</B></TD><TD VALIGN=TOP>FROM track </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmPutToOrigin</B></TD><TD VALIGN=TOP>TO origin </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmPutToAlign</B></TD><TD VALIGN=TOP>TO align </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmPutToTrack</B></TD><TD VALIGN=TOP>TO track </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmRotate><B>fltXmRotate</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmRotateCenter</B></TD><TD VALIGN=TOP>center of rotation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltVector>fltVector</A> </TD>
+<TD VALIGN=TOP><B>fltXmRotateAxis</B></TD><TD VALIGN=TOP>axis of rotation </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmRotateAngle><B>fltXmRotateAngle</B></A></TD><TD VALIGN=TOP>Angle by which to rotate </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmRotateEdge><B>fltXmRotateEdge</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmRotRefPoint1</B></TD><TD VALIGN=TOP>first reference point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmRotRefPoint2</B></TD><TD VALIGN=TOP>second reference point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmRotEdgeAngle><B>fltXmRotEdgeAngle</B></A></TD><TD VALIGN=TOP>Angle by which to rotate </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmScale><B>fltXmScale</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmScaleCenter</B></TD><TD VALIGN=TOP>center of scale </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmScaleX><B>fltXmScaleX</B></A></TD><TD VALIGN=TOP>amount by which to scale in X </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmScaleY><B>fltXmScaleY</B></A></TD><TD VALIGN=TOP>amount by which to scale in Y </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmScaleZ><B>fltXmScaleZ</B></A></TD><TD VALIGN=TOP>amount by which to scale in Z </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmScaleToPoint><B>fltXmScaleToPoint</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmScalePointCenter</B></TD><TD VALIGN=TOP>center of scale </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmScaleRefPoint1</B></TD><TD VALIGN=TOP>first reference point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmScaleRefPoint2</B></TD><TD VALIGN=TOP>second reference point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmScaleOverAll><B>fltXmScaleOverAll</B></A></TD><TD VALIGN=TOP>Overall scale factor </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmScaleAxis><B>fltXmScaleAxis</B></A></TD><TD VALIGN=TOP>Scale factor in direction of axis </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>float (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXmScaleRotAngle><B>fltXmScaleRotAngle</B></A></TD><TD VALIGN=TOP>Angle by which to rotate </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXmTranslate><B>fltXmTranslate</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmTranslateFrom</B></TD><TD VALIGN=TOP>reference FROM point </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>record <A HREF=#fltCoord3d>fltCoord3d</A> </TD>
+<TD VALIGN=TOP><B>fltXmTranslateDelta</B></TD><TD VALIGN=TOP>Delta to translate node by </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD>record</TD><TD COLSPAN="3"><A NAME=fltXref><B>fltXref</B></A> {</TD></TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>char* (200)</TD>
+<TD VALIGN=TOP><A NAME=fltXrefFilename><B>fltXrefFilename</B></A></TD><TD VALIGN=TOP>External reference file name </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGcColPal><B>fltGcColPal</B></A></TD><TD VALIGN=TOP>External reference color palette override </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGcMatPal><B>fltGcMatPal</B></A></TD><TD VALIGN=TOP>External reference material palette override </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGcTxtPal><B>fltGcTxtPal</B></A></TD><TD VALIGN=TOP>External reference texture palette override </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGcLpPal><B>fltGcLpPal</B></A></TD><TD VALIGN=TOP>External reference light point palette override </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltGcShaderPal><B>fltGcShaderPal</B></A></TD><TD VALIGN=TOP>External reference shader palette override </TD>
+</TR>
+<TR><TD></TD>
+<TD NOWRAP VALIGN=TOP>mgbool (4)</TD>
+<TD VALIGN=TOP><A NAME=fltXrefViewAsBox><B>fltXrefViewAsBox</B></A></TD><TD VALIGN=TOP>View external database as bounding box in scene </TD>
+</TR>
+<TR><TD>}
+</TD><TD></TD><TD></TD><TD></TD></TR>
+</TABLE>
+</BODY>
+</HTML>

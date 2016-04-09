@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>mgsavepathtype</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgsavepathtype><H1 CLASS="APISYMBOL">mgsavepathtype</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgsavepathtype</B> - Save path type for 
+external files associated with a database file (textures and shaders)<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgsavepathtype {
+&#32;&#32;&#32;MSPT_ABSOLUTE,
+&#32;&#32;&#32;MSPT_RELATIVE,
+&#32;&#32;&#32;MSPT_NOPATH,
+&#32;&#32;&#32;MSPT_UNKNOWN,
+} mgsavepathtype;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MSPT_ABSOLUTE</B><DD>Save absolute file paths<DT><B>MSPT_RELATIVE</B><DD>Save relative file paths<DT><B>MSPT_NOPATH</B><DD>Save no path information with file names<DT><B>MSPT_UNKNOWN</B><DD>Unknown save path type</DL></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgTextureGetSavePathType.htm#mgTextureGetSavePathType>mgTextureGetSavePathType</A>, <A HREF=mgTextureSetSavePathType.htm#mgTextureSetSavePathType>mgTextureSetSavePathType</A>, 
+<A HREF=mgShaderGetSavePathType.htm#mgShaderGetSavePathType>mgShaderGetSavePathType</A>, <A HREF=mgShaderSetSavePathType.htm#mgShaderSetSavePathType>mgShaderSetSavePathType</A></DD></DL></BODY>
+
+</HTML>

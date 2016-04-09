@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>GRAPHICVIEWFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=GRAPHICVIEWFUNC><H1>Graphics View Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgFitOnGrid.htm#mgFitOnGrid><B>mgFitOnGrid</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgFitOnNode.htm#mgFitOnNode><B>mgFitOnNode</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgFitOnRecList.htm#mgFitOnRecList><B>mgFitOnRecList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgFitOnSelect.htm#mgFitOnSelect><B>mgFitOnSelect</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreePaneLayout.htm#mgFreePaneLayout><B>mgFreePaneLayout</B></A> (<A HREF=mgpanelayout.htm#mgpanelayout>mgpanelayout</A> <I>layout</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentGridMatrix.htm#mgGetCurrentGridMatrix><B>mgGetCurrentGridMatrix</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentGridPoints.htm#mgGetCurrentGridPoints><B>mgGetCurrentGridPoints</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>origin</I>, <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>xAxis</I>, <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>third</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentTrackPlane.htm#mgGetCurrentTrackPlane><B>mgGetCurrentTrackPlane</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgplaned.htm#mgplaned>mgplaned*</A> <I>trackplane</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetPaneLayout.htm#mgGetPaneLayout><B>mgGetPaneLayout</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgpanelayout.htm#mgpanelayout>mgpanelayout</A> <I>layout</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGraphicsViewSettingGetDouble.htm#mgGraphicsViewSettingGetDouble><B>mgGraphicsViewSettingGetDouble</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A> <I>settingName</I>, double* <I>settingValue</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGraphicsViewSettingGetInteger.htm#mgGraphicsViewSettingGetInteger><B>mgGraphicsViewSettingGetInteger</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A> <I>settingName</I>, int* <I>settingValue</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGraphicsViewSettingGetMatrix.htm#mgGraphicsViewSettingGetMatrix><B>mgGraphicsViewSettingGetMatrix</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A> <I>settingName</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>settingValue</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGraphicsViewSettingSetDouble.htm#mgGraphicsViewSettingSetDouble><B>mgGraphicsViewSettingSetDouble</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A> <I>settingName</I>, double <I>settingValue</I>, unsigned int <I>setMask</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGraphicsViewSettingSetInteger.htm#mgGraphicsViewSettingSetInteger><B>mgGraphicsViewSettingSetInteger</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A> <I>settingName</I>, int <I>settingValue</I>, unsigned int <I>setMask</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGraphicsViewSettingSetMatrix.htm#mgGraphicsViewSettingSetMatrix><B>mgGraphicsViewSettingSetMatrix</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A> <I>settingName</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>settingValue</I>, unsigned int <I>setMask</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgpanelayout.htm#mgpanelayout>mgpanelayout</A> <TD><A HREF=mgNewPaneLayout.htm#mgNewPaneLayout><B>mgNewPaneLayout</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgResetView.htm#mgResetView><B>mgResetView</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentGridPoints.htm#mgSetCurrentGridPoints><B>mgSetCurrentGridPoints</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>origin</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>xAxis</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>third</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetPaneLayout.htm#mgSetPaneLayout><B>mgSetPaneLayout</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgpanelayout.htm#mgpanelayout>mgpanelayout</A> <I>layout</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

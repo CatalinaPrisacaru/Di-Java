@@ -1,0 +1,134 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+GEOMETRYFUNCTIONTESTDIALOG DIALOGEX 0, 0, 390, 244
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Geometry Function Test"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Function List:",IDC_STATIC,5,6,47,8
+    CONTROL         "All",IDC_SHOWALL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,57,6,23,8
+    CONTROL         "3D",IDC_SHOW3D,"Button",BS_AUTORADIOBUTTON,89,6,23,8
+    CONTROL         "2D",IDC_SHOW2D,"Button",BS_AUTORADIOBUTTON,122,6,23,8
+    LTEXT           "Use Mouse to Pick:",IDC_STATIC,184,6,63,8
+    CONTROL         "Coordinate 1",IDC_PICKCOORD1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,253,5,56,10
+    CONTROL         "Coordinate 2",IDC_PICKCOORD2,"Button",BS_AUTORADIOBUTTON,311,5,56,10
+    LISTBOX         IDC_LIST,5,19,166,203,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Input",IDC_STATIC,176,17,209,100
+    LTEXT           "Coordinate 1:",IDC_STATIC,197,30,43,8
+    LTEXT           "Coordinate 2:",IDC_STATIC,297,30,43,8
+    EDITTEXT        IDC_INPUTX,197,42,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AXISX,297,42,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INPUTY,197,58,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AXISY,297,58,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INPUTZ,197,74,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AXISZ,297,74,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INPUTANGLE,297,97,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUTX,197,144,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUTSCALAR,297,144,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUTY,197,160,83,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUTZ,197,176,83,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Calculate",IDC_CALCULATE,275,225,54,14
+    PUSHBUTTON      "Close",MGID_CANCEL,333,225,52,14
+    RTEXT           "X:",IDC_STATIC,184,45,8,8
+    RTEXT           "Y:",IDC_STATIC,184,61,8,8
+    RTEXT           "Z:",IDC_STATIC,184,77,8,8
+    GROUPBOX        "Results",IDC_STATIC,176,121,209,77
+    RTEXT           "X:",IDC_STATIC,184,146,8,8
+    RTEXT           "Y:",IDC_STATIC,184,162,8,8
+    RTEXT           "Z:",IDC_STATIC,184,178,8,8
+    RTEXT           "Scalar:",IDC_STATIC,270,100,23,8
+    RTEXT           "X:",IDC_STATIC,285,45,8,8
+    RTEXT           "Y:",IDC_STATIC,285,61,8,8
+    RTEXT           "Z:",IDC_STATIC,285,77,8,8
+    LTEXT           "Coordinate:",IDC_STATIC,197,132,37,8
+    LTEXT           "Scalar:",IDC_STATIC,297,132,23,8
+    LTEXT           "Static",IDC_DESCRIPTION,5,228,264,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    GEOMETRYFUNCTIONTESTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 385
+        BOTTOMMARGIN, 239
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

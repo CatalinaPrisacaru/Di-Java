@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<TITLE>mgnotifierevent</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgnotifierevent><H1 CLASS="APISYMBOL">mgnotifierevent</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgnotifierevent</B> - Notifier Event types<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgnotifierevent {
+&#32;&#32;&#32;MNOTIFY_SELECTLISTCHANGED,
+&#32;&#32;&#32;MNOTIFY_NEWTOPDATABASE,
+&#32;&#32;&#32;MNOTIFY_DATABASECLOSED,
+&#32;&#32;&#32;MNOTIFY_CURRENTPRIMARYCOLORCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTALTCOLORCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTTEXTURECHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTMATERIALCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTTEXTUREMAPPINGCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTLIGHTPOINTAPPEARANCECHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTLIGHTPOINTANIMATIONCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTSHADERCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTSOUNDCHANGED,
+&#32;&#32;&#32;MNOTIFY_CURRENTLIGHTSOURCECHANGED,
+&#32;&#32;&#32;MNOTIFY_LIGHTPOINTPALETTEIZED,
+&#32;&#32;&#32;MNOTIFY_DESKTOPINIT,
+&#32;&#32;&#32;MNOTIFY_DESKTOPEXIT,
+&#32;&#32;&#32;MNOTIFY_DATABASEOPENED,
+&#32;&#32;&#32;MNOTIFY_DATABASESAVED,
+&#32;&#32;&#32;MNOTIFY_NODECHANGED,
+&#32;&#32;&#32;MNOTIFY_NODEDELETED,
+&#32;&#32;&#32;MNOTIFY_NODECREATED,
+&#32;&#32;&#32;MNOTIFY_NODEREPARENTED,
+&#32;&#32;&#32;MNOTIFY_COLORPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_TEXTUREPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_MATERIALPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_TEXTUREMAPPINGPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_LIGHTPOINTAPPEARANCEPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_LIGHTPOINTANIMATIONPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_SHADERPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_SOUNDPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_LIGHTSOURCEPALETTECHANGED,
+&#32;&#32;&#32;MNOTIFY_SWITCHDISTANCECHANGED,
+&#32;&#32;&#32;MNOTIFY_TIMEOFDAYCHANGED,
+&#32;&#32;&#32;MNOTIFY_TEXTURESELECTCHANGED,
+&#32;&#32;&#32;MNOTIFY_EXTENSIONCHANGED,
+&#32;&#32;&#32;MNOTIFY_DATABASEPRESAVE,
+&#32;&#32;&#32;MNOTIFY_EYEPOINTCHANGED,
+} mgnotifierevent;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MNOTIFY_SELECTLISTCHANGED</B><DD>Select List Change notifier event. This 
+is sent whenever the select list contents change.<BR> 
+Applicable to viewer tools only.<DT><B>MNOTIFY_NEWTOPDATABASE</B><DD>New Top Database notifier event. This is 
+sent whenever a new database is selected to be 
+the top (focus) database in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_DATABASECLOSED</B><DD>Database Close notifier event. This is 
+sent whenever a database is closed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTPRIMARYCOLORCHANGED</B><DD>Current Primary Color Change notifier event. 
+This is sent whenever the modeler selects a new 
+primary modeling color.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTALTCOLORCHANGED</B><DD>Current Alternate Color Change notifier event. 
+This is sent whenever the modeler selects a new 
+alternate modeling color.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTTEXTURECHANGED</B><DD>Current Texture Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling texture.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTMATERIALCHANGED</B><DD>Current Material Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling material.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTTEXTUREMAPPINGCHANGED</B><DD>Current Texture Mapping Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling texture mapping.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTLIGHTPOINTAPPEARANCECHANGED</B><DD>Current Light Point Appearance Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling light point appearance.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTLIGHTPOINTANIMATIONCHANGED</B><DD>Current Light Point Animation Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling light point animation.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTSHADERCHANGED</B><DD>Current Shader Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling shader.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTSOUNDCHANGED</B><DD>Current Sound Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling sound.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_CURRENTLIGHTSOURCECHANGED</B><DD>Current Light Source Change notifier event. 
+This is sent whenever the modeler selects a new 
+modeling light source.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_LIGHTPOINTPALETTEIZED</B><DD>Light Point Paletteized notifier event. 
+This is sent whenever an inline light point is read and converted 
+to be a paletteized light point.<BR> 
+Applicable to viewer tools only.<DT><B>MNOTIFY_DESKTOPINIT</B><DD>Desktop Initialized notifier event. This is 
+sent when the Creator desktop starts after all plug-ins are 
+initialized. <BR> 
+Applicable to all tools.<DT><B>MNOTIFY_DESKTOPEXIT</B><DD>Desktop Exit notifier event. This is 
+sent when the Creator desktop exits.<BR> 
+Applicable to all tools.<DT><B>MNOTIFY_DATABASEOPENED</B><DD>Database Opened notifier event. This is 
+sent whenever a database is opened in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_DATABASESAVED</B><DD>Database Saved notifier event. This is 
+sent whenever a database is saved in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_NODECHANGED</B><DD>Node Changed notifier event. This is 
+sent whenever a node attribute is changed in Creator.<BR> 
+Applicable to viewer tools only.<DT><B>MNOTIFY_NODEDELETED</B><DD>Node Deleted notifier event. This is 
+sent whenever a node is deleted in Creator.<BR> 
+Applicable to viewer tools only.<DT><B>MNOTIFY_NODECREATED</B><DD>Node Created notifier event. This is 
+sent whenever a new node is created in Creator.<BR> 
+Applicable to viewer tools only.<DT><B>MNOTIFY_NODEREPARENTED</B><DD>Node Re-Parented notifier event. This is 
+sent whenever a new node is re-parented in Creator.<BR> 
+Applicable to viewer tools only.<DT><B>MNOTIFY_COLORPALETTECHANGED</B><DD>Color Palette Changed notifier event. This is 
+sent whenever a color palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_TEXTUREPALETTECHANGED</B><DD>Texture Palette Changed notifier event. This is 
+sent whenever a texture palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_MATERIALPALETTECHANGED</B><DD>Material Palette Changed notifier event. This is 
+sent whenever a material palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_TEXTUREMAPPINGPALETTECHANGED</B><DD>Texture Mapping Palette Changed notifier event. This is 
+sent whenever a texture mapping palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_LIGHTPOINTAPPEARANCEPALETTECHANGED</B><DD>Light Point Appearance Palette Changed notifier event. This is 
+sent whenever a light point appearance palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_LIGHTPOINTANIMATIONPALETTECHANGED</B><DD>Light Point Animation Palette Changed notifier event. This is 
+sent whenever a light point animation palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_SHADERPALETTECHANGED</B><DD>Shader Palette Changed notifier event. This is 
+sent whenever a shader palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_SOUNDPALETTECHANGED</B><DD>Sound Palette Changed notifier event. This is 
+sent whenever a sound palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_LIGHTSOURCEPALETTECHANGED</B><DD>Light Source Palette Changed notifier event. This is 
+sent whenever a light source palette entry is changed in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_SWITCHDISTANCECHANGED</B><DD>Switch Distance Changed notifier event. This is 
+sent whenever the switch distance is changed in Creator, 
+usually via the More Detail or Less Detail commands.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_TIMEOFDAYCHANGED</B><DD>Time of Day Changed notifier event. This is 
+sent whenever the sky color changes in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_TEXTURESELECTCHANGED</B><DD>Texture Select Change notifier event. This 
+is sent whenever the textures selected in the 
+palette change in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_EXTENSIONCHANGED</B><DD>Extension Changed notifier event. This 
+is sent whenever the definition of an OpenFlight 
+extension is changed.<BR> 
+Applicable to all tools.<DT><B>MNOTIFY_DATABASEPRESAVE</B><DD>Database Pre-Save notifier event. This is 
+sent just before a database is saved in Creator.<BR> 
+Applicable to viewer and editor tools only.<DT><B>MNOTIFY_EYEPOINTCHANGED</B><DD>Eye Point Changed notifier event. This is 
+sent whenever the current eye point changes in Creator.<BR> 
+Applicable to viewer and editor tools only.</DL></DT></DL></BODY>
+
+</HTML>

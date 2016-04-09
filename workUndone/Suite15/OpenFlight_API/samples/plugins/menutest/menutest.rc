@@ -1,0 +1,148 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MENUTESTDIALOG DIALOG DISCARDABLE  0, 0, 182, 124
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Menu Test"
+MENU IDR_DIALOGMENU
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",MGID_OK,125,105,52,14
+    EDITTEXT        IDC_TEXT,35,7,34,14,ES_AUTOHSCROLL
+    CONTROL         "Toggle Button",IDC_TOGGLEBUTTON,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,94,9,61,10
+    LTEXT           "Text:",IDC_LABEL,13,10,17,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,0,0,184,
+                    1
+    GROUPBOX        "Enable Menu Items",IDC_STATIC,5,27,172,72
+    CONTROL         "Do This",IDC_ENABLE_EDIT_DO_THIS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,54,41,10
+    LTEXT           "Edit Menu",IDC_STATIC,13,40,33,8
+    CONTROL         "Do That",IDC_ENABLE_EDIT_DO_THAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,67,42,10
+    CONTROL         "Do The Other",IDC_ENABLE_EDIT_DO_THEOTHER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,80,59,10
+    LTEXT           "View Menu",IDC_STATIC,89,40,36,8
+    CONTROL         "Text",IDC_ENABLE_VIEW_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,54,30,10
+    CONTROL         "Toggle Button",IDC_ENABLE_VIEW_TOGGLEBUTTON,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,95,67,61,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    MENUTESTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 177
+        BOTTOMMARGIN, 119
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_DIALOGMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "New...",                      IDM_FILE_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "Close",                       IDM_FILE_CLOSE
+    END
+    POPUP "Edit"
+    BEGIN
+        POPUP "Do"
+        BEGIN
+            MENUITEM "This",                        IDM_EDIT_DO_THIS
+            MENUITEM "That",                        IDM_EDIT_DO_THAT
+            MENUITEM "The Other Thing",             IDM_EDIT_DO_THEOTHER
+        END
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Text",                        IDM_VIEW_TEXT, CHECKED
+        MENUITEM "Toggle Button",               IDM_VIEW_TOGGLEBUTTON
+        , CHECKED
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

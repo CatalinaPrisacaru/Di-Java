@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>mgResourceGetDialog</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgResourceGetDialog><H1 CLASS="APISYMBOL">mgResourceGetDialog</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgResourceGetDialog</B> - creates a dialog instance derived 
+from a dialog template contained in a resource.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mggui <B>mgResourceGetDialog</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>gui</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgresource.htm#mgresource>mgresource</A></TD><TD><I>resource</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgdialogid.htm#mgdialogid>mgdialogid</A></TD><TD><I>dialogId</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>callbackMask</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgdialogfunc.htm#mgdialogfunc>mgdialogfunc</A></TD><TD><I>dialogFunc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgResourceGetDialog</B> builds a dialog instance using a dialog 
+template extracted from the specified <I>resource</I>.  The dialog template 
+is identified in the <I>resource</I> by <I>dialogId</I>.</P></DD><DD><P>Specify a dialog function <I>dialogFunc</I> for the created 
+dialog and select the dialog events you are interested in for your 
+<I>dialogFunc</I> using the parameter <I>callbackMask</I>.</P></DD><DD><P>The dialog is created as a child of the dialog specified by <I>gui</I>. 
+Note that <I>gui</I> can be a control, a dialog or <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.  If <I>gui</I> 
+is a control, it is assumed to be contained in the dialog that is to be 
+the parent.  If <I>gui</I> is a dialog, it is the dialog to be the parent. 
+If <I>gui</I> is <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the MultiGen modeling system main window.</P></DD><DD><P>The dialog created is not displayed until you explicitly do so by 
+calling <A HREF=mgShowDialog.htm#mgShowDialog>mgShowDialog</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>gui</I></DT><DD>the dialog parent or a control in the dialog 
+that is to be the parent</DD><DT><I>resource</I></DT><DD>the resource containing the dialog template</DD><DT><I>dialogId</I></DT><DD>the dialog template identifier</DD><DT><I>callbackMask</I></DT><DD>bitwise combination of dialog events selected 
+for dialog function <I>dialogfunc</I> - choose any bitwise 
+combination of <A HREF=MGCB_INIT.htm#MGCB_INIT>MGCB_INIT</A>, <A HREF=MGCB_SHOW.htm#MGCB_SHOW>MGCB_SHOW</A>, 
+<A HREF=MGCB_REFRESH.htm#MGCB_REFRESH>MGCB_REFRESH</A>, <A HREF=MGCB_HIDE.htm#MGCB_HIDE>MGCB_HIDE</A> and <A HREF=MGCB_DESTROY.htm#MGCB_DESTROY>MGCB_DESTROY</A></DD><DT><I>dialogFunc</I></DT><DD>dialog function to assign to dialog</DD><DT><I>userData</I></DT><DD>user defined data to pass to <I>dialogfunc</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>If the dialog template is found in the resource and the dialog 
+instance is successfully created, the dialog instance is returned, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgLoadResource.htm#mgLoadResource>mgLoadResource</A>, <A HREF=mgResourceModalDialog.htm#mgResourceModalDialog>mgResourceModalDialog</A>, <A HREF=mgShowDialog.htm#mgShowDialog>mgShowDialog</A></DD></DL></BODY>
+
+</HTML>

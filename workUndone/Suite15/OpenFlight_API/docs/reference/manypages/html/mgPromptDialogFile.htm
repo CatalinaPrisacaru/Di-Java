@@ -1,0 +1,178 @@
+<HTML>
+<HEAD>
+<TITLE>mgPromptDialogFile</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPromptDialogFile><H1 CLASS="APISYMBOL">mgPromptDialogFile</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPromptDialogFile</B> - prompts the user to select one or 
+more files using a standard file browser.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgPromptDialogFile</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>mode</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>numFiles</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgstringlist.htm#mgstringlist>mgstringlist*</A></TD><TD><I>fileList</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, numFiles, name1, name2, ... <B>mgPromptDialogFile</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>mode</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< paramKey ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< paramValue ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPromptDialogFile</B> displays a modal dialog in which the 
+user is prompted to select one or more files.</P></DD><DD><P>The dialog displays the directory structure using a file browser with 
+two push buttons Open/Save and Cancel.&#32The file browser control is used to 
+select the file. The user can specify the mode of the file browser as either 
+Open or Save by specifying either <A HREF=MPFM_OPEN.htm#MPFM_OPEN>MPFM_OPEN</A> or <A HREF=MPFM_SAVE.htm#MPFM_SAVE>MPFM_SAVE</A> in <I>mode</I>.</P></DD><DD><P>The optional parameters are specified as key/value pairs in variable argument style. 
+Following is a list of parameter keys and their associated values:</P></DD><DD><P><A HREF=MPFA_FLAGS.htm#MPFA_FLAGS>MPFA_FLAGS</A> - argument value is a bitwise combination of<BR> 
+<A HREF=MPFF_OVERWRITEPROMPT.htm#MPFF_OVERWRITEPROMPT>MPFF_OVERWRITEPROMPT</A>,<BR> 
+<A HREF=MPFF_FILEMUSTEXIST.htm#MPFF_FILEMUSTEXIST>MPFF_FILEMUSTEXIST</A>, and<BR> 
+<A HREF=MPFF_MULTISELECT.htm#MPFF_MULTISELECT>MPFF_MULTISELECT</A>.</P></DD><DD><P><A HREF=MPFA_TITLE.htm#MPFA_TITLE>MPFA_TITLE</A> - argument value is a string specifying the title of the dialog.</P></DD><DD><P><A HREF=MPFA_PATTERN.htm#MPFA_PATTERN>MPFA_PATTERN</A> - argument value is a string containing a list of 
+description-extension pairs that describe the file browser filters 
+to use.  See <A HREF=MPFA_PATTERN.htm#MPFA_PATTERN>MPFA_PATTERN</A> for a description of the required 
+format of this string.</P></DD><DD><P><A HREF=MPFA_DIRECTORY.htm#MPFA_DIRECTORY>MPFA_DIRECTORY</A> - argument value is a string specifying the 
+initial directory name.</P></DD><DD><P><A HREF=MPFA_FILENAME.htm#MPFA_FILENAME>MPFA_FILENAME</A> - argument value is a string specifying the initial 
+file name (does not include directory path).</P></DD><DD><P><A HREF=MPFA_FULLFILENAME.htm#MPFA_FULLFILENAME>MPFA_FULLFILENAME</A> - argument value is a string specifying 
+the full file name including the path.</P></DD><DD><P><A HREF=MPFA_DIALOGID.htm#MPFA_DIALOGID>MPFA_DIALOGID</A> - argument value is the identifier of a custom dialog 
+to use for the file browser.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P><A HREF=MPFA_RESOURCE.htm#MPFA_RESOURCE>MPFA_RESOURCE</A> - argument value is an object of type <A HREF=mgresource.htm#mgresource>mgresource</A> 
+to identify the resource where your custom dialog template is located.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P><A HREF=MPFA_DIALOGFUNC.htm#MPFA_DIALOGFUNC>MPFA_DIALOGFUNC</A> - argument value is a dialog function for the file 
+browser dialog.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P><A HREF=MPFA_USERDATA.htm#MPFA_USERDATA>MPFA_USERDATA</A> - argument value is the user data to pass to 
+the dialog function.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P><A HREF=MPFA_CALLBACKMASK.htm#MPFA_CALLBACKMASK>MPFA_CALLBACKMASK</A> - argument value is an unsigned integer value specifying 
+the dialog events selected for the dialog function of the file browser.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P><A HREF=MPFA_PATTERNINDEX.htm#MPFA_PATTERNINDEX>MPFA_PATTERNINDEX</A> - argument value is the address of an integer object 
+to receive the index of the selected pattern when the file chooses a file 
+in the browser.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P><A HREF=MPFA_EXITDIRECTORY.htm#MPFA_EXITDIRECTORY>MPFA_EXITDIRECTORY</A> - argument value is the address of a char* value to receive 
+the name of the "exit" directory at the time the user closes the file browser 
+dialog.  If the user cancels the selection in the file browser, this directory 
+is not defined.  In C, the string returned is dynamically allocated. When you 
+are done accessing this string, you should dispose of it using <A HREF=mgFree.htm#mgFree>mgFree</A>.<BR> 
+This argument is not supported in Python OpenFlight Script.</P></DD><DD><P>All optional parameter pairs are passed using variable argument style.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>Terminate the argument list with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD><DD><P>The dialog is created as a child of the specified dialog <I>parent</I>. 
+If you specify <I>parent</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the Creator main window.</P></DD><DD><P>The string list returned for <I>fileList</I> is dynamically allocated and must 
+be deallocated by the caller when it is no longer needed using <A HREF=mgFreeStringList.htm#mgFreeStringList>mgFreeStringList</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window. It is not necessary to terminate the argument 
+list with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> in Python. It is not necessary to free the string list 
+returned for <I>fileList</I> in Python.</P></DD><DD><P>If function is successful, the selected files are returned.</P></DD><DD><P>The following optional input parameters are not supported in 
+Python OpenFlight Script:<BR> 
+<A HREF=MPFA_DIALOGFUNC.htm#MPFA_DIALOGFUNC>MPFA_DIALOGFUNC</A><BR> 
+<A HREF=MPFA_DIALOGID.htm#MPFA_DIALOGID>MPFA_DIALOGID</A><BR> 
+<A HREF=MPFA_RESOURCE.htm#MPFA_RESOURCE>MPFA_RESOURCE</A><BR> 
+<A HREF=MPFA_USERDATA.htm#MPFA_USERDATA>MPFA_USERDATA</A><BR> 
+<A HREF=MPFA_CALLBACKMASK.htm#MPFA_CALLBACKMASK>MPFA_CALLBACKMASK</A><BR> 
+<A HREF=MPFA_PATTERNINDEX.htm#MPFA_PATTERNINDEX>MPFA_PATTERNINDEX</A><BR> 
+<A HREF=MPFA_EXITDIRECTORY.htm#MPFA_EXITDIRECTORY>MPFA_EXITDIRECTORY</A></P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the prompt dialog</DD><DT><I>mode</I></DT><DD>an integer value that is either MPFM_OPEN or 
+MPFM_SAVE that specifies the mode for the file dialog</DD><DT><I>numFiles</I></DT><DD>a pointer to an integer that holds the number of 
+files that have been selected - 
+if the user had selected the MPFF_MULTISELECT option, 
+then this value can be more than one else it will be 
+at most one</DD><DT><I>fileList</I></DT><DD>a pointer to an <A HREF=mgstringlist.htm#mgstringlist>mgstringlist</A> object 
+that will be allocated and filled with the names 
+of the selected files, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if no files selected - 
+caller should free this list when no longer needed using 
+<A HREF=mgFreeStringList.htm#mgFreeStringList>mgFreeStringList</A></DD><DT><I>...</I></DT><DD>optional input parameter pairs 
+(<I>paramKey</I>, <I>paramValue</I>) in variable 
+argument style</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success. 
+Success indicates that the file selected was a valid file and the user 
+dismissed the dialog using the Open/Save push button.  If function call is 
+successful, <I>numFiles</I> contains the number of files that have been selected, 
+and <I>fileList</I> contains the selected file name(s), otherwise both are undefined.</DD><DT>numFiles</DT><DD>The number of file names returned.</DD><DT>name1</DT><DD>The first file name returned.</DD><DT>name2</DT><DD>The second file name returned.</DD><DT>...</DT><DD>etc.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) create a file broswer with 
+*.flt and *.txt as filters starting at the initial directory 'C:/gallery/models' 
+and with the initial file from that directory 'church.flt'. The title for the dialog 
+is 'Open Flight Files or Text Files'. The user is allowed to select multiple files 
+and success is returned only if a valid file is selected.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgstatus status;
+int numFiles;
+mgstringlist fileNames = MG_NULL;
+
+status = mgPromptDialogFile (
+   parent, MPFM_OPEN,
+   &numFiles,
+   &fileNames,
+   MPFA_FLAGS, MPFF_FILEMUSTEXIST|MPFF_MULTISELECT,
+   MPFA_PATTERN, "OpenFlight Files|*.flt || Text Files|*.txt",
+   MPFA_TITLE, "Open Flight Files or Text Files",
+   MPFA_DIRECTORY, "C:/gallery/models",
+   MPFA_FILENAME, "church.flt",
+   MG_NULL);
+
+if (MSTAT_ISOK (status)) {
+   mgstringlist fileNameH = fileNames;
+   // print the name of each file selected
+   while (fileNameH && *fileNameH) {
+      char* fileName = *fileNameH;
+      printf (fileName);
+      fileNameH++;
+   }
+   // free allocated memory when done with file names
+   mgFreeStringList (fileNames);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">outs = mgPromptDialogFile (
+   None, MPFM_OPEN,
+   MPFA_FLAGS, MPFF_FILEMUSTEXIST|MPFF_MULTISELECT,
+   MPFA_PATTERN, "OpenFlight Files|*.flt || Text Files|*.txt",
+   MPFA_TITLE, "Open Flight Files or Text Files",
+   MPFA_DIRECTORY, "C:/gallery/models",
+   MPFA_FILENAME, "church.flt")
+
+status = outs[0]
+
+if (MSTAT_ISOK (status)):
+   numFiles = outs[1]
+   fileNames = outs[2:len(outs)]
+   for fileName in fileNames:
+      print fileName</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPromptDialogFolder.htm#mgPromptDialogFolder>mgPromptDialogFolder</A>, <A HREF=mgPromptDialogTexture.htm#mgPromptDialogTexture>mgPromptDialogTexture</A></DD></DL></BODY>
+
+</HTML>

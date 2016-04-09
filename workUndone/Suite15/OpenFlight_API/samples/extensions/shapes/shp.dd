@@ -1,0 +1,37 @@
+/******************** Version info for extension ***************/
+dataDef shpSiteId { MTYPE_TEXT, LABEL="Site ID", LEN=6, DEF=SHPDATA, NOEDIT }
+dataDef shpVersion { MTYPE_FLOAT, LABEL="Version", DEF=1.0 }
+dataDef shpNodeIndex { MTYPE_INT, LABEL="Shape Bead Index", DEF=0 }
+recordDef shpHeader { MTYPE_REC, shpHeader, LABEL="Shape Header", XCODE=fltHeader }
+struct shpHeader {
+	shpSiteId;
+	shpVersion;
+	shpNodeIndex;	 //required by Multigen for auto next bead id 
+}
+
+dataDef shpTypeCylinder { MTYPE_FLAG, LABEL="Cylinder", DEF=0, ENUM }
+dataDef shpTypeSphere { MTYPE_FLAG, LABEL="Sphere", DEF=0, ENUM }
+dataDef shpTypeCone { MTYPE_FLAG, LABEL="Cone", DEF=1, ENUM }
+
+recordDef shpTypeEnums { MTYPE_REC, shpTypeEnums, LABEL="Shape Type Enums" }
+struct shpTypeEnums {
+	shpTypeCylinder;
+	shpTypeSphere;
+	shpTypeCone;
+}
+
+recordDef shpNode { MTYPE_BEAD, shpNode, LABEL="Shape", PREFIX=shpBd, PARENT=shpNode_Parent, CHILD=shpNode_Child }
+struct shpNode {
+	shpTypeEnums;
+}
+
+//Only have group as a parent
+parent shpNode_Parent {
+	fltGroup;
+}
+
+//Only have Object and Polygon as children
+child shpNode_Child {
+	fltObject;
+	fltPolygon;
+}

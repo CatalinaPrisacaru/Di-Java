@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>mgLeastDetail</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgLeastDetail><H1 CLASS="APISYMBOL">mgLeastDetail</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgLeastDetail</B> - changes the level of detail (LOD) for a database to the lowest level.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgLeastDetail</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgLeastDetail</B> changes the current switch-in distance of the database to the highest value (effectively 
+moving the eyepoint very far from the model) such that the lowest level of detail becomes visible in the scene. 
+The function then changes the visibility of each LOD node according to whether or not it would be 
+visible at this new switch-in (eyepoint) distance.  The visibility of the LOD node is 
+set or unset using the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltIOn>fltIOn</A>
+ attribute of the node.</P></DD><DD><P>If there are no LOD nodes in the database, <B>mgLeastDetail</B> does nothing and returns 
+<A HREF=mgbool.htm#mgbool>MG_TRUE</A>, since the database is already at the lowest (and highest) level of detail. 
+If <I>db</I> is not a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+ node, <B>mgLeastDetail</B> will return <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>See <A HREF=mgMoreDetail.htm#mgMoreDetail>mgMoreDetail</A> for an example of how you might use <B>mgLeastDetail</B> and 
+<A HREF=mgMoreDetail.htm#mgMoreDetail>mgMoreDetail</A> in conjunction to determine which nodes are visible in the scene at 
+each level of detail.</DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgLessDetail.htm#mgLessDetail>mgLessDetail</A>, <A HREF=mgMoreDetail.htm#mgMoreDetail>mgMoreDetail</A>, <A HREF=mgMostDetail.htm#mgMostDetail>mgMostDetail</A>, <A HREF=mgWalk.htm#mgWalk>mgWalk</A>, <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A></DD></DL></BODY>
+
+</HTML>

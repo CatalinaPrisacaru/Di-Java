@@ -1,0 +1,3114 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>OpenFlight API FAQ</TITLE>
+
+<STYLE type='text/css'>
+PRE.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+TABLE.SYNOPSIS {font-family: monospace;}
+TABLE.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+TD.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+TR.HEADER {background-color: #F1F1F1; font-weight: bold;}
+SPAN.MONOSPACE {font-family: monospace;}
+TD.QUESTION {font-size: large; font-weight: bold; background-color: #C2C7E2;}
+TABLE.FAQ {width:100%; border: 1px solid #D1D1D1; padding: 1px;}
+LI.NOINDENT {margin-left: 0px;}
+IMG {margin:5px 0px;}
+H1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+H1 {color:#326db9;}
+H2 {color:#326db9;}
+H3 {color:#326db9;}
+H4 {color:#326db9;}
+H5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000">
+<A NAME=top></A><HR>
+
+<HR>
+<A NAME=OpenFlight_API_FAQ><H1>OpenFlight API FAQ</H1></A><P>
+ <P>
+This section contains answers to <B>Frequently Asked Questions</B> regarding the OpenFlight API, 
+OpenFlight Script and the OpenFlight File Format.<P>
+<H2>Questions</H2><P>
+<A HREF=#FAQ_00000000>What is the OpenFlight API?</A><BR><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR><A HREF=#FAQ_00000002>What is Creator Script?</A><BR><A HREF=#FAQ_00000003>What is the OpenFlight Scene Graph?</A><BR><A HREF=#FAQ_00000004>Is there a user forum on the web devoted to OpenFlight?</A><BR><A HREF=#FAQ_00000005>Are newer versions of the OpenFlight API backward compatible with older versions?</A><BR><A HREF=#FAQ_00000010>Why do I get a Stack Overflow when I open a database in my stand-alone program?</A><BR><A HREF=#FAQ_00000011>What does "SmartHeap Library - Out of Memory" error mean?</A><BR><A HREF=#FAQ_00000012>When I run my stand-alone application, the wrong version of the OpenFlight API runs. Why?</A><BR><A HREF=#FAQ_00000013>How do I control which plug-ins load when I run my stand-alone application or Creator?</A><BR><A HREF=#FAQ_00000100>How do I run OpenFlight Scripts in a stand-alone program environment?</A><BR><A HREF=#FAQ_00000101>How do I run OpenFlight Scripts in Creator?</A><BR><A HREF=#FAQ_00000102>Why are some OpenFlight API function signatures different in C and OpenFlight Script?</A><BR><A HREF=#FAQ_00000103>Are there any OpenFlight Script samples I can start with?</A><BR><A HREF=#FAQ_00000104>Can I invoke Creator tools from the OpenFlight API or OpenFlight Script?</A><BR><A HREF=#FAQ_00000105>Why don't I have to "free" dynamically allocated memory in OpenFlight Script?</A><BR><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR><A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR><A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR><A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR><A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR><A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR><A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR><A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR><A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR><A HREF=#FAQ_00001000>What is an mgrec?</A><BR><A HREF=#FAQ_00001001>What is the OpenFlight Data Dictionary?</A><BR><A HREF=#FAQ_00001002>How can I tell what kind of record I have in an mgrec?</A><BR><A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR><A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR><A HREF=#FAQ_00001005>How do I get a string attribute of a record in the database?</A><BR><A HREF=#FAQ_00001006>How do I access a value in a record nested inside another record?</A><BR><A HREF=#FAQ_00001007>What is the best way to get the coordinates (position) of a vertex node record?</A><BR><A HREF=#FAQ_00001008>How do I get or set the comment attribute of a node record?</A><BR><A HREF=#FAQ_00001009>What is the difference between Color Index/Intensity and Creator Color Index attributes?</A><BR><A HREF=#FAQ_00001010>When I set a color intensity attribute on a node, the value I see on the node is not the exact value I set. Why is there a difference?</A><BR><A HREF=#FAQ_00001011>How do I set up texture on a polygon?</A><BR><A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR><A HREF=#FAQ_00001013>Can I query the OpenFlight revision level of an OpenFlight file on disk without opening it?</A><BR><A HREF=#FAQ_00001014>How do I set a color name on a polygon or mesh?</A><BR><A HREF=#FAQ_00001015>How do I set the normal of a polygon?</A><BR><A HREF=#FAQ_00001016>Which side of a polygon is the front and which is the back?</A><BR><A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR><A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A><BR><A HREF=#FAQ_00001020>How do I tell if a specific node is selected in Creator?</A><BR><A HREF=#FAQ_00001021>How do I get the list of nodes that are currently selected in Creator?</A><BR><A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR><A HREF=#FAQ_00001023>Why are the nodes in the select list in reverse order from how they were selected by the user in Creator?</A><BR><A HREF=#FAQ_00001024>How do I select nodes from my plug-in or script in Creator?</A><BR><A HREF=#FAQ_00001030>How do I get the current modeling mode set in Creator?</A><BR><A HREF=#FAQ_00001031>How do I tell the difference between vertex and edge modeling mode in Creator?</A><BR><A HREF=#FAQ_00001032>How do I change the modeling mode in Creator from my plug-in or script?</A><BR><A HREF=#FAQ_00001040>When I try to attach a node in the database hierarchy, sometimes it fails. What could be causing this?</A><BR><A HREF=#FAQ_00001041>Why can't I move a node from one database to another?</A><BR><A HREF=#FAQ_00001042>How do I create a new node in a database?</A><BR><A HREF=#FAQ_00001043>How do I create an external reference in a master database?</A><BR><A HREF=#FAQ_00001044>How do I create a simple polygon with vertices?</A><BR><A HREF=#FAQ_00001050>How do I apply a matrix (transformation) to a node?</A><BR><A HREF=#FAQ_00001051>How do I get the matrix (transformation) from a node?</A><BR><A HREF=#FAQ_00001080>What order does mgWalk visit the nodes in the hierarchy?</A><BR><A HREF=#FAQ_00001090>How do I hide or show a node in the Creator Graphics view?</A><BR><A HREF=#FAQ_00001100>If I change the position of a vertex, is there an easy way to recalculate its texture coordinates to match the original texture mapping?</A><BR>
+<LEFT><A NAME=FAQ_00000000></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is the OpenFlight API?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The Presagis OpenFlight API is a set of C Language header files and libraries 
+that provides a programming interface to the OpenFlight database format as well 
+as the Creator modeling system. The OpenFlight API provides functions to read 
+and/or modify existing databases as well as those to create new databases. 
+Using the OpenFlight API, you can create:<P>
+<UL>
+ 
+<LI CLASS="NOINDENT">
+ Translators to and from the OpenFlight format </LI>
+ 
+<LI CLASS="NOINDENT">
+ Real-time simulators and games </LI>
+ 
+<LI CLASS="NOINDENT">
+ Modeling applications </LI>
+ 
+<LI CLASS="NOINDENT">
+ Plug-ins that extend the functionality of Creator </LI>
+ 
+</UL>
+</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR>
+ 
+<A HREF=#FAQ_00000104>Can I invoke Creator tools from the OpenFlight API or OpenFlight Script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000001></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is OpenFlight Script?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>OpenFlight Script is a cross-platform Python Language binding to the C Language 
+OpenFlight API. Based on the Python scripting language, OpenFlight Script provides 
+nearly all the functionality of the OpenFlight API levels 1 and 2 and much of the 
+functionality of level 4. If you understand the concepts of the 
+OpenFlight API, you will find programming in either the C Language API or OpenFlight 
+Script very similar.  Both the C Language OpenFlight API and the Python Language bindings 
+for OpenFlight Script are included when you install the OpenFlight API Software Development 
+Kit (SDK).</P></DT><DT><P>You can use OpenFlight Script to do most things you could otherwise do with the C Language 
+API. Because OpenFlight Script is an interpreted language (based on Python), tools and 
+applications written in OpenFlight Script will likely run more slowly than comparable tools 
+written using the C Language API.  So if performance is an issue, consider using the C 
+Language API. Of course the benefit of using OpenFlight Script is that you don't need 
+to pre-compile your tools, you can simply run them.</P></DT><DT><P>You can use OpenFlight Script in either the stand-alone program environment or the 
+Creator modeling system. 
+In the Creator modeling system, you can execute Creator tools using OpenFlight Script 
+using <A HREF=#mgExecute>mgExecute</A>.</P></DT><DT><P>A general knowledge of Python will help you get started quickly using OpenFlight Script.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgExecute>mgExecute</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000002>What is Creator Script?</A><BR>
+ 
+<A HREF=#FAQ_00000104>Can I invoke Creator tools from the OpenFlight API or OpenFlight Script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000002></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is Creator Script?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Creator Script is the same as OpenFlight Script. Note that in OpenFlight Script 
+you can invoke Creator tools.  An OpenFlight script that invokes a Creator tool 
+is often referred to as a "Creator Script" but under the hood it is really just 
+an OpenFlight Script.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR>
+ 
+<A HREF=#FAQ_00000104>Can I invoke Creator tools from the OpenFlight API or OpenFlight Script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000003></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is the OpenFlight Scene Graph?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The OpenFlight Scene Graph is the "in memory" representation of the OpenFlight database. As the name 
+implies, it is a multilevel, hierarchical <I>graph</I> structure. At the "root" (top) of the graph is a 
+database header (<A HREF=#fltHeader>fltHeader</A>) node. At the bottom of the graph are vertex (<A HREF=#fltVertex>fltVertex</A>) nodes. 
+In between is a number of different types of organizational nodes, like <A HREF=#fltGroup>fltGroup</A>, <A HREF=#fltObject>fltObject</A>, <A HREF=#fltLod>fltLod</A>, 
+<A HREF=#fltDof>fltDof</A>, <A HREF=#fltPolgyon>fltPolgyon</A>, <A HREF=#fltMesh>fltMesh</A>, etc.</P></DT><DT><P>Your code can load OpenFlight files into a scene graph using <A HREF=#mgOpenDb>mgOpenDb</A> or create a new, empty scene 
+graph using <A HREF=#mgNewDb>mgNewDb</A>. Once a scene graph is loaded, your code can modify it. You can add, delete or 
+move nodes using functions like <A HREF=#mgNewRec>mgNewRec</A>, <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgDetach>mgDetach</A> and <A HREF=#mgDelete>mgDelete</A>. Your code can 
+also modify node attributes using <A HREF=#mgSetAttList>mgSetAttList</A>. There are many other operations your code can perform 
+on the OpenFlight Scene Graph, these are just a few.</P></DT><DT><P>After making changes to the scene graph, your code can save it to an OpenFlight file using functions 
+like <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A> and <A HREF=#mgExportDb>mgExportDb</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001000>What is an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00001042>How do I create a new node in a database?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000004></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Is there a user forum on the web devoted to OpenFlight?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>There are many user forums on the web devoted to all the Presagis products. 
+Among them, there are 3 forums related specifically to OpenFlight. These are located at:</P></DT><DT><P><A TARGET=_blank HREF=http://www.presagis.com/standards_forum/>http://www.presagis.com/standards_forum/</A>
+</P></DT><DT><P>In addition to the OpenFlight standards forum, the OpenFlight API and OpenFlight Script is 
+often discussed on the Creator product forum, located at:</P></DT><DT><P><A TARGET=_blank HREF=http://www.presagis.com/peer_forum/>http://www.presagis.com/peer_forum/</A>
+</P></DT></DL></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000005></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Are newer versions of the OpenFlight API backward compatible with older versions?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Yes... function signatures do not change, nor are functions or symbols removed in newer versions 
+of the OpenFlight API. In most cases an application or plug-in built with an <I>older</I> version 
+of the OpenFlight API will simply run with a <I>newer</I> version of the API without recompiling.</P></DT><DT><P>There are cases when this is not true.  For example, when Creator migrated from VC6 to VC8 (v3.4), 
+plug-ins built with OpenFlight API v3.3 or earlier would not run in Creator 3.4.  These plug-ins 
+required recompilation in order to be compatible with the new VC8 binary format.</P></DT><DT><P>When a new version of the OpenFlight API is released, we do recommend that you rebuild your plug-ins 
+and applications just to be safe.</P></DT><DT><P>While functions and symbols are not removed in newer versions of the OpenFlight API (as mentioned above), 
+some are deprecated when it makes sense.  A deprecated function, for example, is one for which 
+an improved replacement has been developed.  The original (deprecated) function is not removed 
+but we recommend that you begin using the new function.  There is a <B>Deprecated API</B> 
+section in the Release Notes section of this reference document.  Refer to that section for more 
+information on deprecated API.</P></DT></DL></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000010></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Why am I getting a Stack Overflow when I run my stand-alone program?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>This problem is most likely related to the Stack Size of your application. 
+When you build your application (in Visual Studio, for example), you set the maximum 
+stack size as a linker option. This is the maximum size your program stack is allowed 
+to grow during program execution. If you don't set this explicitly, you get defaults 
+from your build environment (Visual Studio gives you 1MB typically by default).</P></DT><DT><P>If you are building a stand-alone program using the OpenFlight API, we recommend 
+64MB for the stack size.  Due to the nature of OpenFlight database hierarchies and 
+the recursive functions used in the OpenFlight API to traverse them, 
+we have found that stack can get used up quickly and 64MB seems to work well. 
+By the way, Creator uses a 64MB stack size so if you can open an OpenFlight file 
+in Creator but not your application, this may be why.</P></DT><DT><P>If you are working in Visual Studio, check the <SPAN CLASS="MONOSPACE">/STACK</SPAN> linker option when 
+building your application.  Try setting it to:</P></DT><DT><P><PRE CLASS="EXAMPLE">/STACK:64388608,65536</PRE></P></DT></DL></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000011></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What does "SmartHeap Library - Out of Memory" error mean?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The OpenFlight API uses a 3rd party memory management library called SmartHeap. 
+All heap memory allocations made by the OpenFlight API are managed by SmartHeap. 
+When you get this error (typically when trying to open an OpenFlight database 
+using <A HREF=#mgOpenDb>mgOpenDb</A>), SmartHeap is reporting that it has run out of Virtual Memory. 
+There are several possible causes for this.</P></DT><DT><P>The first thing to check is the Virtual Memory setting on your computer. 
+Verify in your Windows Control Panel Settings that you have at least ~2GB Virtual 
+Memory set.  If you are running a 32 bit application, any more will not be useful. 
+If you are running a 64 bit application, you can increase this value if you have 
+enough disk space to accommodate the swap file required.</P></DT><DT><P>On Windows XP, you can find this setting at:<BR> 
+<PRE CLASS="EXAMPLE">Control Panel: Advanced: Performance: Settings: Advanced: Virtual Memory</PRE></P></DT><DT><P>On Windows 7, you can find this setting at:<BR> 
+<PRE CLASS="EXAMPLE">Control Panel: System: Advanced system settings: Advanced Performance Settings: Advanced: Virtual memory</PRE></P></DT><DT><P>If you have adjusted your Virtual Memory setting and still get this error, 
+it could be that the database you are loading is just too large.  If you have 
+Creator, try opening it there. If your database is a master file with external 
+references, try setting <A HREF=#mgSetReadExtFlag>mgSetReadExtFlag</A> to <A HREF=#mgbool>MG_FALSE</A> before opening 
+the database. This tells the OpenFlight API to NOT read the external reference 
+files (which would decrease the amount of virtual memory needed to load the 
+database). Similarly, try setting <A HREF=#mgSetReadTexturesFlag>mgSetReadTexturesFlag</A> to <A HREF=#mgbool>MG_FALSE</A> 
+as well. This tells the OpenFlight API to NOT read textures into memory when loading 
+the texture palette of the database it is opening.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetReadExtFlag>mgSetReadExtFlag</A>, <A HREF=#mgSetReadTexturesFlag>mgSetReadTexturesFlag</A>, <A HREF=#mgOpenDb>mgOpenDb</A></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000012></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">When I run my stand-alone application, the wrong version of the OpenFlight API runs. Why?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Even though you link your application with a specific version of the OpenFlight API <I>Link 
+Libraries</I>, Windows might load a different version of the <I>Dynamic Link Libraries</I> (DLLs) if 
+your runtime environment is not set up correctly.</P></DT><DT><P>First some background on how your application will find the OpenFlight API DLLs (and all 
+the other DLLs it depends on) when you run it on Windows.</P></DT><DT><P>On Windows, the OpenFlight API Dynamic Link Libraries (DLLs) are required when you run your 
+stand-alone application. When you run your application, Windows searches for all DLLs 
+(including the OpenFlight API DLLs) in the following sequence:<P>
+<OL>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The directory where your stand-alone executable is located. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The current directory. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The Windows system directory. The Windows function <SPAN CLASS="MONOSPACE">GetSystemDirectory</SPAN> function retrieves 
+the path of this directory. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The Windows directory. The Windows function <SPAN CLASS="MONOSPACE">GetWindowsDirectory</SPAN> function retrieves the 
+path of this directory. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The directories listed in the <SPAN CLASS="MONOSPACE">PATH</SPAN> environment variable. 
+</LI>
+<P>
+</OL>
+</P></DT><DT><P>Also when your application calls <A HREF=#mgInit>mgInit</A>, the OpenFlight API echoes out the version being 
+run. Check the output of your program to make sure you see the version number you expect to 
+make sure you are running the OpenFlight API version you intend.</P></DT><DT><P>You can also query which version of the OpenFlight API is running using <A HREF=#mgGetVersion>mgGetVersion</A>. 
+The version returned by this function is the same as that echoed by <A HREF=#mgInit>mgInit</A>.</P></DT><DT><P>One final note... A useful Windows utility is <B>depends</B>.  You can run this tool on 
+your executable file (.exe) and it will show you exactly which version of the DLLs will 
+be found at runtime given the current configuration on your computer.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgInit>mgInit</A></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000013></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I control which plug-ins load when I run my stand-alone application or Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Plug-ins are loaded into the stand-alone program and Creator runtime environments 
+in very similar ways. In order for a plug-in to be available in either environment, 
+it must be located in or below the <I>plug-in runtime directory</I>. This is a platform 
+specific directory that is accessible at runtime.</P></DT><DT><P>When the runtime environment system starts up, this directory and all 
+directories below it will be searched for compatible plug-ins. All compatible plug-ins 
+found will be loaded and will be accessible in the runtime environment. Since plug-in 
+modules may be distributed with a host of companion files (preference file, help file, 
+etc), it may be convenient to install each plug-in in its own 
+subdirectory below the <I>plug-in runtime directory</I>. This is possible since the 
+<I>plug-in runtime directory</I> is searched recursively.</P></DT><DT><P>Creator loads plug-ins automatically when it starts. Creator searches for plug-ins 
+in the following locations (in the order listed). As soon as a folder is found in one of these 
+locations, Creator stops searching for other locations and loads the plug-ins it finds in 
+the first folder found.<P>
+<OL>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The directory (or directories) specified by the environmental variable <B>PRESAGIS_CREATOR_PLUGIN_DIR</B>. 
+This environmental variable may specify any accessible directory on your computer or may specify 
+multiple directories using a semi-colon to delimit each path. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+A directory named <A HREF=#plugins>plugins</A> in the Creator configuration folder. This folder 
+is located at:<P>
+<PRE CLASS="EXAMPLE">PRESAGIS_ROOT/Creator/config/plugins</PRE> 
+</LI>
+<P>
+</OL>
+</P></DT><DT><P>Plug-ins are loaded in the stand-alone program environment when your program or script 
+calls the OpenFlight API function <A HREF=#mgInit>mgInit</A>. <A HREF=#mgInit>mgInit</A> searches for plug-ins in the following 
+locations (in the order listed). As soon as a folder is found in one of these 
+locations, <A HREF=#mgInit>mgInit</A> stops searching for other locations and loads the plug-ins it finds in 
+the first folder found.<P>
+<OL>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The directory (or directories) your program specifies when calling <A HREF=#mgSetPluginFolder>mgSetPluginFolder</A>. If you call 
+this function before <A HREF=#mgInit>mgInit</A>, the location(s) you specify will be used to search 
+for plug-ins. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+The directory (or directories) specified by the environmental variable <B>PRESAGIS_OPENFLIGHT_PLUGIN_DIR</B>. 
+This environmental variable may specify any accessible directory on your computer or may specify 
+multiple directories using a semi-colon to delimit each path. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+A directory named <A HREF=#plugins>plugins</A> immediately below the directory that contains the executable being run. 
+</LI>
+<P>
+</OL>
+</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetPluginFolder>mgSetPluginFolder</A>, <A HREF=#mgInit>mgInit</A></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000100></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I run OpenFlight Scripts in a stand-alone program environment?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Before you can use OpenFlight Script in a stand-alone program environment, you 
+will need to install a Python environment (Python 2.7.X is required) on your computer. 
+There are many Python distributions available. A good place to start is:</P></DT><DT><P><A TARGET=_blank HREF=http://www.python.org>http://www.python.org</A>
+</P></DT><DT><P>Remember that OpenFlight Script requires Python 2.7.X.</P></DT><DT><P>After installing a Python environment on your computer, you must tell Python where to 
+locate the OpenFlight Script module. The OpenFlight Script module is comprised of the 
+OpenFlight API dynamic link libraries (including <SPAN CLASS="MONOSPACE">fltdata.dll</SPAN>) and two additional 
+Python specific files included in the OpenFlight API distribution. These additional Python 
+files are:</P></DT><DT><P><UL>
+ 
+<LI CLASS="NOINDENT">
+ <SPAN CLASS="MONOSPACE">_mgapilib.pyd</SPAN> </LI>
+ 
+<LI CLASS="NOINDENT">
+ <SPAN CLASS="MONOSPACE">mgapilib.py</SPAN></LI>
+ 
+</UL>
+</P></DT><DT><P>Both Python files (and the dynamic link library files) are located in:</P></DT><DT><P><SPAN CLASS="MONOSPACE">$(PRESAGIS_OPENFLIGHT_API)/bin/release (Win32)</SPAN><BR> 
+or<BR> 
+<SPAN CLASS="MONOSPACE">$(PRESAGIS_OPENFLIGHT_API)/bin_x64/release (x64)</SPAN><BR></P></DT><DT><P>Here are the steps to make the OpenFlight Script module available in Python:<P>
+<OL>
+ 
+<LI CLASS="NOINDENT">
+ 
+Set the <SPAN CLASS="MONOSPACE">PYTHONPATH</SPAN> environment variable to include the folder where the OpenFlight 
+Script module files (dynamic link library files, <SPAN CLASS="MONOSPACE">_mgapilib.pyd</SPAN> and <SPAN CLASS="MONOSPACE">mgapilib.py</SPAN>) 
+are located. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+Set the <SPAN CLASS="MONOSPACE">PRESAGIS_OPENFLIGHT_SCRIPT</SPAN> environment variable to be the folder 
+where the OpenFlight Script module files are located. 
+</LI>
+<P>
+</OL>
+</P></DT><DT><P>After you configure your Python environment to include the OpenFlight Script module you 
+are ready to create and run OpenFlight Scripts in your stand-alone program environment.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000101>How do I run OpenFlight Scripts in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00000103>Are there any OpenFlight Script samples I can start with?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000101></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I run OpenFlight Scripts in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You do not need to install Python to run OpenFlight scripts in Creator 
+as Creator includes a built-in Python environment.  After installing 
+Creator, you are ready to go.  If you want to use additional Python modules that 
+are not included in Creator's Python environment, you will need to install Python 
+as well as those additional modules.</P></DT><DT><P>Creator includes the OpenFlight Script Editor 
+which allows you to create, edit, test and run scripts directly while you are 
+modeling.  The OpenFlight Script Editor provides a fully functional text editor 
+with advanced features like auto-completion, error highlighting and context sensitive help. 
+It also provides a powerful script interpreter that helps you to create and test scripts rapidly.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000100>How do I run OpenFlight Scripts in a stand-alone program environment?</A><BR>
+ 
+<A HREF=#FAQ_00000103>Are there any OpenFlight Script samples I can start with?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000102></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Why are some OpenFlight API function signatures different in C and OpenFlight Script?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Most of the functions in OpenFlight Script are identical in calling method and functionality 
+to that of the corresponding C language API. There are a few exceptions due to the 
+inherent differences between the C and Python languages. Most of these exceptions exist 
+when a C language function has one or more output parameters. Output parameters are 
+those that get modified in the function and hence returned to the caller. Since C functions 
+have only a single return value, output parameters are commonly used for a function to 
+return multiple values simultaneously.</P></DT><DT><P>In general Python does not support output parameters for functions. To compensate for this 
+Python does support multiple return values for functions in the form of "lists" or "tuples". 
+For C language functions that do have output parameters, there will be a different function 
+signature for the Python equivalent. This is best explained by example (see below).</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>Consider the OpenFlight function <A HREF=#mgGetVtxCoord>mgGetVtxCoord</A>. In C, its function signature is: 
+<PRE CLASS="EXAMPLE">mgbool mgGetVtxCoord (mgrec* vtx, double* x, double* y, double* z);</PRE> 
+This C function returns 4 "bits" of information.  It returns a status (whether the function 
+succeeded or failed) in the function return value.  It also returns the x, y, z coordinates 
+of a vertex in the output parameters <I>x</I>, <I>y</I> and <I>z</I>, respectively.<P>
+In Python, remember, output parameters are not supported. For that reason, 
+the Python signature for this same function is different: 
+<PRE CLASS="EXAMPLE">mgbool, x, y, z mgGetVtxCoord (mgrec* vtx)</PRE><P>
+The Python version of this function returns the same 4 "bits" of information as the C version 
+but uses a different "return" mechanism to pass the values back to the caller.  Because Python has 
+no notion of output parameters, the Python version of <A HREF=#mgGetVtxCoord>mgGetVtxCoord</A> returns the status as well 
+as the x, y and z coordinates as a list (or tuple).<P>
+Note that when the C and Python signatures for an OpenFlight function differ, each signature 
+is listed in the OpenFlight API Reference. When there is no difference between the C 
+and Python signature for a function, a single (common) signature is listed.<P>
+The syntax for calling this function in both C and Python is shown below in the examples.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><P>Here is how you would call <A HREF=#mgGetVtxCoord>mgGetVtxCoord</A> in C:</P></DT><DT><PRE CLASS="EXAMPLE">double x, y, z;
+mgbool status;
+status = mgGetVtxCoord (vtx, &x, &y, &z);
+if (status == MG_TRUE) {
+   // x, y and z contain valid values
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><P>Here is how you would call <A HREF=#mgGetVtxCoord>mgGetVtxCoord</A> in Python:</P></DT><DT><PRE CLASS="EXAMPLE">status, x, y, z = mgGetVtxCoord (vtx)
+if (status == MG_TRUE):
+   # x, y and z contain valid values</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000103></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Are there any OpenFlight Script samples I can start with?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Perhaps the easiest way to get started is to 
+study the sample scripts included with the OpenFlight API distribution. These sample 
+scripts are located at:</P></DT><DT><P><SPAN CLASS="MONOSPACE">$(PRESAGIS_OPENFLIGHT_API)/samples/scripts</SPAN></P></DT><DT><P>The files (immediately) in this folder are stand-alone scripts in that they are 
+designed to run in a stand-alone program environment (not in Creator).</P></DT><DT><P>There are also sample scripts that are designed to run in Creator.  These mimic 
+several common tools in Creator.  You can use them to see how tools 
+might be implemented in OpenFlight Script.  These scripts are located at:</P></DT><DT><P><SPAN CLASS="MONOSPACE">$(PRESAGIS_OPENFLIGHT_API)/samples/scripts/creatortools</SPAN></P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000104></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Can I invoke Creator tools from the OpenFlight API or OpenFlight Script?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You can execute Creator tools from your plug-in tool or OpenFlight Script in the 
+Creator modeler environment using the function <A HREF=#mgExecute>mgExecute</A>.</P></DT><DT><P>Note that you cannot use this function in a stand-alone application or script.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how you might use 
+<A HREF=#mgExecute>mgExecute</A> to execute the Creator Tool <B>Translate</B>.  Use the C code 
+to invoke a Creator Tool from your plugin.  Use the Python code in your 
+OpenFlight script:</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// create a parameter block for the Translate command
+// the parameter block is initialized with default values
+mgparamblock paramBlock = mgGetParamBlock ("Translate");
+
+// set the values for each parameter in the block
+mgParamSetDouble3 (paramBlock, "From Point", 0, 0, 0);
+mgParamSetDouble3 (paramBlock, "To Point", 0, 0, 0);
+
+// execute the Translate command using the parameters set
+mgExecute ("Translate", paramBlock);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># create a parameter block for the Translate command
+# the parameter block is initialized with default values
+paramBlock = mgGetParamBlock ("Translate")
+
+# set the values for each parameter in the block
+mgParamSetDouble3 (paramBlock, "From Point", 0, 0, 0)
+mgParamSetDouble3 (paramBlock, "To Point", 0, 0, 0)
+
+# execute the Translate command using the parameters set
+mgExecute ("Translate", paramBlock)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgExecute>mgExecute</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR>
+ 
+<A HREF=#FAQ_00000002>What is Creator Script?</A><BR>
+ 
+<A HREF=#FAQ_00000103>Are there any OpenFlight Script samples I can start with?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000105></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Why don't I have to "free" dynamically allocated memory in OpenFlight Script?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>OpenFlight Script is based on the Python scripting language. Python has "automatic" 
+garbage collection so your scripts do not have to explicitly free memory in the 
+same way your C language code would have to.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000001>What is OpenFlight Script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000200></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What format revisions of OpenFlight does the OpenFlight API support?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The OpenFlight API can <I>read</I> any format revision of OpenFlight going back to the early days 
+when the format was called simply "Flight" and was maintained by Software Systems in the mid 1980s. 
+The most recent OpenFlight format revision is 16.4.</P></DT><DT><P>You use <A HREF=#mgOpenDb>mgOpenDb</A> to read an OpenFlight file of any format revision. When you do this the file 
+is read into memory into the "OpenFlight Scene Graph" format. The in memory scene graph format 
+has no format revision, per se. It contains all the data necessary to write the most current (native) 
+OpenFlight format revision as well as all supported past revisions. You can examine or edit 
+the OpenFlight Scene Graph and then, optionally, save any changes you make.</P></DT><DT><P>The OpenFlight API can <I>write</I> only certain (newer) format revisions of OpenFlight. Those format 
+revisions include:<BR> 
+15.4<BR> 
+15.6<BR> 
+15.7<BR> 
+15.8<BR> 
+16.0<BR> 
+16.1<BR> 
+16.2<BR> 
+16.3<BR> 
+16.4</P></DT><DT><P>You use <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A> or <A HREF=#mgExportDb>mgExportDb</A> to write (or save) an OpenFlight file.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000201></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I load an OpenFlight file into memory?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You use <A HREF=#mgOpenDb>mgOpenDb</A> to open and load the contents of an OpenFlight file into memory - presumably so you can 
+examine or modify it. In memory, the contents of the OpenFlight file is stored in a <I>graph</I> of hierarchical 
+structures, collectively known as the "OpenFlight Scene Graph". The function <A HREF=#mgOpenDb>mgOpenDb</A> returns 
+the "root node" of this graph. This "root node" is called the "header" or "database header".</P></DT><DT><P>Once the file is loaded in memory, you can examine or edit nodes in the OpenFlight Scene Graph. 
+If you make changes to the OpenFlight Scene Graph, you can save those changes using <A HREF=#mgWriteDb>mgWriteDb</A>, 
+<A HREF=#mgSaveAsDb>mgSaveAsDb</A> or <A HREF=#mgExportDb>mgExportDb</A>. When you no longer need the file loaded in memory, you should 
+close the file and deallocate all associated memory using <A HREF=#mgCloseDb>mgCloseDb</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) load an OpenFlight file into memory, 
+examine the OpenFlight Scene Graph (but make no changes) and then close the file.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// load "file.flt" into the OpenFlight Scene Graph
+mgrec* db = mgOpenDb ("file.flt");
+
+// examine the db (or parts of it)
+...
+
+// no changes, just close the file
+mgCloseDb (db);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># load "file.flt" into the OpenFlight Scene Graph
+db = mgOpenDb ("file.flt")
+
+# examine the db (or parts of it)
+...
+
+# no changes, just close the file
+mgCloseDb (db)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000003>What is the OpenFlight Scene Graph?</A><BR>
+ 
+<A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000202></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I create a brand new, empty, OpenFlight file in memory?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>If you want to load an <I>existing</I> OpenFlight file into memory, you use <A HREF=#mgOpenDb>mgOpenDb</A>. If you want to create 
+a <I>new</I> OpenFlight file in memory, use <A HREF=#mgNewDb>mgNewDb</A>. Both functions return a header node for the corresponding 
+OpenFlight Scene Graph. The header node returned by <A HREF=#mgNewDb>mgNewDb</A> will not be completely empty. 
+By convention the OpenFlight API creates two child group (<A HREF=#fltGroup>fltGroup</A>) nodes below the new db header as shown 
+here:<BR> 
+<IMG SRC="../common/mgNewDb.jpg">
+</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) create a new OpenFlight file into memory, 
+and print out the names of the two groups created.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// create a new OpenFlight file
+mgrec* db = mgNewDb ("newfile.flt");
+
+// get the two group nodes created by convention
+mgrec* g1 = mgGetChild (db);
+mgrec* g2 = mgGetChild (g1);
+
+// get the names of these nodes
+char* g1Name = mgGetName (g1);
+char* g2Name = mgGetName (g2);
+
+// print the names
+printf ("g1 name: %s&#92;n", g1Name);
+printf ("g2 name: %s&#92;n", g2Name);
+
+// free the strings allocated for the names returned
+mgFree (g1Name);
+mgFree (g2Name);
+
+// no changes, just close the file
+mgCloseDb (db);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># create a new OpenFlight file
+db = mgNewDb ("newfile.flt")
+
+# get the two group nodes created by convention
+g1 = mgGetChild (db)
+g2 = mgGetChild (g1)
+
+# get the names of these nodes
+g1Name = mgGetName (g1)
+g2Name = mgGetName (g2)
+
+# print the names
+print "g1 name:",g1Name
+print "g2 name:",g2Name
+
+# in Python, you don't "free" the strings
+
+# no changes, just close the file
+mgCloseDb (db)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A>, 
+<A HREF=#mgGetName>mgGetName</A>, <A HREF=#mgFree>mgFree</A>, <A HREF=#mgGetChild>mgGetChild</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000003>What is the OpenFlight Scene Graph?</A><BR>
+ 
+<A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000205></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">After making changes to the OpenFlight file in memory, how do I save my changes to disk?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>There are several functions in the OpenFlight API to save OpenFlight files to disk. 
+First, be aware that a database header node keeps track the OpenFlight file 
+to which it is currently associated. You can use the function <A HREF=#mgRec2Filename>mgRec2Filename</A> 
+to query this "file name".</P></DT><DT><P>To save the OpenFlight Scene Graph of a header node to the file name currently associated 
+to the header node, use <A HREF=#mgWriteDb>mgWriteDb</A>. To save the file to a different file name, use 
+<A HREF=#mgSaveAsDb>mgSaveAsDb</A>. To save the file to a different file name or different OpenFlight format 
+revision, use <A HREF=#mgExportDb>mgExportDb</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) load an OpenFlight file into memory, 
+make some changes to the OpenFlight Scene Graph, save the changes to the original 
+file name, make a backup copy, and then finally close the file.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// load "file.flt" into the OpenFlight Scene Graph
+mgrec* db = mgOpenDb ("file.flt");
+
+// make some changes to the db
+...
+
+// save the changes to file.flt
+mgWriteDb (db);
+
+// also save a copy for "backup"
+mgSaveAsDb (db, "file_copy.flt");
+
+// finally, close the file
+mgCloseDb (db);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># load "file.flt" into the OpenFlight Scene Graph
+db = mgOpenDb ("file.flt")
+
+# make some changes to the db
+...
+
+# save the changes to file.flt
+mgWriteDb (db)
+
+# also save a copy for "backup"
+mgSaveAsDb (db, "file_copy.flt")
+
+# finally, close the file
+mgCloseDb (db)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000206></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>If you make changes to the OpenFlight Scene Graph in memory, those changes are only saved to 
+disk if you explicitly do so using <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, or <A HREF=#mgExportDb>mgExportDb</A>. If you call 
+<A HREF=#mgCloseDb>mgCloseDb</A> without "saving" the file first, your in-memory changes will be discarded automatically.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) open a file, make some changes but do not 
+save them before closing the file. If you do this, your changes are discarded.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* db = mgOpenDb ("file.flt");
+// get the first group in the database
+mgrec* g1 = mgGetChild (db);
+// delete it, effectively deleting the entire contents
+mgDelete (g1);
+
+// but don't save changes... just close the file. file.flt remains intact
+mgCloseDb (db);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">db = mgOpenDb ("file.flt")
+# get the first group in the database
+g1 = mgGetChild (db)
+# delete it, effectively deleting the entire contents
+mgDelete (g1)
+
+# but don't save changes... just close the file. file.flt remains intact
+mgCloseDb (db)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000207></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I save my changes to an OpenFlight file with a different file name?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The function <A HREF=#mgWriteDb>mgWriteDb</A> writes a database to the file name currently associated 
+to the corresponding header node. To save the database to a different file name, 
+use <A HREF=#mgSaveAsDb>mgSaveAsDb</A>. Note that Once the file has been saved to a "new" name, subsequent 
+calls to <A HREF=#mgWriteDb>mgWriteDb</A> will save the "new name", not the original name.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) open a file, make some changes 
+and save them out to a new file.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* db = mgOpenDb ("fileA.flt");
+
+// make some changes to db
+...
+
+// save changes to a new file
+mgSaveAsDb (db, "fileB.flt");
+
+// make some MORE changes to db
+...
+
+// save changes again, this time using mgWriteDb
+// this will save (again) to "fileB.flt"
+mgWriteDb (db);
+
+// and as always, close the database when you're done
+mgCloseDb (db);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">db = mgOpenDb ("fileA.flt")
+
+# make some changes to db
+...
+
+# save changes to a new file
+mgSaveAsDb (db, "fileB.flt")
+
+# make some MORE changes to db
+...
+
+# save changes again, this time using mgWriteDb
+# this will save (again) to "fileB.flt"
+mgWriteDb (db)
+
+# and as always, close the database when you're done
+mgCloseDb (db)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000208></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Each version of the OpenFlight API is built for a specific OpenFlight format revision. The format 
+revision built into a specific release of the OpenFlight API is often referred to as the <I>native</I> 
+OpenFlight format revision of that OpenFlight API release. For example, the native OpenFlight 
+format revision of OpenFlight API v14.0 is OpenFlight 16.4. So depending on which version of 
+the OpenFlight API you are using, the native OpenFlight format revision of that release will 
+be written by default when you use <A HREF=#mgWriteDb>mgWriteDb</A> or <A HREF=#mgSaveAsDb>mgSaveAsDb</A>.</P></DT><DT><P>As noted here, <A HREF=#mgWriteDb>mgWriteDb</A> or <A HREF=#mgSaveAsDb>mgSaveAsDb</A> will write the native OpenFlight format revision 
+of the OpenFlight API version you are using. If you need to write out a specific OpenFlight 
+format revision, you can use <A HREF=#mgExportDb>mgExportDb</A>.</P></DT><DT><P>The table below lists the native OpenFlight format revisions corresponding to the current 
+and many past versions of the OpenFlight API.<P>
+<TABLE CLASS="SIMPLE">
+ 
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ OpenFlight API Version </TD>
+ 
+<TD CLASS="BORDER">
+ Native OpenFlight Format Revision </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v14.0 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.4 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v5.0 (13.0) </TD>
+ 
+<TD CLASS="BORDER">
+ 16.4 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v4.2 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.4 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v4.1 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.4 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v4.0 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.4 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v3.5 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.3 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v3.4 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.3 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v3.3 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.2 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v3.2 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.2 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v3.1 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.1 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v3.0 </TD>
+ 
+<TD CLASS="BORDER">
+ 16.0 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v2.6 </TD>
+ 
+<TD CLASS="BORDER">
+ 15.8 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v2.5 </TD>
+ 
+<TD CLASS="BORDER">
+ 15.7 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v2.4 </TD>
+ 
+<TD CLASS="BORDER">
+ 15.7 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v2.3 </TD>
+ 
+<TD CLASS="BORDER">
+ 15.6 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v2.2 </TD>
+ 
+<TD CLASS="BORDER">
+ 15.6 </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ v2.1 </TD>
+ 
+<TD CLASS="BORDER">
+ 15.6 </TD>
+ 
+</TR>
+<P>
+</TABLE>
+</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000209>I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000209></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">I want to save my OpenFlight file to a different OpenFlight format revision - How do I do that?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>By default <A HREF=#mgWriteDb>mgWriteDb</A> or <A HREF=#mgSaveAsDb>mgSaveAsDb</A> will write the native OpenFlight format revision 
+of the OpenFlight API version you are using. If you need to write out a different OpenFlight 
+format revision, you can use <A HREF=#mgExportDb>mgExportDb</A>.</P></DT><DT><P>The OpenFlight API can export to the following OpenFlight format revisions:<BR> 
+16.3<BR> 
+16.2<BR> 
+16.1<BR> 
+16.0<BR> 
+15.8<BR> 
+15.7<BR> 
+15.6<BR> 
+15.4</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00000210></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Unlike Creator, the OpenFlight API cannot export to other file formats. 
+The OpenFlight API can only write the OpenFlight file format.</P></DT><DT><P>Use functions <A HREF=#mgWriteDb>mgWriteDb</A> or <A HREF=#mgSaveAsDb>mgSaveAsDb</A> to write the native OpenFlight format 
+revision of the OpenFlight API version you are using. Use <A HREF=#mgExportDb>mgExportDb</A> to write 
+out a different OpenFlight format revision.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgOpenDb>mgOpenDb</A>, <A HREF=#mgNewDb>mgNewDb</A>, <A HREF=#mgWriteDb>mgWriteDb</A>, <A HREF=#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=#mgExportDb>mgExportDb</A>, <A HREF=#mgCloseDb>mgCloseDb</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000200>What format revisions of OpenFlight does the OpenFlight API support?</A><BR>
+ 
+<A HREF=#FAQ_00000201>How do I load an OpenFlight file into memory?</A><BR>
+ 
+<A HREF=#FAQ_00000202>How do I create a brand new, empty, OpenFlight file in memory?</A><BR>
+ 
+<A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+ 
+<A HREF=#FAQ_00000205>After making changes to the OpenFlight file in memory, how do I save my changes to disk?</A><BR>
+ 
+<A HREF=#FAQ_00000206>If I change an OpenFlight file in memory, how do I discard those changes so they are not saved?</A><BR>
+ 
+<A HREF=#FAQ_00000207>How do I save my changes to an OpenFlight file with a different file name?</A><BR>
+ 
+<A HREF=#FAQ_00000208>If I save my changes to an OpenFlight file, which OpenFlight format revision will be written?</A><BR>
+ 
+<A HREF=#FAQ_00000210>Can I save the OpenFlight file as a different format, like Wavefront OBJ or AutoCAD DXF?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001000></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is an mgrec?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The <A HREF=#mgrec>mgrec</A> type is a generic (polymorphic) type used to access different 
+types of records defined by the OpenFlight API.  Primarily, objects of type 
+<A HREF=#mgrec>mgrec</A> represent nodes in the OpenFlight hierarchy.  Other objects (records) 
+represented as <A HREF=#mgrec>mgrec</A> include Transformation records, Palette records, 
+Bounding Box records, etc.</P></DT><DT><P>The <A HREF=#mgrec>mgrec</A> type is an opaque type.  In other words you cannot access the 
+fields of this structure directly.  The OpenFlight API provides functions to 
+access the fields of the records of this type.  Different functions in the 
+API access different types of <A HREF=#mgrec>mgrec</A> records.  The <B>Function Categories</B> 
+section of this reference document is organized (loosely) based on these different 
+record types.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00000003>What is the OpenFlight Scene Graph?</A><BR>
+ 
+<A HREF=#FAQ_00001001>What is the OpenFlight Data Dictionary?</A><BR>
+ 
+<A HREF=#FAQ_00001002>How can I tell what kind of record I have in an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001001></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is the OpenFlight Data Dictionary?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The OpenFlight Data Dictionary is a data schema that defines the records and fields 
+that comprise all the elements in an OpenFlight database.  In this way, the OpenFlight 
+Data Dictionary can be thought of as a "map" that you will use to access elements 
+in the OpenFlight scene.</P></DT><DT><P>Each record type defined in the OpenFlight Data Dictionary has a unique code associated 
+to it.  This code is used to identify the type of record it is.  For each record type 
+there is a corresponding record schema that 
+defines the fields of that record.  Like a record, each field also has a unique 
+code associated to it.  The definition of a record field includes its 
+<B>code</B> and <B>type</B> as well as a brief description of the field.  The <B>code</B> and 
+<B>type</B> of a record field are very important.  The <B>code</B> is the "key" by which 
+that field is known and accessed.  The <B>type</B> tells you the kind and size of the 
+data type used to hold field values.</P></DT><DT><P>The OpenFlight Data Dictionary is documented as a part of this reference document. 
+You will find it a valuable resource as you develop OpenFlight API programs and 
+plug-ins as well as OpenFlight scripts.</P></DT><DT><P>Here is a link to the OpenFlight Data Dictionary for you to bookmark:</P></DT><DT><P><A TARGET=_blank HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A>
+</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001000>What is an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00000003>What is the OpenFlight Scene Graph?</A><BR>
+ 
+<A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001002></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How can I tell what kind of record I have in an mgrec?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>As mentioned above, the <A HREF=#mgrec>mgrec</A> type is a generic type used to access different 
+types of records defined by the OpenFlight API.  Since that is the case, you may not 
+always know what kind of record you have in any given <A HREF=#mgrec>mgrec</A>.  For the most part, 
+this should not be a problem in your code when you know where the record came 
+from.  For example if the record was returned by <A HREF=#mgOpenDb>mgOpenDb</A> or <A HREF=#mgNewDb>mgNewDb</A>, 
+you know it is a node record of type <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+.</P></DT><DT><P>There will be situations in which you don't know what kind of record you have. 
+Consider this scenario.  You want to find all the polygon nodes in the scene 
+and perform some action on each of them.  You would likely use <A HREF=#mgWalk>mgWalk</A> to 
+visit all the nodes in a database hierarchy and when you find a polygon node, 
+perform the action on each that you find.  When you use <A HREF=#mgWalk>mgWalk</A> you provide 
+walk action functions that will be called for each node in the hierarchy as 
+it is visited.  The node currently being visited is passed as a parameter to 
+your walk action function.  To filter out all but the polygon node records, 
+your action function would query the node it is passed.  In this way your 
+function could simply ignore records that are not polygon nodes and process 
+only those that are.</P></DT><DT><P>This is very easy to do using <A HREF=#mgGetCode>mgGetCode</A>.  You pass an <A HREF=#mgrec>mgrec</A> record to 
+<A HREF=#mgGetCode>mgGetCode</A> and it returns the unique code associated to that record.  This 
+code tells you exactly what kind of record you have.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to use <A HREF=#mgGetCode>mgGetCode</A> 
+to interrogate a record <I>rec</I> for its type (<I>code</I>).  You can see how easily 
+this code could be included in your walk action function and used to find 
+just the polygon node records.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// call mgGetCode to return the "code" associated to rec
+mgcode code = mgGetCode (rec);
+
+// there are many possible record "codes"
+// here are some common types
+
+if (code == fltHeader)           // database header node
+   printf ("fltHeader");
+else if (code == fltGroup)       // group node
+   printf ("fltGroup");
+else if (code == fltObject)      // object node
+   printf ("fltObject");
+else if (code == fltPolygon)     // polygon node
+   printf ("fltPolygon");
+else if (code == fltVertex)      // vertex node
+   printf ("fltVertex");
+else if (code == fltXmTranslate) // translate transformation
+   printf ("fltXmTranslate");
+else if (code == fltFMaterial)   // material palette entry
+   printf ("fltFMaterial");
+else
+   printf ("some other kind, there are many!!");</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># call mgGetCode to return the "code" associated to rec
+code = mgGetCode (rec)
+
+# there are many possible record "codes"
+# here are some common types
+
+if (code == fltHeader):        # database header node
+   print "fltHeader"
+elif (code == fltGroup):       # group node
+   print "fltGroup"
+elif (code == fltObject):      # object node
+   print "fltObject"
+elif (code == fltPolygon):     # polygon node
+   print "fltPolygon"
+elif (code == fltVertex):      # vertex node
+   print "fltVertex"
+elif (code == fltXmTranslate): # translate transformation
+   print "fltXmTranslate"
+elif (code == fltFMaterial):   # material palette entry
+   print "fltFMaterial"
+else:
+   print "some other kind, there are many!!"</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetCode>mgGetCode</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001000>What is an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00000003>What is the OpenFlight Scene Graph?</A><BR>
+ 
+<A HREF=#FAQ_00001001>What is the OpenFlight Data Dictionary?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001003></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I get the attributes of a record in the database?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> defines the fields 
+that are contained in any record type.  If you know what kind of 
+record you have, check the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> to see the fields that are defined 
+for that record type.  You then choose which field you want to "get" 
+and use one of several OpenFlight API functions to access that field data.</P></DT><DT><P>The most common function to use is <A HREF=#mgGetAttList>mgGetAttList</A>.  In its simplest 
+form (to retrieve a single value), you provide a <I>rec</I>, a field <I>code</I> 
+and an <I>address</I>.  The <I>rec</I> is the record you want to query. 
+The <I>code</I> identifies the field whose value you want.  The <I>address</I> points 
+to memory that is appropriate (in size and type) to receive the value of the 
+record attribute.  Note that you can provide additional <I>code</I> and 
+<I>address</I> pairs to retrieve multiple values simultaneously.</P></DT><DT><P>The <I>address</I> part can be a bit tricky.  This is where the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> can 
+really help.  Here is an excerpt from the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> showing some of the 
+fields of the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolyon>fltPolyon</A>
+ record.</P></DT><DT><P><PRE CLASS="EXAMPLE">record fltPolygon { 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;short(2)         fltPolyTexture            Texture pattern index (-1 if none) 
+&nbsp;&nbsp;&nbsp;unsigned int(4)  fltPolyPrimeColor         Primary Color Index 
+&nbsp;&nbsp;&nbsp;float(4)         fltPolyPrimeIntensity     Primary Color Intensity 
+&nbsp;&nbsp;&nbsp;mgbool(4)        fltPolyTerrain            TRUE if geometry is terrain 
+&nbsp;&nbsp;&nbsp;char*(variable)  fltComment                Comment Text 
+&nbsp;&nbsp;&nbsp;... 
+}</PRE></P></DT><DT><P>The second column is the <B>code</B> associated to the field. For each field 
+defined in the record, a data type (and size) is listed in the first column. 
+This tells you what kind of <I>address</I> to provide to <A HREF=#mgGetAttList>mgGetAttList</A> for each field.</P></DT><DT><P>In the excerpt shown above, you can see that the <B>fltPolyTexture</B> field is a <SPAN CLASS="MONOSPACE">short</SPAN> 
+integer of length 2 bytes.  Similarly, <B>fltPolyPrimeColor</B> is an <SPAN CLASS="MONOSPACE">unsigned int</SPAN> 
+(4 bytes) and <B>fltPolyPrimeIntensity</B> is a <SPAN CLASS="MONOSPACE">float</SPAN> (4 bytes).</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The examples below (in C and Python) 
+show you how you would use <A HREF=#mgGetAttList>mgGetAttList</A> (and what kind 
+of address to use for each of these attributes) to retrieve the texture and color 
+fields from a polygon node record <I>polygon</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">short textureIndex;
+unsigned int colorIndex;
+float colorIntensity;
+int numAttr;
+
+numAttr = mgGetAttList (polygon,
+&#32       fltPolyTexture, &textureIndex,
+&#32       fltPolyPrimeColor, &colorIndex,
+&#32       fltPolyPrimeIntensity, &colorIntensity,
+&#32       MG_NULL);
+if (numAttr == 3)
+{
+   // all the values were retrieved successfully
+   printf ("Texture Index:   %d&#92;", textureIndex);
+   printf ("Color Index:     %d&#92;", colorIndex);
+   printf ("Color Intensity: %f&#92;", colorIntensity);
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">outs = mgGetAttList (polygon,
+      fltPolyTexture, fltPolyPrimeColor, fltPolyPrimeIntensity)
+
+# outs is a tuple with 7 elements as follows:
+# outs[0] = number of attributes returned, 3 if successful
+# outs[1] = fltPolyTexture
+# outs[2] = value of fltPolyTexture
+# outs[3] = fltPolyPrimeColor
+# outs[4] = value of fltPolyPrimeColor
+# outs[5] = fltPolyPrimeIntensity
+# outs[6] = value of fltPolyPrimeIntensity
+
+numAttr = outs[0]
+if (numAttr == 3):
+   # all the values were retrieved successfully
+   print "Texture Index:  ",outs[2]
+   print "Color Index:    ",outs[4]
+   print "Color Intensity:",outs[6]</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001000>What is an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00001001>What is the OpenFlight Data Dictionary?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001005>How do I get a string attribute of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001007>What is the best way to get the coordinates (position) of a vertex node record?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001004></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I set the attributes of a record in the database?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> defines the fields 
+that are contained in any record type.  If you know what kind of 
+record you have, check the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> to see the fields that are defined 
+for that record type.  You then choose which field you want to "set" 
+and use one of several OpenFlight API functions to set that field data.</P></DT><DT><P>The most common function to use is <A HREF=#mgSetAttList>mgSetAttList</A>.  In its simplest 
+form (to set a single value), you provide a <I>rec</I>, a field <I>code</I> 
+and a <I>value</I>.  The <I>rec</I> is the record whose value you want to set. 
+The <I>code</I> identifies the field of the record you want to set. 
+The <I>value</I> is the value you want to set.  Note that you can provide 
+additional <I>code</I> and <I>value</I> pairs to set multiple values simultaneously.</P></DT><DT><P>The <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> can help you with the <I>value</I> parameter. 
+Here is an excerpt showing some of the 
+fields of the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltObject>fltObject</A>
+ record.</P></DT><DT><P><PRE CLASS="EXAMPLE">record fltObject { 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;mgbool(4)        fltObjNoDay            Do not display in daylight 
+&nbsp;&nbsp;&nbsp;char*(variable)  fltComment             Comment Text 
+&nbsp;&nbsp;&nbsp;... 
+}</PRE></P></DT><DT><P>The second column is the <B>code</B> associated to the field.  For each field 
+defined in the record, a data type (and size) is listed in the first column. 
+This tells you what kind of <I>value</I> to provide to <A HREF=#mgSetAttList>mgSetAttList</A> for each field.</P></DT><DT><P>In the excerpt shown above, you can see that the <B>fltObjNoDay</B> field is a <SPAN CLASS="MONOSPACE">mgbool</SPAN> 
+value and that <B>fltComment</B> is a <SPAN CLASS="MONOSPACE">char*</SPAN> (string) value.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The examples below (in C and Python) 
+show you how you would use <A HREF=#mgSetAttList>mgSetAttList</A> to set the Inhibit Display Day flag and 
+comment for an object node record <I>object</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">int numAttr;
+
+numAttr = mgSetAttList (object,
+&#32       fltObjNoDay, MG_TRUE,
+&#32       fltComment, "This object is not drawn in day",
+&#32       MG_NULL);
+if (numAttr == 2)
+{
+   // all the values were set successfully
+   printf ("Object attributes set successfully");
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">numAttr = mgSetAttList (object,
+&#32       fltObjNoDay, MG_TRUE,
+&#32       fltComment, "This object is not drawn in day")
+if (numAttr == 2):
+   # all the values were set successfully
+   print "Object attributes set successfully"</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetAttList>mgSetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001000>What is an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00001001>What is the OpenFlight Data Dictionary?</A><BR>
+ 
+<A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001005></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I get a string attribute of a record in the database?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>When you use <A HREF=#mgGetAttList>mgGetAttList</A> to retrieve a string attribute from a record, 
+there are some special considerations to keep in mind.  For this discussion, 
+consider the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltHeader>fltHdrLastDate</A>
+ field of the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+ record as shown 
+in this excerpt from the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A>:</P></DT><DT><P><PRE CLASS="EXAMPLE">record fltHeader { 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;char* (32)&#32     fltHdrLastDate&#32       Date and time of last revision 
+&nbsp;&nbsp;&nbsp;... 
+}</PRE></P></DT><DT><P>You can see that this attribute is a <SPAN CLASS="MONOSPACE">char*</SPAN> of length 32 bytes. In 
+other words, it is a string of length 32.  The <I>address</I> you provide 
+to <A HREF=#mgGetAttList>mgGetAttList</A> for string attributes should be the "address" of a 
+<SPAN CLASS="MONOSPACE">char*</SPAN> value.  If <A HREF=#mgGetAttList>mgGetAttList</A> succeeds, it will allocate a 
+string and copy the value of the record attribute to the allocated string. 
+The address you provide will "point" to the allocated string. 
+Since the string attribute is allocated, you must deallocate 
+it after you are done with it (in C, but not in Python) to avoid 
+a memory leak.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to retrieve 
+a string attribute from a node record and how to dispose of it when 
+you are done with it.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">char* date = MG_NULL;
+int numAttr;
+
+numAttr = mgGetAttList (header,
+&#32       fltHdrLastDate, &date,
+&#32       MG_NULL);
+
+if ((numAttr == 1) && (date != NULL)) {
+   // date now points to a character string filled with
+   // the fltHdrLastDate attribute value
+   printf ("Last modified: %s&#92;", date);
+
+   // you need to free the memory when you are done with it!
+   mgFree (date);
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">outs = mgGetAttList (header, fltHdrLastDate)
+# outs is a tuple with 3 elements as follows:
+# outs[0] = number of attributes returned, 1 if successful
+# outs[1] = fltHdrLastDate
+# outs[2] = value of fltHdrLastDate
+numAttr = outs[0]
+if (numAttr == 1):
+   date = outs[2]
+   print "Last modified:", date
+   # no need to deallocate the memory in Python</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001006></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I access a value in a record nested inside another record?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> defines the fields that are contained in any record type. 
+Fields contained in a record may be values or may be nested records 
+themselves that contain other fields, etc.</P></DT><DT><P>To access any value (nested or not) of a record, you typically will use 
+<A HREF=#mgGetAttList>mgGetAttList</A> (to get the value) and <A HREF=#mgSetAttList>mgSetAttList</A> (to set the value). 
+For each of these functions, you specify a <I>rec</I> and a <I>code</I>.  The <I>code</I> 
+represents the field in <I>rec</I> you want to get or set.  These functions will 
+automatically look for <I>code</I> in nested records of <I>rec</I> - so you don't have 
+to do anything special as long as <I>code</I> is found in just one nested record.</P></DT><DT><P>Consider the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ record in the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> as shown here:</P></DT><DT><P><PRE CLASS="EXAMPLE">record fltVertex { 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;record fltCoord3d  fltCoord3d   double precision float coordinate X,Y,Z 
+&nbsp;&nbsp;&nbsp;... 
+} 
+record fltCoord3d { 
+&nbsp;&nbsp;&nbsp;double(8)          fltCoord3dX  X component of coordinate 
+&nbsp;&nbsp;&nbsp;double(8)          fltCoord3dY  Y component of coordinate 
+&nbsp;&nbsp;&nbsp;double(8)          fltCoord3dZ  Z component of coordinate 
+}</PRE></P></DT><DT><P>Notice that <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ contains a nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record. 
+If you wanted to set the <B>fltCoord3dX</B> attribute of the nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record 
+on a <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+, simply pass a <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ record to <A HREF=#mgSetAttList>mgSetAttList</A> and specify 
+<B>fltCoord3dX</B> for <I>code</I>.  Since <B>fltCoord3dX</B> is defined just once in the nested 
+record structure, <A HREF=#mgSetAttList>mgSetAttList</A> will know which field you mean.</P></DT><DT><P><PRE CLASS="EXAMPLE">mgSetAttList (vertex, fltCoord3dX, 2.0, MG_NULL);</PRE></P></DT><DT><P>Now if <I>code</I> is contained in more than one nested record, there is an ambiguity and 
+<A HREF=#mgGetAttList>mgGetAttList</A> and <A HREF=#mgSetAttList>mgSetAttList</A> won't know which <I>code</I> you mean.  Note that these 
+functions will find one of the nested fields but it is not defined which field that will be.</P></DT><DT><P>Consider the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslate</A>
+ record which contains two nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ records:<P>
+<PRE CLASS="EXAMPLE">record fltXmTranslate  { 
+&nbsp;&nbsp;&nbsp;record fltCoord3d&#32fltXmTranslateFrom   reference FROM point 
+&nbsp;&nbsp;&nbsp;record fltCoord3d&#32fltXmTranslateDelta  Delta to translate node by 
+}</PRE></P></DT><DT><P>In this case if you wanted to set the <B>fltCoord3dX</B> attribute of the nested 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslateFrom</A>
+ record on <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslate</A>
+, you cannot simply pass 
+a <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslate</A>
+ record to <A HREF=#mgSetAttList>mgSetAttList</A> because <B>fltCoord3dX</B> is defined 
+in both <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslateFrom</A>
+ and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslateDelta>fltXmTranslateDelta</A>
+ nested records. 
+<A HREF=#mgSetAttList>mgSetAttList</A> won't know which <B>fltCoord3dX</B> you mean.</P></DT><DT><P>To resolve this ambiguity you have two choices.  For common nested record types, 
+like <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ and several others, the OpenFlight API provides "convenience" functions to 
+get/set the nested record components.  For example <A HREF=#mgGetCoord3d>mgGetCoord3d</A> retrieves the X, Y and Z 
+components of a nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record while <A HREF=#mgSetCoord3d>mgSetCoord3d</A> sets them.  You specify 
+the code of the nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record you want to access.  In the case of <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslate</A>
+ 
+above, the following example shows how you would set values on each of the nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ records.</P></DT><DT><P><PRE CLASS="EXAMPLE">// set the components on the fltXmTranslateFrom nested record 
+mgSetCoord3d (translate, fltXmTranslateFrom, 0.0, 0.0, 0.0); 
+&nbsp; 
+// set the components on the fltXmTranslateDelta nested record 
+mgSetCoord3d (translate, fltXmTranslateDelta, 10.0, 5.0, 0.0);</PRE></P></DT><DT><P>As noted above, there are several nested records for which OpenFlight API convenience functions 
+are defined.  Here are some:</P></DT><DT><P><TABLE CLASS="SIMPLE">
+ 
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ Nested Record Type </TD>
+ 
+<TD CLASS="BORDER">
+ Get Function </TD>
+ 
+<TD CLASS="BORDER">
+ Set Function </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetCoord2i>mgGetCoord2i</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetCoord2i>mgSetCoord2i</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3f>fltCoord3f</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetCoord3f>mgGetCoord3f</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetCoord3f>mgSetCoord3f</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetCoord3d>mgGetCoord3d</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetCoord3d>mgSetCoord3d</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltDPlane>fltDPlane</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetPlane>mgGetPlane</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetPlane>mgSetPlane</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltMatrix>fltMatrix</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetMatrix>mgGetMatrix</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetMatrix>mgSetMatrix</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltColorRGBA>fltColorRGBA</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetColorRGBA>mgGetColorRGBA</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetColorRGBA>mgSetColorRGBA</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltNormColor>fltNormColor</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetNormColor>mgGetNormColor</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetNormColor>mgSetNormColor</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVector>fltVector</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetVector>mgGetVector</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetVector>mgSetVector</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVectord>fltVectord</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgGetVectord>mgGetVectord</A> </TD>
+ 
+<TD CLASS="BORDER">
+ <A HREF=#mgSetVectord>mgSetVectord</A> </TD>
+ 
+</TR>
+<P>
+</TABLE>
+</P></DT><DT><P>Finally you have one more option when accessing fields of nested records. 
+The function <A HREF=#mgGetAttRec>mgGetAttRec</A> can be used to get a pointer to the nested 
+record which in turn can be passed to <A HREF=#mgGetAttList>mgGetAttList</A> or <A HREF=#mgSetAttList>mgSetAttList</A>. 
+In this way, you control how to resolve any ambiguity in the nested record 
+structure.  The following example shows how <A HREF=#mgGetAttRec>mgGetAttRec</A> could be used 
+to resolve the ambiguity when accessing fields of nested records in 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslate</A>
+.  While the example shows how to set the field 
+in the nested record using <A HREF=#mgSetAttList>mgSetAttList</A>, it works the same way when 
+using <A HREF=#mgGetAttList>mgGetAttList</A> to get the field value.<P>
+<PRE CLASS="EXAMPLE">mgrec* coordRec; 
+// get the nested fltXmTranslateFrom record 
+coordRec = mgGetAttRec (translate, fltXmTranslateFrom, MG_NULL); 
+// set the components on the nested record 
+mgSetAttList (coordRec, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fltCoord3dX, 0.0, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fltCoord3dY, 0.0, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fltCoord3dZ, 0.0, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MG_NULL); 
+&nbsp; 
+// get the nested fltXmTranslateDelta record 
+coordRec = mgGetAttRec (translate, fltXmTranslateDelta, MG_NULL); 
+// set the components on the nested record 
+mgSetAttList (coordRec, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fltCoord3dX, 10.0, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fltCoord3dY, 5.0, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fltCoord3dZ, 0.0, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MG_NULL);</PRE></P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgGetAttRec>mgGetAttRec</A>, 
+<A HREF=#mgGetCoord2i>mgGetCoord2i</A>, <A HREF=#mgSetCoord2i>mgSetCoord2i</A>, 
+<A HREF=#mgGetCoord3f>mgGetCoord3f</A>, <A HREF=#mgSetCoord3f>mgSetCoord3f</A>, 
+<A HREF=#mgGetCoord3d>mgGetCoord3d</A>, <A HREF=#mgSetCoord3d>mgSetCoord3d</A>, 
+<A HREF=#mgGetPlane>mgGetPlane</A>, <A HREF=#mgSetPlane>mgSetPlane</A>, 
+<A HREF=#mgGetMatrix>mgGetMatrix</A>, <A HREF=#mgSetMatrix>mgSetMatrix</A>, 
+<A HREF=#mgGetColorRGBA>mgGetColorRGBA</A>, <A HREF=#mgSetColorRGBA>mgSetColorRGBA</A>, 
+<A HREF=#mgGetNormColor>mgGetNormColor</A>, <A HREF=#mgSetNormColor>mgSetNormColor</A>, 
+<A HREF=#mgGetVector>mgGetVector</A>, <A HREF=#mgSetVector>mgSetVector</A>, 
+<A HREF=#mgGetVectord>mgGetVectord</A>, <A HREF=#mgSetVectord>mgSetVectord</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001007>What is the best way to get the coordinates (position) of a vertex node record?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001007></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is the best way to get the coordinates (position) of a vertex node record?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>When you look in the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> at the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ record, you will see that 
+the XYZ coordinates of the vertex are contained in a nested record of type 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+.</P></DT><DT><P><PRE CLASS="EXAMPLE">record fltVertex { 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;record fltCoord3d  fltCoord3d   double precision float coordinate X,Y,Z 
+&nbsp;&nbsp;&nbsp;... 
+}</PRE></P></DT><DT><P>The nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record is defined as follows: 
+<PRE CLASS="EXAMPLE">record fltCoord3d { 
+&nbsp;&nbsp;&nbsp;double(8)          fltCoord3dX  X component of coordinate 
+&nbsp;&nbsp;&nbsp;double(8)          fltCoord3dY  Y component of coordinate 
+&nbsp;&nbsp;&nbsp;double(8)          fltCoord3dZ  Z component of coordinate 
+}</PRE></P></DT><DT><P>Like any other attribute, you can always use <A HREF=#mgGetAttList>mgGetAttList</A> to get the values of the 
+vertex record.  But the OpenFlight API provides some "convenience" functions for getting 
+attributes that you are likely to use often.  These convenience functions are both 
+easier to use and more efficient.</P></DT><DT><P>The first convenience function, <A HREF=#mgGetCoord3d>mgGetCoord3d</A>, retrieves the x, y and z coordinates 
+of a nested <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCoord3d>fltCoord3d</A>
+ record from any record that contains one.  The second 
+convenience function, <A HREF=#mgGetVtxCoord>mgGetVtxCoord</A>, retrieves the x, y and z coordinates from 
+a <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ record specifically.  Of these three functions, <A HREF=#mgGetVtxCoord>mgGetVtxCoord</A> 
+is the most efficient and easiest function to use.  For that reason, it is the "best" 
+way to get the coordinates (position) of a vertex node record.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show different ways to 
+retrieve the coordinates (position) of a vertex node record <I>vertex</I> using 
+<A HREF=#mgGetAttList>mgGetAttList</A> and the two convenience functions <A HREF=#mgGetCoord3d>mgGetCoord3d</A> and 
+<A HREF=#mgGetVtxCoord>mgGetVtxCoord</A>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">double x, y, z;
+int numAttr;
+mgbool status;
+
+// like any attribute, you can use mgGetAttList:
+numAttr = mgGetAttList (vertex,
+      fltCoord3dX, &x,
+      fltCoord3dY, &y,
+      fltCoord3dZ, &z,
+      MG_NULL);
+
+// or you can use the convenience function mgGetCoord3d
+// to retrieve a nested fltCoord3d record:
+status = mgGetCoord3d (vertex, fltCoord3d, &x, &y, &z);
+
+// or you can use a very specialized convenience function
+// mgGetVtxCoord to get the vertex coordinates:
+status = mgGetVtxCoord (vertex, &x, &y, &z);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># like any attribute, you can use mgGetAttList:
+outs = mgGetAttList (vertex,
+      fltCoord3dX,
+      fltCoord3dY,
+      fltCoord3dZ)
+numAttr = outs[0]
+if (numAttr == 3):
+   x = outs[2];
+   y = outs[4];
+   z = outs[6];
+
+# or you can use the convenience function mgGetCoord3d
+# to retrieve a nested fltCoord3d record:
+status, x, y, z = mgGetCoord3d (vertex, fltCoord3d)
+
+# or you can use a very specialized convenience function
+# mgGetVtxCoord to get the vertex coordinates:
+status, x, y, z = mgGetVtxCoord (vertex)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001006>How do I access a value in a record nested inside another record?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001008></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I get or set the comment attribute of a node record?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Like any other attribute, you can use <A HREF=#mgGetAttList>mgGetAttList</A> and <A HREF=#mgSetAttList>mgSetAttList</A> 
+to get and set the comment text of a node record.  The attribute code for 
+the comment text is <B>fltComment</B>.  In addition, the OpenFlight API provides 
+"convenience" functions for getting and setting the comment text of a node. 
+Depending on your preference, you can use the set of functions you find easier.</P></DT><DT><P>The convenience function for getting the comment text of a node is <A HREF=#mgGetComment>mgGetComment</A>. 
+It allocates and returns the comment text (if any).  In C, remember to free 
+the string returned after you are done with it using <A HREF=#mgFree>mgFree</A>.</P></DT><DT><P>The convenience function for setting the comment text of a node is <A HREF=#mgSetComment>mgSetComment</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show different ways to get 
+and set the comment text of polygon node record <I>poly</I> using 
+<A HREF=#mgGetAttList>mgGetAttList</A> and <A HREF=#mgSetAttList>mgSetAttList</A> as well as the convenience functions 
+<A HREF=#mgGetComment>mgGetComment</A> and <A HREF=#mgSetComment>mgSetComment</A>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">char* comment1 = NULL;
+char* comment2 = NULL;
+int numAttr;
+
+// get the comment using both techniques...
+
+// like any attribute, you can use mgGetAttList:
+numAttr = mgGetAttList (poly, fltComment, &comment1, MG_NULL);
+
+// or you can use the convenience function mgGetComment
+comment2 = mgGetComment (poly);
+
+// at this point comment1 and comment2 will be the same
+// no matter which technique you use, remember to free the
+// string when you are done with it
+mgFree (comment1);
+mgFree (comment2);
+
+// set the comment using both techniques
+
+// like any attribute, you can use mgSetAttList:
+numAttr = mgSetAttList (poly, fltComment, "Comment String", MG_NULL);
+
+// or you can use the convenience function mgSetComment
+mgSetComment (poly, "Comment String");</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># get the comment using both techniques...
+
+# like any attribute, you can use mgGetAttList:
+numAttr,code,comment1 = mgGetAttList (poly, fltComment)
+
+# or you can use the convenience function mgGetComment
+comment2 = mgGetComment (poly)
+
+# at this point comment1 and comment2 will be the same
+# Note that in Python, you don't have to free the strings
+
+# set the comment using both techniques
+
+# like any attribute, you can use mgSetAttList:
+numAttr,code = mgSetAttList (poly, fltComment, "Comment String")
+
+# or you can use the convenience function mgSetComment
+mgSetComment (poly, "Comment String")</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgGetComment>mgGetComment</A>, <A HREF=#mgSetComment>mgSetComment</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001001>What is the OpenFlight Data Dictionary?</A><BR>
+ 
+<A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001005>How do I get a string attribute of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001009></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What is the difference between Color Index/Intensity and 
+Creator Color Index attributes?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Several nodes in the OpenFlight scene have color index attributes.  These 
+nodes include <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCat>fltCat</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltText>fltText</A>
+, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltLpAppearancePalette>fltLpAppearancePalette</A>
+.  The color attributes 
+on these nodes can be specified in two different ways.  They may be specified 
+by an Index/Intensity value pair or by a Creator Color Index value - both 
+are equivalent.  The difference between these specifications are 
+explained here.</P></DT><DT><P>To understand what the color index values mean, it helps to know how the 
+color palette is constructed.  The database color palette contains 1024 
+color entries.  Each color entry is defined by red, green and blue (RGB) 
+values ranging from 0 to 255.  Each entry is further divided into a band 
+of 128 shades, or intensities ranging from 0 to 127.</P></DT><DT><P>As noted above, you can specify a color using either an Index/Intensity 
+value pair or a Creator Color Index.  These are just two different ways 
+of specifying the same thing.</P></DT><DT><P>When you specify a color by Index/Intensity pair, you specify the color 
+palette entry (0..1023) and the intensity (0.0 .. 1.0).  An intensity value 
+of 0.0 is  black and an intensity value of 1.0 is the full-intensity 
+of the RGB values of that color entry.</P></DT><DT><P>When you specify a color by Creator Color Index, you specify a different 
+index which encodes both the Index and Intensity values described above 
+into a single value.  This is how Creator displays the color index values 
+on the Attribute Pages.  The 128 colors specified by Index <SPAN CLASS="MONOSPACE">N</SPAN>, 
+Intensity <SPAN CLASS="MONOSPACE">I</SPAN> (ranging from 0.0 - 1.0) are encoded into the 
+Creator Color Indices <SPAN CLASS="MONOSPACE">X</SPAN> .. <SPAN CLASS="MONOSPACE">Y</SPAN>, where <SPAN CLASS="MONOSPACE">X</SPAN> is:<P>
+<PRE CLASS="EXAMPLE">(N * 128) + round(I * 127.0)</PRE></P></DT><DT><P>and <SPAN CLASS="MONOSPACE">Y</SPAN> is:<P>
+<PRE CLASS="EXAMPLE">X + 128</PRE></P></DT><DT><P>Color Index <SPAN CLASS="MONOSPACE">0</SPAN>, Intensity <SPAN CLASS="MONOSPACE">1.0</SPAN>, therefore would be Creator Color Index <SPAN CLASS="MONOSPACE">127</SPAN>. 
+Similarly Color Index <SPAN CLASS="MONOSPACE">5</SPAN>, Intensity <SPAN CLASS="MONOSPACE">0.5</SPAN> would be Creator Color Index <SPAN CLASS="MONOSPACE">704</SPAN>.</P></DT><DT><P>The following excerpt from the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> shows the primary and alternate color index 
+attributes of the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolyon>fltPolyon</A>
+ record.<P>
+<PRE CLASS="EXAMPLE">record fltPolygon { 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;unsigned int(4)  fltPolyCreatorPrimeColor  Creator Primary Color Index 
+&nbsp;&nbsp;&nbsp;unsigned int(4)  fltPolyPrimeColor         Primary Color Index 
+&nbsp;&nbsp;&nbsp;float(4)         fltPolyPrimeIntensity     Primary Color Intensity 
+&nbsp;&nbsp;&nbsp;... 
+&nbsp;&nbsp;&nbsp;unsigned int(4)  fltPolyCreatorAltColor    Creator Alternate Color Index 
+&nbsp;&nbsp;&nbsp;unsigned int(4)  fltPolyAltColor           Alternate Color Index 
+&nbsp;&nbsp;&nbsp;float(4)         fltPolyAltIntensity       Alternate Color Intensity 
+&nbsp;&nbsp;&nbsp;... 
+}</PRE></P></DT><DT><P>Notice that the <A TARGET="_blank" HREF=../openflightdd/default.htm>OpenFlight Data Dictionary</A> provides codes for both color index values.  Specifically, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyPrimeColor</A>
+ and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyPrimeIntensity</A>
+ represent the primary color 
+index as an Index/Intensity pair and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyCreatorPrimeColor</A>
+ represents 
+the primary color as a Creator Color Index.  The same applies for alternate color. 
+The attributes <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyAltColor</A>
+ and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyAltIntensity</A>
+ represent 
+the alternate color as an Index/Intensity pair and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyCreatorAltColor</A>
+ 
+as a Creator Color Index.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show both ways to specify 
+the primary color value for <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+ nodes.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// set both node1 and node2 to the same color
+// use different color index attributes to do it
+
+// set using Color Index/Intensity pair
+mgSetAttList (node1,
+      fltPolyPrimeColor, 0,
+      fltPolyPrimeIntensity, 1.0,
+      MG_NULL);
+
+// set using Creator Color Index
+mgSetAttList (node2,
+      fltPolyCreatorPrimeColor, 127,
+      MG_NULL);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># set both node1 and node2 to the same color
+# use different color index attributes to do it
+
+# set using Color Index/Intensity pair
+mgSetAttList (node1,
+      fltPolyPrimeColor, 0,
+      fltPolyPrimeIntensity, 1.0)
+
+# set using Creator Color Index
+mgSetAttList (node2,
+      fltPolyCreatorPrimeColor, 127)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgSetAttList>mgSetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001010>When I set a color intensity attribute on a node, the value I see on the node is not the exact value I set - why is there a difference?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001010></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">When I set a color intensity attribute on a node, the value I see 
+on the node is not the exact value I set.  Why is there a difference?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Several nodes in the OpenFlight scene have color attributes.  These 
+nodes include <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltCat>fltCat</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltText>fltText</A>
+, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltLpAppearancePalette>fltLpAppearancePalette</A>
+.  The color attributes 
+are represented on the nodes as Index/Intensity value pairs.</P></DT><DT><P>To help explain this problem, it will be useful to understand how the 
+color palette is constructed.  The database color palette contains 1024 
+color entries.  Each color entry is defined by red, green and blue (RGB) 
+values ranging from 0 to 255.  Each entry is further divided into a band 
+of 128 shades, or intensities ranging from 0 to 127.  This is how the 
+OpenFlight color palette is stored on disk.</P></DT><DT><P>The problem stems from that fact that the intensity value of a color 
+(stored on disk as an integer value, range 0 to 127) is expressed in the 
+OpenFlight API using a floating point number whose range is 0.0 .. 1.0. 
+Since these 128 integer intensity values are quantized into floating point 
+numbers, only 128 discrete floating point values can be represented. 
+The 128 floating  point numbers that are represented for Intensity <SPAN CLASS="MONOSPACE">I</SPAN> 
+(ranging from 0..127) can be expressed by this equation:<P>
+<PRE CLASS="EXAMPLE">I / 127.0</PRE></P></DT><DT><P>As you can see in the table below, only a small number of all the 
+floating point numbers between 0.0 and 1.0 can be represented by 
+128 integer intensities in the range 0..127:<P>
+<TABLE CLASS="SIMPLE">
+ 
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ Integer Intensity </TD>
+ 
+<TD CLASS="BORDER">
+ Floating Point Intensity </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0.000000000000</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">1</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0.007874015718</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">2</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0.015748031437</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">3</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0.023622047156</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">...</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">...</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">125</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0.984251976013</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">126</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">0.992125988007</SPAN> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">127</SPAN> </TD>
+ 
+<TD CLASS="BORDER">
+ <SPAN CLASS="MONOSPACE">1.000000000000</SPAN> </TD>
+ 
+</TR>
+<P>
+</TABLE>
+</P></DT><DT><P>This quantization explains why the floating point value you set for 
+a color intensity attribute on a node may not be the exact value you 
+get.  For example, if you set the intensity value to <SPAN CLASS="MONOSPACE">0.007</SPAN>, 
+the actual value you will get is <SPAN CLASS="MONOSPACE">0.007874015718</SPAN>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgSetAttList>mgSetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001009>What is the difference between Color Index/Intensity and Creator Color Index attributes?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001011></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I set up texture on a polygon?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>To set up a texture on a polygon, you will do the following:<P>
+<UL>
+ 
+<LI CLASS="NOINDENT">
+ Load a texture in the texture palette of the database </LI>
+ 
+<LI CLASS="NOINDENT">
+ Assign the texture index on the polygon </LI>
+ 
+<LI CLASS="NOINDENT">
+ Assign texture coordinates (UVs) on each vertex of the polygon </LI>
+ 
+</UL>
+</P></DT><DT><P>To assign a texture to a polygon, the texture must be in the texture palette of the 
+database. When a texture is in the texture palette, it will have an <I>index</I> 
+associated to it.  This index is used by many OpenFlight API functions to reference 
+the texture in the palette and is needed, specifically in this situation, to assign 
+to the polygon.  If the texture you want to 
+assign is already in the texture palette of the database, just note the index 
+and skip this step.  Otherwise, you will need to load the texture in the texture 
+palette before you can assign it to a polygon.</P></DT><DT><P>There are a couple of similar functions to load a texture in the texture palette: 
+<A HREF=#mgInsertTexture>mgInsertTexture</A> and <A HREF=#mgReadTexture>mgReadTexture</A>. 
+If you want to assign a specific index to the texture in the palette, use <A HREF=#mgReadTexture>mgReadTexture</A>. 
+If you do this, make sure the index is not already in use.  If you use 
+<A HREF=#mgInsertTexture>mgInsertTexture</A>, a "free" index will be assigned to the texture you 
+load in the texture palette.  The new index assigned is returned by <A HREF=#mgInsertTexture>mgInsertTexture</A>.</P></DT><DT><P>When you have the index of the texture in the texture palette, you are ready to assign it 
+to the polygon.  This is very simple using <A HREF=#mgSetAttList>mgSetAttList</A> and the attribute code 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyTexture</A>
+.  The attribute value you provide is simply the 
+texture palette index of the texture you want to assign to the polygon. Note that 
+the attribute code <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyTexture</A>
+ is used to assign the <I>base</I> 
+texture layer.  Use <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexture1</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexture2</A>
+, 
+... <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexture7</A>
+ to assign other texture layers on the polygon. 
+If your runtime supports detail texture, you can also assign <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolyDetailTexture</A>
+ 
+to the polygon.</P></DT><DT><P>After you have assigned the texture index to the polygon, you must set texture coordinates 
+(UVs) on the vertices of the polygon.  Like any other attribute, you use <A HREF=#mgSetAttList>mgSetAttList</A> 
+to assign UVs to vertex nodes.  You must assign UVs to each vertex of the polygon. Use 
+the attribute codes <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVU</A>
+ and <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVV</A>
+ to assign the base 
+texture UVs on a vertex.  Use attribute codes <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltLayerU1</A>
+, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltLayerV1</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltLayerU2</A>
+, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltLayerV2</A>
+, ... <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltLayerU7</A>
+, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltLayerV7</A>
+ to assign UVs for other texture layers on a vertex.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to load a texture in the 
+palette of a database <I>db</I> and set it up on a quadrilateral polygon <I>poly</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// load a texture in the palette, get its index
+index = mgInsertTexture (db, "C:/textures/brick.rgb");
+
+// assign the texture to the polygon
+mgSetAttList (poly, fltPolyTexture, index, MG_NULL);
+
+// get the 4 vertices of the quad polygon
+vtx1 = mgGetChild (poly);
+vtx2 = mgGetNext (vtx1);
+vtx3 = mgGetNext (vtx2);
+vtx4 = mgGetNext (vtx3);
+
+// assign simple UV mapping to each vertex of the quad
+mgSetAttList (vtx1, fltVU, 0.0, fltVV, 0.0, MG_NULL);
+mgSetAttList (vtx2, fltVU, 1.0, fltVV, 0.0, MG_NULL);
+mgSetAttList (vtx3, fltVU, 1.0, fltVV, 1.0, MG_NULL);
+mgSetAttList (vtx4, fltVU, 0.0, fltVV, 1.0, MG_NULL);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># load a texture in the palette, get its index
+index = mgInsertTexture (db, "C:/textures/brick.rgb")
+
+# assign the texture to the polygon
+mgSetAttList (poly, fltPolyTexture, index)
+
+# get the 4 vertices of the quad polygon
+vtx1 = mgGetChild (poly)
+vtx2 = mgGetNext (vtx1)
+vtx3 = mgGetNext (vtx2)
+vtx4 = mgGetNext (vtx3)
+
+#  assign simple UV mapping to each vertex of the quad
+mgSetAttList (vtx1, fltVU, 0.0, fltVV, 0.0)
+mgSetAttList (vtx2, fltVU, 1.0, fltVV, 0.0)
+mgSetAttList (vtx3, fltVU, 1.0, fltVV, 1.0)
+mgSetAttList (vtx4, fltVU, 0.0, fltVV, 1.0)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgInsertTexture>mgInsertTexture</A>, <A HREF=#mgReadTexture>mgReadTexture</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001014>How do I set a color name on a polygon or mesh?</A><BR>
+ 
+<A HREF=#FAQ_00001015>How do I set the normal of a polygon?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001012></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I determine the OpenFlight revision level of an OpenFlight database?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>After the database is opened (using <A HREF=#mgOpenDb>mgOpenDb</A> or <A HREF=#mgNewDb>mgNewDb</A>), you can access 
+the OpenFlight revision level as an attribute of the OpenFlight database 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+ node.  The attribute code for this is <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltHeader>fltHdrFormatRev</A>
+. 
+You can get this value (like you do any attribute value for any node type) using 
+<A HREF=#mgGetAttList>mgGetAttList</A>.  Note that you cannot set this value using <A HREF=#mgSetAttList>mgSetAttList</A>, 
+it is automatically set when you save or export the database file.</P></DT><DT><P>If you want to query the OpenFlight revision level of a database file on disk 
+(without opening it) you can use the function <A HREF=#mgGetDbVersion>mgGetDbVersion</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to get the OpenFlight revision 
+level attribute from an open database <I>db</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">int formatRev;
+int numAttr = mgGetAttList (db, fltHdrFormatRev, &formatRev, MG_NULL);
+
+// formatRev will be an integer number encoded like 1650, 1640, 1630, 1620, etc
+// specifying the OpenFlight format revision of this OpenFlight file.</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">numAttr, code, formatRev = mgGetAttList (db, fltHdrFormatRev)
+
+# formatRev will be an integer number encoded like 1650, 1640, 1630, 1620, etc
+# specifying the OpenFlight format revision of this OpenFlight file.</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgGetDbVersion>mgGetDbVersion</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001013>Can I query the OpenFlight revision level of an OpenFlight file on disk without opening it?</A><BR>
+ 
+<A HREF=#FAQ_00001003>How do I get the attributes of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001013></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Can I query the OpenFlight revision level of an OpenFlight file on disk 
+without opening it?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You can use the function <A HREF=#mgGetDbVersion>mgGetDbVersion</A> to query the OpenFlight revision level 
+of a file on disk.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to get the OpenFlight revision 
+level for an OpenFlight file on disk.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">int formatRev;
+formatRev = mgGetDbVersion ("c:/MyDatabases/myfile.flt");
+
+// if the file is an OpenFlight file, formatRev will be an integer number
+// encoded like 1650, 1640, 1630, 1620, etc specifying the OpenFlight format
+// revision of this OpenFlight file.
+//
+// if the file is not an OpenFlight file, formatRev will be 0.</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">formatRev = mgGetDbVersion ("c:/MyDatabases/myfile.flt")
+
+# if the file is an OpenFlight file, formatRev will be an integer number
+# encoded like 1650, 1640, 1630, 1620, etc specifying the OpenFlight format
+# revision of this OpenFlight file.
+#
+# if the file is not an OpenFlight file, formatRev will be 0.</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetDbVersion>mgGetDbVersion</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001012>How do I determine the OpenFlight revision level of an OpenFlight database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001014></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I set a color name on a polygon or mesh?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You can use the functions <A HREF=#mgSetPolyColorName>mgSetPolyColorName</A> and <A HREF=#mgSetPolyAltColorName>mgSetPolyAltColorName</A> to 
+set the primary and alternate color names on polygons and meshes.</P></DT><DT><P>Similarly, use functions <A HREF=#mgGetPolyColorName>mgGetPolyColorName</A> and <A HREF=#mgGetPolyAltColorName>mgGetPolyAltColorName</A> to 
+get the primary and alternate color names assigned to polygons and meshes.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetPolyColorName>mgSetPolyColorName</A>, <A HREF=#mgSetPolyAltColorName>mgSetPolyAltColorName</A>, <A HREF=#mgGetPolyColorName>mgGetPolyColorName</A> 
+and <A HREF=#mgGetPolyAltColorName>mgGetPolyAltColorName</A>.</DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001011>How do I set up texture on a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001015>How do I set the normal of a polygon?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001015></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I set the normal of a polygon?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>There is no attribute stored on the <A HREF=#fltPolygon>fltPolygon</A> node for its normal so you 
+cannot <I>set</I> this explicitly. The polygon normal is calculated based on the 
+plane containing the vertices of the polygon and therefore may change as the 
+positions of one or more of its vertices are changed. Note that if not all of 
+the vertices of the polygon are coplanar, the calculated normal may not be 
+what you expect.</P></DT><DT><P>The polygon normal points in the same direction the "front" of the polygon faces. See 
+<A HREF=#FAQ_00001016>Which side of a polygon is the front and which is the back?</A>
+ 
+for more information.</P></DT><DT><P>You can query the normal of a polygon using <A HREF=#mgGetPolyNormal>mgGetPolyNormal</A> 
+but there is no corresponding function to set the polygon normal.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetPolyNormal>mgGetPolyNormal</A>, <A HREF=#mgGetVtxNormal>mgGetVtxNormal</A>, <A HREF=#mgSetVtxNormal>mgSetVtxNormal</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001016>Which side of a polygon is the front and which is the back?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+ 
+<A HREF=#FAQ_00001011>How do I set up texture on a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001014>How do I set a color name on a polygon or mesh?</A><BR>
+ 
+<A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001016></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Which side of a polygon is the front and which is the back?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The order of the vertices in the polygon define which side of the polygon is front 
+and which is back. When looking at the "front" of a polygon, the vertices will be 
+ordered in a counter-clockwise direction. The polygon normal will point towards you 
+if you are looking "down" on the "front" of the polygon. If you are looking at the 
+"back" of the polygon, the normal will point away from you.</P></DT><DT><P>In OpenFlight, solid polygons can be defined in such a way that "both" sides 
+are rendered. This is often called "Both Sides Visible". To make a polygon draw 
+both sides, set the polygon attribute <A HREF=#fltPolyDrawType>fltPolyDrawType</A> to 1 (Solid, Both 
+Sides Visible) using <A HREF=#mgSetAttList>mgSetAttList</A>. Note that this does not affect the order 
+of the vertices on the polygon or the polygon normal. A polygon defined in this 
+way will still have a "front" side and a "back" side but both will be drawn.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetPolyNormal>mgGetPolyNormal</A>, <A HREF=#mgGetVtxNormal>mgGetVtxNormal</A>, <A HREF=#mgSetVtxNormal>mgSetVtxNormal</A>, <A HREF=#mgSetAttList>mgSetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001015>How do I set the normal of a polygon?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001017></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I access an edge of a polygon?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>In the OpenFlight scene graph, there is no explicit node type for an edge of a polygon. 
+Similar to how a polygon normal is <I>calculated</I> based on the current positions of all 
+its vertices, a polygon edge is <I>calculated</I> based on the positions of two <I>adjacent</I> 
+vertices of the polygon.</P></DT><DT><P>A closed polygon with N vertices has exactly N edges. The nth edge (n &lt N) of a closed polygon 
+with N vertices is defined by vertex n and vertex n+1. The Nth edge is defined by the last vertex 
+(vertex N) wrapping back to the first vertex (vertex 1). An unclosed polygon with N vertices has 
+exactly N-1 edges. The nth edge (n &lt= N-1) of an unclosed polygon is defined by vertex n and 
+vertex n+1. For unclosed polygons the last vertex does not attach to the first vertex so 
+does not form an edge.</P></DT><DT><P>When you are working with vertices and their attributes in the scene graph, you do not 
+generally need to worry about (nor do you have explicit access to) edges, only the vertices 
+that comprise the edge. So, to reposition an edge you simply reposition the vertices that 
+comprise that edge. Note, however that if you reposition any <I>one</I> vertex of a closed polygon, 
+you will implicitly change the position of <I>two</I> edges. This is because in a closed polygon, 
+each vertex is part of two edges. Each vertex of a closed polygon is the <I>first</I> vertex of 
+one edge and the <I>last</I> vertex of the <I>previous</I> edge of that polygon. For unclosed polygons, 
+the first and last vertices of the polygon are each part of only one edge, the first 
+and last edge, respectively.</P></DT><DT><P>In Creator, however, the user can select vertices or edges. This is one instance in which 
+you do treat vertices different than edges. See 
+<A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A>
+ for 
+more information on this.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001015>How do I set the normal of a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001018></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I select an edge of a polygon in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>As discussed in <A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A>
+ 
+there is no explicit node type for polygon edges. In Creator, however, the user can select 
+vertices or edges. As there is no node type in the OpenFlight scene graph for an edge 
+(only for vertices), Creator makes this work by attaching a special attribute to a vertex 
+node when it is selected to indicate whether the vertex is selected <I>as a vertex</I> or is 
+selected <I>as an edge</I>.</P></DT><DT><P>When the user selects an edge in Creator, Creator (behind the scenes) selects the first vertex 
+of the edge and automatically sets this special vertex attribute to indicate that the vertex 
+is selected as an edge. To select an edge from your plug-in or script, use <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A> 
+passing the first vertex of the edge you want to select. When you do this, the vertex will be 
+selected but marked as "selected as an edge". If you want to select the vertex instead 
+(not the edge it defines) use <A HREF=#mgSelectOne>mgSelectOne</A>. In both situations, you pass the same vertex. 
+Using <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A> selects the vertex as an edge, <A HREF=#mgSelectOne>mgSelectOne</A> selects the vertex 
+as a vertex.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to select a vertex as 
+a vertex and how to select the same vertex as an edge.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// this function selects the first --vertex-- of a polygon
+static void SelectFirstVertexOfFace (mgrec* face)
+{
+   // get the first child of the face, this is
+   // the first vertex of that face
+   mgrec* firstVertex = mgGetChild (face);
+
+   // select the first vertex as a vertex
+   mgSelectOne (firstVertex);
+}
+
+// this function selects the first --edge-- of a polygon
+static void SelectFirstEdgeOfFace (mgrec* face)
+{
+   // get the first child of the face, this is the
+   // first vertex of that face and defines (with
+   // the second vertex) the first edge of the face
+   mgrec* firstVertex = mgGetChild (face);
+
+   // select the first vertex as an edge
+   mgSelectOneEdge (firstVertex);
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># this function selects the first --vertex-- of a polygon
+def SelectFirstVertexOfFace (face):
+   # get the first child of the face, this is
+   # the first vertex of that face
+   firstVertex = mgGetChild (face)
+
+   # select the first vertex as a vertex
+   mgSelectOne (firstVertex)
+
+# this function selects the first --edge-- of a polygon
+def SelectFirstEdgeOfFace (face):
+   # get the first child of the face, this is the
+   # first vertex of that face and defines (with
+   # the second vertex) the first edge of the face
+   firstVertex = mgGetChild (face)
+
+   # select the first vertex as an edge
+   mgSelectOneEdge (firstVertex)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSelectOne>mgSelectOne</A>, <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A>, 
+<A HREF=#mgIsSelected>mgIsSelected</A>, <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001020></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I tell if a specific node is selected in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You use the function <A HREF=#mgIsSelected>mgIsSelected</A> to determine if a specific node is selected. For 
+<A HREF=#fltVertex>fltVertex</A> nodes, you can further qualify this using <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A> to determine 
+if the vertex is selected as a vertex or is selected as an edge.</P></DT><DT><P>Note that node selection in Creator is <I>implicitly</I> hierarchical. That means that when 
+a user selects, say, an object node in Creator, the children (polygons) below that object 
+are <I>implicitly</I> (not <I>explicitly</I>) selected as well. To exemplify this, consider 
+the situation in which <I>p1</I> and <I>p2</I> (both polygons) are children of object <I>o1</I>. 
+In this example, if the user were to select <I>o1</I> in object mode in Creator, 
+<A HREF=#mgIsSelected>mgIsSelected</A> would return <A HREF=#mgbool>MG_TRUE</A> for <I>o1</I> but <A HREF=#mgbool>MG_FALSE</A> 
+for <I>p1</I> and <I>p2</I> even though <I>p1</I> and <I>p2</I> are <I>implicitly</I> selected by 
+begin children of <I>o1</I> which is <I>explicitly</I> selected.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgIsSelected>mgIsSelected</A>, <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A>, 
+<A HREF=#mgSelectOne>mgSelectOne</A>, <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001021>How do I get the list of nodes that are currently selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001023>Why are the nodes in the select list in reverse order from how they were selected by the user in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001024>How do I select nodes from my plug-in or script in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001021></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I get the list of nodes that are currently selected in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You use the function <A HREF=#mgGetSelectList>mgGetSelectList</A> to get a record list containing all the currently 
+selected nodes in a specified database. Once you have this list, you can use <A HREF=#mgGetRecListCount>mgGetRecListCount</A> 
+to query how many nodes are in the list, <A HREF=#mgGetNextRecInList>mgGetNextRecInList</A> or <A HREF=#mgGetNthRecInList>mgGetNthRecInList</A> to get nodes 
+from the list and <A HREF=#mgIsRecInList>mgIsRecInList</A> to determine if a specific node is in the list.</P></DT><DT><P>When you are done accessing the record list returned by <A HREF=#mgGetSelectList>mgGetSelectList</A>, you should dispose of 
+it using <A HREF=#mgFreeRecList>mgFreeRecList</A>.</P></DT><DT><P>Note that <A HREF=#mgGetSelectList>mgGetSelectList</A> only works inside of Creator since there is no notion 
+of "selected nodes" in your stand-alone program or script.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show you how you might use the select list in Creator.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* rec;
+mgmatrix selectMatrix;
+mgreclist selectList = mgGetSelectList (db);
+
+rec = mgGetNextRecInList (selectList, &selectMatrix);
+while (rec)
+{
+   // do something with rec
+   rec = mgGetNextRecInList (selectList, &selectMatrix);
+}
+// all done with record list, deallocate it
+mgFreeRecList (selectList);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">selectList = mgGetSelectList (db)
+num = mgGetRecListCount (selectList)
+
+for i in range (0, num):
+   rec,matrix = mgGetNextRecInList (selectList)
+
+# you don't need to deallocate the record list in Python</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001023>Why are the nodes in the select list in reverse order from how they were selected by the user in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001024>How do I select nodes from my plug-in or script in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001022></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I tell if an edge is selected in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>As discussed in <A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A>
+ and 
+<A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A>
+ the OpenFlight 
+scene graph does not explicitly define polygon edges. Rather, an edge is defined (virtually) by 
+two adjacent vertices of a polygon. In Creator, however, the user can select vertices or edges. 
+In both cases a single vertex is selected. When an edge is selected, the vertex selected has 
+a special attribute set to specify that it is selected <I>as an edge</I>. Without that attribute 
+set, the vertex is simply selected <I>as a vertex</I>.</P></DT><DT><P>To determine whether any node is selected use <A HREF=#mgIsSelected>mgIsSelected</A>. When the node is a <A HREF=#fltVertex>fltVertex</A> 
+this may not tell you everything you need to know. When <A HREF=#mgIsSelected>mgIsSelected</A> returns <A HREF=#mgbool>MG_TRUE</A> 
+for a <A HREF=#fltVertex>fltVertex</A> node, you still don't know if the vertex is selected as a vertex or is selected as 
+an edge. If your plug-in or script needs to know this, you can call <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A>. <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A> 
+will return <A HREF=#mgbool>MG_TRUE</A> if the vertex is selected as an edge, <A HREF=#mgbool>MG_FALSE</A> if the vertex 
+is selected as a vertex.</P></DT><DT><P>To reiterate, when a <A HREF=#fltVertex>fltVertex</A> is selected as a vertex, <A HREF=#mgIsSelected>mgIsSelected</A> will return <A HREF=#mgbool>MG_TRUE</A> and 
+<A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A> will return <A HREF=#mgbool>MG_FALSE</A>. When a <A HREF=#fltVertex>fltVertex</A> is selected as an edge, 
+<A HREF=#mgIsSelected>mgIsSelected</A> and <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A> will both return <A HREF=#mgbool>MG_TRUE</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) define convenience functions you might use to determine 
+whether a vertex is selected as a vertex or selected as an edge.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// this function returns MG_TRUE if a vertex is selected as a vertex
+static mgbool IsVertexSelectedAsVertex (mgrec* vtx)
+{
+   mgbool isSelected = mgIsSelected(vtx);
+   mgbool isSelectedAsEdge = mgIsSelectedEdge(vtx);
+   if ((isSelected == MG_TRUE) && (isSelectedAsEdge == MG_FALSE))
+      return MG_TRUE;
+   else
+      return MG_FALSE;
+}
+
+// this function returns MG_TRUE if a vertex is selected as an edge
+static mgbool IsVertexSelectedAsEdge (mgrec* vtx)
+{
+   mgbool isSelected = mgIsSelected(vtx);
+   mgbool isSelectedAsEdge = mgIsSelectedEdge(vtx);
+   if ((isSelected == MG_TRUE) && (isSelectedAsEdge == MG_TRUE))
+      return MG_TRUE;
+   else
+      return MG_FALSE;
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># this function returns True if a vertex is selected as a vertex
+def IsVertexSelectedAsVertex (vtx):
+   isSelected = mgIsSelected(vtx)
+   isSelectedAsEdge = mgIsSelectedEdge(vtx)
+   return (isSelected == MG_TRUE) and (isSelectedAsEdge == MG_FALSE)
+
+# this function returns True if a vertex is selected as an edge
+def IsVertexSelectedAsEdge (vtx):
+   isSelected = mgIsSelected(vtx)
+   isSelectedAsEdge = mgIsSelectedEdge(vtx)
+   return (isSelected == MG_TRUE) and (isSelectedAsEdge == MG_TRUE)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgIsSelected>mgIsSelected</A>, <A HREF=#mgIsSelectedEdge>mgIsSelectedEdge</A>, 
+<A HREF=#mgSelectOne>mgSelectOne</A>, <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001020>How do I tell if a specific node is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001021>How do I get the list of nodes that are currently selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001023>Why are the nodes in the select list in reverse order from how they were selected by the user in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001024>How do I select nodes from my plug-in or script in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001023></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Why are the nodes in the select list in reverse order from how they were selected by the user in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Admittedly this is a bit quirky and perhaps the result of a regrettable decision when the OpenFlight API 
+was first released. To explain this, the select list is stored by Creator as a LIFO (Last In First Out) 
+list. As the Creator user adds items to the select list, they are added to the "front" of the list. 
+Historically (before the OpenFlight API was released) all tools written in Creator would take this 
+into account (if order mattered to the tool) and adjust accordingly.</P></DT><DT><P>When the OpenFlight API was first released and provided access to the select list to callers, the 
+selected nodes were "packaged" in the <A HREF=#mgreclist>mgreclist</A> in the same order they were stored by Creator. This was 
+perhaps a regrettable decision and one area in which the initial implementation of the OpenFlight API might 
+have been improved. In hindsight, it might have made more sense to package the nodes in the select list 
+in the order selected by the user, but alas, that was not done. Now that the OpenFlight API has been released 
+(and widely adopted by developers) using this convention, it would be impossible to change this 
+without breaking existing user's code that might depend on this reverse ordering. For that 
+reason, the OpenFlight API will continue to package the <A HREF=#mgreclist>mgreclist</A> in the "reverse" order 
+from how the nodes were originally selected by the user in Creator.</P></DT><DT><P>For many tools you write, you may find that the order of the nodes in the select list is not important. 
+For those cases in which the order is important, the OpenFlight API provides a simple mechanism whereby 
+your plug-in or script can access the select list nodes in the order they were selected by the user 
+in Creator.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show you a simple technique to access nodes contained 
+in a <A HREF=#mgreclist>mgreclist</A> in the order they were selected by the user.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* rec;
+mgmatrix selectMatrix;
+mgreclist selectList = mgGetSelectList (db);
+int num = mgGetRecListCount (selectList);
+int i;
+
+// simply get the last item first and the first item last!
+for (i = num; i &gt 0; i--) {
+   rec = mgGetNthRecInList (selectList, &selectMatrix, i);
+}
+
+// all done with record list, deallocate it
+mgFreeRecList (selectList);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">selectList = mgGetSelectList (db)
+num = mgGetRecListCount (selectList)
+
+# simply loop over the items in reverse order!
+for i in range (num, 0, -1):
+   rec,matrix = mgGetNthRecInList (selectList, i)
+
+# you don't need to deallocate the record list in Python</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetSelectList>mgGetSelectList</A>, <A HREF=#mgGetNthRecInList>mgGetNthRecInList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001020>How do I tell if a specific node is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001021>How do I get the list of nodes that are currently selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001024>How do I select nodes from my plug-in or script in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001024></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I select nodes from my plug-in or script in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>There are several functions in the OpenFlight API you can use to change what is selected in Creator. 
+To deselect all nodes, use <A HREF=#mgDeselectAll>mgDeselectAll</A>. To select a node, use <A HREF=#mgSelectOne>mgSelectOne</A>. 
+To deselect a node, use <A HREF=#mgDeselectOne>mgDeselectOne</A>. Finally, to select all the nodes contained 
+in a record list, use <A HREF=#mgSelectList>mgSelectList</A>.</P></DT><DT><P>Note that when you use <A HREF=#mgSelectOne>mgSelectOne</A> to select a node or <A HREF=#mgSelectList>mgSelectList</A> to select 
+several nodes, any nodes that are currently selected remain selected. If you want to 
+make a node the only node selected or a set of nodes in a record list the only nodes 
+selected, call <A HREF=#mgDeselectAll>mgDeselectAll</A> <I>before</I> calling <A HREF=#mgSelectOne>mgSelectOne</A> or <A HREF=#mgSelectList>mgSelectList</A>, 
+respectively.</P></DT><DT><P>Selecting edges is a bit tricky. Since <A HREF=#fltVertex>fltVertex</A> is used to represent both vertices 
+and edges in the OpenFlight scene graph 
+(see <A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A>
+ to learn 
+how vertices are distinguished from edges), 
+there is a special function, <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A>, to use for selecting edges. 
+See <A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A>
+ for 
+more information on this.</P></DT><DT><P>Note that these selection functions only work inside of Creator since there is no notion 
+of "selected nodes" in your stand-alone program or script.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgDeselectAll>mgDeselectAll</A>, <A HREF=#mgDeselectOne>mgDeselectOne</A>, <A HREF=#mgSelectOne>mgSelectOne</A>, <A HREF=#mgSelectOneEdge>mgSelectOneEdge</A>, 
+<A HREF=#mgSelectList>mgSelectList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001020>How do I tell if a specific node is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001021>How do I get the list of nodes that are currently selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001022>How do I tell if an edge of a polygon is selected in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001023>Why are the nodes in the select list in reverse order from how they were selected by the user in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001030></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I get the current modeling mode set in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You use the function <A HREF=#mgGetModelingMode>mgGetModelingMode</A> to get the current modeling mode selected 
+by the user in Creator. The modeling mode is returned as the <A HREF=#mgcode>mgcode</A> corresponding 
+to that node type (<A HREF=#fltGroup>fltGroup</A>, <A HREF=#fltObject>fltObject</A>, etc).</P></DT><DT><P>The edge modeling mode is a bit tricky. Since <A HREF=#fltVertex>fltVertex</A> is used 
+to represent both vertices and edges in the OpenFlight scene graph 
+(see <A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A>
+ 
+to learn how vertices are distinguished from edges), there is a special function, 
+<A HREF=#mgIsModelingModeEdge>mgIsModelingModeEdge</A>, you can use to know when the modeling mode is edge. 
+See <A HREF=#FAQ_00001031>How do I tell the difference between vertex and 
+edge modeling mode in Creator?</A>
+ for more information on this.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to use this 
+function for different modeling modes:</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgcode mode;
+
+mode = mgGetModelingMode (db);
+if (mode == fltGroup) {
+   printf ("modeling mode is group&#92;n");
+}
+else if (mode == fltObject) {
+   printf ("modeling mode is object&#92;n");
+}
+else {
+   // as noted above, fltVertex will be reported
+   // here if modeling mode is vertex or edge
+   // use mgIsModelingModeEdge to know the difference
+   printf ("modeling mode is %s&#92;n", ddGeName(mode));
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mode = mgGetModelingMode (db)
+if (mode == fltGroup):
+   print "modeling mode is group"
+elif (mode == fltObject:
+   print "modeling mode is object"
+else:
+   # as noted above, fltVertex will be reported
+   # here if modeling mode is vertex or edge
+   # use mgIsModelingModeEdge to know the difference
+   print "modeling mode is",ddGetName(mode)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetModelingMode>mgGetModelingMode</A>, <A HREF=#mgIsModelingModeEdge>mgIsModelingModeEdge</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001031>How do I tell the difference between vertex and edge modeling mode in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001032>How do I change the modeling mode in Creator from my plug-in or script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001031></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I tell the difference between vertex and edge modeling mode in Creator?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>As discussed in <A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A>
+ the OpenFlight 
+scene graph does not explicitly differentiate between vertices and edges. Edges are defined (virtually) 
+by two adjacent vertices of a polygon. In Creator, however, the user can set the modeling mode 
+to vertex or edge. So how does that work?</P></DT><DT><P>The current modeling mode is returned by <A HREF=#mgGetModelingMode>mgGetModelingMode</A>. This function returns <A HREF=#fltVertex>fltVertex</A> 
+if the modeling mode is either vertex or edge. To tell the difference, use the function 
+<A HREF=#mgIsModelingModeEdge>mgIsModelingModeEdge</A>. If the modeling mode is vertex, <A HREF=#mgGetModelingMode>mgGetModelingMode</A> will return <A HREF=#fltVertex>fltVertex</A> 
+and <A HREF=#mgIsModelingModeEdge>mgIsModelingModeEdge</A> will return <A HREF=#mgbool>MG_FALSE</A>. If the modeling mode is edge, 
+<A HREF=#mgGetModelingMode>mgGetModelingMode</A> will return <A HREF=#fltVertex>fltVertex</A> and <A HREF=#mgIsModelingModeEdge>mgIsModelingModeEdge</A> will return 
+<A HREF=#mgbool>MG_TRUE</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgGetModelingMode>mgGetModelingMode</A>, <A HREF=#mgIsModelingModeEdge>mgIsModelingModeEdge</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001017>How do I access an edge of a polygon?</A><BR>
+ 
+<A HREF=#FAQ_00001018>How do I select an edge of a polygon in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001030>How do I get the current modeling mode set in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001032>How do I change the modeling mode in Creator from my plug-in or script?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001032></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I change the modeling mode in Creator from my plug-in or script?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>You use the function <A HREF=#mgSetModelingMode>mgSetModelingMode</A> to change the current modeling mode 
+in Creator. You specify the modeling mode as the <A HREF=#mgcode>mgcode</A> corresponding 
+to the node type (<A HREF=#fltGroup>fltGroup</A>, <A HREF=#fltObject>fltObject</A>, etc) you want.</P></DT><DT><P>The edge modeling mode is a bit tricky. Since <A HREF=#fltVertex>fltVertex</A> is used 
+to represent both vertices and edges in the OpenFlight scene graph 
+you must use a special function, <A HREF=#mgSetModelingModeEdge>mgSetModelingModeEdge</A> to set the 
+modeling mode to edge. To reiterate, use <A HREF=#mgSetModelingMode>mgSetModelingMode</A> to set 
+the modeling mode to vertex (or for any mode other than edge) and use 
+<A HREF=#mgSetModelingModeEdge>mgSetModelingModeEdge</A> to set the modeling mode to edge.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetModelingMode>mgSetModelingMode</A>, <A HREF=#mgSetModelingModeEdge>mgSetModelingModeEdge</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001030>How do I get the current modeling mode set in Creator?</A><BR>
+ 
+<A HREF=#FAQ_00001031>How do I tell the difference between vertex and edge modeling mode in Creator?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001040></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">When I try to attach a node in the database hierarchy, sometimes it fails. 
+What could be causing this?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Here are some common reasons a node may fail to attach in the hierarchy: 
+<UL>
+ 
+<LI CLASS="NOINDENT">
+ The node is already attached 
+in the hierarchy. </LI>
+ 
+<LI CLASS="NOINDENT">
+ The node was created 
+in a different database than the one to which you are trying to attach now. </LI>
+ 
+<LI CLASS="NOINDENT">
+ The node is not a valid 
+child type for the (parent) node to which you are trying to attach. </LI>
+ 
+</UL>
+</P></DT><DT><P>Each of these situations are described below.</P></DT><DT><P>A node (that is not a reference) can be attached in the hierarchy to no more 
+than one single parent. If you try to attach a node that is already attached, 
+you will get an error.  To determine whether a node is attached, use 
+<A HREF=#mgGetParent>mgGetParent</A> and <A HREF=#mgGetNestedParent>mgGetNestedParent</A>.  To move a node from one parent 
+to another, you must first detach the node from its current parent 
+using <A HREF=#mgDetach>mgDetach</A> then attach the node to its new parent.</P></DT><DT><P>When a node is created, it is bound to a specific database and can only be 
+attached in that database hierarchy 
+(there are technical reasons for this, see 
+<A HREF=#FAQ_00001041>Why can't I move a node from one database to another?</A>
+ 
+for more information). There are two functions to create new nodes: <A HREF=#mgNewRec>mgNewRec</A> and 
+<A HREF=#mgNewRecDb>mgNewRecDb</A>.  If you use <A HREF=#mgNewRec>mgNewRec</A> to create a new node, the node is bound to 
+the current database (see <A HREF=#mgSetCurrentDb>mgSetCurrentDb</A> and <A HREF=#mgGetCurrentDb>mgGetCurrentDb</A>). If you use 
+<A HREF=#mgNewRecDb>mgNewRecDb</A> to create a new node, the node is bound to the database you specify 
+as the <I>db</I> parameter to <A HREF=#mgNewRecDb>mgNewRecDb</A>.  Regardless of which function you use 
+to create the new node, the node can only be attached in the hierarchy of the 
+database to which it is bound.  If you try to attach a node to a 
+database other than the database to which it is bound, you will get an error. 
+You can use the function <A HREF=#mgRec2Db>mgRec2Db</A> to determine the database to which a node 
+is bound.</P></DT><DT><P>Nodes in the OpenFlight hierarchy are different types (see 
+<A HREF=#FAQ_00001002>How can I tell what kind of record I have in an mgrec?</A>
+ for 
+more information).  There are implicit rules defining what types of nodes can be 
+attached to other node types.  For example a <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+ node can be attached to 
+many other node types, including <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltHeader>fltHeader</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltLod>fltLod</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltDof>fltDof</A>
+, etc. 
+A <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+ node cannot, however, be attached to a <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltObject>fltObject</A>
+, <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+, 
+<A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ or <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+.  If you try to attach a child node to a parent node that 
+does not allow that child type, you will get an error.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgNewRec>mgNewRec</A>, <A HREF=#mgNewRecDb>mgNewRecDb</A>, <A HREF=#mgSetCurrentDb>mgSetCurrentDb</A>, <A HREF=#mgGetCurrentDb>mgGetCurrentDb</A>, 
+<A HREF=#mgRec2Db>mgRec2Db</A>, <A HREF=#mgGetParent>mgGetParent</A>, <A HREF=#mgGetNestedParent>mgGetNestedParent</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001041>Why can't I move a node from one database to another?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001041></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">Why can't I move a node from one database to another?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>When a node is created, it is allocated from a pool of memory that is owned by 
+the database in which the node is contained.  In this way, when the database is 
+closed, all memory allocated for all the nodes it contains can be deallocated 
+correctly.  For this reason, you are not allowed to simply move nodes from one 
+database hierarchy to another by detaching from one database and re-attaching 
+to another.</P></DT><DT><P>If you do need to move a node from one database to another, you will create a 
+duplicate of the node you want to move (in the context of the destination 
+database), attach the copy in the destination database hierarchy 
+and then delete the original node.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to move a node 
+from one database <I>srcDb</I> to another <I>dstDb</I>.  In both cases <I>srcNode</I> 
+is the node you want to move.  It is attached to <I>srcParent</I>.  You want 
+to move it to <I>dstDb</I> under parent <I>dstParent</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// create a copy of srcNode in the destination database
+// note that this duplicates srcNode and all its descendants
+mgrec* dstNode = mgDuplicateToDb (srcNode, dstDb);
+
+// attach the copy to its new parent in destination database
+mgAttach (dstParent, dstNode);
+
+// delete the original node
+// no need to detach it, mgDelete detaches and deletes
+mgDelete (srcNode);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># create a copy of srcNode in the destination database
+# note that this duplicates srcNode and all its descendants
+dstNode = mgDuplicateToDb (srcNode, dstDb)
+
+# attach the copy to its new parent in destination database
+mgAttach (dstParent, dstNode)
+
+# delete the original node
+# no need to detach it, mgDelete detaches and deletes
+mgDelete (srcNode)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgDuplicateToDb>mgDuplicateToDb</A>, <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgDelete>mgDelete</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001040>When I try to attach a node in the database hierarchy, sometimes it fails.  What could be causing this?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001042></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I create a new node in a database?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>When you add a new node to a database, you simply create the node and add 
+it to the hierarchy. Optionally, if the default attributes of the node are 
+not what you want, you can also modify one or more of the new node's attributes.</P></DT><DT><P>To create a new node use <A HREF=#mgNewRec>mgNewRec</A>. You specify the <A HREF=#mgcode>mgcode</A> of 
+the node type you want to create. To create a group node, for example, 
+specify <A HREF=#fltGroup>fltGroup</A>. After you create the node, you will add 
+it into the OpenFlight Scene Graph using <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A>, 
+<A HREF=#mgInsert>mgInsert</A> or <A HREF=#mgReference>mgReference</A>. Each of these functions add a node 
+into the hierarchy in different ways. To modify a node's attributes 
+use <A HREF=#mgSetAttList>mgSetAttList</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) define a function 
+to create a new object node and attach it to the specified group 
+parent as its first child.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">static void CreateObject (mgrec* parentGroup)
+{
+   // create an object node
+   mgrec* object = mgNewRec (fltObject);
+
+   // attach the new object as the first child of the parent group
+   mgAttach (parentGroup, object);
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">def CreateObject (parentGroup):
+   # create an object node
+   object = mgNewRec (fltObject)
+
+   # attach the new object as the first child of the parent group
+   mgAttach (parentGroup, object)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgNewRec>mgNewRec</A>, <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A>, <A HREF=#mgInsert>mgInsert</A>, <A HREF=#mgReference>mgReference</A>, 
+<A HREF=#mgSetAttList>mgSetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001000>What is an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00001002>How can I tell what kind of record I have in an mgrec?</A><BR>
+ 
+<A HREF=#FAQ_00001040>When I try to attach a node in the database hierarchy, sometimes it fails.  What could be causing this?</A><BR>
+ 
+<A HREF=#FAQ_00001044>How do I create a simple polygon with vertices?</A><BR>
+ 
+<A HREF=#FAQ_00001004>How do I set the attributes of a record in the database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001043></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I create an external reference in a master database?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>Just like groups or objects (and all other node types), external references are simply 
+nodes in the master database. Whereas groups are type <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+ and objects are 
+type <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltObject>fltObject</A>
+, external references are type <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXref>fltXref</A>
+. The <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXrefFilename>fltXrefFilename</A>
+ 
+attribute of the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXref>fltXref</A>
+ node is the file associated to the external reference. 
+Just as you would create any node in the db you would use <A HREF=#mgNewRec>mgNewRec</A> to create the 
+external reference, passing <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXref>fltXref</A>
+ as the code for the new node. Use <A HREF=#mgSetAttList>mgSetAttList</A> 
+to set the <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXrefFilename>fltXrefFilename</A>
+ attribute to associate an OpenFlight file to the external 
+reference.</P></DT><DT><P>And just like other node types, you need to attach the external reference node in the scene. 
+Use <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A> or <A HREF=#mgInsert>mgInsert</A> depending on where you want to attach it. 
+Similarly, you can apply transformations to the external reference just like you would 
+other node types.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to create an external reference 
+in a master database. The new node is attached to the existing node <I>parentNode</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// create the external reference node
+mgrec* xRef = mgNewRec (fltXref);
+
+// associate an OpenFlight file to the new external reference
+mgSetAttList (xRef, "c:/MyDatabases/xRef.flt", MG_NULL);
+
+// attach the new node
+mgAttach (parentNode, xRef);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># create the external reference node
+xRef = mgNewRec (fltXref))
+
+# associate an OpenFlight file to the new external reference
+mgSetAttList (xRef, "c:/MyDatabases/xRef.flt")
+
+# attach the new node
+mgAttach (parentNode, xRef)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgNewRec>mgNewRec</A>, <A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgAttach>mgAttach</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001050>How do I apply a matrix (transformation) to a node?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001044></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I create a simple polygon with vertices?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>As you create any new node in your database, you use <A HREF=#mgNewRec>mgNewRec</A> to make a polygon node, 
+specifying <A HREF=#fltPolygon>fltPolygon</A>. Then for each vertex of the polygon, you use <A HREF=#mgNewRec>mgNewRec</A> 
+again, this time specifying <A HREF=#fltVertex>fltVertex</A>. You will add the polygon into the hierarchy 
+and attach each new vertex to the new polygon. You will use <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A> or 
+<A HREF=#mgInsert>mgInsert</A> to add the polygon to the scene graph as well as the vertices to the new polygon.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) define a function 
+to create a new quadrilateral polygon. It's lower left corner will be the 
+origin and will be positioned on the XY plane. It will measure 2 units in the X 
+direction and 1 unit in Y. The new polygon will be "lit" and the vertex normals will be 
+set to point in the same direction as the polygon normal.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">static void CreatePolygon (mgrec* parentObject)
+{
+   mgvectord faceNormal;
+   mgrec* vtx1;
+   mgrec* vtx2;
+   mgrec* vtx3;
+   mgrec* vtx4;
+   mgrec* face;
+
+   // create a polygon node
+   face = mgNewRec (fltPolygon);
+
+   // attach the new polygon as the first child of the parent object
+   mgAttach (parentObject, face);
+
+   // create 4 vertices (for the quadrilateral)
+   vtx1 = mgNewRec (fltVertex);
+   vtx2 = mgNewRec (fltVertex);
+   vtx3 = mgNewRec (fltVertex);
+   vtx4 = mgNewRec (fltVertex);
+
+   // attach the vertices. mgAttach is the most efficient
+   // but attaches as first child. To get in proper order
+   // using mgAttach, attach last vertex first.
+
+   mgAttach (face, vtx4);
+   mgAttach (face, vtx3);
+   mgAttach (face, vtx2);
+   mgAttach (face, vtx1);     // vtx1 is "first" vertex of polygon
+
+   // set the positions of the new vertices
+   mgSetVtxCoord (vtx1, 0.0, 0.0, 0.0);
+   mgSetVtxCoord (vtx2, 2.0, 0.0, 0.0);
+   mgSetVtxCoord (vtx3, 2.0, 1.0, 0.0);
+   mgSetVtxCoord (vtx4, 0.0, 1.0, 0.0);
+
+   // we know the polygon normal is (0,0,1) because it lies in
+   // the XY plane but we'll calculate it for sake of example
+   mgGetPolyNormal (face, &faceNormal.i, &faceNormal.j, &faceNormal.k);
+
+   // apply this normal to each vertex
+   mgSetVtxNormal (vtx1, faceNormal.i, faceNormal.j, faceNormal.k);
+   mgSetVtxNormal (vtx2, faceNormal.i, faceNormal.j, faceNormal.k);
+   mgSetVtxNormal (vtx3, faceNormal.i, faceNormal.j, faceNormal.k);
+   mgSetVtxNormal (vtx4, faceNormal.i, faceNormal.j, faceNormal.k);
+
+   // finally, set the polygon to be lit
+   mgSetAttList (face, fltGcLightMode, 2, MG_NULL);
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">def CreatePolygon (parentObject):
+   # create a polygon node
+   face = mgNewRec (fltPolygon)
+
+   # attach the new polygon as the first child of the parent object
+   mgAttach (parentObject, face)
+
+   # create 4 vertices (for the quadrilateral)
+   vtx1 = mgNewRec (fltVertex)
+   vtx2 = mgNewRec (fltVertex)
+   vtx3 = mgNewRec (fltVertex)
+   vtx4 = mgNewRec (fltVertex)
+
+   # attach the vertices. mgAttach is the most efficient
+   # but attaches as first child. To get in proper order
+   # using mgAttach, attach last vertex first.
+
+   mgAttach (face, vtx4)
+   mgAttach (face, vtx3)
+   mgAttach (face, vtx2)
+   mgAttach (face, vtx1)&#32# vtx1 is "first" vertex of polygon
+
+   # set the positions of the new vertices
+   mgSetVtxCoord (vtx1, 0.0, 0.0, 0.0)
+   mgSetVtxCoord (vtx2, 2.0, 0.0, 0.0)
+   mgSetVtxCoord (vtx3, 2.0, 1.0, 0.0)
+   mgSetVtxCoord (vtx4, 0.0, 1.0, 0.0)
+
+   # we know the polygon normal is (0,0,1) because it lies in
+   # the XY plane but we'll calculate it for sake of example
+
+   b, i, j, k = mgGetPolyNormal (face)
+
+   # apply this normal to each vertex
+   mgSetVtxNormal (vtx1, i, j, k)
+   mgSetVtxNormal (vtx2, i, j, k)
+   mgSetVtxNormal (vtx3, i, j, k)
+   mgSetVtxNormal (vtx4, i, j, k)
+
+   # finally, set the polygon to be lit
+   mgSetAttList (face, fltGcLightMode, 2)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgNewRec>mgNewRec</A>, <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A>, <A HREF=#mgInsert>mgInsert</A>, 
+<A HREF=#mgSetVtxCoord>mgSetVtxCoord</A>, <A HREF=#mgSetVtxNormal>mgSetVtxNormal</A>, <A HREF=#mgSetAttList>mgSetAttList</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001042>How do I create a new node in a database?</A><BR>
+ 
+<A HREF=#FAQ_00001043>How do I create an external reference in a master database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001050></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I apply a matrix (transformation) to a node?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>To transform a node, you will attach one or more transformation records to it. 
+Each transformation record describes a discrete transformation (translate, rotate, scale, 
+etc) applied to the node. 
+The order the transformation records are attached to the node define the order in 
+which the transformations are applied.  For example a node transformed 
+by a translate and then a scale will be different than if it was transformed 
+by the scale and then the translate.</P></DT><DT><P>There are many benefits (from a modeling and programming point of view) to attaching 
+separate transformations rather than just one single matrix.  The biggest benefit is that you 
+can more easily compose and decompose the transformation if they are broken out into separate 
+parts.  For example if you Translate, Rotate and Scale a node, you can modify the Rotate part 
+separately without having to do all the matrix math to make the "final" matrix.</P></DT><DT><P><TABLE CLASS="SIMPLE">
+ 
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ Transformation Type </TD>
+ 
+<TD CLASS="BORDER">
+ Description </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmGeneral>fltXmGeneral</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ General 4x4 Matrix </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmPut>fltXmPut</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ Put </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmRotate>fltXmRotate</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ Rotate about Point </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmRotateEdge>fltXmRotateEdge</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ Rotate about Edge </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmScale>fltXmScale</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ Scale </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmScaleToPoint>fltXmScaleToPoint</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ Scale to Point </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A TARGET=flt_content HREF=../openflightdd/flt_dd.htm#fltXmTranslate>fltXmTranslate</A>
+ </TD>
+ 
+<TD CLASS="BORDER">
+ Translate </TD>
+ 
+</TR>
+<P>
+</TABLE>
+</P></DT><DT><P>You create a transformation record using <A HREF=#mgNewRec>mgNewRec</A>. 
+You set the attributes of a transformation record just like any other 
+record type using <A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgSetCoord3d>mgSetCoord3d</A>, etc. 
+Finally you attach a transformation record to a node using 
+<A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A> or <A HREF=#mgInsert>mgInsert</A>.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) apply a scale and 
+then a translate transformation (in that order) to a <I>node</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* scale;
+mgrec* translate;
+
+// create the scale transformation
+scale = mgNewRec (fltXmScale);
+
+// create the translate transformation
+translate = mgNewRec (fltXmTranslate);
+
+// set the parameters of the scale
+// scale about the origin
+mgSetCoord3d (scale, fltXmScaleCenter, 0.0, 0.0, 0.0);
+
+// scale uniformly by 2
+mgSetAttList (scale,
+      fltXmScaleX, 2.0,
+      fltXmScaleY, 2.0,
+      fltXmScaleZ, 2.0,
+      MG_NULL);
+
+// set the parameters of the translation
+// translate by 10,10
+mgSetCoord3d (translate, fltXmTranslateDelta, 10.0, 10.0, 0.0);
+
+// attach the transformations so we scale first, then translate
+mgAttach (node, scale);
+mgAppend (node, translate);  // note the translate is "appended"</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># create the scale transformation
+scale = mgNewRec (fltXmScale)
+
+# create the translate transformation
+translate = mgNewRec (fltXmTranslate)
+
+# set the parameters of the scale
+# scale about the origin
+mgSetCoord3d (scale, fltXmScaleCenter, 0.0, 0.0, 0.0)
+
+# scale uniformly by 2
+mgSetAttList (scale,
+      fltXmScaleX, 2.0,
+      fltXmScaleY, 2.0,
+      fltXmScaleZ, 2.0)
+
+# set the parameters of the translation
+# translate by 10,10
+mgSetCoord3d (translate, fltXmTranslateDelta, 10.0, 10.0, 0.0)
+
+# attach the transformations so we scale first, then translate
+mgAttach (node, scale)
+mgAppend (node, translate)  # note the translate is "appended"</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgNewRec>mgNewRec</A>, <A HREF=#mgAttach>mgAttach</A>, <A HREF=#mgAppend>mgAppend</A>, <A HREF=#mgInsert>mgInsert</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001051>How do I get the matrix (transformation) from a node?</A><BR>
+ 
+<A HREF=#FAQ_00001043>How do I create an external reference in a master database?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001051></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I get the matrix (transformation) from a node?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>The effective transformation applied to a node is the cumulation 
+of all the transformation records attached to the node.  There are two ways 
+to get to the transformations applied to a node.</P></DT><DT><P>The first, if you just want the composite matrix, is to use 
+<A HREF=#mgGetMatrix>mgGetMatrix</A>.  This returns the cumulative matrix calculated from 
+each of the transformations attached to a node.  Note that this 
+cumulative matrix does not include any transformations applied 
+to the parent or children of the node.</P></DT><DT><P>The second, if you want each of the separate transformations, is to use 
+<A HREF=#mgGetXform>mgGetXform</A> and then <A HREF=#mgGetNext>mgGetNext</A> to loop through each of the 
+transformations applied.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to get the 
+transformation(s) applied to a <I>node</I>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><P>This example shows how to get the composite matrix representing 
+all the transformation records applied to a <I>node</I> :</P></DT><DT><PRE CLASS="EXAMPLE">mgmatrix matrix;
+
+mgGetMatrix (node, fltMatrix, &matrix);</PRE></DT><DT><P>This example shows how to loop over all the transformation records 
+applied to a <I>node</I> :</P></DT><DT><PRE CLASS="EXAMPLE">mgbool hasXforms;
+
+hasXforms = mgHasXform (node);
+
+if (hasXforms == MG_TRUE)
+{
+   mgrec* transform;
+   int transformType;
+
+   // get the first transformation attached
+   transform = mgGetXform (node);
+
+   while (transform != MG_NULL) {
+      // check what kind of transformation this is
+      transformType = mgGetXformType (transform);
+
+      // here are the possible types:
+      switch (transformType)
+      {
+      case MXLL_TRANSLATE: printf ("MXLL_TRANSLATE&#92;n"); break;
+      case MXLL_SCALE:     printf ("MXLL_SCALE&#92;n");     break;
+      case MXLL_ROTEDGE:   printf ("MXLL_ROTEDGE&#92;n");   break;
+      case MXLL_ROTPT:     printf ("MXLL_ROTPT&#92;n");     break;
+      case MXLL_PUT:       printf ("MXLL_PUT&#92;n");       break;
+      case MXLL_TOPOINT:   printf ("MXLL_TOPOINT&#92;n");   break;
+      case MXLL_GENERAL:   printf ("MXLL_GENERAL&#92;n");   break;
+      }
+
+      // get the next transformation attached
+      transform = mgGetNext (transform);
+   }
+}</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><P>This example shows how to get the composite matrix representing 
+all the transformation records applied to a <I>node</I> :</P></DT><DT><PRE CLASS="EXAMPLE">b, matrix = mgGetMatrix (node, fltMatrix);</PRE></DT><DT><P>This example shows how to loop over all the transformation records 
+applied to a <I>node</I> :</P></DT><DT><PRE CLASS="EXAMPLE">if (hasXforms == MG_FALSE):
+   return;
+
+# get the first transformation attached
+transform = mgGetXform (node)
+while (transform):
+   # check what kind of transformation this is
+   transformType = mgGetXformType (transform)
+
+   if (transformType == MXLL_TRANSLATE):
+      print "MXLL_TRANSLATE"
+   elif (transformType == MXLL_SCALE):
+      print "MXLL_SCALE"
+   elif (transformType == MXLL_ROTEDGE):
+      print "MXLL_ROTEDGE"
+   elif (transformType == MXLL_ROTPT):
+      print "MXLL_ROTPT"
+   elif (transformType == MXLL_PUT):
+      print "MXLL_PUT"
+   elif (transformType == MXLL_SCALE):
+      print "MXLL_SCALE"
+   elif (transformType == MXLL_TOPOINT):
+      print "MXLL_TOPOINT"
+   elif (transformType == MXLL_GENERAL):
+      print "MXLL_GENERAL"
+
+   # get the next transformation attached
+   transform = mgGetNext (transform)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgHasXform>mgHasXform</A>, <A HREF=#mgGetXformType>mgGetXformType</A>, <A HREF=#mgGetNext>mgGetNext</A>, <A HREF=#mgGetMatrix>mgGetMatrix</A></DD></DL></TD></TR><TR><TD><DL><DT><H3>RELATED FAQ</H3></DT><DD><A HREF=#FAQ_00001050>How do I apply a matrix (transformation) to a node?</A><BR>
+</DD></DL></TD></TR>
+</TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001080></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">What order does mgWalk visit the nodes in the hierarchy?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P><A HREF=#mgWalk>mgWalk</A> and <A HREF=#mgWalkEx>mgWalkEx</A> traverse the hierarchy using a depth-first traversal. 
+The diagram below shows the order in which the nodes in a simple hierarchy <I>g1</I> 
+would be visited.<BR> 
+<IMG SRC="../common/mgwalkorder.jpg">
+</P></DT><DT><P>See the example code in <A HREF=#mgWalk>mgWalk</A> for more information on how the <I>preAction</I> and 
+<I>postAction</I> functions for <A HREF=#mgWalk>mgWalk</A> are called in the context of the depth-first 
+traversal.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgWalk>mgWalk</A>, <A HREF=#mgWalkEx>mgWalkEx</A></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001090></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">How do I hide or show a node in the Creator Graphics view?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>In Creator you use the <B>Toggle Display</B> command to hide or show nodes in 
+the Graphics View.  You can also do this programmatically in your plug-in 
+or stand-alone application.  The <B>On</B>/<B>Off</B> state (visibility) of a 
+node is an attribute (<A HREF=#fltIOn>fltIOn</A>) of the node that can set or get 
+using <A HREF=#mgSetAttList>mgSetAttList</A> or <A HREF=#mgGetAttList>mgGetAttList</A>, respectively.</P></DT><DT><P>In Creator, this attribute controls whether a node is visible in the Graphics 
+view.  In the Hierarchy view, nodes that are <B>Off</B> are still drawn, but drawn 
+with a solid outline and transparent box. In both Creator and your stand-alone 
+application, this attribute controls whether or not a node is visited by 
+<A HREF=#mgWalk>mgWalk</A> or <A HREF=#mgWalkEx>mgWalkEx</A> when <A HREF=#MWALK_ON>MWALK_ON</A> is used.</P></DT><DT><P>Note that the visibility of a node is hierarchical.  In other words, a node is 
+visible only if it is visible <B>-AND-</B> all of its ancestors are visible. Conversely, 
+a node is NOT visible if it is NOT visible <B>-OR-</B> any of its ancestors are NOT visible. 
+These rules imply that if you set a node's visibility <B>On</B> and any of its ancestors are <B>Off</B>, 
+the node will remain NOT visible.  In the same way, if you set a node's visibility to <B>Off</B>, all its 
+descendants will be NOT visible.</P></DT><DT><P>Also note that the <A HREF=#fltIOn>fltIOn</A> attribute is not saved with the OpenFlight file. 
+It is a transient attribute that only applies to a node while the node is in memory. 
+It applies only to node records above the <A HREF=#fltVertex>fltVertex</A> level.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to hide a node 
+using <A HREF=#mgSetAttList>mgSetAttList</A>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// hide node
+mgSetAttList (node, fltIOn, 0, MG_NULL);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># hide node
+mgSetAttList (node, fltIOn, 0)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgWalk>mgWalk</A></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+
+<LEFT><A NAME=FAQ_00001100></A></LEFT>
+<P><TABLE CLASS="FAQ"><TR><TD CLASS="QUESTION">If I change the position of a vertex, is there an easy way to recalculate its 
+texture coordinates to match the original texture mapping?</TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD><DL><DT><H3>ANSWER</H3></DT><DD><DL><DT><P>There is a useful utility function called <A HREF=#mgMatrixFormXYZToUV>mgMatrixFormXYZToUV</A> that can help. 
+It creates a matrix that represents the transformation from XYZ coordinates 
+to UV texture coordinates for a polygon in a given texture layer.  So if you calculate 
+and store this matrix before you change the position of any vertex of the polygon, you 
+can then use this matrix after moving the vertex to calculate the UV texture coordinates 
+of the vertex in its new XYZ position.</P></DT><DT><P>Note that <A HREF=#mgMatrixFormXYZToUV>mgMatrixFormXYZToUV</A> works well if your polygon 
+was texture mapped "nicely" (like using 3 Point Put, for example). 
+If you have any warping applied, it will not work so well.</P></DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how you might use 
+<A HREF=#mgMatrixFormXYZToUV>mgMatrixFormXYZToUV</A>.</DT></DL></DD></DL></TD></TR><TR><TD><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgcoord3d xyz;
+mgcoord3d uv;
+mgrec* vtx;
+mgmatrix uvMat;
+
+// get the UV matrix that transforms XYZ coordinates to
+// UV texture coordinates for texture layer 0 of poly
+mgMatrixFormXYZToUV (&uvMat, poly, 0);
+
+// move the Z coordinate of the first vertex to 0
+vtx = mgGetChild (poly);
+
+mgGetVtxCoord (vtx, &xyz.x, &xyz.y, &xyz.z);
+xyz.z = 0.0;
+
+mgSetVtxCoord (vtx, &xyz.x, &xyz.y, &xyz.z);
+
+// after moving the vertex, recalculate the UV texture
+// coordinates for the new vertex position
+uv = mgCoord3dTransform (uvMat, &xyz);
+
+// finally update the UV texture coordinates on the vertex
+// the new U value is in the x coordinate
+// the new V value is in the y coordinate
+// the z coordinate is not interesting here
+mgSetAttList (vtx, fltVU, uv.x, fltVV, uv.y, MG_NULL);</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># get the UV matrix that transforms XYZ coordinates to
+# UV texture coordinates for texture layer 0 of poly
+b, uvMat = mgMatrixFormXYZToUV (poly, 0)
+
+# move the Z coordinate of the first vertex to 0
+vtx = mgGetChild (poly)
+xyz = mgcoord3d()
+b, xyz.x, xyz.y, xyz.z = mgGetVtxCoord (vtx)
+xyz.z = 0.0
+mgSetVtxCoord (vtx, xyz.x, xyz.y, xyz.z)
+
+# after moving the vertex, recalculate the UV texture
+# coordinates for the new vertex position
+uv = mgCoord3dTransform (uvMat, xyz)
+
+# finally update the UV texture coordinates on the vertex
+# the new U value is in the x coordinate
+# the new V value is in the y coordinate
+# the z coordinate is not interesting here
+mgSetAttList (vtx, fltVU, uv.x, fltVV, uv.y)</PRE></DT></DL></DD></DL></TD></TR>
+<TR><TD><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=#mgSetAttList>mgSetAttList</A>, <A HREF=#mgGetAttList>mgGetAttList</A>, <A HREF=#mgMatrixFormXYZToUV>mgMatrixFormXYZToUV</A>, <A HREF=#mgCoord3dTransform>mgCoord3dTransform</A></DD></DL></TD></TR></TABLE></P>
+<A HREF=#top>Back to Top</A>
+<HR>
+<BR>
+</BODY>
+
+</HTML>
+

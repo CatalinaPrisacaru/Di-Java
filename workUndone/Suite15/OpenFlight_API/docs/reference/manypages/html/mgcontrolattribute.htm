@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>mgcontrolattribute</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgcontrolattribute><H1 CLASS="APISYMBOL">mgcontrolattribute</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgcontrolattribute</B> - Control attribute name type<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgcontrolattribute {
+&#32;&#32;&#32;MCA_GLBORDERSTYLE,
+&#32;&#32;&#32;MCA_BOLDFONT,
+&#32;&#32;&#32;MCA_ITALICFONT,
+&#32;&#32;&#32;MCA_GLMOUSEWRAP,
+&#32;&#32;&#32;MCA_SPINAUTOINCREMENT,
+&#32;&#32;&#32;MCA_TEXTACTIVATEONCHANGED,
+} mgcontrolattribute;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MCA_GLBORDERSTYLE</B><DD>GL Control Border Style. 
+This control attribute specifies what kind (if any) 
+of border to draw around the GL control.<BR> 
+The possible values for this attribute include:<BR> 
+<A HREF=MGLBS_NONE.htm#MGLBS_NONE>MGLBS_NONE</A> (default)<BR> 
+<A HREF=MGLBS_SUNKEN.htm#MGLBS_SUNKEN>MGLBS_SUNKEN</A><BR> 
+<A HREF=MGLBS_RAISED.htm#MGLBS_RAISED>MGLBS_RAISED</A><BR> 
+<A HREF=MGLBS_SOLID.htm#MGLBS_SOLID>MGLBS_SOLID</A>.<DT><B>MCA_BOLDFONT</B><DD>Control Bold Font Style. 
+This control attribute specifies whether or not 
+a control's font is bold.<BR> 
+The possible values for this attribute include:<BR> 
+1 - bold<BR> 
+0 - not bold (default)<DT><B>MCA_ITALICFONT</B><DD>Control Italic Font Style. 
+This control attribute specifies whether or not 
+a control's font is italic.<BR> 
+The possible values for this attribute include:<BR> 
+1 - italic<BR> 
+0 - not italic (default)<DT><B>MCA_GLMOUSEWRAP</B><DD>GL Control Mouse Wrap. 
+This control attribute specifies whether or not the 
+<A HREF=MGMA_BUTTON.htm#MGMA_BUTTON>MGMA_BUTTON</A> mouse action reported to a GL mouse 
+function allows the mouse position to go outside the 
+bounds of the physical screen display.  Specifically, 
+when the user tries to drag the mouse past the "edge" 
+of the screen (top, bottom, left or right), this 
+attribute controls the mouse behavior as follows:<BR> 
+If Mouse Wrap is not enabled, the mouse position is clamped 
+to the bounds of the screen and the mouse is not allowed 
+to move any further in that direction.<BR> 
+If Mouse Wrap is enabled, the mouse position is automatically 
+"wrapped" to the edge of the screen that is opposite the 
+edge past which the user is trying to drag.<BR> 
+For example, if the user drags the mouse past the 
+right edge of the screen, the mouse is automatically 
+moved to the left edge of the screen.  This allows for 
+more continuous mouse motion in the GL control.<BR> 
+Note: When Mouse Wrap is enabled, the coordinates 
+contained in the <A HREF=mgglmousebuttondatarec.htm#mgglmousebuttondatarec>mgglmousebuttondatarec</A> structure 
+reported to the GL mouse function will be adjusted 
+automatically to account for this "wrapping" behavior. 
+Again, consider the example of the user dragging the 
+mouse past the right edge of the screen.  If the X 
+coordinate reported just before the mouse "wraps" is N, 
+The X coordinate reported just after the mouse "wraps" 
+will be N+1.<BR> 
+The possible values for this attribute include:<BR> 
+1 - Mouse Wrap enabled<BR> 
+0 - Mouse Wrap not enabled (default)<DT><B>MCA_SPINAUTOINCREMENT</B><DD>Spin Control Auto Increment. 
+This control attribute specifies whether or not the 
+increment value of a spin buddy control attached to 
+a text or scale control is automatically calculated 
+by Creator based on the current value of the text or 
+scale control.<BR> 
+When setting this attribute you must call <A HREF=mgControlSetAttribute.htm#mgControlSetAttribute>mgControlSetAttribute</A> 
+after <A HREF=mgSetGuiCallback.htm#mgSetGuiCallback>mgSetGuiCallback</A> and after you have assigned the spin 
+buddy to the control.<BR> 
+The possible values for this attribute include:<BR> 
+1 - Auto Increment enabled<BR> 
+0 - Auto Increment not enabled (default)<DT><B>MCA_TEXTACTIVATEONCHANGED</B><DD>Text Activate on Changed. 
+Normally a text control receives the <A HREF=MGCB_ACTIVATE.htm#MGCB_ACTIVATE>MGCB_ACTIVATE</A> 
+event only when the control loses focus. This control 
+attribute lets you specify that a text control is to 
+receive this event as the user types.  This may be 
+useful in certain situations.<BR> 
+When setting this attribute you must call <A HREF=mgControlSetAttribute.htm#mgControlSetAttribute>mgControlSetAttribute</A> 
+after <A HREF=mgSetGuiCallback.htm#mgSetGuiCallback>mgSetGuiCallback</A>.<BR> 
+The possible values for this attribute include:<BR> 
+1 - Text control receives <A HREF=MGCB_ACTIVATE.htm#MGCB_ACTIVATE>MGCB_ACTIVATE</A> event 
+as user types and when control loses focus.<BR> 
+0 - Text control receives <A HREF=MGCB_ACTIVATE.htm#MGCB_ACTIVATE>MGCB_ACTIVATE</A> event 
+only when control loses focus. (default)</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This type is used to enumerate the control attributes that can be set.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgControlSetAttribute.htm#mgControlSetAttribute>mgControlSetAttribute</A></DD></DL></BODY>
+
+</HTML>

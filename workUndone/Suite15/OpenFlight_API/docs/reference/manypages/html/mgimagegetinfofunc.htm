@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgimagegetinfofunc</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgimagegetinfofunc><H1 CLASS="APISYMBOL">mgimagegetinfofunc</H1></A></LEFT>
+<DL>
+<DT><H3>CALLBACK NAME</H3></DT>
+<DD><B>mgimagegetinfofunc</B> - Image Get Info function for Image Importer Tools<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus (*<B>mgimagegetinfofunc</B>) ( <TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <TD><I>pluginTool</I>, 
+<TR><TD></TD><TD>void* <TD><I>userData</I>, 
+<TR><TD></TD><TD>int <TD><I>imageid</I>, 
+<TR><TD></TD><TD><A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <TD><I>imageInfo</I> );</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This is the signature for image get info functions. 
+When you register an image importer plug-in tool, provide a get info function 
+of this form that is called when the OpenFlight API needs to get information about an image 
+that your tool has opened.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the plug-in tool</DD><DT><I>userData</I></DT><DD>user defined data specified when tool is registered</DD><DT><I>imageid</I></DT><DD>image identifier indicating which image to get info for - 
+this is the value returned by the image open function when 
+the image was first opened</DD><DT><I>imageInfo</I></DT><DD>image info object that your tool loads values into 
+for info attributes width, height, type, etc corresponding to 
+the specified image</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=MIMG_NO_ERROR.htm#MIMG_NO_ERROR>MIMG_NO_ERROR</A> if successful, otherwise returns applicable texture error code. 
+If successful, the parameter <I>imageInfo</I> should be filled in with all pertinent 
+image information using the <B>mgSetTextureXXX</B> functions listed below.
+</DD></DL><DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterImageImporter.htm#mgRegisterImageImporter>mgRegisterImageImporter</A>, <A HREF=mgSetReadImageGeoInfoFunc.htm#mgSetReadImageGeoInfoFunc>mgSetReadImageGeoInfoFunc</A>, 
+<A HREF=mgSetTextureWidth.htm#mgSetTextureWidth>mgSetTextureWidth</A>, <A HREF=mgSetTextureHeight.htm#mgSetTextureHeight>mgSetTextureHeight</A>, 
+<A HREF=mgSetTextureType.htm#mgSetTextureType>mgSetTextureType</A>, <A HREF=mgSetTextureSampleSize.htm#mgSetTextureSampleSize>mgSetTextureSampleSize</A>, <A HREF=mgSetTextureTiledFlag.htm#mgSetTextureTiledFlag>mgSetTextureTiledFlag</A>, 
+<A HREF=mgSetTextureMinMax.htm#mgSetTextureMinMax>mgSetTextureMinMax</A>, <A HREF=mgSetTextureTransparentValue.htm#mgSetTextureTransparentValue>mgSetTextureTransparentValue</A>, <A HREF=mgSetTextureSignedFlag.htm#mgSetTextureSignedFlag>mgSetTextureSignedFlag</A></DD></DL></BODY>
+
+</HTML>

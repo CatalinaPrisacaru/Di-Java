@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>mgExtensionFieldSetDouble</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExtensionFieldSetDouble><H1 CLASS="APISYMBOL">mgExtensionFieldSetDouble</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExtensionFieldSetDouble</B> - sets the double precision 
+floating point value of an extension field on a node.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgExtensionFieldSetDouble</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fieldGuid</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>fieldValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExtensionFieldSetDouble</B> sets the value of an extension field 
+identified by <I>fieldGuid</I>, attached to node <I>rec</I> to <I>fieldValue</I>.</P></DD><DD><P>Note: If the extension field is already attached to <I>rec</I> and is not of 
+type <A HREF=mgtagtype.htm#mgtagtype>MTYPE_DOUBLE</A>, <I>fieldValue</I> is coerced to the type of the existing 
+extension field.  For example, if the current extension field is of type 
+<A HREF=mgtagtype.htm#mgtagtype>MTYPE_FLAG</A>, a value of 0 will be set on <I>rec</I> if <I>fieldValue</I> 
+is 0.0, a value of 1 will be set otherwise. 
+If the current extension field is of type <A HREF=mgtagtype.htm#mgtagtype>MTYPE_INT</A> or <A HREF=mgtagtype.htm#mgtagtype>MTYPE_FLOAT</A>, 
+<I>fieldValue</I> will simply be converted to the corresponding numeric type. Note that if 
+the type is <A HREF=mgtagtype.htm#mgtagtype>MTYPE_INT</A>, <I>fieldValue</I> will be truncated. 
+If the current extension field is of type <A HREF=mgtagtype.htm#mgtagtype>MTYPE_TEXT</A> or <A HREF=mgtagtype.htm#mgtagtype>MTYPE_XML</A> 
+<I>fieldValue</I> will converted to the corresponding ASCII text.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the node to set extension value on</DD><DT><I>fieldGuid</I></DT><DD>the GUID of the extension field</DD><DT><I>fieldValue</I></DT><DD>the value to set</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgExtensionFieldGetInteger.htm#mgExtensionFieldGetInteger>mgExtensionFieldGetInteger</A>, 
+<B>mgExtensionFieldSetDouble</B>, <A HREF=mgExtensionFieldSetFloat.htm#mgExtensionFieldSetFloat>mgExtensionFieldSetFloat</A>, <A HREF=mgExtensionFieldSetBool.htm#mgExtensionFieldSetBool>mgExtensionFieldSetBool</A>, 
+<A HREF=mgExtensionFieldSetString.htm#mgExtensionFieldSetString>mgExtensionFieldSetString</A>, <A HREF=mgExtensionFieldSetXMLString.htm#mgExtensionFieldSetXMLString>mgExtensionFieldSetXMLString</A>, 
+<A HREF=mgExtensionFieldAdd.htm#mgExtensionFieldAdd>mgExtensionFieldAdd</A>, <A HREF=mgExtensionSiteAdd.htm#mgExtensionSiteAdd>mgExtensionSiteAdd</A></DD></DL></BODY>
+
+</HTML>

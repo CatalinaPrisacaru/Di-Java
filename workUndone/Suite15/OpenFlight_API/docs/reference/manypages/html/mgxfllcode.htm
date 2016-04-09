@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgxfllcode</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgxfllcode><H1 CLASS="APISYMBOL">mgxfllcode</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgxfllcode</B> - The set of possible transformation 
+matrix types for <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltXmHeader>fltXmHeader</A>
+ records<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgxfllcode {
+&#32;&#32;&#32;MXLL_TRANSLATE,
+&#32;&#32;&#32;MXLL_SCALE,
+&#32;&#32;&#32;MXLL_ROTEDGE,
+&#32;&#32;&#32;MXLL_ROTPT,
+&#32;&#32;&#32;MXLL_PUT,
+&#32;&#32;&#32;MXLL_TOPOINT,
+&#32;&#32;&#32;MXLL_GENERAL,
+} mgxfllcode;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MXLL_TRANSLATE</B><DD>a translation matrix<DT><B>MXLL_SCALE</B><DD>a scale matrix<DT><B>MXLL_ROTEDGE</B><DD>a rotation about an edge<DT><B>MXLL_ROTPT</B><DD>a rotation about a point<DT><B>MXLL_PUT</B><DD>a simultaneous translation, rotation and scale matrix<DT><B>MXLL_TOPOINT</B><DD>a simultaneous scale and rotation matrix<DT><B>MXLL_GENERAL</B><DD>a matrix of one or more undefined transformations</DL></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetXformType.htm#mgGetXformType>mgGetXformType</A></DD></DL></BODY>
+
+</HTML>

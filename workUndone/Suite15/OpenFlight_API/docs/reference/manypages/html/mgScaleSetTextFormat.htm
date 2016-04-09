@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgScaleSetTextFormat</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgScaleSetTextFormat><H1 CLASS="APISYMBOL">mgScaleSetTextFormat</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgScaleSetTextFormat</B> - sets the text format string for 
+a scale control.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgScaleSetTextFormat</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>control</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fmtString</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgScaleSetTextFormat</B> sets the format string for the text buddy of 
+a scale control.  The format string, <I>fmtString</I>, is assumed to be a 
+<B>printf</B> style format string and is used to automatically format the 
+numeric value that is displayed in the text buddy control associated 
+to the scale control.</P></DD><DD><P>Since the value represented by a scale control is of type double, you 
+may, for example, use this format string to effectively display integer values 
+in the scale control by using a format string similar to "%.0lf".  See <B>printf</B> 
+for more details on allowable format strings.</P></DD><DD><P>The default format string for a text buddy control is "%lf".</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>control</I></DT><DD>the scale control</DD><DT><I>fmtString</I></DT><DD>the format string for the text buddy</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgScaleSetTextBuddy.htm#mgScaleSetTextBuddy>mgScaleSetTextBuddy</A>, <A HREF=mgScaleSetSpinBuddy.htm#mgScaleSetSpinBuddy>mgScaleSetSpinBuddy</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,168 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetAttList</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetAttList><H1 CLASS="APISYMBOL">mgGetAttList</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetAttList</B> - gets the values of record attributes using the 
+<B>varargs</B> argument style.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgGetAttList</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< attrCode ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< attrValAddr ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>numAttr, < attrCode >, < attrVal >, ... <B>mgGetAttList</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< attrCode ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< attrCode ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetAttList</B> gets one or more values of <I>rec</I>'s attributes named by the 
+attribute codes <I>attrCode</I>.  Note that <I>rec</I> must be a proper record and cannot 
+be a value record.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P><B>mgGetAttList</B> writes the attribute values into the corresponding output 
+variables <I>attrValAddr</I>.</P></DD><DD><P>For numeric attribute types (char, short, int, float, double, etc), pass 
+the address of the corresponding variable type (char, short, int, float, double, etc). 
+For character string attributes (char*), pass the address of a char* variable 
+(initialized to NULL).  In this case <B>mgGetAttList</B> will allocate a dynamic 
+memory buffer of type char*, fill this buffer with the character string value 
+and return this buffer (now pointed to by your char* variable).  Since this 
+string is dynamically allocated, the caller must deallocate it when it 
+is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.  The example below shows this in more detail.</P></DD><DD><P>Since variable-length argument lists cannot be type-checked by the compiler, 
+<B>varargs</B> functions can be a source of bugs.  Be sure to terminate your argument 
+list with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> and be sure that the type of each argument is as expected. 
+Also, when passing the address of variables here, be sure to use variables of the 
+exact size expected by the specified attribute codes.  For example, when an attribute 
+is of type "short", be sure to pass the address of a "short" variable.  Passing the 
+address of an "int" in this case would yield incorrect results.</P></DD><DD><P>The expected sizes for all OpenFlight attribute values are shown in the 
+OpenFlight Data Dictionary.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P><B>mgGetAttList</B> returns the attribute values as a tuple as shown in the example 
+below. The number of items returned in the tuple varies with the number of attributes 
+requested. The first item in the tuple indicates how many attribute code and value pairs 
+follow in the tuple returned.</P></DD><DD><P>It is not necessary to terminate the argument list with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record from which to get values</DD><DT><I>< attrCode ></I></DT><DD>the attribute record code</DD><DT><I>< attrValAddr ></I></DT><DD>the pointer to the returned attribute value</DD><DT><I>...</I></DT><DD>the argument list is <BR><B>C</B> - in pairs of <I>attrCode</I> and <I>attrValAddr</I> 
+ending with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> terminator <BR><B>Python</B> - items of <I>attrCode</I> with no terminator</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>numAttr</DT><DD>The number of attribute values successfully retrieved.</DD><DT>< attrCode ></DT><DD>The first code.</DD><DT>< attrVal ></DT><DD>The value retrieved for the first code, 
+<B>None</B> if not retrieved successfully.</DD><DT>...</DT><DD>etc.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// get the material and texture indices from a polygon node
+// both are of type short
+
+mgrec* poly;
+short texture;
+short material;
+int numAttr;
+
+numAttr = mgGetAttList (poly,
+&#32       fltPolyMaterial, &material,
+&#32       fltPolyTexture, &texture,
+&#32       MG_NULL);
+if (numAttr == 2)
+   printf ("success");
+else
+   printf ("fail");
+
+// get the revision number and the date of last revision from a
+// header node - revision number is int and date is character
+// string - note special handling of character strings
+
+mgrec* header;
+int formatRev;
+char* date = MG_NULL;
+int numAttr;
+
+numAttr = mgGetAttList (header,
+&#32       fltHdrFormatRev, &formatRev,
+&#32       fltHdrLastDate, &date,
+&#32       MG_NULL);
+if (date) {
+   // date now points to a character string filled with
+   // the fltHdrLastDate attribute value - you need to
+   // free the memory when you are done with it !
+   mgFree (date);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># get the material and texture indices from a polygon node
+
+outs = mgGetAttList (poly, fltPolyMaterial, fltPolyTexture)
+# outs is a tuple with 5 elements as follows:
+# outs[0] = number of attributes returned, 2 if successful
+# outs[1] = fltPolyMaterial
+# outs[2] = value of fltPolyMaterial
+# outs[3] = fltPolyTexture
+# outs[4] = value of fltPolyTexture
+numAttr = outs[0]
+if (numAttr == 2):
+   material = outs[2]
+   texture = outs[4]
+   print "success"
+else:
+   print "fail"
+
+# get the revision number and the date of last revision from a
+# header node
+
+outs = mgGetAttList (header, fltHdrFormatRev, fltHdrLastDate)
+# outs is a tuple with 5 elements as follows:
+# outs[0] = number of attributes returned, 2 if successful
+# outs[1] = fltHdrFormatRev
+# outs[2] = value of fltHdrFormatRev
+# outs[3] = fltHdrLastDate
+# outs[4] = value of fltHdrLastDate
+numAttr = outs[0]
+if (numAttr == 2):
+   formatRev = outs[2]
+   date = outs[4]
+   print "success"
+else:
+   print "fail"
+
+# here is an alternate PYTHON syntax not using tuples:
+numAttr,matCode,material,txtCode,texture = mgGetAttList (poly, fltPolyMaterial, fltPolyTexture)
+# numAttr = number of attributes returned, 2 if successful
+# matCode = fltPolyMaterial
+# material = value of fltPolyMaterial
+# txtCode = fltPolyTexture
+# texture = value of fltPolyTexture</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>mgFindGuiById</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgFindGuiById><H1 CLASS="APISYMBOL">mgFindGuiById</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgFindGuiById</B> - retrieves handle to a control in a dialog.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mggui <B>mgFindGuiById</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>gui</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcontrolid.htm#mgcontrolid>mgcontrolid</A></TD><TD><I>controlId</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgFindGuiById</B> returns the abstract handle to a control identified 
+by <I>controlId</I> contained in the dialog specified by <I>gui</I>.<P>
+Note that <I>gui</I> can be either a control or a dialog.  If <I>gui</I> is a control, 
+it is assumed to be contained in the dialog to be searched.  If <I>gui</I> is a dialog, 
+it is the dialog to be searched.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>gui</I></DT><DD>the dialog that contains the control 
+to find or a control in the dialog</DD><DT><I>controlId</I></DT><DD>the identifier of the control to find</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the control handle if found, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL></BODY>
+
+</HTML>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgNextConstructEdge</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNextConstructEdge><H1 CLASS="APISYMBOL">mgNextConstructEdge</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNextConstructEdge</B> - gets the next construction edge 
+node associated with an active editor tool instance.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgNextConstructEdge</B> (</TD><TD><A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A></TD><TD><I>editorContext</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>constructEdge</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgNextConstructEdge</B> gets the construction edge node 
+that follows the specified construction node, <I>constructEdge</I>, 
+associated with the editor tool instance identified by 
+editor context, <I>editorContext</I>.</P></DD><DD><P>After calling <A HREF=mgFirstConstructEdge.htm#mgFirstConstructEdge>mgFirstConstructEdge</A> to get the first 
+construction edge node associated with an editor tool instance, you 
+can call <B>mgNextConstructEdge</B> to get successive construction 
+edge nodes.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>editorContext</I></DT><DD>the editor context from which to 
+get the next construction edge node</DD><DT><I>constructEdge</I></DT><DD>the construction edge node 
+to get next construction edge for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the next construction edge node if found, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewConstructEdge.htm#mgNewConstructEdge>mgNewConstructEdge</A>, <A HREF=mgFirstConstructEdge.htm#mgFirstConstructEdge>mgFirstConstructEdge</A></DD></DL></BODY>
+
+</HTML>

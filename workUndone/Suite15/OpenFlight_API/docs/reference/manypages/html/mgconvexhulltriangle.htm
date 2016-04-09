@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>mgconvexhulltriangle</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgconvexhulltriangle><H1 CLASS="APISYMBOL">mgconvexhulltriangle</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgconvexhulltriangle</B> - Convex Hull triangle structure used by <A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A><P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgcoord3d p1;
+&#32;&#32;&#32;mgcoord3d p2;
+&#32;&#32;&#32;mgcoord3d p3;
+} mgconvexhulltriangle;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>p1</B><DD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> - the coordinate position of the first vertex of the convex hull triangle</DD></DT><DT><B>p2</B><DD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> - the coordinate position of the second vertex of the convex hull triangle</DD></DT><DT><B>p3</B><DD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> - the coordinate position of the third vertex of the convex hull triangle</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This structure represents a single triangle of a convex hull.  The vertices of the 
+triangle are ordered counter-clockwise and the direction of the normal is based on the 
+right hand rule.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A>, <A HREF=mgGetConvexHull.htm#mgGetConvexHull>mgGetConvexHull</A>, <A HREF=mgConvexHullGetTriangleCount.htm#mgConvexHullGetTriangleCount>mgConvexHullGetTriangleCount</A>, <A HREF=mgConvexHullGetTriangleNth.htm#mgConvexHullGetTriangleNth>mgConvexHullGetTriangleNth</A>.</DD></DL></BODY>
+
+</HTML>

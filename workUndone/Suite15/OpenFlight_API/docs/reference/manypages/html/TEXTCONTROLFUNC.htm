@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>TEXTCONTROLFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=TEXTCONTROLFUNC><H1>Text Controls</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextAppendString.htm#mgTextAppendString><B>mgTextAppendString</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>string</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextClear.htm#mgTextClear><B>mgTextClear</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetDMS.htm#mgTextGetDMS><B>mgTextGetDMS</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, double* <I>dmsVal</I>, const char* <I>fmtString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetDouble.htm#mgTextGetDouble><B>mgTextGetDouble</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, double* <I>doubleVal</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetFloat.htm#mgTextGetFloat><B>mgTextGetFloat</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, float* <I>floatVal</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetInteger.htm#mgTextGetInteger><B>mgTextGetInteger</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int* <I>intVal</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetSelection.htm#mgTextGetSelection><B>mgTextGetSelection</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, char* <I>string</I>, int <I>maxLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetSelectionRange.htm#mgTextGetSelectionRange><B>mgTextGetSelectionRange</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int* <I>start</I>, int* <I>end</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextGetString.htm#mgTextGetString><B>mgTextGetString</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, char* <I>string</I>, int <I>maxLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSelectAll.htm#mgTextSelectAll><B>mgTextSelectAll</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSelectRange.htm#mgTextSelectRange><B>mgTextSelectRange</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>firstPos</I>, int <I>lastPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetDMS.htm#mgTextSetDMS><B>mgTextSetDMS</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, double <I>dmsVal</I>, const char* <I>fmtString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetDouble.htm#mgTextSetDouble><B>mgTextSetDouble</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, double <I>doubleVal</I>, const char* <I>fmtString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetEditable.htm#mgTextSetEditable><B>mgTextSetEditable</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>editable</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetFilename.htm#mgTextSetFilename><B>mgTextSetFilename</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>fileName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetFloat.htm#mgTextSetFloat><B>mgTextSetFloat</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, float <I>floatVal</I>, const char* <I>fmtString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetInteger.htm#mgTextSetInteger><B>mgTextSetInteger</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>intVal</I>, const char* <I>fmtString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetSpinBuddy.htm#mgTextSetSpinBuddy><B>mgTextSetSpinBuddy</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, <A HREF=mggui.htm#mggui>mggui</A> <I>spinControl</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetSpinIncrement.htm#mgTextSetSpinIncrement><B>mgTextSetSpinIncrement</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, double <I>increment</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetString.htm#mgTextSetString><B>mgTextSetString</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>string</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgTextSetTextFormat.htm#mgTextSetTextFormat><B>mgTextSetTextFormat</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>fmtString</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

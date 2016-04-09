@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetAttList</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetAttList><H1 CLASS="APISYMBOL">mgSetAttList</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetAttList</B> - sets the values of record attributes using <B>varargs</B> argument style.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgSetAttList</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< attrCode ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< attrVal ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSetAttList</B> sets one or more values of <I>rec</I>'s attributes named by the 
+attribute codes <I>attrCode</I>.  Values are specified by the corresponding <I>attrVal</I>. 
+Note that <I>rec</I> must be a proper record and cannot be a value record.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>Variable-length argument lists cannot be type-checked by the compiler, so using 
+varargs functions can be a source of bugs. Be sure to terminate the argument list 
+with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> and be sure that the type of each argument is as expected.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to terminate the argument list with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record in which to set values</DD><DT><I>< attrCode ></I></DT><DD>the attribute record code to set</DD><DT><I>< attrVal ></I></DT><DD>the attribute value to which <I>attrCode</I> is set</DD><DT><I>...</I></DT><DD>the argument list is in pairs of <I>attrCode</I> and <I>attrVal</I> ending 
+with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> terminator</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the number of attribute code/address pairs set successfully.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* poly;
+short texture = 1;
+short material = 1;
+
+mgSetAttList (poly,
+&#32       fltPolyMaterial, material,
+&#32       fltPolyTexture, texture,
+&#32       MG_NULL);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">texture = 1
+material = 1
+mgSetAttList (poly,
+&#32       fltPolyMaterial, material,
+&#32       fltPolyTexture, texture)</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetAttList.htm#mgGetAttList>mgGetAttList</A>, <A HREF=mgGetAttBuf.htm#mgGetAttBuf>mgGetAttBuf</A>, <A HREF=mgSetAttBuf.htm#mgSetAttBuf>mgSetAttBuf</A></DD></DL></BODY>
+
+</HTML>

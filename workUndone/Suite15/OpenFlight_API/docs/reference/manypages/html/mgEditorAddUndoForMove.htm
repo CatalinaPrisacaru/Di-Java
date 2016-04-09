@@ -1,0 +1,158 @@
+<HTML>
+<HEAD>
+<TITLE>mgEditorAddUndoForMove</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgEditorAddUndoForMove><H1 CLASS="APISYMBOL">mgEditorAddUndoForMove</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgEditorAddUndoForMove</B> - registers undo/redo callback 
+actions for an editor tool instance that moves geometry from one attach 
+point in the scene to a different attach point in the scene.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgEditorAddUndoForMove</B> (</TD><TD><A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A></TD><TD><I>editorContext</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>menuLabel</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>node</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgEditorAddUndoForMove</B> and <A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A> 
+perform all the undo/redo actions automatically for an editor tool instance 
+that moves geometry (hierarchically) from one location in the scene to 
+another.  This is typically accomplished by "detaching" a node from its 
+current parent and re-attaching it to a different parent or to the same 
+parent but in a different sibling order.</P></DD><DD><P>When an editor tool instance moves geometry from one attach point 
+to another within the scene, it can register this action using 
+<B>mgEditorAddUndoForMove</B> or&#32<A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A>.  Doing so 
+causes all the processing required for undo/redo of the move to be performed 
+by the modeling system automatically.  This can greatly reduce the amount of 
+undo/redo support code you must write for your editor tool.</P></DD><DD><P>After calling <B>mgEditorAddUndoForMove</B>, an undo entry is created 
+in the Edit->Undo menu with the specified label string <I>menuLabel</I>. 
+If <A HREF=MUML_USETOOLNAME.htm#MUML_USETOOLNAME>MUML_USETOOLNAME</A> is specified for <I>menuLabel</I>, the name of the 
+editor tool is used as the menu label string.</P></DD><DD><P>When this undo entry is selected by the user, the specified 
+<I>node</I> is detached from its current location in the scene and re-attached 
+back to where it was originally.  In addition, a redo entry is created in 
+the Edit->Redo menu with the same label as that used for the undo entry. 
+When this redo entry is selected, <I>node</I> will be moved back to its location 
+before the undo was selected, at which point another undo entry will be created. 
+As long as the user selects undo/redo of this action, the proper actions will 
+be automatically performed by the modeling system with no further action 
+required of the editor tool.</P></DD><DD><P>For <B>mgEditorAddUndoForMove</B> and <A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A> 
+to work correctly, they must be called <B>before</B> the <I>node</I> is 
+moved in the scene.  This is required so the information required by 
+the undo/redo can be captured correctly before the node is moved. Note 
+that this is different from the requirements of <A HREF=mgEditorAddUndoForCreate.htm#mgEditorAddUndoForCreate>mgEditorAddUndoForCreate</A> 
+which must be called <B>after</B> the node is created and attached.</P></DD><DD><P>Both <B>mgEditorAddUndoForMove</B> and <A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A> 
+can be used in combination with the other automatic and non-automatic 
+undo/redo functions.  So, for example, if your editor tool moves one 
+node and creates another, you could call <B>mgEditorAddUndoForMove</B> 
+to automatically handle the undo/redo for the moved node, then call 
+<A HREF=mgEditorAppendUndoForCreate.htm#mgEditorAppendUndoForCreate>mgEditorAppendUndoForCreate</A> to handle the undo/redo for the node 
+you created.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>editorContext</I></DT><DD>the editor context to 
+register automatic undo/redo 
+for node creation action</DD><DT><I>menuLabel</I></DT><DD>the text of the undo/redo 
+menu items to display</DD><DT><I>node</I></DT><DD>the node moved for 
+which undo/redo is desired</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>In the following example, an editor tool moves one node to a 
+new parent in the scene and creates another node where it used to be. 
+The example shows how the editor tool might register the undo/redo 
+for these actions.</DT><DT><PRE CLASS="EXAMPLE">mgrec* newGroup;
+mgrec* newObj;
+mgrec* newPoly;
+mgrec* parent;
+
+// Create a new group:
+//
+//    newGroup
+//       |
+//    newObj
+//       |
+//    newPoly
+//
+// to go where the group we move was before we moved it
+
+// Build up new group hierarchy
+newGroup = mgNewRec (fltGroup);
+newObj = mgNewRec (fltObject);
+newPoly = mgNewRec (fltPolygon);
+
+mgAttach (newGroup, newObj);
+mgAttach (newObj, newPoly);
+
+// We will move the existing group first, then attach the new
+// group to the same parent.  Remember the parent for later.
+parent = mgGetParent (existingGroup);
+
+// Set up undo/redo for node move.  You only need to register
+// the "root" node that you move.  All children are accounted for
+// automatically.  Use mgEditorAddUndoForMove because this is the
+// first undo-able action performed by the editor tool. Remember, you
+// must register the undo before you move the nodes in the scene.
+mgEditorAddUndoForMove (editorContext, "Move Geometry", existingGroup);
+
+// Move the existing group
+mgDetach (existingGroup);
+mgAttach (newParent, existingGroup);
+
+// Now attach new group to the parent where existingGroup used to be
+mgAttach (parent, newGroup);
+
+// Set up undo/redo for node creation, only need to register the
+// "root" node that you created.  Since newObj and newPoly are
+// children of newGroup, you don't need to register them separately.
+// Use mgEditorAppendUndoForCreate to "append" this undo callback
+// action to the existing undo menu entry created above by
+// mgEditorAddUndoForMove.  Note that you could call
+// mgEditorAddUndoForCreate instead if you wanted the move
+// and creation actions to be undo-able individually. And again,
+// remember to register the undo for node creation after you
+// attach new nodes into the scene.
+mgEditorAppendUndoForCreate (editorContext, newGroup);
+
+// The undo entry labeled "Move Geometry", when selected by the
+// user, will un-move existingGroup and un-create newGroup. When
+// that happens, a redo entry labeled "Move Geometry" will be
+// automatically created in the Edit-&gtRedo menu.  When that redo
+// entry is selected by the user, existingGroup will be re-moved and
+// newGroup will be re-created and attached into the scene and yet
+// another undo entry will be automatically created, and so forth.</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, 
+<A HREF=mgEditorAddUndo.htm#mgEditorAddUndo>mgEditorAddUndo</A>, <A HREF=mgEditorAppendUndo.htm#mgEditorAppendUndo>mgEditorAppendUndo</A>, <A HREF=mgEditorResetUndo.htm#mgEditorResetUndo>mgEditorResetUndo</A>, 
+<A HREF=mgEditorAddRedo.htm#mgEditorAddRedo>mgEditorAddRedo</A>, <A HREF=mgEditorAddUndoForRedo.htm#mgEditorAddUndoForRedo>mgEditorAddUndoForRedo</A>, 
+<A HREF=mgEditorAddUndoForCreate.htm#mgEditorAddUndoForCreate>mgEditorAddUndoForCreate</A>, <A HREF=mgEditorAppendUndoForCreate.htm#mgEditorAppendUndoForCreate>mgEditorAppendUndoForCreate</A>, 
+<A HREF=mgEditorAddUndoForDelete.htm#mgEditorAddUndoForDelete>mgEditorAddUndoForDelete</A>, <A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A>, 
+<A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A></DD></DL></BODY>
+
+</HTML>

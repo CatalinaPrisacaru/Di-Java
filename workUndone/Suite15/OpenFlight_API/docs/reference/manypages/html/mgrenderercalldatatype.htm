@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>mgrenderercalldatatype</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgrenderercalldatatype><H1 CLASS="APISYMBOL">mgrenderercalldatatype</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgrenderercalldatatype</B> - Renderer callback data type<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgrenderercalldatatype {
+&#32;&#32;&#32;MRCD_COMMON,
+&#32;&#32;&#32;MRCD_TEXTACTIVATE,
+&#32;&#32;&#32;MRCD_SCALEACTIVATE,
+&#32;&#32;&#32;MRCD_GLDRAW,
+&#32;&#32;&#32;MRCD_DIALOGSIZE,
+} mgrenderercalldatatype;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MRCD_COMMON</B><DD>Common Call Data.  This indicates that the 
+<I>callData</I> parameter to a renderer callback function 
+is a pointer to an object of type 
+<A HREF=mgguicallbackrec.htm#mgguicallbackrec>mgguicallbackrec</A> and has no additional data.<DT><B>MRCD_TEXTACTIVATE</B><DD>Text Activate Call Data.  This indicates that the 
+<I>callData</I> parameter to a control callback is a pointer 
+to an object of type <A HREF=mgtextactivatecallbackrec.htm#mgtextactivatecallbackrec>mgtextactivatecallbackrec</A>.<DT><B>MRCD_SCALEACTIVATE</B><DD>Scale Activate Call Data.  This indicates that the 
+<I>callData</I> parameter to a control callback is a pointer 
+to an object of type <A HREF=mgscaleactivatecallbackrec.htm#mgscaleactivatecallbackrec>mgscaleactivatecallbackrec</A>.<DT><B>MRCD_GLDRAW</B><DD>GL Draw Call Data.  This indicates that the 
+<I>callData</I> parameter to a control callback is a pointer 
+to an object of type <A HREF=mggldrawcallbackrec.htm#mggldrawcallbackrec>mggldrawcallbackrec</A>.<DT><B>MRCD_DIALOGSIZE</B><DD>Dialog Size Call Data.  This indicates that the 
+<I>callData</I> parameter to a dialog function is a pointer 
+to an object of type <A HREF=mgdialogsizecallbackrec.htm#mgdialogsizecallbackrec>mgdialogsizecallbackrec</A>.</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This type is used to indicate the type of call data passed to a renderer callback 
+functions. When a renderer callback function is called, the <I>callData</I> 
+parameter passed in will be a pointer to an object type that is dependent on the context of 
+the callback function.</P></DD><DD><P>Each member of this type corresponds to a different callback data structure.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterRenderer.htm#mgRegisterRenderer>mgRegisterRenderer</A>, <A HREF=mgrendererfunc.htm#mgrendererfunc>mgrendererfunc</A>, <A HREF=mgrenderercallbackreason.htm#mgrenderercallbackreason>mgrenderercallbackreason</A></DD></DL></BODY>
+
+</HTML>

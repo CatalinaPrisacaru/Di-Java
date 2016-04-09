@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetConstructEdgeCoords</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetConstructEdgeCoords><H1 CLASS="APISYMBOL">mgGetConstructEdgeCoords</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetConstructEdgeCoords</B> - gets the endpoint coordinates 
+of a construction edge node.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgGetConstructEdgeCoords</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>constructEdge</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A></TD><TD><I>coord1</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A></TD><TD><I>coord2</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, coord1, coord2 <B>mgGetConstructEdgeCoords</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>constructEdge</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetConstructEdgeCoords</B> gets the coordinates of the endpoints 
+of a construction edge node <I>constructEdge</I>.</P></DD><DD><P>If either of the coordinate parameters (<I>coord1</I> or <I>coord2</I>) are 
+MG_NULL, that particular coordinate will not be returned.  In this way you can 
+query one endpoint of the construction edge without the other.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>constructEdge</I></DT><DD>the construction edge to 
+get coordinates for</DD><DT><I>coord1</I></DT><DD>address of record to receive 
+coordinates of first vertex of 
+construction edge</DD><DT><I>coord2</I></DT><DD>address of record to receive 
+coordinates of second vertex of 
+construction edge</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.</DD><DT>coord1</DT><DD>If function is successful, <I>coord1</I> contains coordinates of first vertex 
+of construction edge, otherwise <I>coord1</I> is undefined.</DD><DT>coord2</DT><DD>If function is successful, <I>coord2</I> contains coordinates of second vertex 
+of construction edge, otherwise <I>coord2</I> is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewConstructEdge.htm#mgNewConstructEdge>mgNewConstructEdge</A>, <A HREF=mgSetConstructEdgeColor.htm#mgSetConstructEdgeColor>mgSetConstructEdgeColor</A></DD></DL></BODY>
+
+</HTML>

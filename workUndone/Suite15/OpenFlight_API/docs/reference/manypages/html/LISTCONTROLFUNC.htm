@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>LISTCONTROLFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=LISTCONTROLFUNC><H1>List Controls</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListAddItem.htm#mgListAddItem><B>mgListAddItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>, int <I>itemPos</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>select</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListAddItemData.htm#mgListAddItemData><B>mgListAddItemData</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>, void* <I>itemData</I>, int <I>itemPos</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>select</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListAppendItem.htm#mgListAppendItem><B>mgListAppendItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>select</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListAppendItemData.htm#mgListAppendItemData><B>mgListAppendItemData</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>, void* <I>itemData</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>select</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListDeleteAllItems.htm#mgListDeleteAllItems><B>mgListDeleteAllItems</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListDeleteItem.htm#mgListDeleteItem><B>mgListDeleteItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListDeleteItemAtPos.htm#mgListDeleteItemAtPos><B>mgListDeleteItemAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListDeleteSelectedItems.htm#mgListDeleteSelectedItems><B>mgListDeleteSelectedItems</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListDeselectAllItems.htm#mgListDeselectAllItems><B>mgListDeselectAllItems</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListDeselectItemAtPos.htm#mgListDeselectItemAtPos><B>mgListDeselectItemAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgListGetItemCount.htm#mgListGetItemCount><B>mgListGetItemCount</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void* <TD><A HREF=mgListGetItemDataAtPos.htm#mgListGetItemDataAtPos><B>mgListGetItemDataAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListGetItemStringAtPos.htm#mgListGetItemStringAtPos><B>mgListGetItemStringAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>, char* <I>itemString</I>, int <I>maxLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgListGetSelectedItemCount.htm#mgListGetSelectedItemCount><B>mgListGetSelectedItemCount</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListGetSelectedItemPos.htm#mgListGetSelectedItemPos><B>mgListGetSelectedItemPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int* <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListGetSelectedItemString.htm#mgListGetSelectedItemString><B>mgListGetSelectedItemString</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, char* <I>itemString</I>, int <I>maxLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstringlist.htm#mgstringlist>mgstringlist</A> <TD><A HREF=mgListGetSelectedStrings.htm#mgListGetSelectedStrings><B>mgListGetSelectedStrings</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstringlist.htm#mgstringlist>mgstringlist</A> <TD><A HREF=mgListGetStrings.htm#mgListGetStrings><B>mgListGetStrings</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListGetTopPos.htm#mgListGetTopPos><B>mgListGetTopPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int* <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgListIsItemAtPosSelected.htm#mgListIsItemAtPosSelected><B>mgListIsItemAtPosSelected</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgListIsItemInList.htm#mgListIsItemInList><B>mgListIsItemInList</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListReplaceItem.htm#mgListReplaceItem><B>mgListReplaceItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>oldItemString</I>, const char* <I>newItemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListReplaceItemAtPos.htm#mgListReplaceItemAtPos><B>mgListReplaceItemAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>, const char* <I>itemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSelectAllItems.htm#mgListSelectAllItems><B>mgListSelectAllItems</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSelectItem.htm#mgListSelectItem><B>mgListSelectItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSelectItemAtPos.htm#mgListSelectItemAtPos><B>mgListSelectItemAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSetBottomItem.htm#mgListSetBottomItem><B>mgListSetBottomItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSetBottomPos.htm#mgListSetBottomPos><B>mgListSetBottomPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSetItemDataAtPos.htm#mgListSetItemDataAtPos><B>mgListSetItemDataAtPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>, void* <I>itemData</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSetTopItem.htm#mgListSetTopItem><B>mgListSetTopItem</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, const char* <I>itemString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgListSetTopPos.htm#mgListSetTopPos><B>mgListSetTopPos</B></A> (<A HREF=mggui.htm#mggui>mggui</A> <I>control</I>, int <I>itemPos</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

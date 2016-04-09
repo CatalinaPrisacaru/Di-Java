@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>CONSTRUCTIONFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=CONSTRUCTIONFUNC><H1>Construction Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeleteAllConstructs.htm#mgDeleteAllConstructs><B>mgDeleteAllConstructs</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeleteConstructEdge.htm#mgDeleteConstructEdge><B>mgDeleteConstructEdge</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructEdge</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeleteConstructVertex.htm#mgDeleteConstructVertex><B>mgDeleteConstructVertex</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructVtx</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgFirstConstructEdge.htm#mgFirstConstructEdge><B>mgFirstConstructEdge</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgFirstConstructVertex.htm#mgFirstConstructVertex><B>mgFirstConstructVertex</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGetConstructEdgeCoords.htm#mgGetConstructEdgeCoords><B>mgGetConstructEdgeCoords</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructEdge</I>, <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgGetConstructVertexCoords.htm#mgGetConstructVertexCoords><B>mgGetConstructVertexCoords</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructVtx</I>, <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgNewConstructEdge.htm#mgNewConstructEdge><B>mgNewConstructEdge</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgNewConstructVertex.htm#mgNewConstructVertex><B>mgNewConstructVertex</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgNextConstructEdge.htm#mgNextConstructEdge><B>mgNextConstructEdge</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructEdge</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgNextConstructVertex.htm#mgNextConstructVertex><B>mgNextConstructVertex</B></A> (<A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> <I>editorContext</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructVtx</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetConstructEdgeColor.htm#mgSetConstructEdgeColor><B>mgSetConstructEdgeColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructEdge</I>, <A HREF=mgconstructcolor.htm#mgconstructcolor>mgconstructcolor</A> <I>constructColor</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetConstructEdgeCoords.htm#mgSetConstructEdgeCoords><B>mgSetConstructEdgeCoords</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructEdge</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetConstructVertexColor.htm#mgSetConstructVertexColor><B>mgSetConstructVertexColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructVtx</I>, <A HREF=mgconstructcolor.htm#mgconstructcolor>mgconstructcolor</A> <I>constructColor</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSetConstructVertexCoords.htm#mgSetConstructVertexCoords><B>mgSetConstructVertexCoords</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>constructVtx</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

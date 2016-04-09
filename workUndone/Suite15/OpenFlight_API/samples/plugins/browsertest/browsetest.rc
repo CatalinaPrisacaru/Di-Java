@@ -1,0 +1,131 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+BROWSERTESTDIALOG DIALOG DISCARDABLE  0, 0, 265, 254
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "File/Folder Browser Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "File",FILERADIO,"Button",BS_AUTORADIOBUTTON,13,12,35,10
+    CONTROL         "Folder",DIRRADIO,"Button",BS_AUTORADIOBUTTON,13,24,35,
+                    10
+    CONTROL         "Open",OPENRADIO,"Button",BS_AUTORADIOBUTTON,14,49,35,10
+    CONTROL         "Save",SAVERADIO,"Button",BS_AUTORADIOBUTTON,14,61,35,10
+    CONTROL         "Select Multiple Files ",MULTISELECTCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,77,18,80,10
+    CONTROL         "Overwrite prompt",OVERWRITECHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,77,36,80,10
+    CONTROL         "File must exist",FILEMUSTEXISTCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,77,55,80,10
+    EDITTEXT        FILTEREDIT,173,12,82,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Add",FILTERADDBUTTON,173,26,39,13
+    PUSHBUTTON      "Remove",FILTERREMOVEBUTTON,215,26,40,13
+    LISTBOX         FILTERLIST,173,40,82,30,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        TITLEEDIT,60,82,179,14,ES_AUTOHSCROLL
+    EDITTEXT        INITIALFILEEDIT,60,100,179,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",FILEBROWSEBUTTON,241,100,19,14
+    EDITTEXT        INITIALDIREDIT,60,119,179,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",DIRBROWSEBUTTON,241,119,19,14
+    LISTBOX         FILELIST,5,151,255,80,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    LBS_NOSEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Preview...",PREVIEWBUTTON,151,235,50,14
+    DEFPUSHBUTTON   "OK",MGID_OK,208,235,52,14
+    GROUPBOX        "Mode",IDC_STATIC,5,39,54,36
+    GROUPBOX        "Flags",IDC_STATIC,65,1,96,74
+    LTEXT           "Initial File:",IDC_STATIC,6,103,32,8
+    GROUPBOX        "Filters",IDC_STATIC,167,1,93,74
+    LTEXT           "Initial Directory:",IDC_STATIC,6,122,49,8
+    LTEXT           "Title:",IDC_STATIC,6,85,16,8
+    GROUPBOX        "Type",IDC_STATIC,5,1,54,36
+    LTEXT           "Preview Results:",IDC_STATIC,6,139,54,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    BROWSERTESTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 260
+        BOTTOMMARGIN, 249
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

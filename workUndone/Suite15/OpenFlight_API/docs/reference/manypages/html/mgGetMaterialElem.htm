@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetMaterialElem</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetMaterialElem><H1 CLASS="APISYMBOL">mgGetMaterialElem</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetMaterialElem</B> - gets the material components of a record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetMaterialElem</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>ambientR</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>ambientG</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>ambientB</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>diffuseR</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>diffuseG</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>diffuseB</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>specularR</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>specularG</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>specularB</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>emissiveR</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>emissiveG</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>emissiveB</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>shininess</I>,</TD></TR>
+<TR><TD></TD><TD>float*</TD><TD><I>alpha</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, ambientR, ambientG, ambientB, diffuseR, diffuseG, diffuseB, specularR, specularG, specularB, emissiveR, emissiveG, emissiveB, shininess, alpha <B>mgGetMaterialElem</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltIMaterial>fltIMaterial</A>
+ or <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+ record, this function 
+extracts the individual material components of that record.  If <I>rec</I> 
+is a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltIMaterial>fltIMaterial</A>
+ record, this function extracts the components 
+directly from <I>rec</I>.  If <I>rec</I> is a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+ record, this 
+function extracts the components from the material assigned to the polygon.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the material record pointer</DD><DT><I>ambientR</I></DT><DD>the pointer for the ambient red value</DD><DT><I>ambientG</I></DT><DD>the pointer for the ambient green value</DD><DT><I>ambientB</I></DT><DD>the pointer for the ambient blue value</DD><DT><I>diffuseR</I></DT><DD>the pointer for the diffuse red value</DD><DT><I>diffuseG</I></DT><DD>the pointer for the diffuse green value</DD><DT><I>diffuseB</I></DT><DD>the pointer for the diffuse blue value</DD><DT><I>specularR</I></DT><DD>the pointer for the specular red value</DD><DT><I>specularG</I></DT><DD>the pointer for the specular green value</DD><DT><I>specularB</I></DT><DD>the pointer for the specular blue value</DD><DT><I>emissiveR</I></DT><DD>the pointer for the emissive red value</DD><DT><I>emissiveG</I></DT><DD>the pointer for the emissive green value</DD><DT><I>emissiveB</I></DT><DD>the pointer for the emissive blue value</DD><DT><I>shininess</I></DT><DD>the pointer for the shininess value</DD><DT><I>alpha</I></DT><DD>the pointer for the alpha (transparency) value</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the material components are found. 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> if the record doesn&#146t have material properties.</DD><DT>ambientR</DT><DD>If function is successful, ambientR contains the ambient red value, otherwise 
+ambientR is undefined.</DD><DT>ambientG</DT><DD>If function is successful, ambientG contains the ambient green value, otherwise 
+ambientG is undefined.</DD><DT>ambientB</DT><DD>If function is successful, ambientB contains the ambient blue value, otherwise 
+ambientB is undefined.</DD><DT>diffuseR</DT><DD>If function is successful, diffuseR contains the diffuse red value, otherwise 
+diffuseR is undefined.</DD><DT>diffuseG</DT><DD>If function is successful, diffuseG contains the diffuse green value, otherwise 
+diffuseG is undefined.</DD><DT>diffuseB</DT><DD>If function is successful, diffuseB contains the diffuse blue value, otherwise 
+diffuseB is undefined.</DD><DT>specularR</DT><DD>If function is successful, specularR contains the specular red value, otherwise 
+specularR is undefined.</DD><DT>specularG</DT><DD>If function is successful, specularG contains the specular green value, otherwise 
+specularG is undefined.</DD><DT>specularB</DT><DD>If function is successful, specularB contains the specular blue value, otherwise 
+specularB is undefined.</DD><DT>emissiveR</DT><DD>If function is successful, emissiveR contains the emissive red value, otherwise 
+emissiveR is undefined.</DD><DT>emissiveG</DT><DD>If function is successful, emissiveG contains the emissive green value, otherwise 
+emissiveG is undefined.</DD><DT>emissiveB</DT><DD>If function is successful, emissiveB contains the emissive blue value, otherwise 
+emissiveB is undefined.</DD><DT>shininess</DT><DD>If function is successful, shininess contains the shininess value, otherwise 
+shininess is undefined.</DD><DT>alpha</DT><DD>If function is successful, alpha contains the alpha value, otherwise 
+alpha is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetFirstMaterial.htm#mgGetFirstMaterial>mgGetFirstMaterial</A>, <A HREF=mgGetNextMaterial.htm#mgGetNextMaterial>mgGetNextMaterial</A></DD></DL></BODY>
+
+</HTML>

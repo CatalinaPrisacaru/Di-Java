@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+<TITLE>STRUCFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=STRUCFUNC><H1>Structure Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgAppend.htm#mgAppend><B>mgAppend</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>parent</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>child</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgAttach.htm#mgAttach><B>mgAttach</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>parent</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>child</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgContainsReadOnly.htm#mgContainsReadOnly><B>mgContainsReadOnly</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgCountAttrChild.htm#mgCountAttrChild><B>mgCountAttrChild</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgCountChild.htm#mgCountChild><B>mgCountChild</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgCountNestedChild.htm#mgCountNestedChild><B>mgCountNestedChild</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgCountXform.htm#mgCountXform><B>mgCountXform</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgDelete.htm#mgDelete><B>mgDelete</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgDeReference.htm#mgDeReference><B>mgDeReference</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgDetach.htm#mgDetach><B>mgDetach</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgDuplicate.htm#mgDuplicate><B>mgDuplicate</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgDuplicateEx.htm#mgDuplicateEx><B>mgDuplicateEx</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, unsigned int <I>flags</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgDuplicateToDb.htm#mgDuplicateToDb><B>mgDuplicateToDb</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>toDb</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgDuplicateToDbEx.htm#mgDuplicateToDbEx><B>mgDuplicateToDbEx</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>toDb</I>, unsigned int <I>flags</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgEvaluateAsBool.htm#mgEvaluateAsBool><B>mgEvaluateAsBool</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>parent</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, void* <I>userData</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgreclist.htm#mgreclist>mgreclist</A> <TD><A HREF=mgFind.htm#mgFind><B>mgFind</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>matchFunc</I>, void* <I>userData</I>, unsigned int <I>flags</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgreclist.htm#mgreclist>mgreclist</A> <TD><A HREF=mgFindEx.htm#mgFindEx><B>mgFindEx</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>startMatrix</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>matchFunc</I>, void* <I>userData</I>, unsigned int <I>flags</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeNodeExpression.htm#mgFreeNodeExpression><B>mgFreeNodeExpression</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetAttrChild.htm#mgGetAttrChild><B>mgGetAttrChild</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetChild.htm#mgGetChild><B>mgGetChild</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetChildNth.htm#mgGetChildNth><B>mgGetChildNth</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>parent</I>, int <I>nth</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetCurrentDb.htm#mgGetCurrentDb><B>mgGetCurrentDb</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetFirstInstance.htm#mgGetFirstInstance><B>mgGetFirstInstance</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>ref</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetMorphVertex.htm#mgGetMorphVertex><B>mgGetMorphVertex</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetNestedChild.htm#mgGetNestedChild><B>mgGetNestedChild</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetNestedParent.htm#mgGetNestedParent><B>mgGetNestedParent</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetNext.htm#mgGetNext><B>mgGetNext</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetNextInstance.htm#mgGetNextInstance><B>mgGetNextInstance</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>inst</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetParent.htm#mgGetParent><B>mgGetParent</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetPrevious.htm#mgGetPrevious><B>mgGetPrevious</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetRecByName.htm#mgGetRecByName><B>mgGetRecByName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetReference.htm#mgGetReference><B>mgGetReference</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetXform.htm#mgGetXform><B>mgGetXform</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgxfllcode.htm#mgxfllcode>mgxfllcode</A> <TD><A HREF=mgGetXformType.htm#mgGetXformType><B>mgGetXformType</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgHasXform.htm#mgHasXform><B>mgHasXform</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgInsert.htm#mgInsert><B>mgInsert</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>sibling</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsFirstInstance.htm#mgIsFirstInstance><B>mgIsFirstInstance</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsFlagOn.htm#mgIsFlagOn><B>mgIsFlagOn</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsInstance.htm#mgIsInstance><B>mgIsInstance</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsReadOnly.htm#mgIsReadOnly><B>mgIsReadOnly</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsReference.htm#mgIsReference><B>mgIsReference</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsRelated.htm#mgIsRelated><B>mgIsRelated</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>parent</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>child</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsXformEmpty.htm#mgIsXformEmpty><B>mgIsXformEmpty</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIterateRecList.htm#mgIterateRecList><B>mgIterateRecList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>iterateFunc</I>, void* <I>userData</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgLeastDetail.htm#mgLeastDetail><B>mgLeastDetail</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgLessDetail.htm#mgLessDetail><B>mgLessDetail</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMoreDetail.htm#mgMoreDetail><B>mgMoreDetail</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMostDetail.htm#mgMostDetail><B>mgMostDetail</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <TD><A HREF=mgNewNodeExpressionCallback.htm#mgNewNodeExpressionCallback><B>mgNewNodeExpressionCallback</B></A> (<A HREF=mgnodeexpressionfunc.htm#mgnodeexpressionfunc>mgnodeexpressionfunc</A> <I>v</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <TD><A HREF=mgNewNodeExpressionDouble.htm#mgNewNodeExpressionDouble><B>mgNewNodeExpressionDouble</B></A> (double <I>v</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <TD><A HREF=mgNewNodeExpressionGetAtt.htm#mgNewNodeExpressionGetAtt><B>mgNewNodeExpressionGetAtt</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <TD><A HREF=mgNewNodeExpressionInteger.htm#mgNewNodeExpressionInteger><B>mgNewNodeExpressionInteger</B></A> (int <I>v</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <TD><A HREF=mgNewNodeExpressionOperator.htm#mgNewNodeExpressionOperator><B>mgNewNodeExpressionOperator</B></A> (<A HREF=mgnodeexpressionoperator.htm#mgnodeexpressionoperator>mgnodeexpressionoperator</A> <I>oper</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgNewRec.htm#mgNewRec><B>mgNewRec</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgNewRecDb.htm#mgNewRecDb><B>mgNewRecDb</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionEvaluateAsBool.htm#mgNodeExpressionEvaluateAsBool><B>mgNodeExpressionEvaluateAsBool</B></A> (<A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>expressionRoot</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionLoadFromString.htm#mgNodeExpressionLoadFromString><B>mgNodeExpressionLoadFromString</B></A> (const <A HREF=#char >char *</A> <I>expressionString</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionSetLeft.htm#mgNodeExpressionSetLeft><B>mgNodeExpressionSetLeft</B></A> (<A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>expression</I>, <A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>left</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionSetRight.htm#mgNodeExpressionSetRight><B>mgNodeExpressionSetRight</B></A> (<A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>expression</I>, <A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>right</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionSetVariableDouble.htm#mgNodeExpressionSetVariableDouble><B>mgNodeExpressionSetVariableDouble</B></A> (<A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>node</I>, const char* <I>variableName</I>, double <I>val</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionSetVariableInt.htm#mgNodeExpressionSetVariableInt><B>mgNodeExpressionSetVariableInt</B></A> (<A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>node</I>, const char* <I>variableName</I>, int <I>val</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgNodeExpressionSetVariableString.htm#mgNodeExpressionSetVariableString><B>mgNodeExpressionSetVariableString</B></A> (<A HREF=mgnodeexpression.htm#mgnodeexpression>mgnodeexpression</A> <I>node</I>, const char* <I>variableName</I>, const char* <I>val</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgRec2Db.htm#mgRec2Db><B>mgRec2Db</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgRec2Filename.htm#mgRec2Filename><B>mgRec2Filename</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReference.htm#mgReference><B>mgReference</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>refRec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgRemove.htm#mgRemove><B>mgRemove</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetCurrentDb.htm#mgSetCurrentDb><B>mgSetCurrentDb</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgUnRemove.htm#mgUnRemove><B>mgUnRemove</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgValidAttach.htm#mgValidAttach><B>mgValidAttach</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>parentCode</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>childCode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWalk.htm#mgWalk><B>mgWalk</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>preAction</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>postAction</I>, void* <I>userData</I>, unsigned int <I>flags</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWalkEx.htm#mgWalkEx><B>mgWalkEx</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>node</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>startMatrix</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>preAction</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>postAction</I>, void* <I>userData</I>, unsigned int <I>flags</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWalkGetMatrix.htm#mgWalkGetMatrix><B>mgWalkGetMatrix</B></A> (void* <I>userdata</I>, <A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A> <I>matrix</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWalkRecList.htm#mgWalkRecList><B>mgWalkRecList</B></A> (<A HREF=mgreclist.htm#mgreclist>mgreclist</A> <I>recList</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>preAction</I>, <A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A> <I>postAction</I>, void* <I>userData</I>, unsigned int <I>flags</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

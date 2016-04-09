@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetExtRec</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetExtRec><H1 CLASS="APISYMBOL">mgGetExtRec</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetExtRec</B> - gets pointer to one of a record's tag-along 
+extension records.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgGetExtRec</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>rcode</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetExtRec</B> returns the tag-along extension record 
+identified by <I>rcode</I> attached to <I>rec</I>.  Use this function to 
+retrieve a tag-along extension record that may or may not be attached 
+to <I>rec</I>. Use <A HREF=mgGetAttRec.htm#mgGetAttRec>mgGetAttRec</A> to retrieve a nested attribute record.</P></DD><DD><P>This function is useful to resolve field name ambiguity caused 
+by multiple tag-along extension records containing common field names. 
+For example, consider an OpenFlight data extension that defines two 
+tag-along extension records for <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+, <B>myExt1</B> and <B>myExt2</B>. 
+In turn, each of these tag-along extension records contains a field 
+named <B>myIntField</B>.  Given any <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltGroup>fltGroup</A>
+ node, referencing field 
+<B>myIntField</B> using <A HREF=mgGetAttList.htm#mgGetAttList>mgGetAttList</A> or <A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A> is ambiguous 
+since both <B>myExt1</B> and <B>myExt2</B> contain fields by that name.  The 
+example below shows how to resolve this ambiguity when accessing 
+these nested values.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>points to the record that may or 
+may not have a tag-along extension record 
+attached</DD><DT><I>rcode</I></DT><DD>the tag-along extension record code</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the tag-along extension record pointer if found, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows two techniques for getting the value 
+of the field <B>myIntField</B> from a tag-along extension record 
+attached to <B>groupRec</B>.  The first technique leads to undefined 
+results because it is not clear which tag-along extension record 
+containing <B>myIntField</B> to use.  The second technique uses 
+<B>mgGetExtRec</B> to resolve the ambiguity.</DT><DT><PRE CLASS="EXAMPLE">mgrec* groupRec;
+mgrec* extRec;
+int fieldVal;
+
+// this call to mgGetAttList is ambiguous
+mgGetAttList (groupRec, myIntField, &fieldVal, MG_NULL);
+
+// this call to mgGetAttList is not ambiguous
+extRec = mgGetExtRec (groupRec, myExt1);
+if (extRec)
+   mgGetAttList (extRec, myIntField, &fieldVal, MG_NULL);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetAttList.htm#mgGetAttList>mgGetAttList</A>, <A HREF=mgGetAttRec.htm#mgGetAttRec>mgGetAttRec</A></DD></DL></BODY>
+
+</HTML>

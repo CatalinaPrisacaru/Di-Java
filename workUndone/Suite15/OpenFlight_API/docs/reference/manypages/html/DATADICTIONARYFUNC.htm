@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<TITLE>DATADICTIONARYFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=DATADICTIONARYFUNC><H1>Data Dictionary Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetAliasCount.htm#ddGetAliasCount><B>ddGetAliasCount</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetChildCount.htm#ddGetChildCount><B>ddGetChildCount</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">const char* <TD><A HREF=ddGetDefString.htm#ddGetDefString><B>ddGetDefString</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">float <TD><A HREF=ddGetDefVal.htm#ddGetDefVal><B>ddGetDefVal</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">const char* <TD><A HREF=ddGetDesc.htm#ddGetDesc><B>ddGetDesc</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddGetExtendCode.htm#ddGetExtendCode><B>ddGetExtendCode</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetExtFieldCount.htm#ddGetExtFieldCount><B>ddGetExtFieldCount</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddGetExtFieldNth.htm#ddGetExtFieldNth><B>ddGetExtFieldNth</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, unsigned int <I>nth</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetFieldCount.htm#ddGetFieldCount><B>ddGetFieldCount</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddGetFieldNth.htm#ddGetFieldNth><B>ddGetFieldNth</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, unsigned int <I>nth</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetKey.htm#ddGetKey><B>ddGetKey</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">const char* <TD><A HREF=ddGetLabel.htm#ddGetLabel><B>ddGetLabel</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetLength.htm#ddGetLength><B>ddGetLength</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">float <TD><A HREF=ddGetMaxVal.htm#ddGetMaxVal><B>ddGetMaxVal</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">float <TD><A HREF=ddGetMinVal.htm#ddGetMinVal><B>ddGetMinVal</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddGetMyCode.htm#ddGetMyCode><B>ddGetMyCode</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">const char* <TD><A HREF=ddGetName.htm#ddGetName><B>ddGetName</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetParentCount.htm#ddGetParentCount><B>ddGetParentCount</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddGetParentNth.htm#ddGetParentNth><B>ddGetParentNth</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, unsigned int <I>nth</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">const char* <TD><A HREF=ddGetPrefix.htm#ddGetPrefix><B>ddGetPrefix</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">const char* <TD><A HREF=ddGetSiteId.htm#ddGetSiteId><B>ddGetSiteId</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=ddGetSiteNo.htm#ddGetSiteNo><B>ddGetSiteNo</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgtagtype.htm#mgtagtype>mgtagtype</A> <TD><A HREF=ddGetTagType.htm#ddGetTagType><B>ddGetTagType</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddGetUCode.htm#ddGetUCode><B>ddGetUCode</B></A> (const char* <I>siteId</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>localCode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char <TD><A HREF=ddGetVersion.htm#ddGetVersion><B>ddGetVersion</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsDcode.htm#ddIsDcode><B>ddIsDcode</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsDefSet.htm#ddIsDefSet><B>ddIsDefSet</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsDisplay.htm#ddIsDisplay><B>ddIsDisplay</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsEdit.htm#ddIsEdit><B>ddIsEdit</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsEnumSet.htm#ddIsEnumSet><B>ddIsEnumSet</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsField.htm#ddIsField><B>ddIsField</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>fcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsFieldFollowAll.htm#ddIsFieldFollowAll><B>ddIsFieldFollowAll</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>fcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsFieldFollowInLine.htm#ddIsFieldFollowInLine><B>ddIsFieldFollowInLine</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>fcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsFieldFollowPointer.htm#ddIsFieldFollowPointer><B>ddIsFieldFollowPointer</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>rcode</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>fcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsFlt.htm#ddIsFlt><B>ddIsFlt</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsLegalXcode.htm#ddIsLegalXcode><B>ddIsLegalXcode</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>parentCode</I>, <A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsRangeSet.htm#ddIsRangeSet><B>ddIsRangeSet</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>dcode</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsRcode.htm#ddIsRcode><B>ddIsRcode</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=ddIsSearch.htm#ddIsSearch><B>ddIsSearch</B></A> (<A HREF=mgcode.htm#mgcode>mgcode</A> <I>code</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddLabelToCode.htm#ddLabelToCode><B>ddLabelToCode</B></A> (const char* <I>label</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcode.htm#mgcode>mgcode</A> <TD><A HREF=ddNameToCode.htm#ddNameToCode><B>ddNameToCode</B></A> (const char* <I>name</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

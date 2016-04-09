@@ -1,0 +1,29 @@
+#demo-table {
+  font: 100% sans-serif;
+  background-color: #cef;
+  border-collapse: collapse;
+  empty-cells: show;
+  border: 1px solid #7a7;
+  margin:auto;
+  margin-top:5vh;
+  height:75vh;
+  width:400px;
+}
+
+.caption{
+  text-align: left;
+  font-weight: bold;
+  font-size: 200%;
+  border-bottom: .2em solid #4ca;
+  margin-bottom: .5em;
+}
+
+.centeredText{
+	text-align: right;
+	margin-right: 2cm;
+	padding-top:40px
+}
+.button{
+	padding-top:30px;
+	text-align:center;
+}

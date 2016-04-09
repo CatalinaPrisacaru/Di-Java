@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>mgConvexHullGetTriangleNth</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgConvexHullGetTriangleNth><H1 CLASS="APISYMBOL">mgConvexHullGetTriangleNth</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgConvexHullGetTriangleNth</B> - gets the nth triangle of 
+a convex hull.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgConvexHullGetTriangleNth</B> (</TD><TD><A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A></TD><TD><I>hull</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>nth</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgconvexhulltriangle.htm#mgconvexhulltriangle>mgconvexhulltriangle*</A></TD><TD><I>triangle</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, triangle <B>mgConvexHullGetTriangleNth</B> (</TD><TD><A HREF=mgconvexhull.htm#mgconvexhull>mgconvexhull</A></TD><TD><I>hull</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgConvexHullGetTriangleNth</B> returns the <I>nth</I> triangle of the 
+specified convex <I>hull</I>.  The first triangle is specified by <I>nth</I> 
+equal to 1.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>hull</I></DT><DD>the convex hull</DD><DT><I>nth</I></DT><DD>which triangle to get</DD><DT><I>triangle</I></DT><DD>the triangle retrieved</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the triangle was retrieved successfully, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>triangle</DT><DD>If function is successful, this contains the retrieved triangle, 
+otherwise this is undefined.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>See <A HREF=mgGetConvexHull.htm#mgGetConvexHull>mgGetConvexHull</A> for an example of how to build and examine 
+a convex hull.</DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetConvexHull.htm#mgGetConvexHull>mgGetConvexHull</A>, <A HREF=mgConvexHullGetTriangleCount.htm#mgConvexHullGetTriangleCount>mgConvexHullGetTriangleCount</A></DD></DL></BODY>
+
+</HTML>

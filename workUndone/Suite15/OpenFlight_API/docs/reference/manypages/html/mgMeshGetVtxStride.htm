@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>mgMeshGetVtxStride</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMeshGetVtxStride><H1 CLASS="APISYMBOL">mgMeshGetVtxStride</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMeshGetVtxStride</B> - gets the vertex stride 
+for a mesh.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>unsigned int <B>mgMeshGetVtxStride</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This function retrieves the vertex stride for mesh <I>rec</I>. 
+The vertex stride of a mesh indicates the number of bytes between 
+successive vertices in the mesh vertex pool.  This number is always 
+a multiple of 8 to ensure 8 byte alignment for double precision 
+floating point coordinates.</P></DD><DD><P>You can use this value together with the vertex data offsets 
+returned by <A HREF=mgMeshGetVtxOffset.htm#mgMeshGetVtxOffset>mgMeshGetVtxOffset</A> to extract data from a mesh 
+vertex pool. Note: This is not the 
+recommended technique for extracting data from the mesh vertex pool. 
+Instead, it is much simpler to use the functions 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A> and <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ node</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the vertex stride of mesh <I>rec</I> if successful, 
+0 otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgMeshGetVtxPool.htm#mgMeshGetVtxPool>mgMeshGetVtxPool</A>, <A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask>mgMeshGetVtxMask</A>, <A HREF=mgMeshGetVtxOffset.htm#mgMeshGetVtxOffset>mgMeshGetVtxOffset</A>, 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA>mgMeshGetVtxColorRGBA</A>, <A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A>, <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A></DD></DL></BODY>
+
+</HTML>

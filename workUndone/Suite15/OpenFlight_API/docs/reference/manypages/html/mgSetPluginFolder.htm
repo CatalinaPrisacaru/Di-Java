@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetPluginFolder</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetPluginFolder><H1 CLASS="APISYMBOL">mgSetPluginFolder</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetPluginFolder</B> - sets the plug-in runtime directory.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgSetPluginFolder</B> (</TD><TD>const char*</TD><TD><I>folder</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSetPluginFolder</B> sets the folder (or folders) from which plug-ins 
+will be loaded for stand-alone application environments. Before calling <A HREF=mgInit.htm#mgInit>mgInit</A> 
+you can use&#32this function to override this location. To specify a single folder, 
+simply pass a single path for <I>folder</I>. To specify more then one folder, pass 
+a semi-colon delimited list of paths for <I>folder</I>.</P></DD><DD><P>Note that if you specify multiple plug-in folders and the Creator plug-in folder is 
+one of them, you must specify the Creator plug-in folder as the first in the list. If 
+you specify multiple folders and don't specify the Creator plug-in folder, the order 
+is not important.</P></DD><DD><P>Since plug-ins are loaded by <A HREF=mgInit.htm#mgInit>mgInit</A>, you must call <B>mgSetPluginFolder</B> 
+before calling <A HREF=mgInit.htm#mgInit>mgInit</A>. This function is ignored if called in the Creator 
+modeling environment.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>folder</I></DT><DD>the plug-in folder(s) to search</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise. 
+This function will fail if called after <A HREF=mgInit.htm#mgInit>mgInit</A> or from a plug-in in the Creator 
+modeling environment.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>In this example, the stand-alone program uses <B>mgSetPluginFolder</B> to 
+set the location of the plug-in runtime directory. In this case, the stand-alone 
+program wants to load Creator plug-ins and its own set of plug-ins.</DT><DT><PRE CLASS="EXAMPLE">// set the plug-in folders
+// the Creator plug-in folder must be the first in the list
+// the custom plug-in folder(s) must come after
+mgSetPluginFolder ("C:/Presagis/Suite14/Creator/config/plugins;D:/MyPlugins");
+
+// has to be called before mgInit
+mgInit (argc, argv)</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetMessagesEnabled.htm#mgGetMessagesEnabled>mgGetMessagesEnabled</A>, <A HREF=mgInit.htm#mgInit>mgInit</A></DD></DL></BODY>
+
+</HTML>

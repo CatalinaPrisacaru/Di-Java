@@ -1,0 +1,206 @@
+<HTML>
+<HEAD>
+<TITLE>mgPluginToolNewAction</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPluginToolNewAction><H1 CLASS="APISYMBOL">mgPluginToolNewAction</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPluginToolNewAction</B> - creates a plug-in tool action.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgtoolaction <B>mgPluginToolNewAction</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>pluginTool</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>actionName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPluginToolNewAction</B> creates a plug-in tool action identified by 
+<I>actionName</I>.  If your plug-in tool uses keyboard shortcuts in its dialog, 
+it must create a plug-in tool action using this function in the plug-in 
+initialization function. It can then assign a default keyboard shortcut 
+to the action and bind the action to a user interface control in the 
+dialog.</P></DD><DD><P>Note: You must create all plug-in tool actions within your plug-in 
+initialization function.  If you create plug-in tool actions at any other 
+time during the modeling session, the results are not defined.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the plug-in tool for which the action applies</DD><DT><I>actionName</I></DT><DD>the name of the new tool action</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Pointer to plug-in tool action if created successfully, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how a plug-in might create a set 
+of actions for a tool, assign default shortcuts for the actions, and 
+bind the actions to specific controls in the plug-in tool dialog.</DT><DT><PRE CLASS="EXAMPLE">// Plug-in tool actions
+static mgtoolaction Action1 = MG_NULL;
+static mgtoolaction Action2 = MG_NULL;
+
+// Tool instance data
+typedef struct toolrec_t {
+   mgresource        resource;
+   mgplugintool      pluginTool;
+   mgrec*            db;
+} toolrec;
+
+// Control callback function for Action buttons in dialog
+static mgstatus ActionCallback (mggui gui, mgcontrolid controlId,
+&#32&#32&#32&#32 mgguicallbackreason callbackReason,
+&#32&#32&#32&#32 void* userData, void* callData)
+{
+   toolrec* toolRec = (toolrec*) userData;
+   switch (callbackReason) {
+   case MGCB_ACTIVATE:
+      // Will get here if:
+      // User pressed either action button
+      // --OR--
+      // User pressed shortcut key sequence for either action
+      // while tool dialog is active
+      //
+      if (mgControlIdsMatch (controlId, ACTION1_BUTTON)) {
+      // ACTION1_BUTTON button pressed or key sequence CTRL+A
+      }
+      else if (mgControlIdsMatch (controlId, ACTION2_BUTTON)) {
+      // ACTION2_BUTTON button pressed or key sequence SHIFT+CTRL+A
+      }
+      break;
+   case MGCB_REFRESH:
+      break;
+   }
+   return (MSTAT_OK);
+}
+
+// Tool dialog function
+static mgstatus DialogProc (mggui dialog, mgdialogid dialogId,
+&#32&#32&#32     mgguicallbackreason callbackReason,
+&#32&#32&#32     void* userData, void* callData)
+{
+   toolrec* toolRec = (toolrec*) userData;
+   mgeditorcontext editorContext = mgEditorGetContext (dialog);
+   mggui gui;
+
+   switch (callbackReason)
+   {
+   case MGCB_INIT:
+      // Bind Action1 to ACTION1_BUTTON
+      gui = mgFindGuiById (dialog, ACTION1_BUTTON );
+      mgSetGuiCallback (gui, MGCB_ACTIVATE|MGCB_REFRESH, ActionCallback, toolRec);
+      mgSetGuiToolAction (gui, Action1);
+
+      // Bind Action2 to ACTION2_BUTTON
+      gui = mgFindGuiById (dialog, ACTION2_BUTTON );
+      mgSetGuiCallback (gui, MGCB_ACTIVATE|MGCB_REFRESH, ActionCallback, toolRec);
+      mgSetGuiToolAction (gui, Action2);
+      break;
+
+   case MGCB_DESTROY:
+      mgFree (toolRec);
+      break;
+   }
+   return (MSTAT_OK);
+}
+
+// Tool create dialog function
+static mggui CreateDialogFunc (mgplugintool pluginTool, void* userData)
+{
+   toolrec* toolRec = (toolrec*) userData;
+   mggui dialog = mgResourceGetDialog (MG_NULL, toolRec-&gtresource, MYTOOLDIALOG,
+&#32&#32&#32       MGCB_INIT|MGCB_DESTROY, DialogProc, toolRec);
+   return (dialog);
+}
+
+// Tool start function
+static mgstatus StartTool (mgplugintool pluginTool, void* userData, void* callData)
+{
+   mgresource resource = (mgresource) userData;
+   mgeditorcallbackrec* cbData = (mgeditorcallbackrec*) callData;
+   mgrec* db = mgGetActivationDb (cbData-&gttoolActivation);
+   toolrec* toolRec;
+
+   // Allocate and initialize tool instance data
+   toolRec = (toolrec*) mgMalloc (sizeof(toolrec));
+   toolRec-&gtresource = resource;
+   toolRec-&gtdb = db;
+   toolRec-&gtpluginTool = pluginTool;
+
+   // Tell caller that tool can continue and to create its dialog
+   cbData-&gtdialogRequired = MG_TRUE;
+   cbData-&gttoolData = toolRec;
+   return (MSTAT_OK);
+}
+
+// Plug-in initialization function
+MGPIDECLARE(mgbool) mgpInit (mgplugin plugin, int* argc, char* argv [])
+{
+   mgmodulehandle moduleHandle;
+   mgplugintool pluginTool;
+   mgkeysequence keySequence;
+   mgresource resource;
+
+   moduleHandle = mgGetModuleHandle (plugin);
+   resource = mgLoadResource (moduleHandle);
+
+   // Register "My Tool" editor tool in the "Edit" menu
+   pluginTool = mgRegisterEditor (
+      plugin, "My Tool",
+      StartTool, resource,
+      MTA_VERSION, "1.0",
+      MTA_MENULOCATION, MMENU_EDIT,
+      MG_NULL);
+
+   if (pluginTool) {
+      // Assign create dialog function for editor tool instance
+      mgEditorSetCreateDialogFunc (pluginTool, CreateDialogFunc);
+
+      // Create Action1, shortcut CTRL+A
+      Action1 = mgPluginToolNewAction (pluginTool, "Action 1");
+      keySequence.keyboardFlags = MKB_CTRLKEY;
+      keySequence.key = MKEY_A;
+      mgToolActionSetShortCut (Action1, &keySequence);
+
+      // Create Action2, shortcut SHIFT+CTRL+A
+      Action2 = mgPluginToolNewAction (pluginTool, "Action 2");
+      keySequence.keyboardFlags = MKB_SHIFT|MKB_CTRL;
+      keySequence.key = MKEY_A;
+      mgToolActionSetShortCut (Action2, &keySequence);
+   }
+   return (pluginTool ? MG_TRUE : MG_FALSE);
+}
+
+// Plug-in termination function
+MGPIDECLARE(void) mgpExit (mgplugin plugin)
+{
+   mgUnregisterAllTools (plugin);
+   mgPluginToolFreeAction (Action1);
+   Action1 = MG_NULL;
+   mgPluginToolFreeAction (Action2);
+   Action2 = MG_NULL;
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPluginToolFreeAction.htm#mgPluginToolFreeAction>mgPluginToolFreeAction</A>, <A HREF=mgPluginToolGetAction.htm#mgPluginToolGetAction>mgPluginToolGetAction</A>, <A HREF=mgToolActionGetName.htm#mgToolActionGetName>mgToolActionGetName</A>, 
+<A HREF=mgToolActionSetShortCut.htm#mgToolActionSetShortCut>mgToolActionSetShortCut</A>, <A HREF=mgToolActionGetShortCut.htm#mgToolActionGetShortCut>mgToolActionGetShortCut</A>, 
+<A HREF=mgToolActionGetShortCutString.htm#mgToolActionGetShortCutString>mgToolActionGetShortCutString</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<TITLE>mgExtensionFieldGetXMLString</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExtensionFieldGetXMLString><H1 CLASS="APISYMBOL">mgExtensionFieldGetXMLString</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExtensionFieldGetXMLString</B> - gets the XML string of an 
+extension field on a node.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgExtensionFieldGetXMLString</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fieldGuid</I>,</TD></TR>
+<TR><TD></TD><TD>char**</TD><TD><I>fieldValue</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, fieldValue <B>mgExtensionFieldGetXMLString</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fieldGuid</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExtensionFieldGetXMLString</B> gets the XML string 
+value of an extension field identified by <I>fieldGuid</I>, attached to node <I>rec</I>.</P></DD><DD><P>If successful, the value of the extension field is returned in the output 
+parameter <I>fieldValue</I>, otherwise it is undefined.</P></DD><DD><P>Note: If the data type of the extension field is not <A HREF=mgtagtype.htm#mgtagtype>MTYPE_XML</A>, 
+this function will attempt to coerce the extension field value to string and return 
+the corresponding value in <I>fieldValue</I>.  For example, a field of type 
+<A HREF=mgtagtype.htm#mgtagtype>MTYPE_FLAG</A> will set <I>fieldValue</I> to "0" or "1".  A field of type 
+<A HREF=mgtagtype.htm#mgtagtype>MTYPE_INT</A>, <A HREF=mgtagtype.htm#mgtagtype>MTYPE_FLOAT</A> or <A HREF=mgtagtype.htm#mgtagtype>MTYPE_DOUBLE</A> 
+will simply convert the numeric value to string set <I>fieldValue</I> to the result.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The string returned in <I>fieldValue</I> is dynamically allocated and must 
+be deallocated by the caller when it is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to free the returned string in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the node to get extension value from</DD><DT><I>fieldGuid</I></DT><DD>the GUID of the extension field</DD><DT><I>fieldValue</I></DT><DD>the address of value to receive field value</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise. 
+This function will fail if <I>fieldGuid</I> does not specify a valid extension field 
+currently attached to <I>rec</I> or <I>fieldValue</I> is <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</DD><DT>fieldValue</DT><DD>If function is successful, <I>fieldValue</I> contains the retrieved 
+value, otherwise it will not be defined.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) illustrate the 
+use of <B>mgExtensionFieldGetXMLString</B>.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">char* fieldValue = NULL;
+mgbool status;
+
+status = mgExtensionFieldGetXMLString (rec, "732202BF-3EFA-4451-B8A6-B817DDB7BBAE", &fieldValue)
+
+if (MSTAT_ISOK (status)) {
+   printf ("Field Value: %s", fieldValue);
+   // free allocated memory when done with value
+   mgFree (fieldValue);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">status, fieldValue = mgExtensionFieldGetXMLString (rec, "732202BF-3EFA-4451-B8A6-B817DDB7BBAE")
+if (MSTAT_ISOK (status)):
+   print "Field Value:",fieldValue</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgExtensionFieldSetXMLString.htm#mgExtensionFieldSetXMLString>mgExtensionFieldSetXMLString</A>, 
+<A HREF=mgExtensionFieldGetInteger.htm#mgExtensionFieldGetInteger>mgExtensionFieldGetInteger</A>, <A HREF=mgExtensionFieldGetDouble.htm#mgExtensionFieldGetDouble>mgExtensionFieldGetDouble</A>, <A HREF=mgExtensionFieldGetBool.htm#mgExtensionFieldGetBool>mgExtensionFieldGetBool</A>, 
+<A HREF=mgExtensionFieldGetFloat.htm#mgExtensionFieldGetFloat>mgExtensionFieldGetFloat</A>, <A HREF=mgExtensionFieldGetString.htm#mgExtensionFieldGetString>mgExtensionFieldGetString</A>, 
+<A HREF=mgExtensionFieldAdd.htm#mgExtensionFieldAdd>mgExtensionFieldAdd</A>, <A HREF=mgExtensionSiteAdd.htm#mgExtensionSiteAdd>mgExtensionSiteAdd</A></DD></DL></BODY>
+
+</HTML>

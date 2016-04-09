@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>mgExtensionSiteAdd</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExtensionSiteAdd><H1 CLASS="APISYMBOL">mgExtensionSiteAdd</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExtensionSiteAdd</B> - creates a new extension site.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgExtensionSiteAdd</B> (</TD><TD>const char*</TD><TD><I>siteGuid</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExtensionSiteAdd</B> creates a new extension site 
+identified by <I>siteGuid</I>.  This GUID (Globally Uniquie IDentifier) 
+is used to uniquely identify the site.</P></DD><DD><P><I>siteGuid</I> is expected to be in the form of 
+Microsoft's Universally Unique Identifier (UUID) standard. 
+In its canonical form, a UUID consists of 32 hexadecimal digits, displayed 
+in 5 groups separated by hyphens, in the form 8-4-4-4-12 for a total of 
+36 characters (32 digits and 4 '-'). For example: 
+<PRE CLASS="EXAMPLE">550e8400-e29b-41d4-a716-446655440000</PRE></P></DD><DD><P>You can use the function <A HREF=mgExtensionMakeGUID.htm#mgExtensionMakeGUID>mgExtensionMakeGUID</A> to generate a GUID 
+for your new extension site, or on Windows you can use the <B>uuidgen</B> utility.</P></DD><DD><P>After you create an extension site, use <A HREF=mgExtensionFieldSetName.htm#mgExtensionFieldSetName>mgExtensionFieldSetName</A> 
+to set the name of the site.  Then use <A HREF=mgExtensionFieldAdd.htm#mgExtensionFieldAdd>mgExtensionFieldAdd</A> to add extension 
+fields to your site.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>siteGuid</I></DT><DD>the GUID of the site to create</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how you might create an extension site 
+and populate it with extension fields.</DT><DT><PRE CLASS="EXAMPLE">#define MY_SITE_GUID    "550e8400-e29b-41d4-a716-446655440000"
+#define MY_FIELD1_GUID  "688538E5-E2D1-4098-9AF0-6DE5E386AB97"
+#define MY_FIELD2_GUID  "735A87F0-F8F8-4926-860A-1EBA5D2EAB74"
+
+// create the new extension site and give it a name
+mgExtensionSiteAdd (MY_SITE_GUID);
+mgExtensionSiteSetName (MY_SITE_GUID, "My Extension Site");
+
+// create the first new extension field and describe it
+mgExtensionFieldAdd (MY_SITE_GUID, MY_FIELD1_GUID);
+mgExtensionFieldSetName (MY_FIELD1_GUID, "My Extension Field 1");
+
+// this field will "extend" fltPolygon (polygon) nodes
+mgExtensionFieldSetAttach (MY_FIELD1_GUID, fltPolgyon);
+
+// it will be an integer value
+mgExtensionFieldSetType (MY_FIELD1_GUID, MTYPE_INT);
+
+// create the second new extension field and describe it
+mgExtensionFieldAdd (MY_SITE_GUID, MY_FIELD2_GUID);
+mgExtensionFieldSetName (MY_FIELD2_GUID, "My Extension Field 2");
+
+// this field will "extend" fltGroup (group) nodes
+mgExtensionFieldSetAttach (MY_FIELD2_GUID, fltGroup);
+
+// it will be an XML formatted string
+mgExtensionFieldSetType (MY_FIELD2_GUID, MTYPE_XML);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgExtensionSiteSetName.htm#mgExtensionSiteSetName>mgExtensionSiteSetName</A>, <A HREF=mgExtensionFieldAdd.htm#mgExtensionFieldAdd>mgExtensionFieldAdd</A>, <A HREF=mgExtensionMakeGUID.htm#mgExtensionMakeGUID>mgExtensionMakeGUID</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>mgGraphicsViewSettingSetInteger</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGraphicsViewSettingSetInteger><H1 CLASS="APISYMBOL">mgGraphicsViewSettingSetInteger</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGraphicsViewSettingSetInteger</B> - sets an integer view setting 
+on one or more graphics views.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGraphicsViewSettingSetInteger</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A></TD><TD><I>settingName</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>settingValue</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>setMask</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGraphicsViewSettingSetInteger</B> sets the value of a named graphics 
+view setting, <I>settingName</I>, to the value specified by <I>settingValue</I>. 
+Depending on the value of <I>setMask</I>, this function will set the value on 
+either the current graphics view or all the graphics views of <I>db</I>.  To set 
+the value on the current graphics view only, specify <A HREF=MGVSM_SETCURRENT.htm#MGVSM_SETCURRENT>MGVSM_SETCURRENT</A> for 
+<I>setMask</I>.  To set the value on all graphics views of <I>db</I> specify 
+<A HREF=MGVSM_SETALL.htm#MGVSM_SETALL>MGVSM_SETALL</A>.</P></DD><DD><P>Currently only a small subset of the graphics view settings 
+are accessible.  For a complete list, see <A HREF=mgsettingname.htm#mgsettingname>mgsettingname</A>.</P></DD><DD><P>Note that the prefix of the setting name, either <B>MGVD</B> or <B>MGVI</B>, 
+indicates whether the corresponding setting value is double or integer, 
+respectively.  If the value is double, use 
+<A HREF=mgGraphicsViewSettingGetDouble.htm#mgGraphicsViewSettingGetDouble>mgGraphicsViewSettingGetDouble</A> and <A HREF=mgGraphicsViewSettingSetDouble.htm#mgGraphicsViewSettingSetDouble>mgGraphicsViewSettingSetDouble</A> 
+to get and set the value, respectively.  If the value is integer, use 
+<A HREF=mgGraphicsViewSettingGetInteger.htm#mgGraphicsViewSettingGetInteger>mgGraphicsViewSettingGetInteger</A> and <B>mgGraphicsViewSettingSetInteger</B>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>settingName</I></DT><DD>the graphics view setting name</DD><DT><I>settingValue</I></DT><DD>the value to set</DD><DT><I>setMask</I></DT><DD>the mask specifying which graphics 
+views to set</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if there is a graphics view visible 
+in Creator, <I>settingName</I> represents a valid integer graphics view 
+setting, and the value was set successfully, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGraphicsViewSettingGetInteger.htm#mgGraphicsViewSettingGetInteger>mgGraphicsViewSettingGetInteger</A>, 
+<A HREF=mgGraphicsViewSettingGetDouble.htm#mgGraphicsViewSettingGetDouble>mgGraphicsViewSettingGetDouble</A>, <A HREF=mgGraphicsViewSettingSetDouble.htm#mgGraphicsViewSettingSetDouble>mgGraphicsViewSettingSetDouble</A></DD></DL></BODY>
+
+</HTML>

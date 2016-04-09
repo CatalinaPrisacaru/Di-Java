@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>mgExportDb</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExportDb><H1 CLASS="APISYMBOL">mgExportDb</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExportDb</B> - exports an OpenFlight database to disk as 
+a different file format or version.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgExportDb</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fileName</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>formatName</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>formatVersion</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExportDb</B> exports the contents of the OpenFlight database 
+<I>db</I> to a different file format on disk.  The file format is specified 
+by name <I>formatName</I> and version <I>formatVersion</I>.  The name of the 
+file created is specified by <I>fileName</I>.  An argument list specifies 
+a list of format specific parameters to control the export operation.</P></DD><DD><P>The in-memory representation of <I>db</I> is not affected by this 
+function.  In particular, the database <I>db</I> retains its original file 
+name so subsequent calls to <A HREF=mgWriteDb.htm#mgWriteDb>mgWriteDb</A> will write out the original 
+file name, not the name you specified to <B>mgExportDb</B>.  Note that 
+this behavior is different from that of <A HREF=mgSaveAsDb.htm#mgSaveAsDb>mgSaveAsDb</A> which changes 
+the file name associated with the in-memory representation of <I>db</I>.</P></DD><DD><P>Note: If invoked from within the modeler environment, this function 
+will fail if either <I>db</I> or the named file is open in an active window.</P></DD><DD><P>The only valid format name is <A HREF=MEFN_OPENFLIGHT.htm#MEFN_OPENFLIGHT>MEFN_OPENFLIGHT</A>.</P></DD><DD><P>The valid format versions for format name <A HREF=MEFN_OPENFLIGHT.htm#MEFN_OPENFLIGHT>MEFN_OPENFLIGHT</A> are:<BR> 
+<A HREF=MEFV_1650.htm#MEFV_1650>MEFV_1650</A><BR> 
+<A HREF=MEFV_1640.htm#MEFV_1640>MEFV_1640</A><BR> 
+<A HREF=MEFV_1630.htm#MEFV_1630>MEFV_1630</A><BR> 
+<A HREF=MEFV_1620.htm#MEFV_1620>MEFV_1620</A><BR> 
+<A HREF=MEFV_1610.htm#MEFV_1610>MEFV_1610</A><BR> 
+<A HREF=MEFV_1600.htm#MEFV_1600>MEFV_1600</A><BR> 
+<A HREF=MEFV_1580.htm#MEFV_1580>MEFV_1580</A><BR> 
+<A HREF=MEFV_1570.htm#MEFV_1570>MEFV_1570</A><BR> 
+<A HREF=MEFV_1560.htm#MEFV_1560>MEFV_1560</A><BR> 
+<A HREF=MEFV_1540.htm#MEFV_1540>MEFV_1540</A></P></DD><DD><P>The format name <A HREF=MEFN_OPENFLIGHT.htm#MEFN_OPENFLIGHT>MEFN_OPENFLIGHT</A> does not take any additional 
+export parameters so the argument list should be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to export</DD><DT><I>fileName</I></DT><DD>the name of the file to create</DD><DT><I>formatName</I></DT><DD>the name of the format to export to</DD><DT><I>formatVersion</I></DT><DD>the version of <I>formatName</I> to export to</DD><DT><I>...</I></DT><DD>the argument list is in pairs of <I>arg</I> and 
+<I>value</I> ending with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> terminator</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following opens a file and exports it out to 3 different 
+versions of OpenFlight.</DT><DT><PRE CLASS="EXAMPLE">mgrec* db;
+db = mgOpenDb ("file.flt");
+mgExportDb (db, "file15-4.flt", MEFN_OPENFLIGHT, MEFV_1540, MG_NULL);
+mgExportDb (db, "file15-6.flt", MEFN_OPENFLIGHT, MEFV_1560, MG_NULL);
+mgExportDb (db, "file15-7.flt", MEFN_OPENFLIGHT, MEFV_1570, MG_NULL);
+
+mgWriteDb (db);&#32&#32// will write out "file.flt"
+mgCloseDb (db);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewDb.htm#mgNewDb>mgNewDb</A>, <A HREF=mgOpenDb.htm#mgOpenDb>mgOpenDb</A>, <A HREF=mgCloseDb.htm#mgCloseDb>mgCloseDb</A>, 
+<A HREF=mgWriteDb.htm#mgWriteDb>mgWriteDb</A>, <A HREF=mgSaveAsDb.htm#mgSaveAsDb>mgSaveAsDb</A>, <A HREF=mgSetNewOverwriteFlag.htm#mgSetNewOverwriteFlag>mgSetNewOverwriteFlag</A></DD></DL></BODY>
+
+</HTML>

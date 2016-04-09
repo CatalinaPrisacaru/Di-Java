@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>mgExtensionMakeGUID</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExtensionMakeGUID><H1 CLASS="APISYMBOL">mgExtensionMakeGUID</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExtensionMakeGUID</B> - creates a GUID that can be used 
+to create OpenFlight extension sites and fields.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD> char* <B>mgExtensionMakeGUID</B> ( void ) </DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExtensionMakeGUID</B> creates and returns a GUID string that, 
+in turn, can be used to create and identify extension sites and fields.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The string returned is dynamically allocated and must 
+be deallocated by the caller when it is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to free the returned string in Python.</P></DD></DT></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns GUID string if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how you could use this function to 
+help create a simple extension site and populate it with some 
+extension fields.</DT><DT><PRE CLASS="EXAMPLE">// make the GUIDs for one site and two fields
+char* siteGUID = mgExtensionMakeGUID ();
+char* field1GUID = mgExtensionMakeGUID ();
+char* field2GUID = mgExtensionMakeGUID ();
+
+// create the new extension site and give it a name
+mgExtensionSiteAdd (siteGUID);
+mgExtensionSiteSetName (siteGUID, "My Extension Site");
+
+// create the first new extension field and describe it
+mgExtensionFieldAdd (siteGUID, field1GUID);
+mgExtensionFieldSetName (field1GUID, "My Extension Field 1");
+
+// this field will "extend" fltPolygon (polygon) nodes
+mgExtensionFieldSetAttach (field1GUID, fltPolgyon);
+
+// it will be an integer value
+mgExtensionFieldSetType (field1GUID, MTYPE_INT);
+
+// create the second new extension field and describe it
+mgExtensionFieldAdd (siteGUID, field2GUID);
+mgExtensionFieldSetName (field2GUID, "My Extension Field 2");
+
+// free the allocated GUID strings when done
+mgFree (siteGUID);
+mgFree (field1GUID);
+mgFree (field2GUID);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgExtensionSiteAdd.htm#mgExtensionSiteAdd>mgExtensionSiteAdd</A>, <A HREF=mgExtensionFieldAdd.htm#mgExtensionFieldAdd>mgExtensionFieldAdd</A></DD></DL></BODY>
+
+</HTML>

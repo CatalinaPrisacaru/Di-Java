@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetSelectList</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetSelectList><H1 CLASS="APISYMBOL">mgGetSelectList</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetSelectList</B> - gets the current modeling select list.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgreclist <B>mgGetSelectList</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetSelectList</B> creates a new record list containing all the 
+currently selected nodes in the specified database <I>db</I>.  The traversal 
+pointer of the record list returned is set to the first item in the list.</P></DD><DD><P>This function returns a record list object that reflects the state 
+of the select list when it was called.  Typically call this function, 
+examine the contents of the record list returned and then dispose of the 
+record list when you are done.  If you retain the record list, its contents 
+is not guaranteed to be valid if the modeler subsequently changes the 
+select list in Creator or deletes an item that your record list 
+contains.</P></DD><DD><P>Note that the order of the nodes in the record list returned 
+are "reversed" from how they were selected by the user in Creator. 
+That means that for a record list containing N items, the first time 
+you call <A HREF=mgGetNextRecInList.htm#mgGetNextRecInList>mgGetNextRecInList</A> or call <A HREF=mgGetNthRecInList.htm#mgGetNthRecInList>mgGetNthRecInList</A> with 
+parameter <I>nth</I> equal to 1, you will receive the  <I>last</I> or <I>Nth</I> 
+item selected by the user in Creator, not the <I>first</I>. If you need 
+to receive the nodes in the same order as that selected by the user, 
+simply use <A HREF=mgGetNthRecInList.htm#mgGetNthRecInList>mgGetNthRecInList</A>, starting with <I>nth</I> equal to N 
+and ending with 1.</P></DD><DD><P>When you are done accessing the record list returned by this 
+function, you should dispose of it using <A HREF=mgFreeRecList.htm#mgFreeRecList>mgFreeRecList</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to dispose of the record list 
+returned in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to get the select list for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns a record list object containing all the currently selected 
+nodes in database, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if nothing is currently selected.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example gets the select list for database <I>db</I> 
+and traverses each node it contains.</DT><DT><PRE CLASS="EXAMPLE">mgrec* rec;
+mgmatrix selectMatrix;
+mgreclist selectList = mgGetSelectList (db);
+
+rec = mgGetNextRecInList (selectList, &selectMatrix);
+while (rec)
+{
+   // do something with rec
+   rec = mgGetNextRecInList (selectList, &selectMatrix);
+}
+// all done with record list, deallocate it
+mgFreeRecList (selectList);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT>The following example gets the select list for database <I>db</I> 
+and traverses each node it contains</DT><DT><PRE CLASS="EXAMPLE">selectList = mgGetSelectList (db)
+num = mgGetRecListCount (selectList)
+
+for i in range (0, num):
+   rec,matrix = mgGetNextRecInList (selectList)
+
+# you don't need to deallocate the record list in Python</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgreclist.htm#mgreclist>mgreclist</A>, <A HREF=mgFreeRecList.htm#mgFreeRecList>mgFreeRecList</A>, 
+<A HREF=mgResetRecList.htm#mgResetRecList>mgResetRecList</A>, <A HREF=mgGetNextRecInList.htm#mgGetNextRecInList>mgGetNextRecInList</A>, <A HREF=mgGetNthRecInList.htm#mgGetNthRecInList>mgGetNthRecInList</A>, 
+<A HREF=mgGetRecListCount.htm#mgGetRecListCount>mgGetRecListCount</A></DD></DL></BODY>
+
+</HTML>

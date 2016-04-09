@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamGetDouble3</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamGetDouble3><H1 CLASS="APISYMBOL">mgParamGetDouble3</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamGetDouble3</B> - gets the three double precision floating 
+point values for a parameter from a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgParamGetDouble3</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>paramValue1</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>paramValue2</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>paramValue3</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>defaultValue1</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>defaultValue2</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>defaultValue3</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, paramValue1, paramValue2, paramValue3 <B>mgParamGetDouble3</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamGetDouble3</B> retrieves the three double precision floating point 
+values of a parameter named <I>paramName</I> from the parameter block <I>paramBlock</I>. 
+If the parameter exists, its values are returned in <I>paramValue1</I>, <I>paramValue2</I> 
+and <I>paramValue3</I>. If the parameter does not exist, the output parameter values 
+are set to the default you provide in <I>defaultValue1</I>, <I>defaultValue2</I> and 
+<I>defaultValue3</I>.</P></DD><DD><P>If the parameter is not an array type parameter, this is the 
+standard way to retrieve its double3 value. 
+If the parameter is an array type parameter, this function gets 
+the first item in the array and is equivalent to calling 
+<A HREF=mgParamGetDouble3Nth.htm#mgParamGetDouble3Nth>mgParamGetDouble3Nth</A> passing 1 as <I>nth</I>.</P></DD><DD><P>Note that if the parameter does not exist, it is NOT created in the parameter block.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>paramBlock</I></DT><DD>the parameter block</DD><DT><I>paramName</I></DT><DD>the parameter name</DD><DT><I>paramValue1</I></DT><DD>storage location for the parameter value 1 returned</DD><DT><I>paramValue2</I></DT><DD>storage location for the parameter value 2 returned</DD><DT><I>paramValue3</I></DT><DD>storage location for the parameter value 3 returned</DD><DT><I>defaultValue1</I></DT><DD>default value 1 returned if parameter does not exist</DD><DT><I>defaultValue2</I></DT><DD>default value 2 returned if parameter does not exist</DD><DT><I>defaultValue3</I></DT><DD>default value 3 returned if parameter does not exist</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the parameter exists, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>paramValue1</DT><DD>If successful, this will be the first component of the 
+returned values, otherwise will be <I>defaultValue1</I>.</DD><DT>paramValue2</DT><DD>If successful, this will be the second component of the 
+returned values, otherwise will be <I>defaultValue2</I>.</DD><DT>paramValue3</DT><DD>If successful, this will be the third component of the 
+returned values, otherwise will be <I>defaultValue3</I>.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamSetDouble3.htm#mgParamSetDouble3>mgParamSetDouble3</A>, 
+<A HREF=mgParamGetInteger.htm#mgParamGetInteger>mgParamGetInteger</A>, <A HREF=mgParamGetDouble.htm#mgParamGetDouble>mgParamGetDouble</A>, 
+<A HREF=mgParamGetDouble2.htm#mgParamGetDouble2>mgParamGetDouble2</A>, <A HREF=mgParamGetFloat.htm#mgParamGetFloat>mgParamGetFloat</A>, 
+<A HREF=mgParamGetBool.htm#mgParamGetBool>mgParamGetBool</A>, <A HREF=mgParamGetString.htm#mgParamGetString>mgParamGetString</A>, 
+<A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A></DD></DL></BODY>
+
+</HTML>

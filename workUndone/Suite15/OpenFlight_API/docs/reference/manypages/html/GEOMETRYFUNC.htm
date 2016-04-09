@@ -1,0 +1,314 @@
+<HTML>
+<HEAD>
+<TITLE>GEOMETRYFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=GEOMETRYFUNC><H1>Geometry Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgBoxContainsBox.htm#mgBoxContainsBox><B>mgBoxContainsBox</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box1</I>, const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgBoxContainsCoord3d.htm#mgBoxContainsCoord3d><B>mgBoxContainsCoord3d</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgBoxExpandBox.htm#mgBoxExpandBox><B>mgBoxExpandBox</B></A> (<A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>boxToExpand</I>, const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>expandByBox</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgBoxExpandCoord3d.htm#mgBoxExpandCoord3d><B>mgBoxExpandCoord3d</B></A> (<A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>c</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgBoxGetCenter.htm#mgBoxGetCenter><B>mgBoxGetCenter</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgBoxGetCenterBottom.htm#mgBoxGetCenterBottom><B>mgBoxGetCenterBottom</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgBoxGetDiagonalSize.htm#mgBoxGetDiagonalSize><B>mgBoxGetDiagonalSize</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgBoxGetXSize.htm#mgBoxGetXSize><B>mgBoxGetXSize</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgBoxGetYSize.htm#mgBoxGetYSize><B>mgBoxGetYSize</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgBoxGetZSize.htm#mgBoxGetZSize><B>mgBoxGetZSize</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgBoxIntersectsBox.htm#mgBoxIntersectsBox><B>mgBoxIntersectsBox</B></A> (const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box1</I>, const <A HREF=mgboxd.htm#mgboxd>mgboxd*</A> <I>box2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dAdd.htm#mgCoord2dAdd><B>mgCoord2dAdd</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord2dAngle.htm#mgCoord2dAngle><B>mgCoord2dAngle</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dDivide.htm#mgCoord2dDivide><B>mgCoord2dDivide</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>, double <I>scalar</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord2dDot.htm#mgCoord2dDot><B>mgCoord2dDot</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord2dLength.htm#mgCoord2dLength><B>mgCoord2dLength</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord2dLengthSquared.htm#mgCoord2dLengthSquared><B>mgCoord2dLengthSquared</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dLerp.htm#mgCoord2dLerp><B>mgCoord2dLerp</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>, double <I>amount</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dMultiply.htm#mgCoord2dMultiply><B>mgCoord2dMultiply</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>, double <I>scalar</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dNegate.htm#mgCoord2dNegate><B>mgCoord2dNegate</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dNegativeOne.htm#mgCoord2dNegativeOne><B>mgCoord2dNegativeOne</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dNegativeXAxis.htm#mgCoord2dNegativeXAxis><B>mgCoord2dNegativeXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dNegativeYAxis.htm#mgCoord2dNegativeYAxis><B>mgCoord2dNegativeYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dOne.htm#mgCoord2dOne><B>mgCoord2dOne</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dOrthoProject.htm#mgCoord2dOrthoProject><B>mgCoord2dOrthoProject</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dReflect.htm#mgCoord2dReflect><B>mgCoord2dReflect</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dReflectX.htm#mgCoord2dReflectX><B>mgCoord2dReflectX</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dReflectY.htm#mgCoord2dReflectY><B>mgCoord2dReflectY</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dRotate90CCW.htm#mgCoord2dRotate90CCW><B>mgCoord2dRotate90CCW</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dRotate90CW.htm#mgCoord2dRotate90CW><B>mgCoord2dRotate90CW</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dRotateCCW.htm#mgCoord2dRotateCCW><B>mgCoord2dRotateCCW</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dRotateCW.htm#mgCoord2dRotateCW><B>mgCoord2dRotateCW</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord2dScalarProject.htm#mgCoord2dScalarProject><B>mgCoord2dScalarProject</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgCoord2dSetUnitized.htm#mgCoord2dSetUnitized><B>mgCoord2dSetUnitized</B></A> (<A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dSubtract.htm#mgCoord2dSubtract><B>mgCoord2dSubtract</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dUnitize.htm#mgCoord2dUnitize><B>mgCoord2dUnitize</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dVectorProject.htm#mgCoord2dVectorProject><B>mgCoord2dVectorProject</B></A> (const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord1</I>, const <A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dXAxis.htm#mgCoord2dXAxis><B>mgCoord2dXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dYAxis.htm#mgCoord2dYAxis><B>mgCoord2dYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgCoord2dZero.htm#mgCoord2dZero><B>mgCoord2dZero</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dAdd.htm#mgCoord3dAdd><B>mgCoord3dAdd</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgCoord3dAlmostEqual.htm#mgCoord3dAlmostEqual><B>mgCoord3dAlmostEqual</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>, double <I>tolerance</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dAngle.htm#mgCoord3dAngle><B>mgCoord3dAngle</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dCross.htm#mgCoord3dCross><B>mgCoord3dCross</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dDistance.htm#mgCoord3dDistance><B>mgCoord3dDistance</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dDistanceSquared.htm#mgCoord3dDistanceSquared><B>mgCoord3dDistanceSquared</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dDivide.htm#mgCoord3dDivide><B>mgCoord3dDivide</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>scalar</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dDot.htm#mgCoord3dDot><B>mgCoord3dDot</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgCoord3dEqual.htm#mgCoord3dEqual><B>mgCoord3dEqual</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dLength.htm#mgCoord3dLength><B>mgCoord3dLength</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dLengthSquared.htm#mgCoord3dLengthSquared><B>mgCoord3dLengthSquared</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dLerp.htm#mgCoord3dLerp><B>mgCoord3dLerp</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>, double <I>amount</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dMoveAlongVectord.htm#mgCoord3dMoveAlongVectord><B>mgCoord3dMoveAlongVectord</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>, double <I>distance</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dMoveAlongVectorf.htm#mgCoord3dMoveAlongVectorf><B>mgCoord3dMoveAlongVectorf</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vec</I>, float <I>distance</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dMultiply.htm#mgCoord3dMultiply><B>mgCoord3dMultiply</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>scalar</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dNegate.htm#mgCoord3dNegate><B>mgCoord3dNegate</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dNegativeOne.htm#mgCoord3dNegativeOne><B>mgCoord3dNegativeOne</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dNegativeXAxis.htm#mgCoord3dNegativeXAxis><B>mgCoord3dNegativeXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dNegativeYAxis.htm#mgCoord3dNegativeYAxis><B>mgCoord3dNegativeYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dNegativeZAxis.htm#mgCoord3dNegativeZAxis><B>mgCoord3dNegativeZAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dOne.htm#mgCoord3dOne><B>mgCoord3dOne</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dOrthoProject.htm#mgCoord3dOrthoProject><B>mgCoord3dOrthoProject</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dPitchDown.htm#mgCoord3dPitchDown><B>mgCoord3dPitchDown</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dPitchDown90.htm#mgCoord3dPitchDown90><B>mgCoord3dPitchDown90</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dPitchUp.htm#mgCoord3dPitchUp><B>mgCoord3dPitchUp</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dPitchUp90.htm#mgCoord3dPitchUp90><B>mgCoord3dPitchUp90</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dProjectOnPlane.htm#mgCoord3dProjectOnPlane><B>mgCoord3dProjectOnPlane</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, const <A HREF=mgplaned.htm#mgplaned>mgplaned*</A> <I>plane</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dReflect.htm#mgCoord3dReflect><B>mgCoord3dReflect</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dReflectX.htm#mgCoord3dReflectX><B>mgCoord3dReflectX</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dReflectY.htm#mgCoord3dReflectY><B>mgCoord3dReflectY</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dReflectZ.htm#mgCoord3dReflectZ><B>mgCoord3dReflectZ</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dRollLeft.htm#mgCoord3dRollLeft><B>mgCoord3dRollLeft</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dRollLeft90.htm#mgCoord3dRollLeft90><B>mgCoord3dRollLeft90</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dRollRight.htm#mgCoord3dRollRight><B>mgCoord3dRollRight</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dRollRight90.htm#mgCoord3dRollRight90><B>mgCoord3dRollRight90</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgCoord3dScalarProject.htm#mgCoord3dScalarProject><B>mgCoord3dScalarProject</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgCoord3dSetUnitized.htm#mgCoord3dSetUnitized><B>mgCoord3dSetUnitized</B></A> (<A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dSubtract.htm#mgCoord3dSubtract><B>mgCoord3dSubtract</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3f.htm#mgcoord3f>mgcoord3f</A> <TD><A HREF=mgCoord3dToCoord3f.htm#mgCoord3dToCoord3f><B>mgCoord3dToCoord3f</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgCoord3dToVectord.htm#mgCoord3dToVectord><B>mgCoord3dToVectord</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dTransform.htm#mgCoord3dTransform><B>mgCoord3dTransform</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dUnitize.htm#mgCoord3dUnitize><B>mgCoord3dUnitize</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dVectorProject.htm#mgCoord3dVectorProject><B>mgCoord3dVectorProject</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dXAxis.htm#mgCoord3dXAxis><B>mgCoord3dXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dYawLeft.htm#mgCoord3dYawLeft><B>mgCoord3dYawLeft</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dYawLeft90.htm#mgCoord3dYawLeft90><B>mgCoord3dYawLeft90</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dYawRight.htm#mgCoord3dYawRight><B>mgCoord3dYawRight</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>, double <I>degrees</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dYawRight90.htm#mgCoord3dYawRight90><B>mgCoord3dYawRight90</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dYAxis.htm#mgCoord3dYAxis><B>mgCoord3dYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dZAxis.htm#mgCoord3dZAxis><B>mgCoord3dZAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3dZero.htm#mgCoord3dZero><B>mgCoord3dZero</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3fToCoord3d.htm#mgCoord3fToCoord3d><B>mgCoord3fToCoord3d</B></A> (const <A HREF=mgcoord3f.htm#mgcoord3f>mgcoord3f*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgCoord3fTransform.htm#mgCoord3fTransform><B>mgCoord3fTransform</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, const <A HREF=mgcoord3f.htm#mgcoord3f>mgcoord3f*</A> <I>coord</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgreclist.htm#mgreclist>mgreclist</A> <TD><A HREF=mgGetTriangleList.htm#mgGetTriangleList><B>mgGetTriangleList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgboxd.htm#mgboxd>mgboxd</A> <TD><A HREF=mgMakeBox.htm#mgMakeBox><B>mgMakeBox</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>min</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>max</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2d.htm#mgcoord2d>mgcoord2d</A> <TD><A HREF=mgMakeCoord2d.htm#mgMakeCoord2d><B>mgMakeCoord2d</B></A> (double <I>x</I>, double <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord2i.htm#mgcoord2i>mgcoord2i</A> <TD><A HREF=mgMakeCoord2i.htm#mgMakeCoord2i><B>mgMakeCoord2i</B></A> (int <I>x</I>, int <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgMakeCoord3d.htm#mgMakeCoord3d><B>mgMakeCoord3d</B></A> (double <I>x</I>, double <I>y</I>, double <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3f.htm#mgcoord3f>mgcoord3f</A> <TD><A HREF=mgMakeCoord3f.htm#mgMakeCoord3f><B>mgMakeCoord3f</B></A> (float <I>x</I>, float <I>y</I>, float <I>z</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mglined.htm#mglined>mglined</A> <TD><A HREF=mgMakeLine.htm#mgMakeLine><B>mgMakeLine</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgplaned.htm#mgplaned>mgplaned</A> <TD><A HREF=mgMakePlaned.htm#mgMakePlaned><B>mgMakePlaned</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>point</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>normal</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgMakeUnitVectord.htm#mgMakeUnitVectord><B>mgMakeUnitVectord</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgMakeVectord.htm#mgMakeVectord><B>mgMakeVectord</B></A> (const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord1</I>, const <A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d*</A> <I>coord2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReversePoly.htm#mgReversePoly><B>mgReversePoly</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>poly</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordCross.htm#mgVectordCross><B>mgVectordCross</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector1</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">double <TD><A HREF=mgVectordDot.htm#mgVectordDot><B>mgVectordDot</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector1</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgVectordEqual.htm#mgVectordEqual><B>mgVectordEqual</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector1</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordFromLine.htm#mgVectordFromLine><B>mgVectordFromLine</B></A> (const <A HREF=mglined.htm#mglined>mglined*</A> <I>line</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordLerp.htm#mgVectordLerp><B>mgVectordLerp</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector1</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector2</I>, double <I>amount</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordNegate.htm#mgVectordNegate><B>mgVectordNegate</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vector</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordNegativeXAxis.htm#mgVectordNegativeXAxis><B>mgVectordNegativeXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordNegativeYAxis.htm#mgVectordNegativeYAxis><B>mgVectordNegativeYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordNegativeZAxis.htm#mgVectordNegativeZAxis><B>mgVectordNegativeZAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgVectordSetUnitized.htm#mgVectordSetUnitized><B>mgVectordSetUnitized</B></A> (<A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgcoord3d.htm#mgcoord3d>mgcoord3d</A> <TD><A HREF=mgVectordToCoord3d.htm#mgVectordToCoord3d><B>mgVectordToCoord3d</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectordToVectorf.htm#mgVectordToVectorf><B>mgVectordToVectorf</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordTransform.htm#mgVectordTransform><B>mgVectordTransform</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordUnitize.htm#mgVectordUnitize><B>mgVectordUnitize</B></A> (const <A HREF=mgvectord.htm#mgvectord>mgvectord*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordXAxis.htm#mgVectordXAxis><B>mgVectordXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordYAxis.htm#mgVectordYAxis><B>mgVectordYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordZAxis.htm#mgVectordZAxis><B>mgVectordZAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectordZero.htm#mgVectordZero><B>mgVectordZero</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfCross.htm#mgVectorfCross><B>mgVectorfCross</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector1</I>, const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">float <TD><A HREF=mgVectorfDot.htm#mgVectorfDot><B>mgVectorfDot</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector1</I>, const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgVectorfEqual.htm#mgVectorfEqual><B>mgVectorfEqual</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector1</I>, const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfLerp.htm#mgVectorfLerp><B>mgVectorfLerp</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector1</I>, const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector2</I>, double <I>amount</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfNegate.htm#mgVectorfNegate><B>mgVectorfNegate</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vector</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfNegativeXAxis.htm#mgVectorfNegativeXAxis><B>mgVectorfNegativeXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfNegativeYAxis.htm#mgVectorfNegativeYAxis><B>mgVectorfNegativeYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfNegativeZAxis.htm#mgVectorfNegativeZAxis><B>mgVectorfNegativeZAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgVectorfSetUnitized.htm#mgVectorfSetUnitized><B>mgVectorfSetUnitized</B></A> (<A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectord.htm#mgvectord>mgvectord</A> <TD><A HREF=mgVectorfToVectord.htm#mgVectorfToVectord><B>mgVectorfToVectord</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfTransform.htm#mgVectorfTransform><B>mgVectorfTransform</B></A> (const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A> <I>matrix</I>, const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfUnitize.htm#mgVectorfUnitize><B>mgVectorfUnitize</B></A> (const <A HREF=mgvectorf.htm#mgvectorf>mgvectorf*</A> <I>vec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfXAxis.htm#mgVectorfXAxis><B>mgVectorfXAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfYAxis.htm#mgVectorfYAxis><B>mgVectorfYAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfZAxis.htm#mgVectorfZAxis><B>mgVectorfZAxis</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgvectorf.htm#mgvectorf>mgvectorf</A> <TD><A HREF=mgVectorfZero.htm#mgVectorfZero><B>mgVectorfZero</B></A> (void) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

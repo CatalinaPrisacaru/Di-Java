@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetMatrix</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetMatrix><H1 CLASS="APISYMBOL">mgGetMatrix</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetMatrix</B> - gets values out of a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatrix>fltMatrix</A>
+ record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetMatrix</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>matrixCode</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A></TD><TD><I>matrix</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, mgmatrix <B>mgGetMatrix</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>matrixCode</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a record <I>rec</I> which contains a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatrix>fltMatrix</A>
+ record identified 
+by the record code <I>matrixCode</I>, <B>mgGetMatrix</B> copies the corresponding 
+matrix of <I>rec</I> into <I>matrix</I>.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>Note: Memory is not allocated for <I>matrix</I> by this function.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>a node or record containing a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatrix>fltMatrix</A>
+ record</DD><DT><I>matrixCode</I></DT><DD>the record code of the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatrix>fltMatrix</A>
+ to retrieve</DD><DT><I>matrix</I></DT><DD>the address of the matrix to receive values</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> if 
+<I>rec</I> has no such matrix or if otherwise unsuccessful.</DD><DT>mgmatrix</DT><DD>the corresponding matrix of <I>rec</I>.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetMatrix.htm#mgSetMatrix>mgSetMatrix</A>, <A HREF=mgHasXform.htm#mgHasXform>mgHasXform</A>, <A HREF=mgGetXform.htm#mgGetXform>mgGetXform</A>, <A HREF=mgGetXformType.htm#mgGetXformType>mgGetXformType</A></DD></DL></BODY>
+
+</HTML>

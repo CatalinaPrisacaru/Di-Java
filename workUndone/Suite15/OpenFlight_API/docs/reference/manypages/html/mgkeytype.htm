@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>mgkeytype</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgkeytype><H1 CLASS="APISYMBOL">mgkeytype</H1></A></LEFT>
+<DL>
+<DT><H3>ENUM NAME</H3></DT>
+<DD><B>mgkeytype</B> - Keyboard Key names<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef enum mgkeytype {
+&#32;&#32;&#32;MKEY_NOKEY,
+&#32;&#32;&#32;MKEY_ESCAPE,
+&#32;&#32;&#32;MKEY_BACK,
+&#32;&#32;&#32;MKEY_TAB,
+&#32;&#32;&#32;MKEY_RETURN,
+&#32;&#32;&#32;MKEY_F1,
+&#32;&#32;&#32;MKEY_F2,
+&#32;&#32;&#32;MKEY_F3,
+&#32;&#32;&#32;MKEY_F4,
+&#32;&#32;&#32;MKEY_F5,
+&#32;&#32;&#32;MKEY_F6,
+&#32;&#32;&#32;MKEY_F7,
+&#32;&#32;&#32;MKEY_F8,
+&#32;&#32;&#32;MKEY_F9,
+&#32;&#32;&#32;MKEY_F10,
+&#32;&#32;&#32;MKEY_F11,
+&#32;&#32;&#32;MKEY_F12,
+&#32;&#32;&#32;MKEY_F13,
+&#32;&#32;&#32;MKEY_F14,
+&#32;&#32;&#32;MKEY_F15,
+&#32;&#32;&#32;MKEY_F16,
+&#32;&#32;&#32;MKEY_KEYPAD0,
+&#32;&#32;&#32;MKEY_KEYPAD1,
+&#32;&#32;&#32;MKEY_KEYPAD2,
+&#32;&#32;&#32;MKEY_KEYPAD3,
+&#32;&#32;&#32;MKEY_KEYPAD4,
+&#32;&#32;&#32;MKEY_KEYPAD5,
+&#32;&#32;&#32;MKEY_KEYPAD6,
+&#32;&#32;&#32;MKEY_KEYPAD7,
+&#32;&#32;&#32;MKEY_KEYPAD8,
+&#32;&#32;&#32;MKEY_KEYPAD9,
+&#32;&#32;&#32;MKEY_APOSTROPHE,
+&#32;&#32;&#32;MKEY_COMMA,
+&#32;&#32;&#32;MKEY_MINUS,
+&#32;&#32;&#32;MKEY_PERIOD,
+&#32;&#32;&#32;MKEY_SLASH,
+&#32;&#32;&#32;MKEY_SEMICOLON,
+&#32;&#32;&#32;MKEY_EQUAL,
+&#32;&#32;&#32;MKEY_0,
+&#32;&#32;&#32;MKEY_1,
+&#32;&#32;&#32;MKEY_2,
+&#32;&#32;&#32;MKEY_3,
+&#32;&#32;&#32;MKEY_4,
+&#32;&#32;&#32;MKEY_5,
+&#32;&#32;&#32;MKEY_6,
+&#32;&#32;&#32;MKEY_7,
+&#32;&#32;&#32;MKEY_8,
+&#32;&#32;&#32;MKEY_9,
+&#32;&#32;&#32;MKEY_A,
+&#32;&#32;&#32;MKEY_B,
+&#32;&#32;&#32;MKEY_C,
+&#32;&#32;&#32;MKEY_D,
+&#32;&#32;&#32;MKEY_E,
+&#32;&#32;&#32;MKEY_F,
+&#32;&#32;&#32;MKEY_G,
+&#32;&#32;&#32;MKEY_H,
+&#32;&#32;&#32;MKEY_I,
+&#32;&#32;&#32;MKEY_J,
+&#32;&#32;&#32;MKEY_K,
+&#32;&#32;&#32;MKEY_L,
+&#32;&#32;&#32;MKEY_M,
+&#32;&#32;&#32;MKEY_N,
+&#32;&#32;&#32;MKEY_O,
+&#32;&#32;&#32;MKEY_P,
+&#32;&#32;&#32;MKEY_Q,
+&#32;&#32;&#32;MKEY_R,
+&#32;&#32;&#32;MKEY_S,
+&#32;&#32;&#32;MKEY_T,
+&#32;&#32;&#32;MKEY_U,
+&#32;&#32;&#32;MKEY_V,
+&#32;&#32;&#32;MKEY_W,
+&#32;&#32;&#32;MKEY_X,
+&#32;&#32;&#32;MKEY_Y,
+&#32;&#32;&#32;MKEY_Z,
+&#32;&#32;&#32;MKEY_LEFTBRACKET,
+&#32;&#32;&#32;MKEY_BACKSLASH,
+&#32;&#32;&#32;MKEY_RIGHTBRACKET,
+&#32;&#32;&#32;MKEY_PAGEUP,
+&#32;&#32;&#32;MKEY_QUOTELEFT,
+&#32;&#32;&#32;MKEY_PAGEDOWN,
+&#32;&#32;&#32;MKEY_CLEAR,
+&#32;&#32;&#32;MKEY_UP,
+&#32;&#32;&#32;MKEY_DOWN,
+&#32;&#32;&#32;MKEY_LEFT,
+&#32;&#32;&#32;MKEY_RIGHT,
+&#32;&#32;&#32;MKEY_INSERT,
+&#32;&#32;&#32;MKEY_DELETE,
+&#32;&#32;&#32;MKEY_HOME,
+&#32;&#32;&#32;MKEY_END,
+&#32;&#32;&#32;MKEY_DIVIDE,
+&#32;&#32;&#32;MKEY_MULTIPLY,
+&#32;&#32;&#32;MKEY_SUBTRACT,
+&#32;&#32;&#32;MKEY_ADD,
+&#32;&#32;&#32;MKEY_DECIMAL,
+&#32;&#32;&#32;MKEY_SPACE,
+} mgkeytype;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>MKEY_NOKEY</B><DD>No key<DT><B>MKEY_ESCAPE</B><DD>Escape key<DT><B>MKEY_BACK</B><DD>Backspace key<DT><B>MKEY_TAB</B><DD>Tab key<DT><B>MKEY_RETURN</B><DD>Return key<DT><B>MKEY_F1</B><DD>Function key F1<DT><B>MKEY_F2</B><DD>Function key F2<DT><B>MKEY_F3</B><DD>Function key F3<DT><B>MKEY_F4</B><DD>Function key F4<DT><B>MKEY_F5</B><DD>Function key F5<DT><B>MKEY_F6</B><DD>Function key F6<DT><B>MKEY_F7</B><DD>Function key F7<DT><B>MKEY_F8</B><DD>Function key F8<DT><B>MKEY_F9</B><DD>Function key F9<DT><B>MKEY_F10</B><DD>Function key F10<DT><B>MKEY_F11</B><DD>Function key F11<DT><B>MKEY_F12</B><DD>Function key F12<DT><B>MKEY_F13</B><DD>Function key F13<DT><B>MKEY_F14</B><DD>Function key F14<DT><B>MKEY_F15</B><DD>Function key F15<DT><B>MKEY_F16</B><DD>Function key F16<DT><B>MKEY_KEYPAD0</B><DD>Keypad key 0<DT><B>MKEY_KEYPAD1</B><DD>Keypad key 1<DT><B>MKEY_KEYPAD2</B><DD>Keypad key 2<DT><B>MKEY_KEYPAD3</B><DD>Keypad key 3<DT><B>MKEY_KEYPAD4</B><DD>Keypad key 4<DT><B>MKEY_KEYPAD5</B><DD>Keypad key 5<DT><B>MKEY_KEYPAD6</B><DD>Keypad key 6<DT><B>MKEY_KEYPAD7</B><DD>Keypad key 7<DT><B>MKEY_KEYPAD8</B><DD>Keypad key 8<DT><B>MKEY_KEYPAD9</B><DD>Keypad key 9<DT><B>MKEY_APOSTROPHE</B><DD>Apostrophe key<DT><B>MKEY_COMMA</B><DD>Comma key<DT><B>MKEY_MINUS</B><DD>Minus key<DT><B>MKEY_PERIOD</B><DD>Period key<DT><B>MKEY_SLASH</B><DD>Forward Slash key<DT><B>MKEY_SEMICOLON</B><DD>Semicolon key<DT><B>MKEY_EQUAL</B><DD>Equals key<DT><B>MKEY_0</B><DD>0 key<DT><B>MKEY_1</B><DD>1 key<DT><B>MKEY_2</B><DD>2 key<DT><B>MKEY_3</B><DD>3 key<DT><B>MKEY_4</B><DD>4 key<DT><B>MKEY_5</B><DD>5 key<DT><B>MKEY_6</B><DD>6 key<DT><B>MKEY_7</B><DD>7 key<DT><B>MKEY_8</B><DD>8 key<DT><B>MKEY_9</B><DD>9 key<DT><B>MKEY_A</B><DD>A key<DT><B>MKEY_B</B><DD>B key<DT><B>MKEY_C</B><DD>C key<DT><B>MKEY_D</B><DD>D key<DT><B>MKEY_E</B><DD>E key<DT><B>MKEY_F</B><DD>F key<DT><B>MKEY_G</B><DD>G key<DT><B>MKEY_H</B><DD>H key<DT><B>MKEY_I</B><DD>I key<DT><B>MKEY_J</B><DD>J key<DT><B>MKEY_K</B><DD>K key<DT><B>MKEY_L</B><DD>L key<DT><B>MKEY_M</B><DD>M key<DT><B>MKEY_N</B><DD>N key<DT><B>MKEY_O</B><DD>O key<DT><B>MKEY_P</B><DD>P key<DT><B>MKEY_Q</B><DD>Q key<DT><B>MKEY_R</B><DD>R key<DT><B>MKEY_S</B><DD>S key<DT><B>MKEY_T</B><DD>T key<DT><B>MKEY_U</B><DD>U key<DT><B>MKEY_V</B><DD>V key<DT><B>MKEY_W</B><DD>W key<DT><B>MKEY_X</B><DD>X key<DT><B>MKEY_Y</B><DD>Y key<DT><B>MKEY_Z</B><DD>Z key<DT><B>MKEY_LEFTBRACKET</B><DD>Left Bracket key<DT><B>MKEY_BACKSLASH</B><DD>Backward Slash key<DT><B>MKEY_RIGHTBRACKET</B><DD>Right Bracket key<DT><B>MKEY_PAGEUP</B><DD>Page Up key<DT><B>MKEY_QUOTELEFT</B><DD>Left Quote key<DT><B>MKEY_PAGEDOWN</B><DD>Page Down key<DT><B>MKEY_CLEAR</B><DD>C Up key<DT><B>MKEY_UP</B><DD>Up Arrow key<DT><B>MKEY_DOWN</B><DD>Down Arrow key<DT><B>MKEY_LEFT</B><DD>Left Arrow key<DT><B>MKEY_RIGHT</B><DD>Right Arrow key<DT><B>MKEY_INSERT</B><DD>Insert key<DT><B>MKEY_DELETE</B><DD>Delete key<DT><B>MKEY_HOME</B><DD>Home key<DT><B>MKEY_END</B><DD>End key<DT><B>MKEY_DIVIDE</B><DD>Keypad Divide key<DT><B>MKEY_MULTIPLY</B><DD>Keypad Multiply key<DT><B>MKEY_SUBTRACT</B><DD>Keypad Subtract key<DT><B>MKEY_ADD</B><DD>Keypad Add key<DT><B>MKEY_DECIMAL</B><DD>Keypad Decimal key<DT><B>MKEY_SPACE</B><DD>Space Key</DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This enumerated type is used to identify keyboard keys. 
+See <A HREF=mgkeysequence.htm#mgkeysequence>mgkeysequence</A>.</P></DD></DT></DL></BODY>
+
+</HTML>

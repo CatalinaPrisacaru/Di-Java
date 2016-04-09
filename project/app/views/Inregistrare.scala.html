@@ -1,0 +1,46 @@
+<div class="fullPage">
+    <input type="image" id='onme' class="btn-menu" src="@routes.Assets.at("images/menu.png")" name="image">
+
+    <form action="#" method="post">
+	<div id="demo-table" class="p">
+		<div class="caption">Register</div>
+		
+			<div class="centeredText">
+				<label>First Name:</label>
+				<input type="text" id="fname" />
+			</div>
+			
+			<div class="centeredText">
+				<label>Last Name:</label>
+				<input type="text" id="lname" />
+			</div>
+			
+			<div class="centeredText">
+				<label>Email:</label>
+				<input type="email" id="mail" />
+			</div>
+			
+			<div class="centeredText">
+				<label>Telephone:</label>
+				<input type="tel" id="tel" />
+			</div>
+			
+			<div class="centeredText">
+				<label>Password:</label>
+				<input type="password" id="password" />
+			</div>
+			
+			<div class="button">
+				<button type="submit">make your account</button>
+			</div>
+	</div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function(){
+            document.getElementsByClassName('carousel-indicators')[0].style.visibility='hidden';
+            document.getElementsByClassName('btn-menu')[0].style.visibility='hidden';
+        });
+	</script>
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/Inregistrare.css")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/Common.css")">
+

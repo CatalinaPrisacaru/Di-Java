@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetRegistryRoot</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetRegistryRoot><H1 CLASS="APISYMBOL">mgGetRegistryRoot</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetRegistryRoot</B> - returns the root name of the Creator registry.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetRegistryRoot</B> (</TD><TD>char*</TD><TD><I>rootString</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>maxLen</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, string <B>mgGetRegistryRoot</B> (  )
+</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetRegistryRoot</B> returns the root path of the registry currently in 
+use by Creator.  The output string is truncated and null terminated if it is 
+longer than <I>maxLen</I> characters.</P></DD><DD><P>This function is only applicable on the Windows operation system platform 
+in the Creator modeler environment.  This function will always return <A HREF=mgbool.htm#mgbool>MG_FALSE</A> 
+when called by a stand-alone application or from any code running on IRIX.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rootString</I></DT><DD>character buffer to hold the root path</DD><DT><I>maxLen</I></DT><DD>maximum number of characters to store in <I>rootString</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if registry root retrieved successfully, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>string</DT><DD>If function is successful, string contains the root path, otherwise undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetRegistryString.htm#mgGetRegistryString>mgGetRegistryString</A>, <A HREF=mgSetRegistryString.htm#mgSetRegistryString>mgSetRegistryString</A>, 
+<A HREF=mgLoadResource.htm#mgLoadResource>mgLoadResource</A>, <A HREF=mgGetModuleHandle.htm#mgGetModuleHandle>mgGetModuleHandle</A></DD></DL></BODY>
+
+</HTML>

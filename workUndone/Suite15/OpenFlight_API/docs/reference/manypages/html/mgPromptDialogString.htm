@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>mgPromptDialogString</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPromptDialogString><H1 CLASS="APISYMBOL">mgPromptDialogString</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPromptDialogString</B> - prompts the user to enter string value.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgPromptDialogString</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>numColumns</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>messageText</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>value</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>maxLen</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, string <B>mgPromptDialogString</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>numColumns</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>messageText</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>value</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPromptDialogString</B> displays a modal dialog in which the 
+user is asked to enter a text string value.</P></DD><DD><P>The dialog displays a text message and contains a text control and 
+two push button controls - OK and Cancel.  The text control is wide 
+enough to display <I>numColumns</I> characters and initially displays the 
+text string contained in the parameter <I>value</I>.  The user enters the 
+string value into this text control. The OK and Cancel push button controls 
+are used to dismiss the dialog.</P></DD><DD><P>If the user enters a valid string value and chooses the OK button 
+to dismiss the dialog, the value is returned in the parameter 
+<I>value</I>.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The dialog is created as a child of the specified dialog <I>parent</I>. 
+If you specify <I>parent</I> as <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>, the dialog is created as a 
+child of the Creator main window.  If the user enters a valid string 
+value and chooses the OK button to dismiss the dialog, the value is returned 
+in the parameter <I>value</I>.  The returned string is truncated and 
+null terminated if it is longer than <I>maxLen</I> characters.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window.  If the user enters a valid string 
+value and chooses the OK button to dismiss the dialog, the value is returned. 
+The return string is limited to 256 characters.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the prompt dialog</DD><DT><I>numColumns</I></DT><DD>number of columns that will be visible in the 
+text control</DD><DT><I>messageText</I></DT><DD>a text string that is displayed in the dialog 
+as a message to the user</DD><DT><I>value</I></DT><DD>C - on input, the initial text string to display in 
+the text control, on output will receive the text entered. 
+<BR>Python - the initial string value to display in the text control</DD><DT><I>maxLen</I></DT><DD>the maximum number of characters to store in <I>value</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success. 
+Success indicates that the value entered was a valid string value 
+and the user dismissed the dialog using the OK push button.</DD><DT>string</DT><DD>If function 
+is successful, <I>value</I> contains the corresponding string, otherwise 
+<I>value</I> is undefined.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) prompt the user to enter 
+a string (default value "Default").</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgstatus status;
+char outString[100];
+strcpy (outString, "Default");
+status = mgPromptDialogString (MG_NULL, 20, "Enter String", outString, 100)
+if (MSTAT_ISOK (status)) {
+   printf ("String: %s", outString);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">status,outString = mgPromptDialogString (None, 20, "Enter String", "Default")
+if (MSTAT_ISOK (status)):
+   print "String:", outString</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPromptDialogInteger.htm#mgPromptDialogInteger>mgPromptDialogInteger</A>, <A HREF=mgPromptDialogFloat.htm#mgPromptDialogFloat>mgPromptDialogFloat</A>, <A HREF=mgPromptDialogDouble.htm#mgPromptDialogDouble>mgPromptDialogDouble</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetPolyCurrentTextureMapping</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetPolyCurrentTextureMapping><H1 CLASS="APISYMBOL">mgSetPolyCurrentTextureMapping</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetPolyCurrentTextureMapping</B> - sets the texture mapping 
+attribute in a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+ or <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ record to the current 
+modeling texture mapping.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgSetPolyCurrentTextureMapping</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>layer</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+ or <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ record, <I>rec</I>, this function 
+sets its texture mapping attribute for the given <I>layer</I> according to the current 
+modeling texture mapping selected by the user in Creator for database <I>db</I>.</P></DD><DD><P>The parameter <I>layer</I> is a number between 0-7, representing the 
+layer you want to set and corresponds to the attributes:<BR> 
+0 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltPolyTexmap</A>
+<BR> 
+1 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap1</A>
+<BR> 
+2 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap2</A>
+<BR> 
+3 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap3</A>
+<BR> 
+4 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap4</A>
+<BR> 
+5 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap5</A>
+<BR> 
+6 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap6</A>
+<BR> 
+7 : <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltLayerTexmap7</A>
+<BR></P></DD><DD><P>If you specify any other value for <I>layer</I>, the function will fail.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database whose current modeling texture 
+mapping will be used</DD><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltPolygon>fltPolygon</A>
+ or <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ record on 
+which to set the texture mapping attribute</DD><DT><I>layer</I></DT><DD>the layer number 0..7</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* poly;
+mgbool status;
+
+poly = mgNewRec (fltPolygon);
+// set texture mapping attribute for layer 0 to the
+// current texture mapping in the palette
+status = mgSetPolyCurrentTexture (db, poly, 0);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetPolyCurrentColor.htm#mgSetPolyCurrentColor>mgSetPolyCurrentColor</A>, <A HREF=mgSetPolyCurrentAltColor.htm#mgSetPolyCurrentAltColor>mgSetPolyCurrentAltColor</A>, 
+<A HREF=mgSetPolyColorRGB.htm#mgSetPolyColorRGB>mgSetPolyColorRGB</A>, <A HREF=mgSetPolyAltColorRGB.htm#mgSetPolyAltColorRGB>mgSetPolyAltColorRGB</A>, 
+<A HREF=mgSetVtxColorRGB.htm#mgSetVtxColorRGB>mgSetVtxColorRGB</A>, <A HREF=mgSetVtxColorRGBA.htm#mgSetVtxColorRGBA>mgSetVtxColorRGBA</A>, 
+<A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A></DD></DL></BODY>
+
+</HTML>

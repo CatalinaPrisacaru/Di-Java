@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>mgPtrArraySearch</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPtrArraySearch><H1 CLASS="APISYMBOL">mgPtrArraySearch</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPtrArraySearch</B> - searches a pointer array for a specific 
+item using a linear search.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgPtrArraySearch</B> (</TD><TD><A HREF=mgptrarray.htm#mgptrarray>mgptrarray</A></TD><TD><I>ptrArray</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>key</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><A HREF=mgPtrArrayBSearch.htm#mgPtrArrayBSearch>mgPtrArrayBSearch</A> uses a linear search to locate a specific item 
+<I>key</I> in a pointer array <I>ptrArray</I>.  The linear search starts at the 
+item at index 1 and searches the list until the <I>key</I> is found.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>ptrArray</I></DT><DD>the pointer array</DD><DT><I>key</I></DT><DD>the item to search for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>If the <I>key</I> is found, returns the index of the item (which will 
+be in the range 1..length of array).  If the <I>key</I> is not found, returns 0.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewPtrArray.htm#mgNewPtrArray>mgNewPtrArray</A>, <A HREF=mgFreePtrArray.htm#mgFreePtrArray>mgFreePtrArray</A>, <A HREF=mgPtrArrayAppend.htm#mgPtrArrayAppend>mgPtrArrayAppend</A>, 
+<A HREF=mgPtrArrayInsert.htm#mgPtrArrayInsert>mgPtrArrayInsert</A>, <A HREF=mgPtrArrayReplace.htm#mgPtrArrayReplace>mgPtrArrayReplace</A>, <A HREF=mgPtrArrayGet.htm#mgPtrArrayGet>mgPtrArrayGet</A>, 
+<A HREF=mgPtrArrayRemove.htm#mgPtrArrayRemove>mgPtrArrayRemove</A>, <A HREF=mgPtrArrayLength.htm#mgPtrArrayLength>mgPtrArrayLength</A>, <A HREF=mgPtrArraySort.htm#mgPtrArraySort>mgPtrArraySort</A>, 
+<A HREF=mgPtrArrayBSearch.htm#mgPtrArrayBSearch>mgPtrArrayBSearch</A></DD></DL></BODY>
+
+</HTML>

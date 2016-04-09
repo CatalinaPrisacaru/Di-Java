@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>mgReadImageGeoInfo</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgReadImageGeoInfo><H1 CLASS="APISYMBOL">mgReadImageGeoInfo</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgReadImageGeoInfo</B> - reads the georeference information 
+from an image file.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgReadImageGeoInfo</B> (</TD><TD>const char*</TD><TD><I>textureName</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo*</A></TD><TD><I>geoInfo</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, geoInfo <B>mgReadImageGeoInfo</B> (</TD><TD><A HREF=#string>string</A></TD><TD><I>textureName</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgReadImageGeoInfo</B> reads the georeference information of an 
+image on disk and returns a georeference info object containing the 
+information read.  The parameter <I>textureName</I> is the name of the image file.</P></DD><DD><P>This function reads georeference information from the image 
+file itself, not the image attribute file.  This implies that the 
+file must contain georeference information for this function to 
+succeed.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>When you are through with the returned georeference info object, 
+you must free it by calling <A HREF=mgFreeImageGeoInfo.htm#mgFreeImageGeoInfo>mgFreeImageGeoInfo</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to free the returned georeference info object in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>textureName</I></DT><DD>the name of the image file</DD><DT><I>geoInfo</I></DT><DD>address of object to receive 
+georeference info object allocated 
+and filled</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD><A HREF=MIMG_NO_ERROR.htm#MIMG_NO_ERROR>MIMG_NO_ERROR</A> if successful, otherwise applicable 
+texture error code.</DD><DT>geoInfo</DT><DD>If function is successful, geoInfo contains the georeference 
+info object, otherwise geoInfo is undefined.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) illustrate the 
+use of <B>mgReadImageGeoInfo</B> to read and examine a georeference info object 
+for a georeferenced texture.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">int imgError;
+mgimagegeoinfo info = MG_NULL;
+imgError = mgReadImageGeoInfo ("c:/MyTextures/TrueMarble.16km.2700x1350.tif", &info);
+if (imgError == MIMG_NO_ERROR)
+{
+   mgbool ok;
+   int type, projection, earthModel;
+   ok = mgGetTextureGeoType (info, &type);
+   if (ok == MG_TRUE)
+      printf ("Type: %d&#92;n", type);
+   ok = mgGetTextureGeoProjection (info, &projection);
+   if (ok == MG_TRUE)
+      printf ("Projection: %d&#92;n", projection);
+   ok = mgGetTextureGeoEarthModel (info, &earthModel);
+   if (ok == MG_TRUE)
+      printf ("Earth Model: %d&#92;n", earthModel);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">imgError, info = mgReadImageGeoInfo ("c:/MyTextures/TrueMarble.16km.2700x1350.tif")
+if (imgError == MIMG_NO_ERROR):
+   ok, type = mgGetTextureGeoType (info)
+   if (ok == MG_TRUE):
+      print "Type:", type
+   ok, projection = mgGetTextureGeoProjection (info)
+   if (ok == MG_TRUE):
+      print "Projection:", projection
+   b, earthModel = mgGetTextureGeoEarthModel (info)
+   if (ok == MG_TRUE):
+      print "Earth Model:", earthModel</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetTextureGeoType.htm#mgGetTextureGeoType>mgGetTextureGeoType</A>, <A HREF=mgGetTextureGeoProjection.htm#mgGetTextureGeoProjection>mgGetTextureGeoProjection</A>, 
+<A HREF=mgGetTextureGeoEarthModel.htm#mgGetTextureGeoEarthModel>mgGetTextureGeoEarthModel</A>, <A HREF=mgGetTextureGeoUTMZone.htm#mgGetTextureGeoUTMZone>mgGetTextureGeoUTMZone</A>, 
+<A HREF=mgGetTextureGeoUTMHemisphere.htm#mgGetTextureGeoUTMHemisphere>mgGetTextureGeoUTMHemisphere</A>, <A HREF=mgGetTextureGeoImageOrigin.htm#mgGetTextureGeoImageOrigin>mgGetTextureGeoImageOrigin</A>, 
+<A HREF=mgGetTextureGeoNumCtlPts.htm#mgGetTextureGeoNumCtlPts>mgGetTextureGeoNumCtlPts</A>, <A HREF=mgGetTextureGeoCtlPt.htm#mgGetTextureGeoCtlPt>mgGetTextureGeoCtlPt</A>, 
+<A HREF=mgFreeImageGeoInfo.htm#mgFreeImageGeoInfo>mgFreeImageGeoInfo</A>, <A HREF=mgReadImageInfo.htm#mgReadImageInfo>mgReadImageInfo</A></DD></DL></BODY>
+
+</HTML>

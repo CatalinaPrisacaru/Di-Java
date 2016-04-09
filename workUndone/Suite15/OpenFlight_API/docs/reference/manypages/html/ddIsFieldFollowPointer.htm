@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>ddIsFieldFollowPointer</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=ddIsFieldFollowPointer><H1 CLASS="APISYMBOL">ddIsFieldFollowPointer</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>ddIsFieldFollowPointer</B> - checks if a specific code is a 
+legal field of a record. The check includes the record itself and all 
+its subsequent in-line records.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>ddIsFieldFollowPointer</B> (</TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>rcode</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>fcode</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>ddIsFieldFollowPointer</B> searches all fields of record <I>rcode</I> 
+for a match with <I>fcode</I>. If <I>fcode</I> is not found in <I>rcode</I>, 
+<B>ddIsFieldFollowPointer</B> continues the search of <I>rcode</I>, following 
+every pointer record&#146s attribute list for <I>fcode</I> until either a match 
+was found or all subsequent pointer records are searched.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rcode</I></DT><DD>the record being searched</DD><DT><I>fcode</I></DT><DD>the field code to match</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if <I>fcode</I> is a legal field of <I>rcode</I>, 
+following the pointer record during the search, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=ddIsField.htm#ddIsField>ddIsField</A>, <A HREF=ddIsFieldFollowInLine.htm#ddIsFieldFollowInLine>ddIsFieldFollowInLine</A>, <A HREF=ddIsFieldFollowAll.htm#ddIsFieldFollowAll>ddIsFieldFollowAll</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetMessagesEnabled</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetMessagesEnabled><H1 CLASS="APISYMBOL">mgSetMessagesEnabled</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetMessagesEnabled</B> - enables or disables system messages.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void <B>mgSetMessagesEnabled</B> (</TD><TD><A HREF=mgmessageseverityenum.htm#mgmessageseverityenum>mgmessageseverityenum</A></TD><TD><I>severity</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgbool.htm#mgbool>mgbool</A></TD><TD><I>enabled</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>According to the switch <I>enabled</I>, <B>mgSetMessagesEnabled</B> 
+either enables (<A HREF=mgbool.htm#mgbool>MG_TRUE</A>) or disables (<A HREF=mgbool.htm#mgbool>MG_FALSE</A>) 
+the display of messages of level <I>severity</I> within the stand-alone 
+program environment. By default, messages for all severities are enabled.</P></DD><DD><P>Note: Within the modeler environment, messages are always enabled 
+and cannot be disabled.  For this reason, this function is ignored when 
+invoked from within the modeler environment.</P></DD><DD><P>You can invoke this function before you call <A HREF=mgInit.htm#mgInit>mgInit</A> in the stand 
+alone program environment to turn on or off messages displayed by 
+the OpenFlight API initialization function.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>severity</I></DT><DD>severity level of the messages 
+to enable or disable</DD><DT><I>enabled</I></DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> to enable messages, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> to disable them</DD></DL></DD></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to disable all messages 
+before calling <A HREF=mgInit.htm#mgInit>mgInit</A> and then re-enabling them after.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// disable all messages
+mgSetMessagesEnabled (MMSG_STATUS, MG_FALSE);
+mgSetMessagesEnabled (MMSG_WARNING, MG_FALSE);
+mgSetMessagesEnabled (MMSG_ERROR, MG_FALSE);
+
+mgInit (argc, argv);
+
+// re-enable all messages
+mgSetMessagesEnabled (MMSG_STATUS, MG_TRUE);
+mgSetMessagesEnabled (MMSG_WARNING, MG_TRUE);
+mgSetMessagesEnabled (MMSG_ERROR, MG_TRUE);
+
+// continue with stand-alone application processing</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># disable all messages
+mgSetMessagesEnabled (MMSG_STATUS, MG_FALSE)
+mgSetMessagesEnabled (MMSG_WARNING, MG_FALSE)
+mgSetMessagesEnabled (MMSG_ERROR, MG_FALSE)
+
+mgInit (argc, argv)
+
+# re-enable all messages
+mgSetMessagesEnabled (MMSG_STATUS, MG_TRUE)
+mgSetMessagesEnabled (MMSG_WARNING, MG_TRUE)
+mgSetMessagesEnabled (MMSG_ERROR, MG_TRUE)
+
+# continue with stand-alone script processing</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetMessagesEnabled.htm#mgGetMessagesEnabled>mgGetMessagesEnabled</A></DD></DL></BODY>
+
+</HTML>

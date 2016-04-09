@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>mgNewSound</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNewSound><H1 CLASS="APISYMBOL">mgNewSound</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNewSound</B> - allocates a new record for a sound palette entry.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec* <B>mgNewSound</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>name</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>index</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgrec, index <B>mgNewSound</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#string>string</A></TD><TD><I>name</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a database node db, mgNewSound allocates a sound record with 
+the name given and puts it in the database&#146s sound palette. If successful, the 
+sound record is returned.  If unsuccessful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> is returned.  This 
+sound attributes can then be set by using <A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A> with the returned record. 
+The index of the entry in the sound palette is returned in index.</P></DD><DD><P>The code of the record returned will be <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSoundPalette>fltSoundPalette</A>
+.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>name</I></DT><DD>the name of the sound entry record</DD><DT><I>index</I></DT><DD>the returned index of the sound entry record</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgrec</DT><DD>Returns the new sound palette entry record if successful, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.</DD><DT>index</DT><DD>If a palette record is returned, its index will be 
+returned in index, otherwise index is undefined.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* sound;
+int index;
+mgrec* db;
+db = mgNewDb ("newfile.flt");
+sound = mgNewSound (db, "NewSound", &index);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetSound.htm#mgGetSound>mgGetSound</A></DD></DL></BODY>
+
+</HTML>

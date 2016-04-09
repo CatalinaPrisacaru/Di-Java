@@ -1,0 +1,148 @@
+<HTML>
+<HEAD>
+<TITLE>PARAMETERFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=PARAMETERFUNC><H1>Parameter Block Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeParamBlock.htm#mgFreeParamBlock><B>mgFreeParamBlock</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <TD><A HREF=mgGetParamBlock.htm#mgGetParamBlock><B>mgGetParamBlock</B></A> (const char* <I>commandName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <TD><A HREF=mgNewParamBlock.htm#mgNewParamBlock><B>mgNewParamBlock</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddBool.htm#mgParamAddBool><B>mgParamAddBool</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddDouble.htm#mgParamAddDouble><B>mgParamAddDouble</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddDouble2.htm#mgParamAddDouble2><B>mgParamAddDouble2</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>defaultValue1</I>, double <I>defaultValue2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddDouble3.htm#mgParamAddDouble3><B>mgParamAddDouble3</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>defaultValue1</I>, double <I>defaultValue2</I>, double <I>defaultValue3</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddFloat.htm#mgParamAddFloat><B>mgParamAddFloat</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, float <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddInteger.htm#mgParamAddInteger><B>mgParamAddInteger</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgparam.htm#mgparam>mgparam</A> <TD><A HREF=mgParamAddString.htm#mgParamAddString><B>mgParamAddString</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppend.htm#mgParamAppend><B>mgParamAppend</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, <A HREF=#variant>variant</A> <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendBool.htm#mgParamAppendBool><B>mgParamAppendBool</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendDouble.htm#mgParamAppendDouble><B>mgParamAppendDouble</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendDouble2.htm#mgParamAppendDouble2><B>mgParamAppendDouble2</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>paramValue1</I>, double <I>paramValue2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendDouble3.htm#mgParamAppendDouble3><B>mgParamAppendDouble3</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>paramValue1</I>, double <I>paramValue2</I>, double <I>paramValue3</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendFloat.htm#mgParamAppendFloat><B>mgParamAppendFloat</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, float <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendInteger.htm#mgParamAppendInteger><B>mgParamAppendInteger</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, int <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamAppendString.htm#mgParamAppendString><B>mgParamAppendString</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, const char* <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamExists.htm#mgParamExists><B>mgParamExists</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetBool.htm#mgParamGetBool><B>mgParamGetBool</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>paramValue</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetBoolNth.htm#mgParamGetBoolNth><B>mgParamGetBoolNth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>paramValue</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">unsigned int <TD><A HREF=mgParamGetDimension.htm#mgParamGetDimension><B>mgParamGetDimension</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetDouble.htm#mgParamGetDouble><B>mgParamGetDouble</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double* <I>paramValue</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetDouble2.htm#mgParamGetDouble2><B>mgParamGetDouble2</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double* <I>paramValue1</I>, double* <I>paramValue2</I>, double <I>defaultValue1</I>, double <I>defaultValue2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetDouble2Nth.htm#mgParamGetDouble2Nth><B>mgParamGetDouble2Nth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, double* <I>paramValue1</I>, double* <I>paramValue2</I>, double <I>defaultValue1</I>, double <I>defaultValue2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetDouble3.htm#mgParamGetDouble3><B>mgParamGetDouble3</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double* <I>paramValue1</I>, double* <I>paramValue2</I>, double* <I>paramValue3</I>, double <I>defaultValue1</I>, double <I>defaultValue2</I>, double <I>defaultValue3</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetDouble3Nth.htm#mgParamGetDouble3Nth><B>mgParamGetDouble3Nth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, double* <I>paramValue1</I>, double* <I>paramValue2</I>, double* <I>paramValue3</I>, double <I>defaultValue1</I>, double <I>defaultValue2</I>, double <I>defaultValue3</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetDoubleNth.htm#mgParamGetDoubleNth><B>mgParamGetDoubleNth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, double* <I>paramValue</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetFloat.htm#mgParamGetFloat><B>mgParamGetFloat</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, float* <I>paramValue</I>, float <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetFloatNth.htm#mgParamGetFloatNth><B>mgParamGetFloatNth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, float* <I>paramValue</I>, float <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetInteger.htm#mgParamGetInteger><B>mgParamGetInteger</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, int* <I>paramValue</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetIntegerNth.htm#mgParamGetIntegerNth><B>mgParamGetIntegerNth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, int* <I>paramValue</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">unsigned int <TD><A HREF=mgParamGetSize.htm#mgParamGetSize><B>mgParamGetSize</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetString.htm#mgParamGetString><B>mgParamGetString</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, char* <I>paramValue</I>, int <I>maxLen</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetStringAlloc.htm#mgParamGetStringAlloc><B>mgParamGetStringAlloc</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, char** <I>paramValue</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetStringNth.htm#mgParamGetStringNth><B>mgParamGetStringNth</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, char* <I>paramValue</I>, int <I>maxLen</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamGetStringNthAlloc.htm#mgParamGetStringNthAlloc><B>mgParamGetStringNthAlloc</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, unsigned int <I>nth</I>, char** <I>paramValue</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSet.htm#mgParamSet><B>mgParamSet</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, <A HREF=#variant>variant</A> <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetBool.htm#mgParamSetBool><B>mgParamSetBool</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDimension.htm#mgParamSetDimension><B>mgParamSetDimension</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, unsigned int <I>maxArrayDimension</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDouble.htm#mgParamSetDouble><B>mgParamSetDouble</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDouble2.htm#mgParamSetDouble2><B>mgParamSetDouble2</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>paramValue1</I>, double <I>paramValue2</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDouble3.htm#mgParamSetDouble3><B>mgParamSetDouble3</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, double <I>paramValue1</I>, double <I>paramValue2</I>, double <I>paramValue3</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDoubleMaxLE.htm#mgParamSetDoubleMaxLE><B>mgParamSetDoubleMaxLE</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, double <I>maxValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDoubleMaxLT.htm#mgParamSetDoubleMaxLT><B>mgParamSetDoubleMaxLT</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, double <I>maxValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDoubleMinGE.htm#mgParamSetDoubleMinGE><B>mgParamSetDoubleMinGE</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, double <I>minValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetDoubleMinGT.htm#mgParamSetDoubleMinGT><B>mgParamSetDoubleMinGT</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, double <I>minValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetEnumerant.htm#mgParamSetEnumerant><B>mgParamSetEnumerant</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, int <I>value</I>, const char* <I>string</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetFloat.htm#mgParamSetFloat><B>mgParamSetFloat</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, float <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetInteger.htm#mgParamSetInteger><B>mgParamSetInteger</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, int <I>paramValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetIntegerMaxLE.htm#mgParamSetIntegerMaxLE><B>mgParamSetIntegerMaxLE</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, int <I>maxValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetIntegerMaxLT.htm#mgParamSetIntegerMaxLT><B>mgParamSetIntegerMaxLT</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, int <I>maxValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetIntegerMinGE.htm#mgParamSetIntegerMinGE><B>mgParamSetIntegerMinGE</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, int <I>minValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetIntegerMinGT.htm#mgParamSetIntegerMinGT><B>mgParamSetIntegerMinGT</B></A> (<A HREF=mgparam.htm#mgparam>mgparam</A> <I>param</I>, int <I>minValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgParamSetString.htm#mgParamSetString><B>mgParamSetString</B></A> (<A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A> <I>paramBlock</I>, const char* <I>paramName</I>, const char* <I>paramValue</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

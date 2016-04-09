@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetCoord2i</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetCoord2i><H1 CLASS="APISYMBOL">mgSetCoord2i</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetCoord2i</B> - sets all three attribute values in a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ record.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgSetCoord2i</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>code</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>x</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>y</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a record, <I>rec</I>, and the name of one of its <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ attribute records, 
+<B>mgSetCoord2i</B> sets the <I>x</I> and <I>y</I> attribute values in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ attribute record.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record whose <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ record is to be set</DD><DT><I>code</I></DT><DD>the name of the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ attribute code of <I>rec</I></DD><DT><I>x</I></DT><DD>the x value to set in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ attribute record</DD><DT><I>y</I></DT><DD>the y value to set in the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltCoord2i>fltCoord2i</A>
+ attribute record</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetCoord3d.htm#mgSetCoord3d>mgSetCoord3d</A></DD></DL></BODY>
+
+</HTML>

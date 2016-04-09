@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>mgPtrStackTop</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPtrStackTop><H1 CLASS="APISYMBOL">mgPtrStackTop</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPtrStackTop</B> - returns the item on top of a pointer stack.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void* <B>mgPtrStackTop</B> (</TD><TD><A HREF=mgptrstack.htm#mgptrstack>mgptrstack</A></TD><TD><I>ptrStack</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPtrStackTop</B> gets the item on top of the pointer stack 
+<I>ptrStack</I> and returns that item.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>ptrStack</I></DT><DD>the pointer stack</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the item that is currently at the top of the stack, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if stack is empty.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewPtrStack.htm#mgNewPtrStack>mgNewPtrStack</A>, <A HREF=mgFreePtrStack.htm#mgFreePtrStack>mgFreePtrStack</A>, 
+<A HREF=mgPtrStackPush.htm#mgPtrStackPush>mgPtrStackPush</A>, <A HREF=mgPtrStackPop.htm#mgPtrStackPop>mgPtrStackPop</A>, <A HREF=mgPtrStackClear.htm#mgPtrStackClear>mgPtrStackClear</A>, 
+<A HREF=mgPtrStackLength.htm#mgPtrStackLength>mgPtrStackLength</A></DD></DL></BODY>
+
+</HTML>

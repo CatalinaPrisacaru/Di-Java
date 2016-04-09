@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgvertexrefdata</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgvertexrefdata><H1 CLASS="APISYMBOL">mgvertexrefdata</H1></A></LEFT>
+<DL>
+<DT><H3>UNION NAME</H3></DT>
+<DD><B>mgvertexrefdata</B> - 3D Vertex Mouse Input Reference data<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef union  {
+&#32;&#32;&#32;mgrec* vertex;
+&#32;&#32;&#32;mgrec* edge[2];
+&#32;&#32;&#32;mgrec* curve;
+&#32;&#32;&#32;mgrec* face;
+&#32;&#32;&#32;mgplaned* trackPlane;
+} mgvertexrefdata;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>vertex</B><DD><A HREF=mgrec.htm#mgrec>mgrec*</A> - the existing vertex referenced for <A HREF=mgvertexreftype.htm#mgvertexreftype>MVRF_VERTEX</A></DD></DT><DT><B>edge[2]</B><DD><A HREF=mgrec.htm#mgrec>mgrec*</A> - the existing edge referenced for <A HREF=mgvertexreftype.htm#mgvertexreftype>MVRF_EDGE</A></DD></DT><DT><B>curve</B><DD><A HREF=mgrec.htm#mgrec>mgrec*</A> - the existing curve referenced for <A HREF=mgvertexreftype.htm#mgvertexreftype>MVRF_CURVE</A></DD></DT><DT><B>face</B><DD><A HREF=mgrec.htm#mgrec>mgrec*</A> - the existing face referenced for <A HREF=mgvertexreftype.htm#mgvertexreftype>MVRF_FACE</A></DD></DT><DT><B>trackPlane</B><DD><A HREF=mgplaned.htm#mgplaned>mgplaned*</A> - the trackplane referenced for <A HREF=mgvertexreftype.htm#mgvertexreftype>MVRF_TRACKPLANE</A></DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>When 3D vertex mouse input is reported to an editor tool via 
+the corresponding 3D vertex input function, reference data may be 
+included that specifies how the user entered the 3D vertex input. 
+This record is used to specify this 3D vertex input reference data.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, <A HREF=mgEditorSetVertexFunc.htm#mgEditorSetVertexFunc>mgEditorSetVertexFunc</A>, <A HREF=mgvertexreftype.htm#mgvertexreftype>mgvertexreftype</A></DD></DL></BODY>
+
+</HTML>

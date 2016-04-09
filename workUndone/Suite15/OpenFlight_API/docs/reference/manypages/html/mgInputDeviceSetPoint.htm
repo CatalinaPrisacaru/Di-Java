@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>mgInputDeviceSetPoint</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgInputDeviceSetPoint><H1 CLASS="APISYMBOL">mgInputDeviceSetPoint</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgInputDeviceSetPoint</B> - sets a point on an input device.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgInputDeviceSetPoint</B> (</TD><TD><A HREF=mginputdevice.htm#mginputdevice>mginputdevice</A></TD><TD><I>inputDevice</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>x</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>y</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgInputDeviceSetPoint</B> sets a 2D point with coordinates <I>x</I>, <I>y</I> on the 
+input device <I>inputDevice</I> obtained by <A HREF=mgInputDeviceGetHandle.htm#mgInputDeviceGetHandle>mgInputDeviceGetHandle</A>.  The event is sent 
+by calling <A HREF=mgInputDeviceSendEvent.htm#mgInputDeviceSendEvent>mgInputDeviceSendEvent</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>inputDevice</I></DT><DD>the input device obtained from <A HREF=mgInputDeviceGetHandle.htm#mgInputDeviceGetHandle>mgInputDeviceGetHandle</A></DD><DT><I>x</I></DT><DD>x coordinate of the point</DD><DT><I>y</I></DT><DD>y coordinate of the point</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgInputDeviceSendEvent.htm#mgInputDeviceSendEvent>mgInputDeviceSendEvent</A>, <A HREF=mgInputDeviceGetHandle.htm#mgInputDeviceGetHandle>mgInputDeviceGetHandle</A>, <A HREF=mgInputDeviceSetVertex.htm#mgInputDeviceSetVertex>mgInputDeviceSetVertex</A></DD></DL></BODY>
+
+</HTML>

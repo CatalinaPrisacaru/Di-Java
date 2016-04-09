@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>mgExit</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgExit><H1 CLASS="APISYMBOL">mgExit</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgExit</B> - exits the OpenFlight API software development 
+environment.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD> mgbool <B>mgExit</B> ( void ) </DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgExit</B> is the very last function an application should call. 
+This function performs the proper exit functions, such as closing all 
+database and resource files, housekeeping, and releasing memory. 
+It is a mandatory call to exit the entire programming environment. 
+<B>mgExit</B> does not write or save any databases.</P></DD><DD><P>Note: This function is for use in stand-alone applications only 
+and should not be called from inside a plug-in.  Doing so may yield 
+undefined results.</P></DD></DT></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgCloseDb.htm#mgCloseDb>mgCloseDb</A>, <A HREF=mgInit.htm#mgInit>mgInit</A>, <A HREF=mgIsInitialized.htm#mgIsInitialized>mgIsInitialized</A></DD></DL></BODY>
+
+</HTML>

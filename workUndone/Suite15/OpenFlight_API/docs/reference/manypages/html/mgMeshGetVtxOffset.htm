@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>mgMeshGetVtxOffset</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMeshGetVtxOffset><H1 CLASS="APISYMBOL">mgMeshGetVtxOffset</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMeshGetVtxOffset</B> - gets the offset for vertex data 
+in a mesh.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgMeshGetVtxOffset</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>bit</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This function retrieves the offset for the vertex data 
+specified by mesh vertex mask bit <I>bit</I> in the vertex pool 
+of mesh <I>rec</I>.</P></DD><DD><P>The vertex data offset for a particular kind of data within 
+the mesh vertex pool indicates the number of bytes from the start 
+of the vertex pool to the first byte of the data in the first 
+vertex.</P></DD><DD><P>Use a single Mesh Vertex Mask Bit for <I>bit</I> to specify 
+which data you want the offset for:<BR> 
+<A HREF=MMESH_VTXCOORD.htm#MMESH_VTXCOORD>MMESH_VTXCOORD</A>,<BR> 
+<A HREF=MMESH_VTXCOLOR.htm#MMESH_VTXCOLOR>MMESH_VTXCOLOR</A>,<BR> 
+<A HREF=MMESH_VTXCOLORRGB.htm#MMESH_VTXCOLORRGB>MMESH_VTXCOLORRGB</A>,<BR> 
+<A HREF=MMESH_VTXNORMAL.htm#MMESH_VTXNORMAL>MMESH_VTXNORMAL</A>,<BR> 
+<A HREF=MMESH_VTXUV0.htm#MMESH_VTXUV0>MMESH_VTXUV0</A>,<BR> 
+<A HREF=MMESH_VTXUV1.htm#MMESH_VTXUV1>MMESH_VTXUV1</A>,<BR> 
+<A HREF=MMESH_VTXUV2.htm#MMESH_VTXUV2>MMESH_VTXUV2</A>,<BR> 
+<A HREF=MMESH_VTXUV3.htm#MMESH_VTXUV3>MMESH_VTXUV3</A>,<BR> 
+<A HREF=MMESH_VTXUV4.htm#MMESH_VTXUV4>MMESH_VTXUV4</A>,<BR> 
+<A HREF=MMESH_VTXUV5.htm#MMESH_VTXUV5>MMESH_VTXUV5</A>,<BR> 
+<A HREF=MMESH_VTXUV6.htm#MMESH_VTXUV6>MMESH_VTXUV6</A>, or <BR> 
+<A HREF=MMESH_VTXUV7.htm#MMESH_VTXUV7>MMESH_VTXUV7</A></P></DD><DD><P>You can use the values returned by this function together 
+with the vertex stride returned by <A HREF=mgMeshGetVtxStride.htm#mgMeshGetVtxStride>mgMeshGetVtxStride</A> to 
+extract data from the mesh vertex pool.  Note: This is not the 
+recommended technique for extracting data from the mesh vertex 
+pool.  Instead, it is much simpler to use the functions 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA>mgMeshGetVtxColorRGBA</A>, <A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A> and <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ node</DD><DT><I>bit</I></DT><DD>the mesh vertex mask bit specifying 
+the data to get offset for</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the offset for the specified data in the 
+vertex pool of mesh <I>rec</I> if successful, -1 otherwise. 
+This function will fail if <I>rec</I> is not a valid mesh node 
+or if the vertices in the mesh do not have the data specified 
+by <I>bit</I>.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgMeshGetVtxPool.htm#mgMeshGetVtxPool>mgMeshGetVtxPool</A>, <A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask>mgMeshGetVtxMask</A>, <A HREF=mgMeshGetVtxStride.htm#mgMeshGetVtxStride>mgMeshGetVtxStride</A>, 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA>mgMeshGetVtxColorRGBA</A>, <A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A>, <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A></DD></DL></BODY>
+
+</HTML>

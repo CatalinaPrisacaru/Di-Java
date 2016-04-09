@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>mgSubTextureGet</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSubTextureGet><H1 CLASS="APISYMBOL">mgSubTextureGet</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSubTextureGet</B> - gets the subtexture definitions from a 
+texture attribute record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgSubTextureGet</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>imgRec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgsubtexturedata.htm#mgsubtexturedata>mgsubtexturedata</A></TD><TD><I>subTextureData[]</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>arrayLen</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>numSubTextures, subTextureData <B>mgSubTextureGet</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>imgRec</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSubTextureGet</B> gets the subtexture definitions of the specified 
+texture attribute record <I>imgRec</I> (of type <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltImage>fltImage</A>
+).</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P><B>mgSubTextureGet</B> writes the data into the output parameter <I>subTextureData</I>. 
+The size of the array is specified by <I>arrayLen</I>.  The number of subtexture definitions 
+actually written into the array is returned.  You can determine the actual number of 
+subtexture definitions contained in a texture attribute record by calling 
+<A HREF=mgSubTextureCount.htm#mgSubTextureCount>mgSubTextureCount</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P><B>mgSubTextureGet</B> returns the subtexture definitions. The number 
+of subtexture definitions included is also returned.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>imgRec</I></DT><DD>the texture attribute record</DD><DT><I>subTextureData[]</I></DT><DD>the array of subtexture records to be filled in</DD><DT><I>arrayLen</I></DT><DD>the size of the array <I>subTextureData</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>numSubTextures</DT><DD>The number of subtexture records being returned.</DD><DT>subTextureData</DT><DD>The records returned.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* imgRec = mgGetTextureAttributes (db, textureIndex);
+int num;
+num = mgSubTextureCount (imgRec);
+if (num &gt 0) {
+   int numGot;
+   mgsubtexturedata* subTexures;
+   subTexures = (mgsubtexturedata*) mgMalloc (num * sizeof(mgsubtexturedata));
+   numGot = mgSubTextureGet (imgRec, subTexures, num);
+   for (int i = 0; i &lt numGot; ++i)
+   {
+      printf("Subtexture %d :\\n", i+1);
+      printf("   name: %s\\n", subTexures[i].name);
+      printf("   l,b,r,t: %d %d %d %d\\n", subTexures[i].l,
+&#32 subTexures[i].b, subTexures[i].r, subTexures[i].t);
+   }
+
+   // free the allocated subtexture data when you're done with it
+   mgFree (subTexures);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">imgRec = mgGetTextureAttributes (db, textureIndex)
+num,subTexures = mgSubTextureGet (imgRec)
+for i in range (0, num):
+   print "Subtexture",i+1,":"
+   subTexture = subTexures[i]
+   print "   name:",subTexture.name
+   print "   l,b,r,t:",subTexture.l,subTexture.b,subTexture.r,subTexture.t</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSubTextureAdd.htm#mgSubTextureAdd>mgSubTextureAdd</A>, <A HREF=mgSubTextureDelete.htm#mgSubTextureDelete>mgSubTextureDelete</A>, <A HREF=mgSubTextureCount.htm#mgSubTextureCount>mgSubTextureCount</A>, 
+<A HREF=mgSubTextureGetBounds.htm#mgSubTextureGetBounds>mgSubTextureGetBounds</A></DD></DL></BODY>
+
+</HTML>

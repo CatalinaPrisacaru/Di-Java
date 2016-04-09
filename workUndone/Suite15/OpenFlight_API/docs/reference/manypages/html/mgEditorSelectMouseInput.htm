@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>mgEditorSelectMouseInput</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgEditorSelectMouseInput><H1 CLASS="APISYMBOL">mgEditorSelectMouseInput</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgEditorSelectMouseInput</B> - selects the active mouse input 
+callback function for an editor tool instance.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgEditorSelectMouseInput</B> (</TD><TD><A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A></TD><TD><I>editorContext</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgmouseinputtype.htm#mgmouseinputtype>mgmouseinputtype</A></TD><TD><I>inputType</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgEditorSelectMouseInput</B> selects which mouse input callback 
+function to make active for the specified editor context, <I>editorContext</I>.</P></DD><DD><P>When an editor tool is registered, a separate mouse input callback 
+function may be assigned for each class of mouse input (3D vertex input 
+using <A HREF=mgEditorSetVertexFunc.htm#mgEditorSetVertexFunc>mgEditorSetVertexFunc</A>, 2D point input 
+using <A HREF=mgEditorSetPointFunc.htm#mgEditorSetPointFunc>mgEditorSetPointFunc</A>, geometry pick input using 
+<A HREF=mgEditorSetPickFunc.htm#mgEditorSetPickFunc>mgEditorSetPickFunc</A> and device specific input using 
+<A HREF=mgEditorSetDeviceInputFunc.htm#mgEditorSetDeviceInputFunc>mgEditorSetDeviceInputFunc</A>). When an editor instance is active, 
+only one of the mouse input functions registered may be active at a time. 
+This is required so Creator 
+can interpret the mouse events properly for your tool instance. 
+This function is used to select which mouse input callback function is 
+currently active for an editor tool instance.</P></DD><DD><P>If your editor tool instance does not handle any mouse input, set 
+<I>inputType</I> to <A HREF=mgmouseinputtype.htm#mgmouseinputtype>MMSI_NOINPUT</A> so that none of the 
+mouse input callback functions are active.</P></DD><DD><P>You can switch between different mouse input callback functions 
+at any time while your editor tool instance is active.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>editorContext</I></DT><DD>the editor context to select 
+active mouse input for</DD><DT><I>inputType</I></DT><DD>the mouse input callback function to select:<BR> 
+<A HREF=mgmouseinputtype.htm#mgmouseinputtype>MMSI_VERTEXINPUT</A> - to select 3D vertex input <BR> 
+<A HREF=mgmouseinputtype.htm#mgmouseinputtype>MMSI_POINTINPUT</A> - to select 2D point input <BR> 
+<A HREF=mgmouseinputtype.htm#mgmouseinputtype>MMSI_PICKINPUT</A> - to select geometry pick input <BR> 
+<A HREF=mgmouseinputtype.htm#mgmouseinputtype>MMSI_DEVICEINPUT</A> - to select device specific input <BR> 
+<A HREF=mgmouseinputtype.htm#mgmouseinputtype>MMSI_NOINPUT</A> - to select NO mouse input</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how an editor tool might register 
+multiple mouse input functions (a 3D vertex function, a 2D point function 
+and a pick function) for an editor tool, <I>editorTool</I> and then select 
+one of them to be active when the tool instance is active.<BR><BR> 
+When the editor tool is registered:</DT><DT><PRE CLASS="EXAMPLE">// Register the mouse input functions that are used by tool
+mgEditorSetVertexFunc (editorTool, MyVertexFunc);
+mgEditorSetPointFunc (editorTool, MyPointFunc);
+mgEditorSetPickFunc (editorTool, MyPickFunc);
+mgEditorSetDeviceInputFunc (editorTool, MyDeviceInputFunc);</PRE></DT><DT>Then when the editor tool instance is active:</DT><DT><PRE CLASS="EXAMPLE">// Activate the 3D vertex function, MyVertexFunc
+mgEditorSelectMouseInput (editorContext, MMSI_VERTEXINPUT);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgEditorSetVertexFunc.htm#mgEditorSetVertexFunc>mgEditorSetVertexFunc</A>, <A HREF=mgEditorSetPointFunc.htm#mgEditorSetPointFunc>mgEditorSetPointFunc</A>, <A HREF=mgEditorSetPickFunc.htm#mgEditorSetPickFunc>mgEditorSetPickFunc</A></DD></DL></BODY>
+
+</HTML>

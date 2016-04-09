@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<TITLE>mgEditorAddRedo</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgEditorAddRedo><H1 CLASS="APISYMBOL">mgEditorAddRedo</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgEditorAddRedo</B> - registers a new redo callback action 
+for an editor tool instance.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgEditorAddRedo</B> (</TD><TD><A HREF=mgeditorundofunc.htm#mgeditorundofunc>mgeditorundofunc</A></TD><TD><I>redoFunc</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgeditorundocleanupfunc.htm#mgeditorundocleanupfunc>mgeditorundocleanupfunc</A></TD><TD><I>redoCleanupFunc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>redoData</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgEditorAddRedo</B> creates a new redo-able action item 
+in the redo menu.</P></DD><DD><P>If the action "un-done" by the undo function of an editor tool 
+instance is "redo-able", the editor tool registers this redo-able 
+action using this function.  Doing so causes a redo entry to be created 
+in the Edit->Redo menu with the same label as the corresponding undo.</P></DD><DD><P>When this redo entry is selected by the user, the specified 
+redo callback function, <I>redoFunc</I> is called and passed 
+the specified redo data <I>redoData</I>.  In this function, the editor 
+tool instance is responsible for restoring the database to the state 
+it was in prior to the editor tool undo function being called.  This 
+is critical for previous undo/redo callback actions to correctly 
+perform their processing.</P></DD><DD><P><B>mgEditorAddRedo</B> may only be called by from within an undo 
+callback function of the editor tool.  This provides the necessary 
+"context" for the redo-able action (editor context, menu label, etc). 
+If your undo callback function does not register a redo-able action 
+using this function, all the items already in the Edit->Redo menu 
+will be cleared.</P></DD><DD><P>Generally, after the redo callback function is called, the redo 
+cleanup callback function, <I>redoCleanupFunc</I> is called.  In this 
+function, the editor tool instance can deallocate the redo data. 
+Alternatively, the redo cleanup callback function may be called 
+when the redo entry in the Edit->Redo menu becomes unreachable. 
+In this case, the redo callback function will not be called 
+before the redo cleanup callback function.</P></DD><DD><P>The redo data <I>redoData</I> specified may be the same data as 
+was specified when the undo was registered.  In fact, this is 
+very common since the undo and redo data for a specific editor tool 
+instance may be very similar in content.  When the <I>redoData</I> specified 
+to <B>mgEditorAddRedo</B> is the same address as the undo data, the 
+undo and redo cleanup functions are automatically deferred by the 
+modeling system until this "shared" data is really not needed anymore. 
+When an undo or redo cleanup function is called, it is always safe (and 
+required) to free the associated memory.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>redoFunc</I></DT><DD>the redo callback function 
+for this redo-able action</DD><DT><I>redoCleanupFunc</I></DT><DD>the redo cleanup callback 
+function for this redo-able action</DD><DT><I>redoData</I></DT><DD>user data to be passed to 
+callback functions <I>redoFunc</I> 
+and <I>redoCleanupFunc</I> when they 
+are called</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how an editor tool 
+might register an undo and redo that "share" data.<BR><BR> 
+When the editor tool is executed, it registers the undo. An undo 
+entry labeled "My Action" is created in the Edit->Undo menu.</DT><DT><PRE CLASS="EXAMPLE">// this object will be shared by the undo and redo
+myundodata* myUndoData = BuildUndoData ();
+
+// Register the undo callback action
+mgEditorAddUndo (editorContext, "My Action",
+&#32&#32  MyUndoFunc, MyUndoCleanupFunc, myUndoData);</PRE></DT><DT>Then when the user invokes Edit->Undo->My Action, <B>MyUndoFunc</B> 
+is called and it registers the redo.  A redo entry labeled "My Action" 
+is created in the Edit->Redo menu.  This label is inferred by the 
+modeling system since it knows which undo callback function it is 
+currently in when <B>mgEditorAddRedo</B> is called.</DT><DT><PRE CLASS="EXAMPLE">static void MyUndoFunc (mgrec* db, void* undoData)
+{
+   myundodata* myUndoData = (myundodata*) undoData;
+
+   // Undo the action
+   // ...
+
+   // Then register the redo.  Note that the redo data is the same as
+   // the undo data.  This is ok.  This tells the OpenFlight API that the
+   // data is purposefully shared.  And as a result, the cleanup
+   // function will not be called until the shared data is "really"
+   // ready to be freed.  Note also that the same cleanup function
+   // is used for undo and redo.  This will most likely be the case
+   // when the data is shared between the undo and redo.
+   mgEditorAddRedo (MyRedoFunc, MyUndoCleanupFunc, myUndoData);
+}</PRE></DT><DT>Then when the user invokes Edit->Redo->My Action, <B>MyRedoFunc</B> 
+is called and it registers the undo for the redo.  An undo entry labeled 
+"My Action" is created in the Edit->Undo menu.  Like above, this 
+label is inferred by the modeling system since it knows which redo 
+callback function it is currently in when <A HREF=mgEditorAddUndoForRedo.htm#mgEditorAddUndoForRedo>mgEditorAddUndoForRedo</A> 
+is called.</DT><DT><PRE CLASS="EXAMPLE">static void MyRedoFunc (mgrec* db, void* redoData)
+{
+   myundodata* myUndoData = (myundodata*) redoData;
+
+   // Redo the action
+   // ...
+
+   // Then register the undo for the redo, note that the undo data
+   // is the same as the redo data which is the same as the original
+   // undo data.  Again, this is ok.  This tells the OpenFlight API that the
+   // data is purposefully shared.  And as a result, the cleanup
+   // function will be called when the data is "really" ready to
+   // be freed.  Note that the undo for redo function is the same
+   // as the original undo function.  This is almost always the
+   // case when the data is shared since the undo processing
+   // required after the tool originally executes is the same
+   // processing required after an undo is re-done.
+   // Also, note again that the same cleanup function is used
+   // for undo, redo and undo for redo.
+   mgEditorAddUndoForRedo (myUndoFunc, MyUndoCleanupFunc, myUndoData);
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A>, 
+<A HREF=mgEditorAddUndo.htm#mgEditorAddUndo>mgEditorAddUndo</A>, <A HREF=mgEditorAppendUndo.htm#mgEditorAppendUndo>mgEditorAppendUndo</A>, <A HREF=mgEditorResetUndo.htm#mgEditorResetUndo>mgEditorResetUndo</A>, 
+<A HREF=mgEditorAddUndoForRedo.htm#mgEditorAddUndoForRedo>mgEditorAddUndoForRedo</A>, 
+<A HREF=mgEditorAddUndoForCreate.htm#mgEditorAddUndoForCreate>mgEditorAddUndoForCreate</A>, <A HREF=mgEditorAppendUndoForCreate.htm#mgEditorAppendUndoForCreate>mgEditorAppendUndoForCreate</A>, 
+<A HREF=mgEditorAddUndoForDelete.htm#mgEditorAddUndoForDelete>mgEditorAddUndoForDelete</A>, <A HREF=mgEditorAppendUndoForDelete.htm#mgEditorAppendUndoForDelete>mgEditorAppendUndoForDelete</A>, 
+<A HREF=mgEditorAddUndoForMove.htm#mgEditorAddUndoForMove>mgEditorAddUndoForMove</A>, <A HREF=mgEditorAppendUndoForMove.htm#mgEditorAppendUndoForMove>mgEditorAppendUndoForMove</A></DD></DL></BODY>
+
+</HTML>

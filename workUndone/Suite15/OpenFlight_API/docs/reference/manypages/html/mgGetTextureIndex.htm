@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetTextureIndex</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetTextureIndex><H1 CLASS="APISYMBOL">mgGetTextureIndex</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetTextureIndex</B> - gets the index of a texture palette entry 
+from its name.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgGetTextureIndex</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>textureName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetTextureIndex</B> returns the index of the texture palette entry whose 
+file name matches <I>textureName</I>. If no such entry is found and <I>textureName</I> 
+is a relative path, this function returns the index of the texture palette entry 
+whose file name matches the full path of <I>textureName</I>, which is the 
+concatenation of the database's directory and <I>textureName</I>. If no such entry 
+is found still, this function returns the smallest index of the entries whose 
+file names end with <I>textureName</I>.</P></DD><DD><P>If a texture is read using <A HREF=mgReadTextureAndAlpha.htm#mgReadTextureAndAlpha>mgReadTextureAndAlpha</A> or 
+<A HREF=mgInsertTextureAndAlpha.htm#mgInsertTextureAndAlpha>mgInsertTextureAndAlpha</A>, this function returns its index when the specified 
+<I>mergeName</I> is passed in as <I>textureName</I>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>textureName</I></DT><DD>the name of the texture palette entry</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the index of the texture palette entry if found, or returns -1 otherwise.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples load a few textures and print out the indices that correspond 
+to various inputs. Suppose the directory of the current database is C:/folder.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* db = mgGetCurrentDb ();
+
+// load the texture at the specified path and assign its index to 0
+mgReadTexture (db, "C:/A.rgb", 0, 0, 0);
+
+// load the texture at the specified path and assign its index to 1
+mgReadTexture (db, "C:/folder/A.rgb", 1, 0, 0);
+
+// load the texture at the specified path and assign its index to 2
+mgReadTexture (db, "C:/folder2/B.rgb", 2, 0, 0);
+
+// load the texture at the specified path and assign its index to 3
+mgReadTexture (db, "C:/B.rgb", 3, 0, 0);
+
+printf ("%d", mgGetTextureIndex (db, "C:/A.rgb"));
+printf ("%d", mgGetTextureIndex (db, "A.rgb"));
+printf ("%d", mgGetTextureIndex (db, "B.rgb"));</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">db = mgGetCurrentDb ()
+
+# load the texture at the specified path and assign its index to 0
+mgReadTexture (db, "C:/A.rgb", 0, 0, 0)
+
+# load the texture at the specified path and assign its index to 1
+mgReadTexture (db, "C:/folder/A.rgb", 1, 0, 0)
+
+# load the texture at the specified path and assign its index to 2
+mgReadTexture (db, "C:/folder2/B.rgb", 2, 0, 0)
+
+# load the texture at the specified path and assign its index to 3
+mgReadTexture (db, "C:/B.rgb", 3, 0, 0)
+
+print mgGetTextureIndex (db, "C:/A.rgb")
+print mgGetTextureIndex (db, "A.rgb")
+print mgGetTextureIndex (db, "B.rgb")</PRE></DT></DL></DD></DL>
+<DL><DT><H3>EXAMPLE OUTPUT</H3></DT><DD><DL><DT>The following is the output produced by the examples above. The first output is 0 as expected. 
+To determine the index of A.rgb, first we look for a loaded texture whose path is an exact match. 
+Since none of the loaded textures satisfies that condition, we look for a loaded texture whose path 
+matches the full path of A.rgb, which is C:/folder/A.rgb as the directory of the current database 
+is C:/folder. Thus, the second output is 1. As for B.rgb, there is not a loaded texture whose path 
+matches it or its full path, so we look for textures whose tail matches it. The last output is 2 
+because it is the smallest of all the indices of such textures.</DT><DT><PRE CLASS="EXAMPLE">0 
+1 
+2</PRE></DT></DL></DD></DL>
+
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetTextureName.htm#mgGetTextureName>mgGetTextureName</A>, <A HREF=mgGetFirstTexture.htm#mgGetFirstTexture>mgGetFirstTexture</A>, <A HREF=mgGetNextTexture.htm#mgGetNextTexture>mgGetNextTexture</A>, 
+<A HREF=mgIsTextureInPalette.htm#mgIsTextureInPalette>mgIsTextureInPalette</A>, <A HREF=mgIsTextureIndexInPalette.htm#mgIsTextureIndexInPalette>mgIsTextureIndexInPalette</A></DD></DL></BODY>
+
+</HTML>

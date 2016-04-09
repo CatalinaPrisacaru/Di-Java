@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>mggraphicviewdata</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mggraphicviewdata><H1 CLASS="APISYMBOL">mggraphicviewdata</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mggraphicviewdata</B> - Graphic View data<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgglcontext glContext;
+&#32;&#32;&#32;mggraphicdrawmode drawMode;
+&#32;&#32;&#32;mgbool lightingEnabled;
+&#32;&#32;&#32;mgbool textureEnabled;
+&#32;&#32;&#32;mggraphicdrawreason drawReason;
+&#32;&#32;&#32;void* userData;
+&#32;&#32;&#32;mggraphicview graphicView;
+} mggraphicviewdata;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>glContext</B><DD><A HREF=mgglcontext.htm#mgglcontext>mgglcontext</A> - Gl rendering context associated to this 
+graphics view</DD></DT><DT><B>drawMode</B><DD><A HREF=mggraphicdrawmode.htm#mggraphicdrawmode>mggraphicdrawmode</A> - draw mode for the graphics view</DD></DT><DT><B>lightingEnabled</B><DD><A HREF=mgbool.htm#mgbool>mgbool</A> - <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if lighting mode is enabled</DD></DT><DT><B>textureEnabled</B><DD><A HREF=mgbool.htm#mgbool>mgbool</A> - <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if texture drawing is enabled</DD></DT><DT><B>drawReason</B><DD><A HREF=mggraphicdrawreason.htm#mggraphicdrawreason>mggraphicdrawreason</A> - draw reason for the graphics view</DD></DT><DT><B>userData</B><DD>void* - user data supplied by <B>mgRegisterNodeDrawGraphic</B></DD></DT><DT><B>graphicView</B><DD><A HREF=#mggraphicview>mggraphicview</A> - graphic view</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>The graphic draw function for an extension node will be passed a pointer 
+to an object of this type.  This record contains a GL rendering context object 
+and other objects that indicate the draw state of the graphics view in which 
+the extension node is to be drawn.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterGraphicDraw.htm#mgRegisterGraphicDraw>mgRegisterGraphicDraw</A>, <A HREF=mggraphicdrawfunc.htm#mggraphicdrawfunc>mggraphicdrawfunc</A></DD></DL></BODY>
+
+</HTML>

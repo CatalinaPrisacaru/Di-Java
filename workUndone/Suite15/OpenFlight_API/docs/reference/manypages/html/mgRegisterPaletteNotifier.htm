@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<TITLE>mgRegisterPaletteNotifier</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRegisterPaletteNotifier><H1 CLASS="APISYMBOL">mgRegisterPaletteNotifier</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRegisterPaletteNotifier</B> - registers a palette notifier.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgnotifier <B>mgRegisterPaletteNotifier</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>pluginTool</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgnotifierevent.htm#mgnotifierevent>mgnotifierevent</A></TD><TD><I>event</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgpalettenotifyfunc.htm#mgpalettenotifyfunc>mgpalettenotifyfunc</A></TD><TD><I>notifyFunc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRegisterPaletteNotifier</B> registers a model-time palette notifier 
+on behalf of the specified editor or viewer plug-in tool, <I>pluginTool</I>. 
+When the specified model time palette <I>event</I> occurs for the specified 
+database <I>db</I>, the palette notification callback function, <I>notifyFunc</I> 
+is called. The affected database and palette entry index are passed to the 
+notification callback function with the specified user defined data, 
+<I>userData</I>.</P></DD><DD><P>Typically, you register a model-time palette notifier for a particular 
+database node <I>db</I> in the scene. If you do this, your notification callback 
+function will be called only when the specified <I>event</I> occurs within the palette 
+of that specific <I>db</I> node. If you want your notification callback function to 
+be called whenever the event occurs within the palette of any database node, 
+set <I>db</I> to <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD><DD><P>Note: Model-time palette notifier events only apply to viewer and editor tools. 
+Database importers and exporters, image importers and input device plug-in 
+cannot receive model-time palette notification in this way.</P></DD><DD><P>The following palette notifiers are valid for this function:<BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_COLORPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_TEXTUREPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_MATERIALPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_TEXTUREMAPPINGPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTPOINTAPPEARANCEPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTPOINTANIMATIONPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SHADERPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SOUNDPALETTECHANGED</A><BR> 
+<A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTSOURCEPALETTECHANGED</A></P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the plug-in tool that is registering the notifier</DD><DT><I>event</I></DT><DD>notification event you are interested in</DD><DT><I>db</I></DT><DD>the database for which you are registering the event</DD><DT><I>notifyFunc</I></DT><DD>the palette notification callback function</DD><DT><I>userData</I></DT><DD>user data to be passed to notification callback 
+function when it is called</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns a notifier object if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterNotifier.htm#mgRegisterNotifier>mgRegisterNotifier</A>, <A HREF=mgUnregisterNotifier.htm#mgUnregisterNotifier>mgUnregisterNotifier</A>, 
+<A HREF=mgSetNotifierEnabled.htm#mgSetNotifierEnabled>mgSetNotifierEnabled</A>, <A HREF=mgnotifierevent.htm#mgnotifierevent>mgnotifierevent</A></DD></DL></BODY>
+
+</HTML>

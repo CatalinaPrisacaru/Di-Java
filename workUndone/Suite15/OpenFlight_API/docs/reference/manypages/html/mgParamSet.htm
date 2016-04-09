@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamSet</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamSet><H1 CLASS="APISYMBOL">mgParamSet</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamSet</B> - sets a parameter value in a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For C)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgParamSet</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#variant>variant</A></TD><TD><I>paramValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamSet</B> sets the value of a parameter named 
+<I>paramName</I> in the parameter block <I>paramBlock</I> to <I>paramValue</I>. 
+If the parameter does not exist, no value is set.</P></DD><DD><P>If the parameter is an array type parameter, this function sets 
+the first value in the array and clears all the other values in the 
+parameter.</P></DD><DD><P>Note that if the parameter does not exist, it is NOT created in the parameter block.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>Note that this function is for OpenFlight Scripts only and cannot 
+be used by your C language plug-in. 
+In your C language plug-in you must use either 
+<A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A>, <A HREF=mgParamSetDouble.htm#mgParamSetDouble>mgParamSetDouble</A>, <A HREF=mgParamSetFloat.htm#mgParamSetFloat>mgParamSetFloat</A>, 
+<A HREF=mgParamSetBool.htm#mgParamSetBool>mgParamSetBool</A>, <A HREF=mgParamSetString.htm#mgParamSetString>mgParamSetString</A>, <A HREF=mgParamSetDouble2.htm#mgParamSetDouble2>mgParamSetDouble2</A>, 
+or <A HREF=mgParamSetDouble3.htm#mgParamSetDouble3>mgParamSetDouble3</A> depending on the data type of the parameter.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>paramBlock</I></DT><DD>the parameter block</DD><DT><I>paramName</I></DT><DD>the parameter name</DD><DT><I>paramValue</I></DT><DD>value to set for <I>paramName</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise. 
+This function will fail if <I>paramName</I> is not a parameter in <I>paramBlock</I> 
+or if <I>paramValue</I> is not a valid value for the <I>paramName</I> parameter 
+as defined by its constraints (if any).
+</DD></DL><DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT>The following shows how you might use this function in your script 
+to set different types of parameter values:</DT><DT><PRE CLASS="EXAMPLE"># set the parameters for and call a fictitious tool named "My Scale"
+paramBlock = mgGetParamBlock ("My Scale")
+
+# use tuple syntax (See Python Docs) to set double3 parameter type
+mgParamSet (paramBlock, "Center Point", [0, 0, 0])
+
+# use numeric (integer or float) to set integer or double parameter type
+mgParamSet (paramBlock, "Scale X", 2.5)
+mgParamSet (paramBlock, "Scale Y", 1)
+mgParamSet (paramBlock, "Scale Z", 1)
+
+# use string (quoted) to set string parameter type
+mgParamSet (paramBlock, "Comment", "Scale by X")
+
+# finally execute "My Scale" tool with parameters set
+mgExecute ("My Scale", paramBlock)</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A>, <A HREF=mgParamSetDouble.htm#mgParamSetDouble>mgParamSetDouble</A>, 
+<A HREF=mgParamSetFloat.htm#mgParamSetFloat>mgParamSetFloat</A>, <A HREF=mgParamSetBool.htm#mgParamSetBool>mgParamSetBool</A>, <A HREF=mgParamSetString.htm#mgParamSetString>mgParamSetString</A>, 
+<A HREF=mgParamSetDouble2.htm#mgParamSetDouble2>mgParamSetDouble2</A>, <A HREF=mgParamSetDouble3.htm#mgParamSetDouble3>mgParamSetDouble3</A>, <A HREF=mgParamAppend.htm#mgParamAppend>mgParamAppend</A>, 
+<A HREF=mgGetParamBlock.htm#mgGetParamBlock>mgGetParamBlock</A></DD></DL></BODY>
+
+</HTML>

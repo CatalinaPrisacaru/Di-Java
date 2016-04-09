@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<TITLE>mgRec2Filename</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRec2Filename><H1 CLASS="APISYMBOL">mgRec2Filename</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRec2Filename</B> - gets the database name from any node of a database.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>char* <B>mgRec2Filename</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given any node in a database, <I>rec</I>, <B>mgRec2Filename</B> returns the 
+database file name.  If a node is not associated with any database, a null string is 
+returned.  The file name returned has a path if it was opened or created in a remote 
+directory.</P></DD><DD><P>Note: Forward slashes "/" are used as directory delimiters in the path 
+of the file returned.  Also, if the database being queried has not yet been 
+saved to disk, the name returned will be a "temporary" name.  You can use the 
+function <A HREF=mgIsDbUntitled.htm#mgIsDbUntitled>mgIsDbUntitled</A> to check this.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The string returned is dynamically allocated and must 
+be deallocated by the caller when it is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to free the returned string in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the node in a database</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the file name if successful, or <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if no node is found.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* db;
+mgbool isUntitled;
+char* fileName;
+db = mgGetCurrentDb ();
+fileName = mgRec2Filename (db);
+isUntitled = mgIsDbUntitled (db);
+if (fileName != MG_NULL) {
+   if (isUntitled == MG_TRUE) {
+      printf ("%s is a temporary filename for the database", fileName);
+   }
+   else {
+      printf ("%s is the actual filename for the database", fileName);
+   }
+
+   // free the fileName string when you are done with it !
+   mgFree (fileName);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetCurrentDb.htm#mgGetCurrentDb>mgGetCurrentDb</A>, <A HREF=mgRec2Db.htm#mgRec2Db>mgRec2Db</A>, <A HREF=mgIsDbUntitled.htm#mgIsDbUntitled>mgIsDbUntitled</A></DD></DL></BODY>
+
+</HTML>

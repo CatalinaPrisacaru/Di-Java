@@ -1,0 +1,121 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+WALKEXDIALOG DIALOG DISCARDABLE  0, 0, 214, 295
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "mgWalkEx Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "Use mgWalk from db",IDC_USEMGWALK,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,5,5,204,10
+    CONTROL         "Use mgWalkEx from db",IDC_USEMGWALKEX,"Button",
+                    BS_AUTORADIOBUTTON,5,18,204,10
+    CONTROL         "Use mgWalkEx from Selected Node",IDC_USEMGWALKEXSEL,
+                    "Button",BS_AUTORADIOBUTTON,5,31,204,10
+    LTEXT           "Selected Node:",IDC_STATIC,5,49,50,8
+    LISTBOX         IDC_NODEMATRIX,5,73,204,39,LBS_NOINTEGRALHEIGHT | 
+                    WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_SELECTMATRIX,5,126,204,39,LBS_NOINTEGRALHEIGHT | 
+                    WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_COMPOSITEMATRIXPRE,5,180,204,39,LBS_NOINTEGRALHEIGHT | 
+                    WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_COMPOSITEMATRIXPOST,5,233,204,39,
+                    LBS_NOINTEGRALHEIGHT | WS_HSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Close",IDC_CLOSE,157,276,52,14
+    LTEXT           "",IDC_NODEID,60,49,149,8
+    LTEXT           "Cumulative Matrix from db to Node (Pre Action):",
+                    IDC_STATIC,5,169,204,8
+    LTEXT           "Matrix on Node:",IDC_STATIC,5,62,204,8
+    LTEXT           "Select Matrix:",IDC_STATIC,5,115,204,8
+    CONTROL         "",IDC_FRAME,"Static",SS_ETCHEDHORZ,5,44,203,1
+    LTEXT           "Cumulative Matrix from db to Node (Post Action):",
+                    IDC_STATIC,5,222,204,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    WALKEXDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 209
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 290
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

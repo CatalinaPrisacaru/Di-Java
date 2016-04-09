@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>mgNewPtrArray</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNewPtrArray><H1 CLASS="APISYMBOL">mgNewPtrArray</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNewPtrArray</B> - allocate a new pointer array.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD> mgptrarray <B>mgNewPtrArray</B> ( void ) </DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgNewPtrArray</B> allocates a new pointer array and returns its 
+handle.  The array created is initially empty.</P></DD><DD><P>This function creates and returns a pointer array which can be 
+used as a "dynamic" array.  In this way, its length is not statically 
+declared.</P></DD><DD><P>Use the function <A HREF=mgFreePtrArray.htm#mgFreePtrArray>mgFreePtrArray</A> to dispose of the pointer 
+array when you are through using it.</P></DD></DT></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the pointer array if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgFreePtrArray.htm#mgFreePtrArray>mgFreePtrArray</A>, <A HREF=mgPtrArrayAppend.htm#mgPtrArrayAppend>mgPtrArrayAppend</A>, <A HREF=mgPtrArrayInsert.htm#mgPtrArrayInsert>mgPtrArrayInsert</A>, 
+<A HREF=mgPtrArrayReplace.htm#mgPtrArrayReplace>mgPtrArrayReplace</A>, <A HREF=mgPtrArrayGet.htm#mgPtrArrayGet>mgPtrArrayGet</A>, <A HREF=mgPtrArrayRemove.htm#mgPtrArrayRemove>mgPtrArrayRemove</A>, 
+<A HREF=mgPtrArrayClear.htm#mgPtrArrayClear>mgPtrArrayClear</A>, <A HREF=mgPtrArrayLength.htm#mgPtrArrayLength>mgPtrArrayLength</A>, <A HREF=mgPtrArraySort.htm#mgPtrArraySort>mgPtrArraySort</A>, 
+<A HREF=mgPtrArraySearch.htm#mgPtrArraySearch>mgPtrArraySearch</A>, <A HREF=mgPtrArrayBSearch.htm#mgPtrArrayBSearch>mgPtrArrayBSearch</A></DD></DL></BODY>
+
+</HTML>

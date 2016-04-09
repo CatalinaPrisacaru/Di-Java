@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>mgRecPutProperty</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRecPutProperty><H1 CLASS="APISYMBOL">mgRecPutProperty</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRecPutProperty</B> - associates user defined data with a record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgRecPutProperty</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>pluginTool</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A></TD><TD><I>propName</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A></TD><TD><I>propValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRecPutProperty</B> allows you to associate data of any 
+type, <I>propValue</I>, with \\ node record.  The user-defined data is associated 
+with a record, <I>rec</I>, and identified by a property name string, <I>propName</I>, 
+allowing any number of data records to be associated with the node record, 
+as long as all property names are unique.</P></DD><DD><P>Since there may be multiple plug-in tools associating data to node records 
+in the scene simultaneously, a plug-in tool <I>pluginTool</I> is required to ensure 
+the actual property names are unique.  In this way, multiple plug-in tools can all 
+use the same property name with no risk of name space collisions. However, if the 
+same plug-in tool uses a property name more than once, the last use overwrites 
+any previous uses.</P></DD><DD><P>After using this function to associate user data to a node record, 
+use the function <A HREF=mgRecGetProperty.htm#mgRecGetProperty>mgRecGetProperty</A> to retrieve the data.  Then when 
+you no longer need the data associated to the node record, use 
+<A HREF=mgRecDeleteProperty.htm#mgRecDeleteProperty>mgRecDeleteProperty</A> to disassociate the data from the node. 
+Note that <A HREF=mgRecDeleteProperty.htm#mgRecDeleteProperty>mgRecDeleteProperty</A> does not free or otherwise affect 
+the actual data that was associated.  If this data was dynamically 
+allocated, it is the callers responsibility to deallocate it.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the plug-in tool handle</DD><DT><I>rec</I></DT><DD>the record to put property on</DD><DT><I>propName</I></DT><DD>the name of the property to assign</DD><DT><I>propValue</I></DT><DD>the value of the property to assign</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example associates a string property to a node, 
+retrieves the string and prints it out.  Finally, it deletes the 
+property from the node.</DT><DT><PRE CLASS="EXAMPLE">#define PROPERTY_NAME   "My String Property"
+#define USER_STRING     "This String is associated to my node"
+
+char* string;
+
+// allocate the string to be associated to the node
+string = mgMalloc (strlen (USER_STRING) + 1);
+strcpy  string, USER_STRING);
+
+// associate the string as a property of the node
+mgRecPutProperty (pluginTool, rec, PROPERTY_NAME, string);
+
+// Then later, retrieve the string property, print it out
+
+char* string;
+
+// Retrieve the string property from the node
+string = (char*) mgRecGetProperty (pluginTool, rec, PROPERTY_NAME);
+printf ("%s: %s", PROPERTY_NAME, string);
+
+// Output is:
+// My String Property: This String is associated to my node
+
+// Then finally, when you no longer need the string to be
+// associated to the node
+
+char* string;
+
+// Retrieve the string property from the node (need to free it)
+string = (char*) mgRecGetProperty (pluginTool, rec, PROPERTY_NAME);
+mgFree (string);
+mgRecDeleteProperty (pluginTool, rec, PROPERTY_NAME);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRecGetProperty.htm#mgRecGetProperty>mgRecGetProperty</A>, <A HREF=mgRecDeleteProperty.htm#mgRecDeleteProperty>mgRecDeleteProperty</A>, <A HREF=mgSetUserData.htm#mgSetUserData>mgSetUserData</A></DD></DL></BODY>
+
+</HTML>

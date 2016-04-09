@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetSwitchMaskName</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetSwitchMaskName><H1 CLASS="APISYMBOL">mgGetSwitchMaskName</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetSwitchMaskName</B> - gets the name of a switch mask.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>char* <B>mgGetSwitchMaskName</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>maskNo</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node, <I>rec</I>, <B>mgGetSwitchMaskName</B> returns 
+the name assigned to the mask <I>maskNo</I>.</P></DD><DD><P>The value of <I>maskNo</I> must be between 0 and the number of masks 
+of <I>rec</I> minus 1 (the first mask is <I>maskNo</I> 0).</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The string returned is dynamically allocated and must 
+be deallocated by the caller when it is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to free the returned string in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node</DD><DT><I>maskNo</I></DT><DD>switch mask number starting from 0</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the name of the switch mask if it exists and is named, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise. 
+This function will fail if <I>maskNo</I> does not specify a valid mask of <I>rec</I>.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetSwitchMaskName.htm#mgSetSwitchMaskName>mgSetSwitchMaskName</A>, 
+<A HREF=mgGetSwitchMaskCount.htm#mgGetSwitchMaskCount>mgGetSwitchMaskCount</A>, 
+<A HREF=mgGetSwitchMaskNo.htm#mgGetSwitchMaskNo>mgGetSwitchMaskNo</A>, 
+<A HREF=mgGetSwitchBit.htm#mgGetSwitchBit>mgGetSwitchBit</A>, 
+<A HREF=mgAddSwitchMask.htm#mgAddSwitchMask>mgAddSwitchMask</A>, 
+<A HREF=mgDeleteSwitchMask.htm#mgDeleteSwitchMask>mgDeleteSwitchMask</A>, 
+<A HREF=mgInitSwitchMask.htm#mgInitSwitchMask>mgInitSwitchMask</A>, 
+<A HREF=mgSetSwitchBit.htm#mgSetSwitchBit>mgSetSwitchBit</A></DD></DL></BODY>
+
+</HTML>

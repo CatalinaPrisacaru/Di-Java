@@ -1,0 +1,107 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ATTRIBUTEVIEWER DIALOGEX 200, 100, 218, 287
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Palette Viewer"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Mode:",IDC_STATIC,5,4,21,8
+    LTEXT           "Static",MODELABEL,36,4,173,8
+    LTEXT           "Parent:",IDC_STATIC,5,18,24,8
+    LTEXT           "Static",PARENTLABEL,36,18,173,8
+    LTEXT           "Palette:",IDC_STATIC,5,32,25,8
+    COMBOBOX        IDC_PALETTE_COMBO,36,30,127,138,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "All Colors",ALLCOLORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,169,32,43,10
+    LTEXT           "Count:",IDC_STATIC,5,46,22,8
+    LTEXT           "Static",COUNTLABEL,36,46,173,8
+    LTEXT           "Current:",IDC_STATIC,5,60,26,8
+    LTEXT           "Static",SELECTEDLABEL,36,60,173,8
+    LISTBOX         DESC_LIST,5,72,207,83,LBS_SORT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Static",DESCLABEL,5,161,203,11
+    LISTBOX         ATTR_LIST,5,174,207,91,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Update",UPDATEBUTTON,108,269,50,14
+    DEFPUSHBUTTON   "OK",MGID_OK,163,269,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+ATTRIBUTEVIEWER DLGINIT
+BEGIN
+    IDC_PALETTE_COMBO, 0x403, 1, 0
+"\000" 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetMatTextureLayer</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetMatTextureLayer><H1 CLASS="APISYMBOL">mgGetMatTextureLayer</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetMatTextureLayer</B> - gets values out of a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatTextureLayer>fltMatTextureLayer</A>
+ record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetMatTextureLayer</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>matTextureCode</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>textureIndex</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>textureLayer</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, textureIndex, textureLayer <B>mgGetMatTextureLayer</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgcode.htm#mgcode>mgcode</A></TD><TD><I>matTextureCode</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given a record, <I>rec</I>, <B>mgGetMatTextureLayer</B> gets the values of <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatTextureLayer>fltMatTextureLayer</A>
+ 
+attribute record <I>matTextureCode</I> from <I>rec</I> and stores them in <I>textureIndex</I> and <I>textureLayer</I>.</P></DD><DD><P>You do not have to provide addresses for both <I>textureIndex</I> and <I>textureLayer</I> values.  For 
+example, if you only want to receive the index value (but not layer), specify a valid 
+address for <I>textureIndex</I> and leave <I>textureLayer</I> NULL.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the record from which to get the 
+<A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatTextureLayer>fltMatTextureLayer</A>
+ attribute code</DD><DT><I>matTextureCode</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMatTextureLayer>fltMatTextureLayer</A>
+ attribute code</DD><DT><I>textureIndex</I></DT><DD>address of value to receive texture index</DD><DT><I>textureLayer</I></DT><DD>address of value to receive texture layer</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the layer was retrieved successfully, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>textureIndex</DT><DD>If function is successful, textureIndex contains the retrieved index, otherwise 
+textureIndex is undefined.</DD><DT>textureLayer</DT><DD>If function is successful, textureLayer contains the retrieved layer, otherwise 
+textureLayer is undefined.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* db;
+mgrec* matRec;
+int materialIndex;
+int textureIndex, textureLayer;
+mgbool status;
+
+db = mgOpenDb ("file.flt");
+matRec = mgGetFirstMaterial (db, &materialIndex);
+status = mgGetMatTextureLayer (matRec, fltAmbientExLayer1, &textureIndex, &textureLayer);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetMatTextureLayer.htm#mgSetMatTextureLayer>mgSetMatTextureLayer</A>, <A HREF=mgGetNormColor.htm#mgGetNormColor>mgGetNormColor</A>, <A HREF=mgGetAttList.htm#mgGetAttList>mgGetAttList</A>, <A HREF=mgGetAttBuf.htm#mgGetAttBuf>mgGetAttBuf</A></DD></DL></BODY>
+
+</HTML>

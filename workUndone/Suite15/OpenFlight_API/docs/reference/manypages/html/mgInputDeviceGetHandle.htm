@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>mgInputDeviceGetHandle</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgInputDeviceGetHandle><H1 CLASS="APISYMBOL">mgInputDeviceGetHandle</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgInputDeviceGetHandle</B> - requests the device handle 
+to report events.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mginputdevice <B>mgInputDeviceGetHandle</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>pluginTool</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgInputDeviceGetHandle</B> tries to give focus to the specified plug-in 
+input device <I>pluginTool</I> and returns the device handle if successful. 
+The OpenFlight API maintains device handles to ensure that input from different 
+devices are treated properly.  A plug-in device must obtain a device handle before 
+sending an event.</P></DD><DD><P>A device (say the mouse) has focus while it is in the middle of 
+a <A HREF=mgmousestate.htm#mgmousestate>MMSS_START</A> - <A HREF=mgmousestate.htm#mgmousestate>MMSS_CONTINUE</A> - 
+<A HREF=mgmousestate.htm#mgmousestate>MMSS_STOP</A> event sequence.  A device must re-acquire 
+the device handle each time it calls <A HREF=mgInputDeviceSendEvent.htm#mgInputDeviceSendEvent>mgInputDeviceSendEvent</A>. 
+No other devices can obtain the device handle until the device that 
+has focus reports the button state <A HREF=mgmousestate.htm#mgmousestate>MMSS_STOP</A>.</P></DD><DD><P>The device handle must not be stored, since it may become invalid 
+some time later (after it has lost focus).</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the input device plug-in tool</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the device handle if plug-in device can get focus, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgInputDeviceSetPoint.htm#mgInputDeviceSetPoint>mgInputDeviceSetPoint</A>, <A HREF=mgInputDeviceSetButtonStatus.htm#mgInputDeviceSetButtonStatus>mgInputDeviceSetButtonStatus</A>, 
+<A HREF=mgInputDeviceSetVertex.htm#mgInputDeviceSetVertex>mgInputDeviceSetVertex</A>, <A HREF=mgInputDeviceSendEvent.htm#mgInputDeviceSendEvent>mgInputDeviceSendEvent</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetTextureSize</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetTextureSize><H1 CLASS="APISYMBOL">mgGetTextureSize</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetTextureSize</B> - gets the size of a texture 
+palette entry.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgGetTextureSize</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>index</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetTextureSize</B> returns the size (in bytes) of the texture palette 
+entry at the specified <I>index</I> contained in the texture palette of 
+database <I>db</I>.</P></DD><DD><P>The position of a texture palette entry is the lower left corner 
+where it is displayed in the texture palette.  This position is measured 
+in pixels.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>index</I></DT><DD>the index of the texture palette entry</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the size of the texture palette entry (in bytes) if found, 
+-1 otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetTextureCount.htm#mgGetTextureCount>mgGetTextureCount</A>, <A HREF=mgGetTextureTotalSize.htm#mgGetTextureTotalSize>mgGetTextureTotalSize</A></DD></DL></BODY>
+
+</HTML>

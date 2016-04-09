@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamSetDoubleMaxLT</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamSetDoubleMaxLT><H1 CLASS="APISYMBOL">mgParamSetDoubleMaxLT</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamSetDoubleMaxLT</B> - defines the maximum value (exclusive) 
+for a double precision floating point parameter in a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgParamSetDoubleMaxLT</B> (</TD><TD><A HREF=mgparam.htm#mgparam>mgparam</A></TD><TD><I>param</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>maxValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamSetDoubleMaxLT</B> defines the maximum value <I>maxValue</I> for 
+the double precision floating point parameter <I>param</I> such that the parameter 
+must be less than <I>maxValue</I>.</P></DD><DD><P>See the example code in <A HREF=mgParamSetDoubleMinGT.htm#mgParamSetDoubleMinGT>mgParamSetDoubleMinGT</A> to see how to set 
+up valid ranges for double precision floating point parameters.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>param</I></DT><DD>the parameter to set max value for</DD><DT><I>maxValue</I></DT><DD>the maximum value for <I>paramName</I></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamSetDoubleMinGT.htm#mgParamSetDoubleMinGT>mgParamSetDoubleMinGT</A>, <A HREF=mgParamSetDoubleMinGE.htm#mgParamSetDoubleMinGE>mgParamSetDoubleMinGE</A>, 
+<A HREF=mgParamSetDoubleMaxLE.htm#mgParamSetDoubleMaxLE>mgParamSetDoubleMaxLE</A>, 
+<A HREF=mgParamAddDouble.htm#mgParamAddDouble>mgParamAddDouble</A>, 
+<A HREF=mgParamSetDouble.htm#mgParamSetDouble>mgParamSetDouble</A>, <A HREF=mgParamGetDouble.htm#mgParamGetDouble>mgParamGetDouble</A>, 
+<A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A></DD></DL></BODY>
+
+</HTML>

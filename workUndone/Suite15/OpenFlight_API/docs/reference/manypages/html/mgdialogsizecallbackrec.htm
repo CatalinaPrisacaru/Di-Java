@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>mgdialogsizecallbackrec</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgdialogsizecallbackrec><H1 CLASS="APISYMBOL">mgdialogsizecallbackrec</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgdialogsizecallbackrec</B> - callback structure for the size dialog 
+event sent to dialogs<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgguicalldatatype callDataType;
+&#32;&#32;&#32;mgbool isMinimized;
+} mgdialogsizecallbackrec;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>callDataType</B><DD><A HREF=mgguicalldatatype.htm#mgguicalldatatype>mgguicalldatatype</A> - call data type that indicates the type 
+of call data this object really is - will always be 
+<A HREF=mgguicalldatatype.htm#mgguicalldatatype>MGCD_DIALOGSIZE</A></DD></DT><DT><B>isMinimized</B><DD><A HREF=mgbool.htm#mgbool>mgbool</A> - <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if 
+dialog is being minimized, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> 
+otherwise</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>When the <A HREF=MGCB_SIZE.htm#MGCB_SIZE>MGCB_SIZE</A> dialog event is sent to a 
+dialog via its <A HREF=mgdialogfunc.htm#mgdialogfunc>mgdialogfunc</A>, the <I>calldata</I> parameter passed in will point 
+to an object of this type.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgdialogfunc.htm#mgdialogfunc>mgdialogfunc</A></DD></DL></BODY>
+
+</HTML>

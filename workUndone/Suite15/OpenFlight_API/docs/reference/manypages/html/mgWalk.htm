@@ -1,0 +1,212 @@
+<HTML>
+<HEAD>
+<TITLE>mgWalk</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgWalk><H1 CLASS="APISYMBOL">mgWalk</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgWalk</B> - walks a node hierarchy and performs an action at each node.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgWalk</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>node</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A></TD><TD><I>preAction</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A></TD><TD><I>postAction</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>flags</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgWalk</B> traverses from any <I>node</I> down the hierarchy and visits the 
+nodes within the tree using a depth-first traversal.  The diagram below shows the 
+order in which the nodes in a simple hierarchy below <I>db</I> would be visited.<BR> 
+<IMG SRC="../../common/mgwalkorder.jpg">
+</P></DD><DD><P>The types of nodes visited are based 
+on traversal modifiers specified in <I>flags</I>.  The <I>flags</I> parameter is a bitwise 
+combination of the following:</P></DD><DD><P><A HREF=MWALK_NEXT.htm#MWALK_NEXT>MWALK_NEXT</A> - Setting this mask causes the walk to visit siblings of the 
+top node being walked as well as the children of these siblings.<BR> 
+By default, siblings of the top node being walked are not visited.</P></DD><DD><P><A HREF=MWALK_VERTEX.htm#MWALK_VERTEX>MWALK_VERTEX</A> - Setting this mask causes the walk to visit vertex nodes. 
+Note that the mask <A HREF=MWALK_ON.htm#MWALK_ON>MWALK_ON</A> does not affect whether a vertex node is visited 
+because vertex nodes are always <B>On</B>.<BR> 
+By default, vertex nodes are not visited.</P></DD><DD><P><A HREF=MWALK_MASTER.htm#MWALK_MASTER>MWALK_MASTER</A> - Setting this mask causes the walk to visit referenced nodes. 
+If you set this mask without setting <A HREF=MWALK_MASTERALL.htm#MWALK_MASTERALL>MWALK_MASTERALL</A>, referenced nodes will only 
+be visited one time no matter how many times they are referenced in the database. 
+Set <A HREF=MWALK_MASTERALL.htm#MWALK_MASTERALL>MWALK_MASTERALL</A> to visit referenced nodes once each time they are referenced.<BR> 
+By default, referenced nodes are not visited.</P></DD><DD><P><A HREF=MWALK_MASTERALL.htm#MWALK_MASTERALL>MWALK_MASTERALL</A> - Setting this mask causes the walk 
+to visit referenced nodes once each time they are referenced.<BR> 
+By default, referenced nodes are not visited.</P></DD><DD><P><A HREF=MWALK_ON.htm#MWALK_ON>MWALK_ON</A> - Setting this mask causes the walk to visit only nodes that are 
+currently <B>On</B>.  Nodes are <B>Off</B> if they are not part of the current level of 
+detail or if they have been explicitly "toggled off" by the modeler.<BR> 
+By default, all nodes are visited whether they are <B>On</B> or <B>Off</B>.</P></DD><DD><P><A HREF=MWALK_NOREADONLY.htm#MWALK_NOREADONLY>MWALK_NOREADONLY</A> - Setting this mask causes the walk 
+to not visit read-only nodes (external nodes, for example).<BR> 
+By default, read-only nodes are visited.</P></DD><DD><P><A HREF=MWALK_NONESTED.htm#MWALK_NONESTED>MWALK_NONESTED</A> - Setting this mask causes the walk 
+to not visit nested nodes (subfaces, for example).<BR> 
+By default, nested nodes are visited.</P></DD><DD><P><A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A> - Setting this mask causes the walk to accumulate a 
+matrix stack while visiting the nodes. This matrix stack can be accessed during 
+either of the walk actions functions to return the using the function 
+<A HREF=mgWalkGetMatrix.htm#mgWalkGetMatrix>mgWalkGetMatrix</A>.<BR> 
+By default, no matrix stack is accumulated.</P></DD><DD><P>At each node visited, two user-provided 
+functions (<I>preAction</I> and <I>postAction</I>) are invoked to perform necessary 
+tasks.  The <I>preAction</I> function is invoked before the node's children are 
+traversed, and <I>postAction</I> is invoked after the node's children have been 
+traversed. As an option, the traversal can be terminated by either the 
+<I>preAction</I> or <I>postAction</I> function returning <A HREF=mgbool.htm#mgbool>MG_FALSE</A>. Note, 
+however that returning <A HREF=mgbool.htm#mgbool>MG_FALSE</A> in your <I>postAction</I> function 
+will not stop nodes below the current node from being visited because by 
+the time the <I>postAction</I> function is called for any node, that node&#146s children 
+have already been visited.  Returning <A HREF=mgbool.htm#mgbool>MG_FALSE</A> in your <I>preAction</I> 
+function, however, will stop nodes below the current node from being visited.</P></DD><DD><P>Specifying <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for either <I>preAction</I> or <I>postAction</I> is valid. 
+If either function is not specified in this way, that action function is simply 
+skipped during the walk.</P></DD><DD><P>In general you should not change the hierarchy of the <I>node</I> being traversed 
+(or any of its descendants) in your <I>preAction</I> or <I>postAction</I> function. If you 
+do change the hierarchy during the <B>mgWalk</B>, be aware that you may change the 
+behavior of the <B>mgWalk</B> and may get unexpected results.  Here are some things 
+to note if you do change the hierarchy during the <B>mgWalk</B>:<P>
+<UL>
+<P>
+<LI CLASS="NOINDENT">
+ 
+You can safely delete (<A HREF=mgDelete.htm#mgDelete>mgDelete</A>) the node currently being visited in the <I>postAction</I> function. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+If you delete (<A HREF=mgDelete.htm#mgDelete>mgDelete</A>) the node currently being visited in the <I>preAction</I> function, its 
+descendants will not be visited. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+If you attach (<A HREF=mgAttach.htm#mgAttach>mgAttach</A> or <A HREF=mgAppend.htm#mgAppend>mgAppend</A>) nodes below the node currently being visited in the 
+<I>postAction</I> function, the new nodes will not be visited. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+If you attach (<A HREF=mgAttach.htm#mgAttach>mgAttach</A> or <A HREF=mgAppend.htm#mgAppend>mgAppend</A>) nodes below the node currently being visited in the 
+<I>preAction</I> function, the <B>mgWalk</B> behavior is undefined. 
+</LI>
+<P>
+<LI CLASS="NOINDENT">
+ 
+If you attach (<A HREF=mgInsert.htm#mgInsert>mgInsert</A>) nodes immediately after the node currently being visited in the 
+<I>preAction</I> or <I>postAction</I> function, the new nodes will not be visited. 
+</LI>
+<P>
+</UL>
+</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>node</I></DT><DD>the starting node of the traversal</DD><DT><I>preAction</I></DT><DD>the function that is invoked 
+before any of the node's children have been visited</DD><DT><I>postAction</I></DT><DD>the function that is invoked 
+after all the node's children have been visited</DD><DT><I>userData</I></DT><DD>pointer to user defined data that will be passed 
+to <I>preAction</I> and <I>postAction</I> callback functions</DD><DT><I>flags</I></DT><DD>traversal modifiers that allow you to select 
+certain types of nodes for visiting. 
+This parameter is the bitwise combination of the following masks:<BR> 
+<A HREF=MWALK_NEXT.htm#MWALK_NEXT>MWALK_NEXT</A><BR> <A HREF=MWALK_VERTEX.htm#MWALK_VERTEX>MWALK_VERTEX</A><BR> <A HREF=MWALK_MASTER.htm#MWALK_MASTER>MWALK_MASTER</A><BR> 
+<A HREF=MWALK_MASTERALL.htm#MWALK_MASTERALL>MWALK_MASTERALL</A><BR> <A HREF=MWALK_ON.htm#MWALK_ON>MWALK_ON</A><BR> <A HREF=MWALK_NOREADONLY.htm#MWALK_NOREADONLY>MWALK_NOREADONLY</A><BR> 
+<A HREF=MWALK_NONESTED.htm#MWALK_NONESTED>MWALK_NONESTED</A><BR> <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if traversal successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> if 
+traversal unsuccessful or if terminated by one of the action functions.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) traverse the hierarchy <I>db</I> 
+and print out the name of each node as they are visited.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">static mgbool PreWalkFunc (mgrec* db, mgrec* parent, mgrec* rec, void* userData)
+{
+   char* name = mgGetName (rec);
+   int* numNodesOnH = (int*) userData;
+   // only count the nodes in the pre-walk func, it you count in post-walk, you
+   // would count each node twice
+   *numNodesOnH = *numNodesOnH + 1;
+   printf ("PreWalkFunc : %s&#92;n", name);
+   mgFree (name);
+   return (MG_TRUE);
+}
+static mgbool PostWalkFunc (mgrec* db, mgrec* parent, mgrec* rec, void* userData)
+{
+   char* name = mgGetName (rec);
+   printf ("PostWalkFunc: %s&#92;n", name);
+   mgFree (name);
+   return (MG_TRUE);
+}
+
+int numNodesOn = 0;
+// visit all the nodes that are "ON" under db
+mgWalk (db, PreWalkFunc, PostWalkFunc, &numNodesOn, MWALK_ON);
+printf ("Number of nodes: %d&#92;n", numNodesOn);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">class numNodesOn:
+   pass
+
+def PreWalkFunc (db, parent, rec, i):
+   print "PreWalkFunc :",mgGetName(rec)
+   i.count = i.count + 1
+   return MG_TRUE
+
+def PostWalkFunc (db, parent, rec, i):
+   print "PostWalkFunc:",mgGetName(rec)
+   return MG_TRUE
+
+db = mgGetCurrentDb ()
+i = numNodesOn()
+i.count = 0
+
+mgWalk (db, PreWalkFunc, PostWalkFunc, i, MWALK_ON)
+print "Number of nodes:",i.count</PRE></DT></DL></DD></DL>
+<DL><DT><H3>EXAMPLE OUTPUT</H3></DT><DD><DL><DT>The following is the output produced by these examples run 
+on the hierarchy shown in the diagram above.  This output shows you 
+the order in which the <I>preAction</I> or <I>postAction</I> are called 
+in the context of the depth-first traversal on <I>db</I>.</DT><DT><PRE CLASS="EXAMPLE">PreWalkFunc : db 
+PreWalkFunc : g1 
+PreWalkFunc : g2 
+PreWalkFunc : o7 
+PreWalkFunc : p6 
+PostWalkFunc: p6 
+PreWalkFunc : p5 
+PostWalkFunc: p5 
+PreWalkFunc : p4 
+PostWalkFunc: p4 
+PostWalkFunc: o7 
+PreWalkFunc : o11 
+PreWalkFunc : p24 
+PostWalkFunc: p24 
+PreWalkFunc : p8 
+PostWalkFunc: p8 
+PostWalkFunc: o11 
+PostWalkFunc: g2 
+PostWalkFunc: g1 
+PostWalkFunc: db 
+Number of nodes: 10</PRE></DT></DL></DD></DL>
+
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A>, <A HREF=mgWalkRecList.htm#mgWalkRecList>mgWalkRecList</A>, <A HREF=mgWalkGetMatrix.htm#mgWalkGetMatrix>mgWalkGetMatrix</A>, <A HREF=mgGetNext.htm#mgGetNext>mgGetNext</A>, <A HREF=mgGetPrevious.htm#mgGetPrevious>mgGetPrevious</A>, 
+<A HREF=mgGetParent.htm#mgGetParent>mgGetParent</A>, <A HREF=mgGetChild.htm#mgGetChild>mgGetChild</A>, 
+<A HREF=mgGetNestedParent.htm#mgGetNestedParent>mgGetNestedParent</A>, <A HREF=mgGetNestedChild.htm#mgGetNestedChild>mgGetNestedChild</A>, <A HREF=mgGetReference.htm#mgGetReference>mgGetReference</A>, 
+<A HREF=mgGetChildNth.htm#mgGetChildNth>mgGetChildNth</A>, <A HREF=mgGetAttrChild.htm#mgGetAttrChild>mgGetAttrChild</A>, 
+<A HREF=mgFind.htm#mgFind>mgFind</A>, <A HREF=mgFindEx.htm#mgFindEx>mgFindEx</A></DD></DL></BODY>
+
+</HTML>

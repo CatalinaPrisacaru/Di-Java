@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>mgPtrArrayInsert</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPtrArrayInsert><H1 CLASS="APISYMBOL">mgPtrArrayInsert</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPtrArrayInsert</B> - insert an item into a pointer array.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void <B>mgPtrArrayInsert</B> (</TD><TD><A HREF=mgptrarray.htm#mgptrarray>mgptrarray</A></TD><TD><I>ptrArray</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>pos</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>item</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPtrArrayInsert</B> inserts the specified <I>item</I> into the 
+pointer array <I>ptrArray</I> at the position <I>pos</I>.</P></DD><DD><P>This function inserts a new item into the pointer array such 
+that the new item, after it is inserted, is at position <I>pos</I>. 
+This causes the item that was previously at this position (and all 
+items after it) to get shifted up one index.</P></DD><DD><P>The first item in a pointer array is at index 1.  Therefore, 
+to insert an item at the beginning of the array, specify <I>pos</I> 
+as 1.  To insert an item at the end of the array, specify <I>pos</I> 
+as the length of the pointer array plus one (or use 
+<A HREF=mgPtrArrayAppend.htm#mgPtrArrayAppend>mgPtrArrayAppend</A>).</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>ptrArray</I></DT><DD>the pointer array</DD><DT><I>pos</I></DT><DD>the position in array to insert 
+the item (in range 1..length+1)</DD><DT><I>item</I></DT><DD>the item to be inserted into the 
+pointer array</DD></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgNewPtrArray.htm#mgNewPtrArray>mgNewPtrArray</A>, <A HREF=mgFreePtrArray.htm#mgFreePtrArray>mgFreePtrArray</A>, <A HREF=mgPtrArrayAppend.htm#mgPtrArrayAppend>mgPtrArrayAppend</A>, 
+<A HREF=mgPtrArrayReplace.htm#mgPtrArrayReplace>mgPtrArrayReplace</A>, <A HREF=mgPtrArrayGet.htm#mgPtrArrayGet>mgPtrArrayGet</A>, <A HREF=mgPtrArrayRemove.htm#mgPtrArrayRemove>mgPtrArrayRemove</A>, 
+<A HREF=mgPtrArrayClear.htm#mgPtrArrayClear>mgPtrArrayClear</A>, <A HREF=mgPtrArrayLength.htm#mgPtrArrayLength>mgPtrArrayLength</A>, <A HREF=mgPtrArraySort.htm#mgPtrArraySort>mgPtrArraySort</A>, 
+<A HREF=mgPtrArraySearch.htm#mgPtrArraySearch>mgPtrArraySearch</A>, <A HREF=mgPtrArrayBSearch.htm#mgPtrArrayBSearch>mgPtrArrayBSearch</A></DD></DL></BODY>
+
+</HTML>

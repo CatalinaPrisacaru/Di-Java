@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>MTA_MENULABEL</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=MTA_MENULABEL><H1 CLASS="APISYMBOL">MTA_MENULABEL</H1></A></LEFT>
+<DL>
+<DT><H3>NAME</H3></DT>
+<DD><B>MTA_MENULABEL</B> - Tool Attribute <I>Menu Label</I><P></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This string attribute specifies the menu label that 
+is placed in the corresponding menu <A HREF=MTA_MENULOCATION.htm#MTA_MENULOCATION>MTA_MENULOCATION</A> 
+for a tool.  When the user selects this menu item, the plug-in 
+tool is launched.</P></DD><DD><P>You must specify both <A HREF=MTA_MENULOCATION.htm#MTA_MENULOCATION>MTA_MENULOCATION</A> and 
+MTA_MENULABEL if you want your tool to be launched from 
+a menu.</P></DD><DD><P>To put a horizontal separator before or after your new 
+menu item prepend or append, respectively, your menu label 
+with the "-" character. 
+See the examples that follow.</P></DD></DT></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>Specify the following values for this attribute to put 
+a horizontal separator before/after your new menu item:</DT><DT><PRE CLASS="EXAMPLE">-Launch My Tool : Horizontal separator added before your menu item.
+
+Launch My Tool- : Horizontal separator added after your menu item.</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterViewer.htm#mgRegisterViewer>mgRegisterViewer</A>, <A HREF=mgRegisterEditor.htm#mgRegisterEditor>mgRegisterEditor</A></DD></DL></BODY>
+
+</HTML>

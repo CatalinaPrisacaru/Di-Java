@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamGetStringAlloc</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamGetStringAlloc><H1 CLASS="APISYMBOL">mgParamGetStringAlloc</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamGetStringAlloc</B> - allocates and gets a string parameter 
+value from a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgParamGetStringAlloc</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I>,</TD></TR>
+<TR><TD></TD><TD>char**</TD><TD><I>paramValue</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>defaultValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamGetStringAlloc</B> allocates and retrieves a string 
+parameter value named <I>paramName</I> from the parameter block <I>paramBlock</I>. 
+If the parameter exists, a string is allocated, initialized to the parameter value 
+and returned in <I>paramValue</I>. If the parameter does not exist, a string is allocated, 
+initialized to <I>defaultValue</I> and returned in <I>paramValue</I>.</P></DD><DD><P>The string returned for <I>paramValue</I> 
+is dynamically allocated and must be deallocated by the caller when it 
+is no longer needed using <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD><DD><P>If the parameter is not an array type parameter, this is a standard 
+ways to retrieve its string value. 
+If the parameter is an array type parameter, this function gets 
+the first item in the array and is equivalent to calling 
+<A HREF=mgParamGetStringNthAlloc.htm#mgParamGetStringNthAlloc>mgParamGetStringNthAlloc</A> passing 1 as <I>nth</I>.</P></DD><DD><P>This function is similar to <A HREF=mgParamGetString.htm#mgParamGetString>mgParamGetString</A>.  Use <A HREF=mgParamGetString.htm#mgParamGetString>mgParamGetString</A> 
+if the value of the string parameter you want is a known or fixed length and you can guarantee 
+the buffer you pass in <I>paramValue</I> is big enough.  If you do not know the length of the string 
+parameter value or want to make sure the entire string is retrieved use <B>mgParamGetStringAlloc</B>.</P></DD><DD><P>Note that if the parameter does not exist, it is NOT created in the parameter block.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>paramBlock</I></DT><DD>the parameter block</DD><DT><I>paramName</I></DT><DD>the parameter name</DD><DT><I>paramValue</I></DT><DD>the address of value to receive parameter value returned</DD><DT><I>defaultValue</I></DT><DD>default value returned if parameter does not exist</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the parameter exists, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how to use both <B>mgParamGetStringAlloc</B> and <A HREF=mgParamGetString.htm#mgParamGetString>mgParamGetString</A> 
+to get the value of a string parameter from a parameter block.</DT><DT><PRE CLASS="EXAMPLE">mgparamblock paramBlock;
+mgparam param;
+char stringBuf[10];
+char* allocatedBuf = NULL;
+
+// create a parameter block
+paramBlock = mgNewParamBlock();
+
+// add a string parameter called "Text Parameter"
+// default value is "Some text here"
+param = mgParamAddString (paramBlock, "Text Parameter", "Some text here");
+
+// first use mgParamGetString to get parameter string value
+// if buffer passed is not long enough, the parameter value returned will
+// be truncated, in this case it will return 9 characters of the parameter
+// value and a terminating NULL character (10 characters total)
+// stringBuf will be "Some text"
+mgParamGetString (paramBlock, "Text Parameter", stringBuf, 10, "");
+printf (stringBuf);
+
+// next use mgParamGetStringAlloc to get parameter string value
+// mgParamGetStringAlloc will always return entire string
+// allocatedBuf will contain entire string "Some text here"
+mgParamGetStringAlloc (paramBlock, "Text Parameter", &allocatedBuf, "");
+printf (allocatedBuf);
+
+// remember to free the allocated string buffer when you're done with it
+mgFree (allocatedBuf);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamGetString.htm#mgParamGetString>mgParamGetString</A>, <A HREF=mgParamSetString.htm#mgParamSetString>mgParamSetString</A>, 
+<A HREF=mgParamGetInteger.htm#mgParamGetInteger>mgParamGetInteger</A>, <A HREF=mgParamGetDouble.htm#mgParamGetDouble>mgParamGetDouble</A>, 
+<A HREF=mgParamGetFloat.htm#mgParamGetFloat>mgParamGetFloat</A>, <A HREF=mgParamGetBool.htm#mgParamGetBool>mgParamGetBool</A>, 
+<A HREF=mgParamGetDouble2.htm#mgParamGetDouble2>mgParamGetDouble2</A>, <A HREF=mgParamGetDouble3.htm#mgParamGetDouble3>mgParamGetDouble3</A>, 
+<A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A></DD></DL></BODY>
+
+</HTML>

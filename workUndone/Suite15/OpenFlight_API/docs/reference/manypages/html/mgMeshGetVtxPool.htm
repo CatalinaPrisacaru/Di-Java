@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>mgMeshGetVtxPool</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMeshGetVtxPool><H1 CLASS="APISYMBOL">mgMeshGetVtxPool</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMeshGetVtxPool</B> - gets the vertex pool for a mesh.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void* <B>mgMeshGetVtxPool</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>This function retrieves the vertex pool for mesh <I>rec</I>.</P></DD><DD><P>The vertex pool is a packed sequence of values representing the 
+vertex data for a mesh.  The values packed in the vertex pool represent 
+vertex coordinates (x,y,z), vertex colors (index/intensity or RGB), vertex 
+normals (i,j,k) and vertex texture coordinates (u,v).</P></DD><DD><P>How the vertex data is packed in the vertex pool is dependent on 
+the vertex mask of the mesh.  This mask, returned by <A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask>mgMeshGetVtxMask</A>, 
+indicates what kind of data is packed in the&#32vertex pool.</P></DD><DD><P>The following defines the format of the packed data corresponding 
+to each Mesh Vertex Mask Bit:</P></DD><DD><P><A HREF=MMESH_VTXCOORD.htm#MMESH_VTXCOORD>MMESH_VTXCOORD</A> - 3 8-byte double precision floating point 
+values (24 bytes total) representing the coordinate position 
+of the vertex.  The x position is first, then y followed by z.</P></DD><DD><P><A HREF=MMESH_VTXCOLOR.htm#MMESH_VTXCOLOR>MMESH_VTXCOLOR</A> - 1 4-byte integer value representing the 
+color index (integer) and intensity (single precision floating point) 
+of the vertex.  The color index and intensity of the vertex is encoded 
+in this integer value N as follows.  The color index is the result of 
+the ((N & 0x00ffffff-768)/128.  This will be an integer 
+value in the range 0..1023.  The intensity is the result of the 
+floating point operation (N mod 128)/127.0f.  This will be a 
+floating point number in the range 0.0f..1.0f.</P></DD><DD><P><A HREF=MMESH_VTXCOLORRGB.htm#MMESH_VTXCOLORRGB>MMESH_VTXCOLORRGB</A> - 3 1-byte unsigned integer values (4 bytes total 
+including 1 byte padding) representing the RGB color of the vertex. 
+The red component is first, then green followed by blue.</P></DD><DD><P><A HREF=MMESH_VTXNORMAL.htm#MMESH_VTXNORMAL>MMESH_VTXNORMAL</A> - 3 4-byte single precision floating point 
+values (12 bytes total) representing the normal of the vertex. 
+The i component is first, then j followed by k.</P></DD><DD><P><A HREF=MMESH_VTXUV0.htm#MMESH_VTXUV0>MMESH_VTXUV0</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 0 of the vertex. The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV1.htm#MMESH_VTXUV1>MMESH_VTXUV1</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 1 of the vertex.  The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV2.htm#MMESH_VTXUV2>MMESH_VTXUV2</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 2 of the vertex. The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV3.htm#MMESH_VTXUV3>MMESH_VTXUV3</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 3 of the vertex. The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV4.htm#MMESH_VTXUV4>MMESH_VTXUV4</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 4 of the vertex. The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV5.htm#MMESH_VTXUV5>MMESH_VTXUV5</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 5 of the vertex. The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV6.htm#MMESH_VTXUV6>MMESH_VTXUV6</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 6 of the vertex. The u component is first followed by v.</P></DD><DD><P><A HREF=MMESH_VTXUV7.htm#MMESH_VTXUV7>MMESH_VTXUV7</A> - 2 4-byte single precision floating point 
+values (8 bytes total) representing the texture coordinates for 
+layer 7 of the vertex. The u component is first followed by v.</P></DD><DD><P>You can extract the data out of the vertex pool using the 
+vertex stride and vertex offset values returned by functions 
+<A HREF=mgMeshGetVtxStride.htm#mgMeshGetVtxStride>mgMeshGetVtxStride</A> and <A HREF=mgMeshGetVtxOffset.htm#mgMeshGetVtxOffset>mgMeshGetVtxOffset</A>, respectively. 
+Note: This is not the 
+recommended technique for extracting data from the vertex 
+pool.  Instead, it is much simpler to use the functions 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A> and <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltMesh>fltMesh</A>
+ node</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the vertex pool of mesh <I>rec</I> if successful, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgMeshGetVtxMask.htm#mgMeshGetVtxMask>mgMeshGetVtxMask</A>, <A HREF=mgMeshPrimitiveGetNumVtx.htm#mgMeshPrimitiveGetNumVtx>mgMeshPrimitiveGetNumVtx</A>, 
+<A HREF=mgMeshPrimitiveGetVtxIndexArray.htm#mgMeshPrimitiveGetVtxIndexArray>mgMeshPrimitiveGetVtxIndexArray</A>, 
+<A HREF=mgMeshGetVtxCoord.htm#mgMeshGetVtxCoord>mgMeshGetVtxCoord</A>, <A HREF=mgMeshGetVtxColor.htm#mgMeshGetVtxColor>mgMeshGetVtxColor</A>, 
+<A HREF=mgMeshGetVtxColorRGBA.htm#mgMeshGetVtxColorRGBA>mgMeshGetVtxColorRGBA</A>, <A HREF=mgMeshGetVtxColorRGB.htm#mgMeshGetVtxColorRGB>mgMeshGetVtxColorRGB</A>, <A HREF=mgMeshGetVtxColorAlpha.htm#mgMeshGetVtxColorAlpha>mgMeshGetVtxColorAlpha</A>, 
+<A HREF=mgMeshGetVtxNormal.htm#mgMeshGetVtxNormal>mgMeshGetVtxNormal</A>, <A HREF=mgMeshGetVtxUV.htm#mgMeshGetVtxUV>mgMeshGetVtxUV</A></DD></DL></BODY>
+
+</HTML>

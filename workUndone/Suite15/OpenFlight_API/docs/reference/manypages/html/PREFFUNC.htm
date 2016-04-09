@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>PREFFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=PREFFUNC><H1>Preference Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgModelingPrefGetDouble.htm#mgModelingPrefGetDouble><B>mgModelingPrefGetDouble</B></A> (const <A HREF=mgmodelingprefname.htm#mgmodelingprefname>mgmodelingprefname</A> <I>prefName</I>, double* <I>prefValue</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgModelingPrefGetInteger.htm#mgModelingPrefGetInteger><B>mgModelingPrefGetInteger</B></A> (const <A HREF=mgmodelingprefname.htm#mgmodelingprefname>mgmodelingprefname</A> <I>prefName</I>, int* <I>prefValue</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgModelingPrefSetDouble.htm#mgModelingPrefSetDouble><B>mgModelingPrefSetDouble</B></A> (const <A HREF=mgmodelingprefname.htm#mgmodelingprefname>mgmodelingprefname</A> <I>prefName</I>, double <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgModelingPrefSetInteger.htm#mgModelingPrefSetInteger><B>mgModelingPrefSetInteger</B></A> (const <A HREF=mgmodelingprefname.htm#mgmodelingprefname>mgmodelingprefname</A> <I>prefName</I>, int <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefDelete.htm#mgPluginPrefDelete><B>mgPluginPrefDelete</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefGetBool.htm#mgPluginPrefGetBool><B>mgPluginPrefGetBool</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>prefValue</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefGetDouble.htm#mgPluginPrefGetDouble><B>mgPluginPrefGetDouble</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, double* <I>prefValue</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefGetFloat.htm#mgPluginPrefGetFloat><B>mgPluginPrefGetFloat</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, float* <I>prefValue</I>, float <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefGetInteger.htm#mgPluginPrefGetInteger><B>mgPluginPrefGetInteger</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, int* <I>prefValue</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefGetString.htm#mgPluginPrefGetString><B>mgPluginPrefGetString</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, char* <I>prefValue</I>, int <I>maxLen</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefSetBool.htm#mgPluginPrefSetBool><B>mgPluginPrefSetBool</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefSetDouble.htm#mgPluginPrefSetDouble><B>mgPluginPrefSetDouble</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, double <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefSetFloat.htm#mgPluginPrefSetFloat><B>mgPluginPrefSetFloat</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, float <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefSetInteger.htm#mgPluginPrefSetInteger><B>mgPluginPrefSetInteger</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, int <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginPrefSetString.htm#mgPluginPrefSetString><B>mgPluginPrefSetString</B></A> (<A HREF=mgplugin.htm#mgplugin>mgplugin</A> <I>plugin</I>, const char* <I>prefName</I>, const char* <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefDelete.htm#mgPluginToolPrefDelete><B>mgPluginToolPrefDelete</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefGetBool.htm#mgPluginToolPrefGetBool><B>mgPluginToolPrefGetBool</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>prefValue</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefGetDouble.htm#mgPluginToolPrefGetDouble><B>mgPluginToolPrefGetDouble</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, double* <I>prefValue</I>, double <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefGetFloat.htm#mgPluginToolPrefGetFloat><B>mgPluginToolPrefGetFloat</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, float* <I>prefValue</I>, float <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefGetInteger.htm#mgPluginToolPrefGetInteger><B>mgPluginToolPrefGetInteger</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, int* <I>prefValue</I>, int <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefGetString.htm#mgPluginToolPrefGetString><B>mgPluginToolPrefGetString</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, char* <I>prefValue</I>, int <I>maxLen</I>, const char* <I>defaultValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefSetBool.htm#mgPluginToolPrefSetBool><B>mgPluginToolPrefSetBool</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefSetDouble.htm#mgPluginToolPrefSetDouble><B>mgPluginToolPrefSetDouble</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, double <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefSetFloat.htm#mgPluginToolPrefSetFloat><B>mgPluginToolPrefSetFloat</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, float <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefSetInteger.htm#mgPluginToolPrefSetInteger><B>mgPluginToolPrefSetInteger</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, int <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgPluginToolPrefSetString.htm#mgPluginToolPrefSetString><B>mgPluginToolPrefSetString</B></A> (<A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A> <I>plugintool</I>, const char* <I>prefName</I>, const char* <I>prefValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetAutoUpdatePriorityFlag.htm#mgSetAutoUpdatePriorityFlag><B>mgSetAutoUpdatePriorityFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetCompressVertexTableFlag.htm#mgSetCompressVertexTableFlag><B>mgSetCompressVertexTableFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetFreezeLODCentersFlag.htm#mgSetFreezeLODCentersFlag><B>mgSetFreezeLODCentersFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetNewOverwriteFlag.htm#mgSetNewOverwriteFlag><B>mgSetNewOverwriteFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetOpenCreateFlag.htm#mgSetOpenCreateFlag><B>mgSetOpenCreateFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetReadExtFlag.htm#mgSetReadExtFlag><B>mgSetReadExtFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetReadTexturesFlag.htm#mgSetReadTexturesFlag><B>mgSetReadTexturesFlag</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetSaveNonIndexedLightPoints.htm#mgSetSaveNonIndexedLightPoints><B>mgSetSaveNonIndexedLightPoints</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetSaveUnreferencedUVs.htm#mgSetSaveUnreferencedUVs><B>mgSetSaveUnreferencedUVs</B></A> (<A HREF=mgbool.htm#mgbool>mgbool</A> <I>flag</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

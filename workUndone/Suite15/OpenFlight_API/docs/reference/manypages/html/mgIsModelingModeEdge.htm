@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>mgIsModelingModeEdge</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgIsModelingModeEdge><H1 CLASS="APISYMBOL">mgIsModelingModeEdge</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgIsModelingModeEdge</B> - checks if the current modeling mode is edge.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgIsModelingModeEdge</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgIsModelingModeEdge</B> checks if the current modeling mode for the 
+specified database <I>db</I> is edge.  The edge modeling mode is a special case 
+of vertex mode.  In edge mode, <A HREF=mgGetModelingMode.htm#mgGetModelingMode>mgGetModelingMode</A> will return <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ 
+(since there is no "edge" type in OpenFlight) and this function will return 
+<A HREF=mgbool.htm#mgbool>MG_TRUE</A>.  In vertex mode <A HREF=mgGetModelingMode.htm#mgGetModelingMode>mgGetModelingMode</A> will return <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltVertex>fltVertex</A>
+ 
+and this function will return <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database to check modeling mode for</DD></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">// check if modeling mode is edge mode
+// if mgIsModelingModeEdge() returns MG_TRUE
+// you don't have to check mgGetModelingMode()
+mgbool isEdgeMode = mgIsModelingModeEdge (db);
+
+// check if modeling mode is vertex mode
+// mgGetModelingMode() is ambiguous if it returns fltVertex
+// must also check that it mgIsModelingModeEdge() is MG_FALSE
+// to know it is vertex mode
+mgbool isVertexMode = (
+   (mgGetModelingMode (db) == fltVertex) &&
+   (mgIsModelingModeEdge (db) == MG_FALSE)
+   ) ? MG_TRUE : MG_FALSE;</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetActivationDb.htm#mgGetActivationDb>mgGetActivationDb</A>, 
+<A HREF=mgGetModelingMode.htm#mgGetModelingMode>mgGetModelingMode</A>, <A HREF=mgSetModelingMode.htm#mgSetModelingMode>mgSetModelingMode</A>, <A HREF=mgSetModelingModeEdge.htm#mgSetModelingModeEdge>mgSetModelingModeEdge</A>, 
+<A HREF=mgGetModelingParent.htm#mgGetModelingParent>mgGetModelingParent</A>, <A HREF=mgGetModelingParentMatrix.htm#mgGetModelingParentMatrix>mgGetModelingParentMatrix</A>, <A HREF=mgGetDefaultModelingParent.htm#mgGetDefaultModelingParent>mgGetDefaultModelingParent</A>, <A HREF=mgSetModelingParent.htm#mgSetModelingParent>mgSetModelingParent</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetNextTextureMapping</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetNextTextureMapping><H1 CLASS="APISYMBOL">mgGetNextTextureMapping</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetNextTextureMapping</B> - gets the next texture 
+mapping in a database&#146s palette.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetNextTextureMapping</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>index</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>textureMappingName</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, index, name <B>mgGetNextTextureMapping</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetNextTextureMapping</B> gets the index and name of the next texture 
+mapping contained in the texture mapping palette of database <I>db</I>.</P></DD><DD><P>If you pass <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for <I>index</I>, the index of the texture mapping 
+palette entry is not returned.</P></DD><DD><P>If you pass <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for <I>textureMappingName</I>, the name of the texture 
+mapping palette entry is not returned.  If you do pass a character string for 
+<I>textureMappingName</I>, the buffer&#32should be at least 20 characters.</P></DD><DD><P>After calling <A HREF=mgGetFirstTextureMapping.htm#mgGetFirstTextureMapping>mgGetFirstTextureMapping</A>, successive calls to 
+<B>mgGetNextTextureMapping</B> return successive texture mapping palette entries.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>index</I></DT><DD>pointer to the index of the next texture mapping</DD><DT><I>textureMappingName</I></DT><DD>the name of the next texture mapping</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the next texture mapping palette entry is found, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>index</DT><DD>If function is successful, index contains the retrieved index, otherwise 
+index is undefined.</DD><DT>name</DT><DD>If function is successful, name contains the retrieved name, otherwise 
+name is undefined.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>See <A HREF=mgGetFirstTextureMapping.htm#mgGetFirstTextureMapping>mgGetFirstTextureMapping</A> for an example of how to use this function.</DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetFirstTextureMapping.htm#mgGetFirstTextureMapping>mgGetFirstTextureMapping</A>, <A HREF=mgGetTextureMappingCount.htm#mgGetTextureMappingCount>mgGetTextureMappingCount</A>, <A HREF=mgGetTextureMappingName.htm#mgGetTextureMappingName>mgGetTextureMappingName</A></DD></DL></BODY>
+
+</HTML>

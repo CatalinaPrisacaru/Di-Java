@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>mgTextGetDMS</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgTextGetDMS><H1 CLASS="APISYMBOL">mgTextGetDMS</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgTextGetDMS</B> - retrieves double precision floating point 
+value represented in DMS (degrees, minutes, seconds) format from text a 
+control.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgTextGetDMS</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>control</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>dmsVal</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fmtString</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgTextGetDMS</B> attempts to interpret the text value displayed 
+in the specified text <I>control</I> as a double precision floating point 
+value.  The text is assumed to be formatted as a DMS string as described 
+below.</P></DD><DD><P>Depending on the <I>fmtString</I> you specify, you can specify how 
+you expect the text in the control to be formatted.  You must specify 
+either <A HREF=MDFMT_LAT.htm#MDFMT_LAT>MDFMT_LAT</A> or <A HREF=MDFMT_LON.htm#MDFMT_LON>MDFMT_LON</A> as described here.</P></DD><DD><P>If you specify <A HREF=MDFMT_LAT.htm#MDFMT_LAT>MDFMT_LAT</A> 
+in <I>fmtString</I>, the text in the control is expected to be a latitude 
+measurement expressed in the form: <B>DD~MM'SS"H</B>, where DD is the number of 
+degrees, MM is the number of minutes, SS is the number of seconds and H 
+is either 'N' or 'S' depending on whether the value lies in the northern 
+or southern hemisphere, respectively.</P></DD><DD><P>If you specify <A HREF=MDFMT_LON.htm#MDFMT_LON>MDFMT_LON</A> 
+in <I>fmtString</I>, the text in the control is expected to be a longitude 
+measurement expressed in the form: <B>DD~MM'SS"H</B>, where DD is the number of 
+degrees, MM is the number of minutes, SS is the number of seconds and H 
+is either 'E' or 'W' depending on whether the value lies in the eastern 
+or western hemisphere, respectively.</P></DD><DD><P>By convention, values entered in the northern and eastern hemispheres 
+are returned as positive (0.0 .. 180.0).  Values entered in the southern and 
+western hemispheres are returned as negative (-180 .. 0.0).</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>control</I></DT><DD>the text control</DD><DT><I>dmsVal</I></DT><DD>address of double value to receive numeric value 
+in decimal degrees from text control</DD><DT><I>fmtString</I></DT><DD>latitude/longitude formatting string</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.  If function 
+is successful, <I>dmsVal</I> contains the corresponding numeric value in 
+decimal degrees, otherwise <I>dmsVal</I> is undefined.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgTextSetDMS.htm#mgTextSetDMS>mgTextSetDMS</A>, 
+<A HREF=mgTextGetString.htm#mgTextGetString>mgTextGetString</A>, <A HREF=mgTextGetInteger.htm#mgTextGetInteger>mgTextGetInteger</A>, <A HREF=mgTextGetFloat.htm#mgTextGetFloat>mgTextGetFloat</A>, <A HREF=mgTextGetDouble.htm#mgTextGetDouble>mgTextGetDouble</A></DD></DL></BODY>
+
+</HTML>

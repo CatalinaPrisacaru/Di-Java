@@ -1,0 +1,615 @@
+<HTML>
+<HEAD>
+<TITLE>mgRegisterNotifier</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRegisterNotifier><H1 CLASS="APISYMBOL">mgRegisterNotifier</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRegisterNotifier</B> - registers a notifier.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgnotifier <B>mgRegisterNotifier</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>pluginTool</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgnotifierevent.htm#mgnotifierevent>mgnotifierevent</A></TD><TD><I>event</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgnotifyfunc.htm#mgnotifyfunc>mgnotifyfunc</A></TD><TD><I>notifyFunc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRegisterNotifier</B> registers a model-time notifier on behalf 
+of the specified editor or viewer plug-in tool, <I>pluginTool</I>.  When the 
+specified model time <I>event</I> occurs for the specified database <I>db</I> 
+and/or node <I>rec</I>, the notification callback function, <I>notifyFunc</I> 
+is called. The affected database and node (if any) are passed to the 
+notification callback function with the specified user defined data, 
+<I>userData</I>.</P></DD><DD><P>Typically, you register a model-time notifier for a particular 
+database node <I>db</I> or specific node <I>rec</I> in the scene.  If you do this, 
+your notification callback function will be called only when the specified <I>event</I> 
+occurs to that specific <I>db</I> or <I>rec</I> node.  If you want your notification callback 
+function to be called whenever the event occurs to any database node, set <I>db</I> to 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD><DD><P>After you register a model-time notifier, it is immediately enabled. You can 
+disable and re-enable the notifier during the lifetime of your plug-in tool 
+using <A HREF=mgSetNotifierEnabled.htm#mgSetNotifierEnabled>mgSetNotifierEnabled</A>.</P></DD><DD><P>Note that the parameters <I>db</I> and <I>rec</I> are not applicable to all notifier 
+events. For example, the notifier <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SELECTLISTCHANGED</A> that is 
+sent whenever the select list changes, can accept a non-null <I>db</I> but ignores <I>rec</I>. 
+Similarly, the notifier <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DESKTOPINIT</A> that is sent when the 
+Creator desktop starts after all plug-ins are initialized, ignores both <I>db</I> and <I>rec</I> 
+as they are not applicable for this event. The notifier <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_NODEDELETED</A> 
+that is sent whenever a node is deleted in Creator, accepts both <I>db</I> and <I>rec</I>.</P></DD><DD><P>Certain notifier events are valid only for certain plug-in tool types. 
+For example, viewer tools can receive any notifier event while editor tools and 
+other plug-in tool types can only receive a subset of the notifier events.</P></DD><DD><P>Other restrictions are imposed on editor tools when registering certain 
+notifier events. Because an editor tool instance is bound to a specific database 
+when it runs, an editor tool is required to specify that database as the <I>db</I> 
+parameter when it registers certain notifier events.</P></DD><DD><P>The following lists the 
+notifiers that are valid for this function. It also lists which types of plug-in 
+tools can receive each notifier event and any restrictions imposed.<P>
+<TABLE CLASS="SIMPLE">
+<P>
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ Notifier Event </TD>
+ 
+<TD CLASS="BORDER">
+ Plug-in tool types </TD>
+ 
+<TD CLASS="BORDER">
+ Notes </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SELECTLISTCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_NEWTOPDATABASE</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DATABASECLOSED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTPRIMARYCOLORCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTALTCOLORCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTTEXTURECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTMATERIALCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTTEXTUREMAPPINGCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTLIGHTPOINTAPPEARANCECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTLIGHTPOINTANIMATIONCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTSHADERCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTSOUNDCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_CURRENTLIGHTSOURCECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> cannot be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for Editor </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_COLORPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_TEXTUREPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_MATERIALPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_TEXTUREMAPPINGPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTPOINTAPPEARANCEPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTPOINTANIMATIONPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SHADERPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SOUNDPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTSOURCEPALETTECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_LIGHTPOINTPALETTEIZED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DESKTOPINIT</A> </TD>
+ 
+<TD CLASS="BORDER">
+ All </TD>
+ 
+<TD CLASS="BORDER">
+ <I>db</I> and <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+ 
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DESKTOPEXIT</A> </TD>
+ 
+<TD CLASS="BORDER">
+ All </TD>
+ 
+<TD CLASS="BORDER">
+ <I>db</I> and <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DATABASEOPENED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored, <I>db</I> must be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DATABASESAVED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_NODECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer </TD>
+ 
+<TD CLASS="BORDER">
+ </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_NODEDELETED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer </TD>
+ 
+<TD CLASS="BORDER">
+ </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_NODECREATED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> must be <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_NODEREPARENTED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer </TD>
+ 
+<TD CLASS="BORDER">
+ </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_SWITCHDISTANCECHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_TIMEOFDAYCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_TEXTURESELECTCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_EXTENSIONCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ All </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_DATABASEPRESAVE</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=mgnotifierevent.htm#mgnotifierevent>MNOTIFY_EYEPOINTCHANGED</A> </TD>
+ 
+<TD CLASS="BORDER">
+ Viewer, Editor </TD>
+ 
+<TD CLASS="BORDER">
+ <I>rec</I> ignored </TD>
+ 
+</TR>
+<P>
+</TABLE>
+</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>pluginTool</I></DT><DD>the plug-in tool that is registering the notifier</DD><DT><I>event</I></DT><DD>notification event you are interested in</DD><DT><I>db</I></DT><DD>the database for which you are registering the event</DD><DT><I>rec</I></DT><DD>the specific node for which the event applies</DD><DT><I>notifyFunc</I></DT><DD>the notification callback function</DD><DT><I>userData</I></DT><DD>user data to be passed to notification callback 
+function when it is called</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns a notifier object if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example shows how a plug-in tool might set up model-time notifiers 
+to be notified when either the select list changes or the user brings a different 
+database to the top (focus) in Creator:</DT><DT><PRE CLASS="EXAMPLE">static void MyNotifier (mgnotifier notifier, mgnotifierevent event,
+&#32&#32&#32      mgrec* db, mgrec* rec, void* userData)
+{
+   switch (event)
+   {
+   case MNOTIFY_SELECTLISTCHANGED:
+      // the select list has changed for db
+      break;
+
+   case MNOTIFY_NEWTOPDATABASE:
+      // the current database is now db
+      // db may be MG_NULL if Creator desktop has no more files
+      break;
+
+   case MNOTIFY_NODECREATED:
+      // rec has been created in db
+      break;
+   }
+}
+
+// register interest in select list changing for any database
+mgRegisterNotifier (pluginTool, MNOTIFY_SELECTLISTCHANGED,
+     MG_NULL, MG_NULL, MyNotifier, MG_NULL);
+
+// register interest in any database becoming the current (focus) database
+mgRegisterNotifier (pluginTool, MNOTIFY_NEWTOPDATABASE,
+     MG_NULL, MG_NULL, MyNotifier, MG_NULL);
+
+// register interest in any node being created
+mgRegisterNotifier (pluginTool, MNOTIFY_NODECREATED,
+     MG_NULL, MG_NULL, MyNotifier, MG_NULL);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterPaletteNotifier.htm#mgRegisterPaletteNotifier>mgRegisterPaletteNotifier</A>, <A HREF=mgUnregisterNotifier.htm#mgUnregisterNotifier>mgUnregisterNotifier</A>, 
+<A HREF=mgSetNotifierEnabled.htm#mgSetNotifierEnabled>mgSetNotifierEnabled</A>, <A HREF=mgnotifierevent.htm#mgnotifierevent>mgnotifierevent</A></DD></DL></BODY>
+
+</HTML>

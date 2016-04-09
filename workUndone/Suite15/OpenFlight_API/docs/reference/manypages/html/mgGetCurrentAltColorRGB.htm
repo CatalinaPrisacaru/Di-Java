@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetCurrentAltColorRGB</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetCurrentAltColorRGB><H1 CLASS="APISYMBOL">mgGetCurrentAltColorRGB</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetCurrentAltColorRGB</B> - returns the RGB 
+components of the current alternate modeling color.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetCurrentAltColorRGB</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>short*</TD><TD><I>red</I>,</TD></TR>
+<TR><TD></TD><TD>short*</TD><TD><I>green</I>,</TD></TR>
+<TR><TD></TD><TD>short*</TD><TD><I>blue</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, red, green, blue <B>mgGetCurrentAltColorRGB</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetCurrentAltColorRGB</B> returns the <I>red</I>, <I>green</I>, 
+and <I>blue</I> components of the current alternate modeling color 
+selected for database <I>db</I>.  The values 
+returned are in the range 0..255.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>red</I></DT><DD>address of value to receive red component 
+of current alternate modeling color</DD><DT><I>green</I></DT><DD>address of value to receive green component 
+of current alternate modeling color</DD><DT><I>blue</I></DT><DD>address of value to receive blue component 
+of current alternate modeling color</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if RGB components of current alternate modeling 
+color for <I>db</I> could be determined, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>red</DT><DD>If function is successful, red contains the retrieved red component, otherwise 
+red is undefined.</DD><DT>green</DT><DD>If function is successful, green contains the retrieved green component, otherwise 
+green is undefined.</DD><DT>blue</DT><DD>If function is successful, blue contains the retrieved blue component, otherwise 
+blue is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetCurrentAltColorRGB.htm#mgSetCurrentAltColorRGB>mgSetCurrentAltColorRGB</A>, <A HREF=mgSetCurrentAltColor.htm#mgSetCurrentAltColor>mgSetCurrentAltColor</A>, <A HREF=mgGetCurrentColorRGB.htm#mgGetCurrentColorRGB>mgGetCurrentColorRGB</A></DD></DL></BODY>
+
+</HTML>

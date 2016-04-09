@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>mgRendererSetRendererFunc</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgRendererSetRendererFunc><H1 CLASS="APISYMBOL">mgRendererSetRendererFunc</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgRendererSetRendererFunc</B> - registers a renderer function 
+for a renderer.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgRendererSetRendererFunc</B> (</TD><TD><A HREF=mgplugintool.htm#mgplugintool>mgplugintool</A></TD><TD><I>rendererPluginTool</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrendererfunc.htm#mgrendererfunc>mgrendererfunc</A></TD><TD><I>rendererFunc</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrenderercontext.htm#mgrenderercontext>mgrenderercontext</A></TD><TD><I>rendererContext</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>eyex</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>eyey</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>eyez</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>centerx</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>centery</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>centerz</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>upx</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>upy</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>upz</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>eyex</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>eyey</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>eyez</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>centerx</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>centery</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>centerz</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>upx</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>upy</I>,</TD></TR>
+<TR><TD></TD><TD>double</TD><TD><I>upz</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgRendererSetRendererFunc</B> registers the renderer function for 
+a renderer.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rendererPluginTool</I></DT><DD>the renderer plug-in tool to 
+which this renderer function is to 
+be applied</DD><DT><I>rendererFunc</I></DT><DD>the renderer function</DD><DT><I>rendererContext</I></DT><DD>the renderer context to get 
+associated view handle</DD><DT><I>db</I></DT><DD>the database</DD><DT><I>eyex</I></DT><DD>the x component of the eyepoint position</DD><DT><I>eyey</I></DT><DD>the y component of the eyepoint position</DD><DT><I>eyez</I></DT><DD>the z component of the eyepoint position</DD><DT><I>centerx</I></DT><DD>the x component of the reference point</DD><DT><I>centery</I></DT><DD>the y component of the reference point</DD><DT><I>centerz</I></DT><DD>the z component of the reference point</DD><DT><I>upx</I></DT><DD>the i component of the up vector</DD><DT><I>upy</I></DT><DD>the j component of the up vector</DD><DT><I>upz</I></DT><DD>the k component of the up vector</DD><DT><I>db</I></DT><DD>the database</DD><DT><I>eyex</I></DT><DD>the x component of the eyepoint position</DD><DT><I>eyey</I></DT><DD>the y component of the eyepoint position</DD><DT><I>eyez</I></DT><DD>the z component of the eyepoint position</DD><DT><I>centerx</I></DT><DD>the x component of the reference point</DD><DT><I>centery</I></DT><DD>the y component of the reference point</DD><DT><I>centerz</I></DT><DD>the z component of the reference point</DD><DT><I>upx</I></DT><DD>the i component of the up vector</DD><DT><I>upy</I></DT><DD>the j component of the up vector</DD><DT><I>upz</I></DT><DD>the k component of the up vector</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgRegisterRenderer.htm#mgRegisterRenderer>mgRegisterRenderer</A></DD></DL></BODY>
+
+</HTML>

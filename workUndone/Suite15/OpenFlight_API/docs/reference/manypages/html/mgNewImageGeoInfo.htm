@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>mgNewImageGeoInfo</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNewImageGeoInfo><H1 CLASS="APISYMBOL">mgNewImageGeoInfo</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNewImageGeoInfo</B> - reads the georeference information 
+from an image file.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgimagegeoinfo <B>mgNewImageGeoInfo</B> (</TD><TD>const char*</TD><TD><I>textureName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgNewImageGeoInfo</B> reads the georeference information of an 
+image on disk and returns a georeference info object containing the 
+information read. &#32The parameter <I>textureName</I> is the name of the image file.</P></DD><DD><P>This function is similar to <A HREF=mgReadImageGeoInfo.htm#mgReadImageGeoInfo>mgReadImageGeoInfo</A> except that it 
+returns the georeference info object directly instead of returning it as an 
+output parameter as <A HREF=mgReadImageGeoInfo.htm#mgReadImageGeoInfo>mgReadImageGeoInfo</A> does.  Use <A HREF=mgReadImageGeoInfo.htm#mgReadImageGeoInfo>mgReadImageGeoInfo</A> 
+if you need the texture error code on failure.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>When you are through with the returned georeference info object, 
+you must free it by calling <A HREF=mgFreeImageGeoInfo.htm#mgFreeImageGeoInfo>mgFreeImageGeoInfo</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to free the returned georeference info object in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>textureName</I></DT><DD>the name of the image file</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns georeference info object if successful, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgReadImageGeoInfo.htm#mgReadImageGeoInfo>mgReadImageGeoInfo</A>, <A HREF=mgFreeImageGeoInfo.htm#mgFreeImageGeoInfo>mgFreeImageGeoInfo</A></DD></DL></BODY>
+
+</HTML>

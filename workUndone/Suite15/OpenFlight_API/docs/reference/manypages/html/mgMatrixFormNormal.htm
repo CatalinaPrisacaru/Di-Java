@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<TITLE>mgMatrixFormNormal</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMatrixFormNormal><H1 CLASS="APISYMBOL">mgMatrixFormNormal</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMatrixFormNormal</B> - creates a matrix to transform normals by 
+based on the matrix by which the coordinates are transformed.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void <B>mgMatrixFormNormal</B> (</TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A></TD><TD><I>matrix</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A></TD><TD><I>geomMatrix</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgmatrix <B>mgMatrixFormNormal</B> (</TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A></TD><TD><I>geomMatrix</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgMatrixFormNormal</B> gets a matrix that can be used 
+to transform normals if <I>geomMatrix</I> is the matrix by which coordinates 
+are transformed.  Normals transformed 
+by the resulting matrix will remain orthogonal to a surface transformed by 
+<I>geomMatrix</I> even when <I>geomMatrix</I> is a non rigid transform such as a skew or 
+scale (including non uniform scaling). Note that unit normals transformed by 
+<I>matrix</I> may not remain unit lengthed on certain transformation such as 
+scales and thus in most cases, the resulting normals will most likely need to be 
+reunitized. Also note that for rigid transformations such as rotations, translations 
+and reflections about an axis, this function is unnecessary and simply transforming 
+unit normals by the same matrix without translation will maintain the normals to 
+be orthogonal to the surface and of unit length.</P></DD><DD><P>The original matrix <I>geomMatrix</I> is not affected.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>This function writes the resulting matrix into the output 
+parameter <I>matrix</I> if successful.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>This function returns the resulting matrix if successful.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>matrix</I></DT><DD>address of matrix to receive result</DD><DT><I>geomMatrix</I></DT><DD>transformation of geometry</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgmatrix</DT><DD>the matrix.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A></DD></DL></BODY>
+
+</HTML>

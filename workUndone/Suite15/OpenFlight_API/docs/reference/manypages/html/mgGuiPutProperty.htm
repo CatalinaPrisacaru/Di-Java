@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>mgGuiPutProperty</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGuiPutProperty><H1 CLASS="APISYMBOL">mgGuiPutProperty</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGuiPutProperty</B> - associates user defined data with a gui 
+item.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGuiPutProperty</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>gui</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A></TD><TD><I>propName</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgpropertyvalue.htm#mgpropertyvalue>mgpropertyvalue</A></TD><TD><I>propValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGuiPutProperty</B> allows you to associate data of any 
+type, <I>propValue</I>, with a dialog or control.  The user defined data is 
+associated with a gui item, <I>gui</I>, and identified by a property name 
+string, <I>propName</I>, allowing any number of data records to be associated 
+with the gui item, as long as all property names are unique.</P></DD><DD><P>After using this function to associate user data to a gui item, 
+use the function <A HREF=mgGuiGetProperty.htm#mgGuiGetProperty>mgGuiGetProperty</A> to retrieve the data.  Then when 
+you no longer need the data associated to the gui item, use 
+<A HREF=mgGuiDeleteProperty.htm#mgGuiDeleteProperty>mgGuiDeleteProperty</A> to disassociate the data from the gui item. 
+Note that <A HREF=mgGuiDeleteProperty.htm#mgGuiDeleteProperty>mgGuiDeleteProperty</A> does not free or otherwise affect 
+the actual data that was associated.  If this data was dynamically 
+allocated, it is the callers responsibility to deallocate it.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>gui</I></DT><DD>the gui item to put property on</DD><DT><I>propName</I></DT><DD>the name of the property to assign</DD><DT><I>propValue</I></DT><DD>the value of the property to assign</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example associates a string property to a control 
+in a dialog, retrieves the string and prints it out.  Finally, it 
+deletes the property from the control.</DT><DT><PRE CLASS="EXAMPLE">#define PROPERTY_NAME   "My String Property"
+#define USER_STRING     "This String is associated to my control"
+
+char* string;
+
+// allocate the string to be associated to the control
+string = mgMalloc (strlen (USER_STRING) + 1);
+strcpy (string, USER_STRING);
+
+// associate the string as a property of the control
+mgGuiPutProperty (gui, PROPERTY_NAME, string);
+
+// Then later, retrieve the string property, print it out
+
+char* string;
+
+// Retrieve the string property from the control
+string = (char*) mgGuiGetProperty (gui, PROPERTY_NAME);
+printf ("%s: %s", PROPERTY_NAME, string);
+
+// Output is:
+// My String Property: This String is associated to my control
+
+// Then finally, when you no longer need the string to be
+// associated to the control
+
+char* string;
+
+// Retrieve the string property from the control (need to free it)
+string = (char*) mgGuiGetProperty (gui, PROPERTY_NAME);
+mgFree (string);
+mgGuiDeleteProperty (gui, PROPERTY_NAME);</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGuiGetProperty.htm#mgGuiGetProperty>mgGuiGetProperty</A>, <A HREF=mgGuiDeleteProperty.htm#mgGuiDeleteProperty>mgGuiDeleteProperty</A></DD></DL></BODY>
+
+</HTML>

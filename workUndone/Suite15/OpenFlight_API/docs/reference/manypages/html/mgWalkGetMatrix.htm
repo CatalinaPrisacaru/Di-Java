@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<TITLE>mgWalkGetMatrix</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgWalkGetMatrix><H1 CLASS="APISYMBOL">mgWalkGetMatrix</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgWalkGetMatrix</B> - returns the current matrix accumulated so far during 
+an <A HREF=mgWalk.htm#mgWalk>mgWalk</A> or <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A> traversal.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgWalkGetMatrix</B> (</TD><TD>void*</TD><TD><I>userdata</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A></TD><TD><I>matrix</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, mgmatrix <B>mgWalkGetMatrix</B> (</TD><TD>void*</TD><TD><I>userdata</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgWalkGetMatrix</B> calculates and returns the current matrix accumulated 
+during a traversal initiated by either <A HREF=mgWalk.htm#mgWalk>mgWalk</A> or <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A> with flags that include 
+<A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A>.</P></DD><DD><P>The matrix accumulated is formed by multiplying together all the matrices of the nodes 
+contained in the path from the root of the traversal to the current node of the traversal. 
+When you use <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A> to traverse, you can specify the starting or "root" matrix of the 
+traversal.</P></DD><DD><P>Note: This function can only be called from within the users preaction or postaction 
+callback during <A HREF=mgWalk.htm#mgWalk>mgWalk</A> or <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A>.  If you call this function in any other context, 
+or call this function without having specified <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A> when you called 
+<A HREF=mgWalk.htm#mgWalk>mgWalk</A> or <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A>, it will fail.</P></DD><DD><P>If <B>mgWalkGetMatrix</B> is called during the preaction callback, it includes the matrix 
+applied to the current node (if any).  If called during the postaction callback, it does not 
+include the matrix applied to the current node.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>userdata</I></DT><DD>pointer passed to <A HREF=mgWalk.htm#mgWalk>mgWalk</A> or <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A> identifying 
+the user defined data</DD><DT><I>matrix</I></DT><DD>the address of a matrix to receive 
+the composite of all transformations accumulated thus 
+far during the traversal</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the matrix is returned, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>mgmatrix</DT><DD>If function is successful, contains the matrix representing 
+the cumulative transformations applied to this point during the traversal, otherwise undefined.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">static mgbool PreWalkFunc (mgrec* db, mgrec* parent, mgrec* rec, void* userData)
+{
+   mgmatrix mat;
+   mgbool ok = mgWalkGetMatrix (userData, &mat);
+   if (ok == MG_TRUE)
+   {
+      // mat contains cumulative transformations applied to this
+      // point (including this node rec) during the traversal
+   }
+   return (MG_TRUE);
+}
+static mgbool PostWalkFunc (mgrec* db, mgrec* parent, mgrec* rec, void* userData)
+{
+   mgmatrix mat;
+   mgbool ok = mgWalkGetMatrix (userData, &mat);
+   if (ok == MG_TRUE)
+   {
+      // mat contains cumulative transformations applied to this
+      // point (but NOT including this node rec) during the traversal
+   }
+   return (MG_TRUE);
+}
+// both of the following are equivalent
+mgWalkEx (db, MG_NULL, PreWalkFunc, PostWalkFunc, MG_NULL, MWALK_MATRIXSTACK);
+mgWalk (db, PreWalkFunc, PostWalkFunc, MG_NULL, MWALK_MATRIXSTACK);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">def PreWalkFunc (db, parent, rec, userData):
+   ok, mat = mgWalkGetMatrix (userData)
+   if (ok == MG_TRUE):
+      print mat[0],mat[1],mat[2],mat[3]
+      print mat[4],mat[5],mat[6],mat[7]
+      print mat[8],mat[9],mat[10],mat[11]
+      print mat[12],mat[13],mat[14],mat[15]
+      print "-"
+      # mat contains cumulative transformations applied to this
+      # point (including this node rec) during the traversal
+   else:
+      print "Error"
+   return MG_TRUE
+
+def PostWalkFunc (db, parent, rec, userData):
+   ok, mat = mgWalkGetMatrix (userData)
+   if (ok == MG_TRUE):
+      print mat[0],mat[1],mat[2],mat[3]
+      print mat[4],mat[5],mat[6],mat[7]
+      print mat[8],mat[9],mat[10],mat[11]
+      print mat[12],mat[13],mat[14],mat[15]
+      print "-"
+      # mat contains cumulative transformations applied to this
+      # point (but NOT including this node rec) during the traversal
+   else:
+      print "Error"
+   return MG_TRUE
+
+db = mgGetCurrentDb ()
+# both of the following are equivalent
+mgWalkEx (db, None, PreWalkFunc, PostWalkFunc, None, MWALK_MATRIXSTACK)
+mgWalk (db, PreWalkFunc, PostWalkFunc, None, MWALK_MATRIXSTACK);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgWalk.htm#mgWalk>mgWalk</A>, <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A>, <A HREF=mgWalkRecList.htm#mgWalkRecList>mgWalkRecList</A>, <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A></DD></DL></BODY>
+
+</HTML>

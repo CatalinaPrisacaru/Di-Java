@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>mgeditorcallbackrec</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgeditorcallbackrec><H1 CLASS="APISYMBOL">mgeditorcallbackrec</H1></A></LEFT>
+<DL>
+<DT><H3>STRUCT NAME</H3></DT>
+<DD><B>mgeditorcallbackrec</B> - callback structure for editor tool start functions<P></DD>
+<DT><H3>SYNOPSIS</H3></DT>
+<DD><PRE CLASS="EXAMPLE">typedef struct  {
+&#32;&#32;&#32;mgtoolactivation toolActivation;
+&#32;&#32;&#32;mgbool dialogRequired;
+&#32;&#32;&#32;void* toolData;
+&#32;&#32;&#32;mgeditorcontext editorContext;
+} mgeditorcallbackrec;
+</PRE>
+</DD>
+</DL>
+<DL><DT><H3>MEMBERS</H3><DL><DT><B>toolActivation</B><DD><A HREF=mgtoolactivation.htm#mgtoolactivation>mgtoolactivation</A> - tool activation</DD></DT><DT><B>dialogRequired</B><DD><A HREF=mgbool.htm#mgbool>mgbool</A> - <A HREF=mgbool.htm#mgbool>MG_TRUE</A> to tell 
+OpenFlight API to create your editor dialog for you</DD></DT><DT><B>toolData</B><DD>void* - tool instance data that will be 
+passed to subsequent editor tool interactions</DD></DT><DT><B>editorContext</B><DD><A HREF=mgeditorcontext.htm#mgeditorcontext>mgeditorcontext</A> - the editor context associated to this 
+invocation of the editor tool</DD></DT></DL></DT></DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>When an editor tool is launched, the corresponding 
+start function is called. The start function is passed a 
+pointer to a record of this type in the <I>callData</I> parameter.</P></DD><DD><P>This record contains a tool activation object from which 
+you can obtain the identity of the top (focus) database.</P></DD><DD><P>This record also contains two fields that your tool 
+fills in and returns if a dialog is required by your tool.  If your 
+editor tool needs to display a dialog to continue its work, it must 
+set the <I>dialogRequired</I> field to <A HREF=mgbool.htm#mgbool>MG_TRUE</A>.  Additionally, 
+you can fill in the <I>toolData</I> field with tool defined data that 
+is passed to subsequent editor interactions while your tool 
+is active on the desktop.</P></DD><DD><P>If you do not need to display a dialog, set the 
+<I>dialogRequired</I> field to <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgtoolstartfunc.htm#mgtoolstartfunc>mgtoolstartfunc</A>, <A HREF=mgGetActivationDb.htm#mgGetActivationDb>mgGetActivationDb</A></DD></DL></BODY>
+
+</HTML>

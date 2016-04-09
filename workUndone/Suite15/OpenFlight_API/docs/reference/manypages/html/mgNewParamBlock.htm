@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>mgNewParamBlock</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNewParamBlock><H1 CLASS="APISYMBOL">mgNewParamBlock</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNewParamBlock</B> - creates a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD> mgparamblock <B>mgNewParamBlock</B> ( void ) </DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgNewParamBlock</B> creates a parameter block, typically used to 
+define the default tool parameter block for an editor plug-in tool.</P></DD><DD><P>See the example code in <A HREF=mgPluginToolSetDefaultParamBlock.htm#mgPluginToolSetDefaultParamBlock>mgPluginToolSetDefaultParamBlock</A>.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The parameter block is dynamically allocated and (normally) must be 
+deallocated by the caller when it is no longer needed using <A HREF=mgFreeParamBlock.htm#mgFreeParamBlock>mgFreeParamBlock</A>. 
+Note that If you pass the parameter block to <A HREF=mgPluginToolSetDefaultParamBlock.htm#mgPluginToolSetDefaultParamBlock>mgPluginToolSetDefaultParamBlock</A>, you 
+transfer ownership of the parameter block to the OpenFlight API and you should 
+NOT deallocate the block.  The OpenFlight API will automatically dispose 
+of the memory when it is appropriate to do so.</P></DD></DT></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Pointer to parameter block if created successfully, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A>, <A HREF=mgGetParamBlock.htm#mgGetParamBlock>mgGetParamBlock</A>, <A HREF=mgFreeParamBlock.htm#mgFreeParamBlock>mgFreeParamBlock</A>, 
+<A HREF=mgPluginToolSetDefaultParamBlock.htm#mgPluginToolSetDefaultParamBlock>mgPluginToolSetDefaultParamBlock</A></DD></DL></BODY>
+
+</HTML>

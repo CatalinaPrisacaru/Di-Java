@@ -1,0 +1,126 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_POLYMESH DIALOGEX 0, 0, 187, 174
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Polygon Mesh"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",MGID_OK,7,155,54,14
+    PUSHBUTTON      "Cancel",MGID_CANCEL,66,155,54,14
+    EDITTEXT        IDC_EDIT1,103,60,66,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,103,76,66,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,104,98,66,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,104,115,66,13,ES_AUTOHSCROLL
+    LTEXT           "Mesh Width:",IDC_STATIC,17,62,74,8
+    LTEXT           "Mesh Height:",IDC_STATIC,17,78,74,8
+    LTEXT           "Number of Cells Wide:",IDC_STATIC,17,100,74,8
+    LTEXT           "Number of Cells High:",IDC_STATIC,17,117,74,8
+    DEFPUSHBUTTON   "Apply",GENERATE,126,155,54,14
+    LTEXT           "Prompt",MOUSE_STATUS,7,4,173,11,0,WS_EX_STATICEDGE
+    CONTROL         "Origin",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,17,32,39,
+                    9
+    CONTROL         "Alignment",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,63,32,
+                    47,9
+    CONTROL         "Third Point",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,120,
+                    32,51,9
+    GROUPBOX        "To Points",IDC_STATIC,7,21,173,25
+    GROUPBOX        "Mesh Parameters",IDC_STATIC,7,49,173,100
+    CONTROL         "Draw Grid",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,133,67,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_POLYMESH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 169
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_POLYMESH            BITMAP  DISCARDABLE     "polymesh.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>mgPromptDialogTexture</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPromptDialogTexture><H1 CLASS="APISYMBOL">mgPromptDialogTexture</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPromptDialogTexture</B> - prompts the user to select one or 
+more texture files using a standard file browser.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgPromptDialogTexture</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>mode</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>numFiles</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgstringlist.htm#mgstringlist>mgstringlist*</A></TD><TD><I>fileList</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus, numFiles, name1, name2, ... <B>mgPromptDialogTexture</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>parent</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>mode</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< paramKey ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>< paramValue ></I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgPromptDialogTexture</B> displays a modal dialog in which the 
+user is prompted to select one or more texture files.</P></DD><DD><P>The dialog displays the directory structure using a file browser with 
+two push buttons Open/Save and Cancel and a texture preview area.  When the 
+user selects a texture file in the file browser, the texture preview area 
+displays a thumbnail view of the texture and lists some useful information 
+(dimensions) about the texture selected.</P></DD><DD><P><B>mgPromptDialogTexture</B> functions very similar to <A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>. 
+The main difference is the file browser that is displayed.  As described above, 
+the file browser displayed by <B>mgPromptDialogTexture</B> includes a texture preview 
+area that is not displayed by <A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>. 
+For more information on <B>mgPromptDialogTexture</B>, see <A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>.</P></DD><DD><P>All optional parameters are passed using variable argument style 
+and must be terminated with <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A>.</P></DD><DD><P>Unlike <A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>, <B>mgPromptDialogTexture</B> does not allow 
+you to supply a custom dialog.  For that reason, the following optional 
+input parameters are not supported for <B>mgPromptDialogTexture</B>:<P>
+<A HREF=MPFA_RESOURCE.htm#MPFA_RESOURCE>MPFA_RESOURCE</A><BR> 
+<A HREF=MPFA_DIALOGID.htm#MPFA_DIALOGID>MPFA_DIALOGID</A><BR> 
+<A HREF=MPFA_DIALOGFUNC.htm#MPFA_DIALOGFUNC>MPFA_DIALOGFUNC</A><BR> 
+<A HREF=MPFA_USERDATA.htm#MPFA_USERDATA>MPFA_USERDATA</A><BR> 
+<A HREF=MPFA_CALLBACKMASK.htm#MPFA_CALLBACKMASK>MPFA_CALLBACKMASK</A></P></DD><DD><P>If you do not specify the optional parameter <A HREF=MPFA_PATTERN.htm#MPFA_PATTERN>MPFA_PATTERN</A>, 
+<B>mgPromptDialogTexture</B> will automatically add the standard list of texture 
+pattern description-extension pairs supported by Creator.  If you do specify 
+<A HREF=MPFA_PATTERN.htm#MPFA_PATTERN>MPFA_PATTERN</A>, you can override this default list of extensions with your 
+own.  In this case, the list you specify will be the only description-extension 
+pairs displayed in the file browser.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>The string list returned for <I>fileList</I> is dynamically allocated and must 
+be deallocated by the caller when it is no longer needed using <A HREF=mgFreeStringList.htm#mgFreeStringList>mgFreeStringList</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>Currently the <I>parent</I> parameter is reserved for future enhancement 
+and should be specified as <B>None</B>.  For now the dialog is created as a child 
+of the main Creator main window.  It is not necessary to free the string list 
+returned for <I>fileList</I> in Python.</P></DD><DD><P>In addition to the custom dialog optional parameters listed above, the 
+following optional input parameters are not supported in 
+Python OpenFlight Script:<BR> 
+<A HREF=MPFA_PATTERNINDEX.htm#MPFA_PATTERNINDEX>MPFA_PATTERNINDEX</A><BR> 
+<A HREF=MPFA_EXITDIRECTORY.htm#MPFA_EXITDIRECTORY>MPFA_EXITDIRECTORY</A></P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>parent</I></DT><DD>the dialog parent to attach the prompt dialog</DD><DT><I>mode</I></DT><DD>an integer value that is either MPFM_OPEN or 
+MPFM_SAVE that specifies the mode for the file dialog</DD><DT><I>numFiles</I></DT><DD>a pointer to an integer that holds the number of 
+files that have been selected - 
+if the user had selected the MPFF_MULTISELECT option, 
+then this value can be more than one else it will be 
+at most one</DD><DT><I>fileList</I></DT><DD>a pointer to an <A HREF=mgstringlist.htm#mgstringlist>mgstringlist</A> object 
+that will be allocated and filled with the names 
+of the selected files, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> if no files selected - 
+caller should free this list when no longer needed using 
+<A HREF=mgFreeStringList.htm#mgFreeStringList>mgFreeStringList</A></DD><DT><I>...</I></DT><DD>optional input parameters in variable 
+argument style</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgstatus</DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success. 
+Success indicates that the file selected was a valid file and the user 
+dismissed the dialog using the Open/Save push button.  If function call is 
+successful, <I>numFiles</I> contains the number of files that have been selected, 
+and <I>fileList</I> contains the selected file name(s), otherwise both are undefined.</DD><DT>numFiles</DT><DD>The number of file names returned.</DD><DT>name1</DT><DD>The first file name returned.</DD><DT>name2</DT><DD>The second file name returned.</DD><DT>...</DT><DD>etc.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>As noted above, this function is similar to <A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>.  See 
+<A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A> for an example similar to that for using <B>mgPromptDialogTexture</B>.</DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPromptDialogFile.htm#mgPromptDialogFile>mgPromptDialogFile</A>, <A HREF=mgPromptDialogFolder.htm#mgPromptDialogFolder>mgPromptDialogFolder</A>, <A HREF=mgPromptDialogColor.htm#mgPromptDialogColor>mgPromptDialogColor</A></DD></DL></BODY>
+
+</HTML>

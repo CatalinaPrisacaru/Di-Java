@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamGetIntegerNth</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamGetIntegerNth><H1 CLASS="APISYMBOL">mgParamGetIntegerNth</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamGetIntegerNth</B> - gets the nth item of an 
+integer parameter value in a parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgParamGetIntegerNth</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>nth</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>paramValue</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>defaultValue</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, paramValue <B>mgParamGetIntegerNth</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamGetIntegerNth</B> retrieves the <I>nth</I> item of an 
+integer parameter value named <I>paramName</I> in the parameter block 
+<I>paramBlock</I>.  If the parameter exists and contains an <I>nth</I> 
+item, its value is returned in <I>paramValue</I>. If the parameter 
+does not exist or does not contain an <I>nth</I> item, <I>paramValue</I> 
+is set to <I>defaultValue</I>.</P></DD><DD><P>The first item of an array parameter is <I>nth</I> equal to 1.</P></DD><DD><P>Note that if the parameter does not exist, it is NOT created in the parameter block.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>paramBlock</I></DT><DD>the parameter block</DD><DT><I>paramName</I></DT><DD>the parameter name</DD><DT><I>nth</I></DT><DD>which value to return from the array parameter</DD><DT><I>paramValue</I></DT><DD>storage location for the parameter value returned</DD><DT><I>defaultValue</I></DT><DD>default value returned if parameter does not exist</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>paramValue</DT><DD>If successful, <I>paramValue</I> will be the parameter 
+value, otherwise <I>paramValue</I> will be <I>defaultValue</I>.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A>, <A HREF=mgParamAppendInteger.htm#mgParamAppendInteger>mgParamAppendInteger</A>, 
+<A HREF=mgParamGetDoubleNth.htm#mgParamGetDoubleNth>mgParamGetDoubleNth</A>, <A HREF=mgParamGetFloatNth.htm#mgParamGetFloatNth>mgParamGetFloatNth</A>, 
+<A HREF=mgParamGetBoolNth.htm#mgParamGetBoolNth>mgParamGetBoolNth</A>, <A HREF=mgParamGetStringNth.htm#mgParamGetStringNth>mgParamGetStringNth</A>, 
+<A HREF=mgParamGetDouble2Nth.htm#mgParamGetDouble2Nth>mgParamGetDouble2Nth</A>, <A HREF=mgParamGetDouble3Nth.htm#mgParamGetDouble3Nth>mgParamGetDouble3Nth</A>, 
+<A HREF=mgGetParamBlock.htm#mgGetParamBlock>mgGetParamBlock</A>, <A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A></DD></DL></BODY>
+
+</HTML>

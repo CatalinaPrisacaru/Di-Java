@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>mgParamAddInteger</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgParamAddInteger><H1 CLASS="APISYMBOL">mgParamAddInteger</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgParamAddInteger</B> - adds an integer parameter to a 
+parameter block.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgparam <B>mgParamAddInteger</B> (</TD><TD><A HREF=mgparamblock.htm#mgparamblock>mgparamblock</A></TD><TD><I>paramBlock</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>paramName</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>defaultValue</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgParamAddInteger</B> creates a new integer parameter named 
+<I>paramName</I> and adds it to the parameter block <I>paramBlock</I>. 
+The parameter value is initialized with <I>defaultValue</I>.</P></DD><DD><P>You can use an integer parameter to represent numeric (the default) or 
+enumerated values.  Enumerated integer parameters represent a set (may be non-contiguous) 
+of discrete values, while numeric integer parameters represent a range of whole numbers.</P></DD><DD><P>If your integer parameter is enumerated, use <A HREF=mgParamSetEnumerant.htm#mgParamSetEnumerant>mgParamSetEnumerant</A> to define each 
+enumerant.</P></DD><DD><P>If your integer parameter is numeric, you can use <A HREF=mgParamSetIntegerMinGT.htm#mgParamSetIntegerMinGT>mgParamSetIntegerMinGT</A>, 
+<A HREF=mgParamSetIntegerMinGE.htm#mgParamSetIntegerMinGE>mgParamSetIntegerMinGE</A>, <A HREF=mgParamSetIntegerMaxLT.htm#mgParamSetIntegerMaxLT>mgParamSetIntegerMaxLT</A> and <A HREF=mgParamSetIntegerMaxLE.htm#mgParamSetIntegerMaxLE>mgParamSetIntegerMaxLE</A> 
+to define the valid range for your parameter value.</P></DD><DD><P>After the parameter value is defined, use <A HREF=mgParamGetInteger.htm#mgParamGetInteger>mgParamGetInteger</A> 
+and <A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A> to query and change its value, respectively.</P></DD><DD><P>Note: If the named parameter already exists in <I>paramBlock</I>, it 
+is replaced.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>paramBlock</I></DT><DD>the parameter block</DD><DT><I>paramName</I></DT><DD>the parameter name</DD><DT><I>defaultValue</I></DT><DD>default value of the parameter</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the parameter if created successfully, 
+<A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgParamAddDouble.htm#mgParamAddDouble>mgParamAddDouble</A>, <A HREF=mgParamAddFloat.htm#mgParamAddFloat>mgParamAddFloat</A>, 
+<A HREF=mgParamAddBool.htm#mgParamAddBool>mgParamAddBool</A>, 
+<A HREF=mgParamAddString.htm#mgParamAddString>mgParamAddString</A>, <A HREF=mgParamAddDouble2.htm#mgParamAddDouble2>mgParamAddDouble2</A>, <A HREF=mgParamAddDouble3.htm#mgParamAddDouble3>mgParamAddDouble3</A>, 
+<A HREF=mgParamGetInteger.htm#mgParamGetInteger>mgParamGetInteger</A>, <A HREF=mgParamSetInteger.htm#mgParamSetInteger>mgParamSetInteger</A>, <A HREF=mgParamSetEnumerant.htm#mgParamSetEnumerant>mgParamSetEnumerant</A>, 
+<A HREF=mgParamSetIntegerMinGT.htm#mgParamSetIntegerMinGT>mgParamSetIntegerMinGT</A>, <A HREF=mgParamSetIntegerMinGE.htm#mgParamSetIntegerMinGE>mgParamSetIntegerMinGE</A>, 
+<A HREF=mgParamSetIntegerMaxLT.htm#mgParamSetIntegerMaxLT>mgParamSetIntegerMaxLT</A>, <A HREF=mgParamSetIntegerMaxLE.htm#mgParamSetIntegerMaxLE>mgParamSetIntegerMaxLE</A>, 
+<A HREF=mgNewParamBlock.htm#mgNewParamBlock>mgNewParamBlock</A></DD></DL></BODY>
+
+</HTML>

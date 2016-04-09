@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetVtxCoord</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetVtxCoord><H1 CLASS="APISYMBOL">mgGetVtxCoord</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetVtxCoord</B> - retrieves the x,y,z coordinate from a vertex record.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetVtxCoord</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>x</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>y</I>,</TD></TR>
+<TR><TD></TD><TD>double*</TD><TD><I>z</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, x, y, z <B>mgGetVtxCoord</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetVtxCoord</B> retrieves the <I>x</I>, <I>y</I>, and <I>z</I> values of the 
+vertex coordinate from a vertex record <I>rec</I>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>a vertex record</DD><DT><I>x</I></DT><DD>address of value to receive x coordinate</DD><DT><I>y</I></DT><DD>address of value to receive y coordinate</DD><DT><I>z</I></DT><DD>address of value to receive z coordinate</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the coord was retrieved successfully, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>x</DT><DD>If function is successful, x contains the retrieved x coordinate, otherwise 
+x is undefined.</DD><DT>y</DT><DD>If function is successful, y contains the retrieved y coordinate, otherwise 
+y is undefined.</DD><DT>z</DT><DD>If function is successful, z contains the retrieved z coordinate, otherwise 
+z is undefined.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSetVtxCoord.htm#mgSetVtxCoord>mgSetVtxCoord</A>, <A HREF=mgGetCoord3d.htm#mgGetCoord3d>mgGetCoord3d</A></DD></DL></BODY>
+
+</HTML>

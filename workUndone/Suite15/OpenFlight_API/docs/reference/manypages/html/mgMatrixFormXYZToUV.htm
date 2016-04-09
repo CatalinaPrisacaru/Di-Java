@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>mgMatrixFormXYZToUV</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgMatrixFormXYZToUV><H1 CLASS="APISYMBOL">mgMatrixFormXYZToUV</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgMatrixFormXYZToUV</B> - creates a matrix that maps xyz space to 
+uv space.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgMatrixFormXYZToUV</B> (</TD><TD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix*</A></TD><TD><I>matrix</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>poly</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>layer</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, mgmatrix <B>mgMatrixFormXYZToUV</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>poly</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>layer</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgMatrixFormXYZToUV</B> gets a matrix that maps the xyz coordinates of <I>poly</I> 
+to uv space for texture <I>layer</I>. Note that this xyz to uv matrix assumes that the uvs 
+on layer <I>layer</I> of <I>poly</I> have a linear mapping like one provided by three point put. 
+Any warping or tapering will not be taken into account by this mapping matrix.</P></DD><DD><P>The original polygon <I>poly</I> is not changed.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>This function writes the resulting matrix into the output 
+parameter <I>matrix</I> if successful.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>This function returns the resulting matrix if successful.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>matrix</I></DT><DD>address of matrix to receive result</DD><DT><I>poly</I></DT><DD>textured polygon to generate a mapping for</DD><DT><I>layer</I></DT><DD>layer of the uv coordinates to map</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful,&#32<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>mgmatrix</DT><DD>the matrix.</DD></DL></DL>
+<DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) show how to transfer 
+the texture mapping of one polygon to another polygon in texture layer 0 
+using <B>mgMatrixFormXYZToUV</B>. This is similar to the Flow Texture tool 
+in Creator.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">mgrec* vtx;
+mgmatrix uvMat;
+
+// get the UV matrix that transforms XYZ coordinates to
+// UV texture coordinates for texture layer 0 of poly1
+mgMatrixFormXYZToUV (&uvMat, poly1, 0);
+
+// apply this mapping to all vertices of poly2
+vtx = mgGetChild (poly2);
+while (vtx)
+{
+   mgcoord3d xyz;
+   mgcoord3d uv;
+
+   // get the XYZ of this vertex of poly2
+   mgGetVtxCoord (vtx, &xyz.x, &xyz.y, &xyz.z);
+
+   // calculate the UV texture coordinates for this
+   // vertex in UV space of poly1
+   uv = mgCoord3dTransform (uvMat, &xyz);
+
+   // finally update the UV texture coordinates on
+   // the vertex of poly2
+   // the U value is in the y coordinate
+   // the V value is in the y coordinate
+   // the z coordinate is not interesting here
+   mgSetAttList (vtx, fltVU, uv.x, fltVV, uv.y, MG_NULL);
+
+   // get ready to process next vertex of poly2
+   vtx = mgGetNext (vtx);
+}</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE"># get the UV matrix that transforms XYZ coordinates to
+# UV texture coordinates for texture layer 0 of poly1
+b, uvMat = mgMatrixFormXYZToUV (poly1, 0)
+
+# apply this mapping to all vertices of poly2
+vtx = mgGetChild (poly2)
+
+# create xyz coordinate to store values
+xyz = mgcoord3d()
+
+while (vtx):
+   # get the XYZ of this vertex of poly2
+   b, xyz.x, xyz.y, xyz.z = mgGetVtxCoord (vtx)
+
+   # calculate the UV texture coordinates for this
+   # vertex in UV space of poly1
+   uv = mgCoord3dTransform (uvMat, xyz)
+
+   # finally update the UV texture coordinates on
+   # the vertex of poly2
+   # the U value is in the y coordinate
+   # the V value is in the y coordinate
+   # the z coordinate is not interesting here
+   mgSetAttList (vtx, fltVU, uv.x, fltVV, uv.y)
+
+   # get ready to process next vertex of poly2
+   vtx = mgGetNext (vtx)</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgmatrix.htm#mgmatrix>mgmatrix</A>, <A HREF=mgMatrixFormQuadToQuad.htm#mgMatrixFormQuadToQuad>mgMatrixFormQuadToQuad</A>, 
+<A HREF=mgMatrixFormTranslate.htm#mgMatrixFormTranslate>mgMatrixFormTranslate</A>, <A HREF=mgMatrixFormScale.htm#mgMatrixFormScale>mgMatrixFormScale</A>, 
+<A HREF=mgMatrixFormRotate.htm#mgMatrixFormRotate>mgMatrixFormRotate</A>, <A HREF=mgMatrixFormRotateX.htm#mgMatrixFormRotateX>mgMatrixFormRotateX</A>, 
+<A HREF=mgMatrixFormRotateY.htm#mgMatrixFormRotateY>mgMatrixFormRotateY</A>, <A HREF=mgMatrixFormRotateZ.htm#mgMatrixFormRotateZ>mgMatrixFormRotateZ</A>, 
+<A HREF=mgMatrixRotateX.htm#mgMatrixRotateX>mgMatrixRotateX</A>, <A HREF=mgMatrixRotateY.htm#mgMatrixRotateY>mgMatrixRotateY</A>, <A HREF=mgMatrixRotateZ.htm#mgMatrixRotateZ>mgMatrixRotateZ</A>, 
+<A HREF=mgMatrixMultiply.htm#mgMatrixMultiply>mgMatrixMultiply</A></DD></DL></BODY>
+
+</HTML>

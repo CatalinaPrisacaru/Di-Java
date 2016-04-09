@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>mgPluginGetProperty</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgPluginGetProperty><H1 CLASS="APISYMBOL">mgPluginGetProperty</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgPluginGetProperty</B> - retrieves user defined data 
+associated with a plug-in module.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgpropertyvalue <B>mgPluginGetProperty</B> (</TD><TD><A HREF=mgplugin.htm#mgplugin>mgplugin</A></TD><TD><I>plugin</I>,</TD></TR>
+<TR><TD></TD><TD>const <A HREF=mgpropertyname.htm#mgpropertyname>mgpropertyname</A></TD><TD><I>propName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Use <B>mgPluginGetProperty</B> to retrieve the data named <I>propName</I> 
+that was associated with the plug-in module <I>plugin</I> using 
+<A HREF=mgPluginPutProperty.htm#mgPluginPutProperty>mgPluginPutProperty</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>plugin</I></DT><DD>the plug-in module</DD><DT><I>propName</I></DT><DD>the name of the property to get</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the user-defined data if found, <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 3</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgPluginPutProperty.htm#mgPluginPutProperty>mgPluginPutProperty</A>, <A HREF=mgPluginDeleteProperty.htm#mgPluginDeleteProperty>mgPluginDeleteProperty</A>, 
+<A HREF=mgPluginToolPutProperty.htm#mgPluginToolPutProperty>mgPluginToolPutProperty</A>, <A HREF=mgPluginToolGetProperty.htm#mgPluginToolGetProperty>mgPluginToolGetProperty</A>, 
+<A HREF=mgPluginToolDeleteProperty.htm#mgPluginToolDeleteProperty>mgPluginToolDeleteProperty</A></DD></DL></BODY>
+
+</HTML>

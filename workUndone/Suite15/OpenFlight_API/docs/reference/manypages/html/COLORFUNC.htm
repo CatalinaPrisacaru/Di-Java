@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>COLORFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=COLORFUNC><H1>Color Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgDeleteColorName.htm#mgDeleteColorName><B>mgDeleteColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetColorIndexByName.htm#mgGetColorIndexByName><B>mgGetColorIndexByName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>name</I>, int* <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstringlist.htm#mgstringlist>mgstringlist</A> <TD><A HREF=mgGetColorNameList.htm#mgGetColorNameList><B>mgGetColorNameList</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentAltColor.htm#mgGetCurrentAltColor><B>mgGetCurrentAltColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, unsigned int* <I>index</I>, float* <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentAltColorRGB.htm#mgGetCurrentAltColorRGB><B>mgGetCurrentAltColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentColor.htm#mgGetCurrentColor><B>mgGetCurrentColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, unsigned int* <I>index</I>, float* <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetCurrentColorName.htm#mgGetCurrentColorName><B>mgGetCurrentColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentColorRGB.htm#mgGetCurrentColorRGB><B>mgGetCurrentColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetNextColorName.htm#mgGetNextColorName><B>mgGetNextColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, void** <I>ptr</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIndex2RGB.htm#mgIndex2RGB><B>mgIndex2RGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, unsigned int <I>index</I>, float <I>intensity</I>, short* <I>red</I>, short* <I>green</I>, short* <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgNewColorName.htm#mgNewColorName><B>mgNewColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReadColorPalette.htm#mgReadColorPalette><B>mgReadColorPalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>fileName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReadDefaultColorPalette.htm#mgReadDefaultColorPalette><B>mgReadDefaultColorPalette</B></A> (const char* <I>fileName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgRGB2Index.htm#mgRGB2Index><B>mgRGB2Index</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>, unsigned int* <I>index</I>, float* <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetColorIndex.htm#mgSetColorIndex><B>mgSetColorIndex</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, short <I>r</I>, short <I>g</I>, short <I>b</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentAltColor.htm#mgSetCurrentAltColor><B>mgSetCurrentAltColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, unsigned int <I>index</I>, float <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentAltColorRGB.htm#mgSetCurrentAltColorRGB><B>mgSetCurrentAltColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentColor.htm#mgSetCurrentColor><B>mgSetCurrentColor</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, unsigned int <I>index</I>, float <I>intensity</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentColorName.htm#mgSetCurrentColorName><B>mgSetCurrentColorName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, const char* <I>name</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentColorRGB.htm#mgSetCurrentColorRGB><B>mgSetCurrentColorRGB</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, short <I>red</I>, short <I>green</I>, short <I>blue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWriteColorPalette.htm#mgWriteColorPalette><B>mgWriteColorPalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>fileName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWriteDefaultColorPalette.htm#mgWriteDefaultColorPalette><B>mgWriteDefaultColorPalette</B></A> (const char* <I>fileName</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgSelectOneEx</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSelectOneEx><H1 CLASS="APISYMBOL">mgSelectOneEx</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSelectOneEx</B> - select a node record.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgSelectOneEx</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>flags</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSelectOneEx</B> performs the same function as <A HREF=mgSelectOne.htm#mgSelectOne>mgSelectOne</A>, but 
+in addition, it allows you to control certain capabilities of the selection 
+using <I>flags</I>.  This parameter is a bitwise combination of the following:</P></DD><DD><P><A HREF=MSEL_ALLOWRECURSIVE.htm#MSEL_ALLOWRECURSIVE>MSEL_ALLOWRECURSIVE</A> - If you set this mask, recursive selection 
+will be allowed. In other words, nodes whose ancestors or descendants are 
+already selected will be allowed to be selected themselves. 
+By default, recursive selection is not allowed.</P></DD><DD><P>For a complete description of <B>mgSelectOneEx</B>, see <A HREF=mgSelectOne.htm#mgSelectOne>mgSelectOne</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the node to select</DD><DT><I>flags</I></DT><DD>selection modifiers that allow you to control 
+how the selection is performed - 
+this parameter is the bitwise combination of the following masks:<BR> 
+<A HREF=MSEL_ALLOWRECURSIVE.htm#MSEL_ALLOWRECURSIVE>MSEL_ALLOWRECURSIVE</A></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgSelectOne.htm#mgSelectOne>mgSelectOne</A>, <A HREF=mgDeselectOne.htm#mgDeselectOne>mgDeselectOne</A>, <A HREF=mgSelectOneEdge.htm#mgSelectOneEdge>mgSelectOneEdge</A>, <A HREF=mgIsSelected.htm#mgIsSelected>mgIsSelected</A>, 
+<A HREF=mgIsSelectedEdge.htm#mgIsSelectedEdge>mgIsSelectedEdge</A>, <A HREF=mgDeselectAll.htm#mgDeselectAll>mgDeselectAll</A>, <A HREF=mgSelectList.htm#mgSelectList>mgSelectList</A></DD></DL></BODY>
+
+</HTML>

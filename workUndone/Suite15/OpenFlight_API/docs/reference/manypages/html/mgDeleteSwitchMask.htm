@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>mgDeleteSwitchMask</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgDeleteSwitchMask><H1 CLASS="APISYMBOL">mgDeleteSwitchMask</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgDeleteSwitchMask</B> - deletes a mask from a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgDeleteSwitchMask</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>rec</I>,</TD></TR>
+<TR><TD></TD><TD>int</TD><TD><I>maskNo</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgDeleteSwitchMask</B> deletes the mask specified by <I>maskNo</I> from 
+a <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node.  Upon successful completion, the indices of all 
+masks after the one deleted are decremented by one.</P></DD><DD><P>The value of <I>maskNo</I> must be between 0 and the number of masks 
+of <I>rec</I> minus 1 (the first mask is <I>maskNo</I> 0).</P></DD><DD><P>Note: Since a switch must have at least one mask, 
+<B>mgDeleteSwitchMask</B> will not delete the last mask.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>rec</I></DT><DD>the <A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltSwitch>fltSwitch</A>
+ node</DD><DT><I>maskNo</I></DT><DD>mask index to be deleted, 0 is the first mask</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns the new current mask index if successful, -1 otherwise. 
+This function will fail if <I>maskNo</I> does not specify a valid mask of <I>rec</I>.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetSwitchMaskCount.htm#mgGetSwitchMaskCount>mgGetSwitchMaskCount</A>, 
+<A HREF=mgGetSwitchMaskNo.htm#mgGetSwitchMaskNo>mgGetSwitchMaskNo</A>, 
+<A HREF=mgGetSwitchBit.htm#mgGetSwitchBit>mgGetSwitchBit</A>, 
+<A HREF=mgGetSwitchMaskName.htm#mgGetSwitchMaskName>mgGetSwitchMaskName</A>, 
+<A HREF=mgAddSwitchMask.htm#mgAddSwitchMask>mgAddSwitchMask</A>, 
+<A HREF=mgInitSwitchMask.htm#mgInitSwitchMask>mgInitSwitchMask</A>, 
+<A HREF=mgSetSwitchBit.htm#mgSetSwitchBit>mgSetSwitchBit</A>, 
+<A HREF=mgSetSwitchMaskName.htm#mgSetSwitchMaskName>mgSetSwitchMaskName</A></DD></DL></BODY>
+
+</HTML>

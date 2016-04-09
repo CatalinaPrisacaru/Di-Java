@@ -1,0 +1,246 @@
+<HTML>
+<HEAD>
+<TITLE>TEXTUREFUNC</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<A NAME=TEXTUREFUNC><H1>Texture Functions</H1></A>
+
+<TABLE width="100%" border="0", cellspacing="1", cellpadding="3" ><TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgCopyTexture.htm#mgCopyTexture><B>mgCopyTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>dstDb</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>srcDb</I>, const char* <I>newTextureName</I>, int <I>srcIndex</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgCopyTexturePalette.htm#mgCopyTexturePalette><B>mgCopyTexturePalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>dstDb</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>srcDb</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgDeleteTexture.htm#mgDeleteTexture><B>mgDeleteTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeselectAllTextures.htm#mgDeselectAllTextures><B>mgDeselectAllTextures</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgDeselectTextureIndex.htm#mgDeselectTextureIndex><B>mgDeselectTextureIndex</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgFlipImage.htm#mgFlipImage><B>mgFlipImage</B></A> (unsigned char* <I>pixels</I>, int <I>width</I>, int <I>height</I>, int <I>type</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeImageGeoInfo.htm#mgFreeImageGeoInfo><B>mgFreeImageGeoInfo</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgFreeImageInfo.htm#mgFreeImageInfo><B>mgFreeImageInfo</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGeoCoordAdd.htm#mgGeoCoordAdd><B>mgGeoCoordAdd</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, <A HREF=mggeocoorddata.htm#mggeocoorddata>mggeocoorddata</A> <I>geoCoordData[]</I>, int <I>n</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGeoCoordCount.htm#mgGeoCoordCount><B>mgGeoCoordCount</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGeoCoordDelete.htm#mgGeoCoordDelete><B>mgGeoCoordDelete</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGeoCoordGet.htm#mgGeoCoordGet><B>mgGeoCoordGet</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, <A HREF=mggeocoorddata.htm#mggeocoorddata>mggeocoorddata</A> <I>geoCoordData[]</I>, int <I>arrayLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentSubTexture.htm#mgGetCurrentSubTexture><B>mgGetCurrentSubTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentTexture.htm#mgGetCurrentTexture><B>mgGetCurrentTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetCurrentTextureLayer.htm#mgGetCurrentTextureLayer><B>mgGetCurrentTextureLayer</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>layer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetFirstSelectedTexture.htm#mgGetFirstSelectedTexture><B>mgGetFirstSelectedTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>index</I>, char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetFirstTexture.htm#mgGetFirstTexture><B>mgGetFirstTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>index</I>, char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetImageRowWidth.htm#mgGetImageRowWidth><B>mgGetImageRowWidth</B></A> (int <I>width</I>, int <I>sampleSize</I>, int <I>type</I>, int* <I>pad</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetNextSelectedTexture.htm#mgGetNextSelectedTexture><B>mgGetNextSelectedTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>index</I>, char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetNextTexture.htm#mgGetNextTexture><B>mgGetNextTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int* <I>index</I>, char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetSelectedTextureCount.htm#mgGetSelectedTextureCount><B>mgGetSelectedTextureCount</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgGetTextureAttributes.htm#mgGetTextureAttributes><B>mgGetTextureAttributes</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetTextureCount.htm#mgGetTextureCount><B>mgGetTextureCount</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoCtlPt.htm#mgGetTextureGeoCtlPt><B>mgGetTextureGeoCtlPt</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>index</I>, double* <I>imageX</I>, double* <I>imageY</I>, double* <I>projX</I>, double* <I>projY</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoEarthModel.htm#mgGetTextureGeoEarthModel><B>mgGetTextureGeoEarthModel</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>earthModel</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoImageOrigin.htm#mgGetTextureGeoImageOrigin><B>mgGetTextureGeoImageOrigin</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>imageOrigin</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoNumCtlPts.htm#mgGetTextureGeoNumCtlPts><B>mgGetTextureGeoNumCtlPts</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>numCoords</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoProjection.htm#mgGetTextureGeoProjection><B>mgGetTextureGeoProjection</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>projection</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoType.htm#mgGetTextureGeoType><B>mgGetTextureGeoType</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>type</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoUTMHemisphere.htm#mgGetTextureGeoUTMHemisphere><B>mgGetTextureGeoUTMHemisphere</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>hemisphere</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureGeoUTMZone.htm#mgGetTextureGeoUTMZone><B>mgGetTextureGeoUTMZone</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int* <I>zone</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureHeight.htm#mgGetTextureHeight><B>mgGetTextureHeight</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int* <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetTextureIndex.htm#mgGetTextureIndex><B>mgGetTextureIndex</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureMinMax.htm#mgGetTextureMinMax><B>mgGetTextureMinMax</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, float* <I>min</I>, float* <I>max</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetTextureName.htm#mgGetTextureName><B>mgGetTextureName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTexturePosition.htm#mgGetTexturePosition><B>mgGetTexturePosition</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, int* <I>x</I>, int* <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureSampleSize.htm#mgGetTextureSampleSize><B>mgGetTextureSampleSize</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int* <I>sampleSize</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">char* <TD><A HREF=mgGetTextureSaveName.htm#mgGetTextureSaveName><B>mgGetTextureSaveName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureSignedFlag.htm#mgGetTextureSignedFlag><B>mgGetTextureSignedFlag</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>isSigned</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetTextureSize.htm#mgGetTextureSize><B>mgGetTextureSize</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">unsigned char* <TD><A HREF=mgGetTextureTexels.htm#mgGetTextureTexels><B>mgGetTextureTexels</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureTiledFlag.htm#mgGetTextureTiledFlag><B>mgGetTextureTiledFlag</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>isTiled</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgGetTextureTotalSize.htm#mgGetTextureTotalSize><B>mgGetTextureTotalSize</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureTransparentValue.htm#mgGetTextureTransparentValue><B>mgGetTextureTransparentValue</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int* <I>transparentValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureType.htm#mgGetTextureType><B>mgGetTextureType</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int* <I>type</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgGetTextureWidth.htm#mgGetTextureWidth><B>mgGetTextureWidth</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int* <I>width</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgHasTextureTransparentValue.htm#mgHasTextureTransparentValue><B>mgHasTextureTransparentValue</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, <A HREF=mgbool.htm#mgbool>mgbool*</A> <I>hasTransparentValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgInsertTexture.htm#mgInsertTexture><B>mgInsertTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgInsertTextureAndAlpha.htm#mgInsertTextureAndAlpha><B>mgInsertTextureAndAlpha</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>textureName</I>, const char* <I>alphaName</I>, const char* <I>mergeName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsTextureDefault.htm#mgIsTextureDefault><B>mgIsTextureDefault</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsTextureIndexInPalette.htm#mgIsTextureIndexInPalette><B>mgIsTextureIndexInPalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsTextureIndexSelected.htm#mgIsTextureIndexSelected><B>mgIsTextureIndexSelected</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgIsTextureInPalette.htm#mgIsTextureInPalette><B>mgIsTextureInPalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgMoveTexture.htm#mgMoveTexture><B>mgMoveTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>srcIndex</I>, int <I>dstIndex</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <TD><A HREF=mgNewImageGeoInfo.htm#mgNewImageGeoInfo><B>mgNewImageGeoInfo</B></A> (const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <TD><A HREF=mgNewImageInfo.htm#mgNewImageInfo><B>mgNewImageInfo</B></A> (const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgNewTexture.htm#mgNewTexture><B>mgNewTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, unsigned char* <I>texels</I>, const char* <I>textureName</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, int <I>x</I>, int <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgPurgeTextures.htm#mgPurgeTextures><B>mgPurgeTextures</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgReadImage.htm#mgReadImage><B>mgReadImage</B></A> (const char* <I>textureName</I>, unsigned char** <I>pixels</I>, int* <I>type</I>, int* <I>width</I>, int* <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgrec.htm#mgrec>mgrec*</A> <TD><A HREF=mgReadImageAttributes.htm#mgReadImageAttributes><B>mgReadImageAttributes</B></A> (const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgReadImageGeoInfo.htm#mgReadImageGeoInfo><B>mgReadImageGeoInfo</B></A> (const char* <I>textureName</I>, <A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo*</A> <I>geoInfo</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgReadImageHeader.htm#mgReadImageHeader><B>mgReadImageHeader</B></A> (const char* <I>textureName</I>, int* <I>type</I>, int* <I>width</I>, int* <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgReadImageInfo.htm#mgReadImageInfo><B>mgReadImageInfo</B></A> (const char* <I>textureName</I>, <A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo*</A> <I>textureInfo</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReadTexture.htm#mgReadTexture><B>mgReadTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>textureName</I>, int <I>index</I>, int <I>x</I>, int <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReadTextureAndAlpha.htm#mgReadTextureAndAlpha><B>mgReadTextureAndAlpha</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>textureName</I>, const char* <I>alphaName</I>, const char* <I>mergeName</I>, int <I>index</I>, int <I>x</I>, int <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgReadTexturePalette.htm#mgReadTexturePalette><B>mgReadTexturePalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>fileName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgReplaceTexture.htm#mgReplaceTexture><B>mgReplaceTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgstatus.htm#mgstatus>mgstatus</A> <TD><A HREF=mgSelectTextureIndex.htm#mgSelectTextureIndex><B>mgSelectTextureIndex</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentSubTexture.htm#mgSetCurrentSubTexture><B>mgSetCurrentSubTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentTexture.htm#mgSetCurrentTexture><B>mgSetCurrentTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetCurrentTextureLayer.htm#mgSetCurrentTextureLayer><B>mgSetCurrentTextureLayer</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>layer</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetTextureAttributes.htm#mgSetTextureAttributes><B>mgSetTextureAttributes</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoCtlPt.htm#mgSetTextureGeoCtlPt><B>mgSetTextureGeoCtlPt</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>index</I>, double <I>imageX</I>, double <I>imageY</I>, double <I>projX</I>, double <I>projY</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoEarthModel.htm#mgSetTextureGeoEarthModel><B>mgSetTextureGeoEarthModel</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>earthModel</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoImageOrigin.htm#mgSetTextureGeoImageOrigin><B>mgSetTextureGeoImageOrigin</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>imageOrigin</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoNumCtlPts.htm#mgSetTextureGeoNumCtlPts><B>mgSetTextureGeoNumCtlPts</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>numCoords</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoProjection.htm#mgSetTextureGeoProjection><B>mgSetTextureGeoProjection</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>projection</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoType.htm#mgSetTextureGeoType><B>mgSetTextureGeoType</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>type</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoUTMHemisphere.htm#mgSetTextureGeoUTMHemisphere><B>mgSetTextureGeoUTMHemisphere</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>hemisphere</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureGeoUTMZone.htm#mgSetTextureGeoUTMZone><B>mgSetTextureGeoUTMZone</B></A> (<A HREF=mgimagegeoinfo.htm#mgimagegeoinfo>mgimagegeoinfo</A> <I>geoInfo</I>, int <I>zone</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureHeight.htm#mgSetTextureHeight><B>mgSetTextureHeight</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int <I>height</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureMinMax.htm#mgSetTextureMinMax><B>mgSetTextureMinMax</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, float <I>min</I>, float <I>max</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetTextureName.htm#mgSetTextureName><B>mgSetTextureName</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetTexturePosition.htm#mgSetTexturePosition><B>mgSetTexturePosition</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, int <I>x</I>, int <I>y</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureSampleSize.htm#mgSetTextureSampleSize><B>mgSetTextureSampleSize</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int <I>sampleSize</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureSignedFlag.htm#mgSetTextureSignedFlag><B>mgSetTextureSignedFlag</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>isSigned</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">void <TD><A HREF=mgSetTextureTexels.htm#mgSetTextureTexels><B>mgSetTextureTexels</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, unsigned char* <I>texels</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureTiledFlag.htm#mgSetTextureTiledFlag><B>mgSetTextureTiledFlag</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>isTiled</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureTransparentValue.htm#mgSetTextureTransparentValue><B>mgSetTextureTransparentValue</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int <I>transparentValue</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureType.htm#mgSetTextureType><B>mgSetTextureType</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int <I>type</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSetTextureWidth.htm#mgSetTextureWidth><B>mgSetTextureWidth</B></A> (<A HREF=mgimageinfo.htm#mgimageinfo>mgimageinfo</A> <I>textureInfo</I>, int <I>width</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgSubTextureAdd.htm#mgSubTextureAdd><B>mgSubTextureAdd</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, <A HREF=mgsubtexturedata.htm#mgsubtexturedata>mgsubtexturedata</A> <I>subTextureData[]</I>, int <I>n</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgSubTextureCount.htm#mgSubTextureCount><B>mgSubTextureCount</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSubTextureDelete.htm#mgSubTextureDelete><B>mgSubTextureDelete</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgSubTextureGet.htm#mgSubTextureGet><B>mgSubTextureGet</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, <A HREF=mgsubtexturedata.htm#mgsubtexturedata>mgsubtexturedata</A> <I>subTextureData[]</I>, int <I>arrayLen</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgSubTextureGetBounds.htm#mgSubTextureGetBounds><B>mgSubTextureGetBounds</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>imgRec</I>, int* <I>left</I>, int* <I>bottom</I>, int* <I>right</I>, int* <I>top</I>, int <I>index</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgfilelocatorfunc.htm#mgfilelocatorfunc>mgfilelocatorfunc</A> <TD><A HREF=mgTextureGetLocatorFunc.htm#mgTextureGetLocatorFunc><B>mgTextureGetLocatorFunc</B></A> (void) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgsavepathtype.htm#mgsavepathtype>mgsavepathtype</A> <TD><A HREF=mgTextureGetSavePathType.htm#mgTextureGetSavePathType><B>mgTextureGetSavePathType</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgTextureSetLocatorFunc.htm#mgTextureSetLocatorFunc><B>mgTextureSetLocatorFunc</B></A> (<A HREF=mgfilelocatorfunc.htm#mgfilelocatorfunc>mgfilelocatorfunc</A> <I>locatorFunc</I>, void* <I>userData</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgTextureSetSavePathType.htm#mgTextureSetSavePathType><B>mgTextureSetSavePathType</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, <A HREF=mgsavepathtype.htm#mgsavepathtype>mgsavepathtype</A> <I>saveType</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right">int <TD><A HREF=mgWriteImage.htm#mgWriteImage><B>mgWriteImage</B></A> (const char* <I>textureName</I>, unsigned char* <I>pixels</I>, int <I>type</I>, int <I>width</I>, int <I>height</I>, <A HREF=mgbool.htm#mgbool>mgbool</A> <I>compress</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWriteImageAttributes.htm#mgWriteImageAttributes><B>mgWriteImageAttributes</B></A> (const char* <I>textureName</I>, <A HREF=mgrec.htm#mgrec>mgrec*</A> <I>rec</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWriteTexture.htm#mgWriteTexture><B>mgWriteTexture</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, int <I>index</I>, const char* <I>textureName</I>) ;</TR>
+<TR valign="top" bgcolor="#F3F3F3">
+<TD align="right"><A HREF=mgbool.htm#mgbool>mgbool</A> <TD><A HREF=mgWriteTexturePalette.htm#mgWriteTexturePalette><B>mgWriteTexturePalette</B></A> (<A HREF=mgrec.htm#mgrec>mgrec*</A> <I>db</I>, const char* <I>fileName</I>) ;</TR>
+</TABLE>
+<BR>
+
+
+</BODY>
+
+</HTML>

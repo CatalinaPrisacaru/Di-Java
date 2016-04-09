@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<TITLE>mgFind</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgFind><H1 CLASS="APISYMBOL">mgFind</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgFind</B> - walks a node hierarchy and collects a list of nodes that 
+match a user specified criteria.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgreclist <B>mgFind</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>node</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=mgwalkfunc.htm#mgwalkfunc>mgwalkfunc</A></TD><TD><I>matchFunc</I>,</TD></TR>
+<TR><TD></TD><TD>void*</TD><TD><I>userData</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned int</TD><TD><I>flags</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgFind</B> walks a <I>node</I> hierarchy and calls the <I>matchFunc</I> function 
+for each node visited.  If the <I>matchFunc</I> function returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> 
+for a node, the node is added to the record list that is returned from <B>mgFind</B>. 
+If <B>matchFunc</B> returns <A HREF=mgbool.htm#mgbool>MG_FALSE</A>, the node is not added to the record list.</P></DD><DD><P><B>mgFind</B> traverses a <I>node</I> hierarchy in the same way as <A HREF=mgWalk.htm#mgWalk>mgWalk</A>. You 
+control this traversal using <I>flags</I>.  See <A HREF=mgWalk.htm#mgWalk>mgWalk</A> for more information on this 
+traversal mechanism.</P></DD></DT></DL>
+<DL><DT><H3>C NOTES</H3><DD><P>When you are done accessing the record list returned by this 
+function, you should dispose of it using <A HREF=mgFreeRecList.htm#mgFreeRecList>mgFreeRecList</A>.</P></DD></DT></DL>
+<DL><DT><H3>PYTHON NOTES</H3><DD><P>It is not necessary to dispose of the record list returned in Python.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>node</I></DT><DD>the starting node of the traversal</DD><DT><I>matchFunc</I></DT><DD>the match function invoked for each node visited</DD><DT><I>userData</I></DT><DD>pointer to user defined data that will be passed 
+to the <I>matchFunc</I> callback function</DD><DT><I>flags</I></DT><DD>traversal modifiers that allow you to select 
+certain types of nodes for visiting. 
+This parameter is the bitwise combination of the following masks:<BR> 
+<A HREF=MWALK_NEXT.htm#MWALK_NEXT>MWALK_NEXT</A><BR> <A HREF=MWALK_VERTEX.htm#MWALK_VERTEX>MWALK_VERTEX</A><BR> <A HREF=MWALK_MASTER.htm#MWALK_MASTER>MWALK_MASTER</A><BR> 
+<A HREF=MWALK_MASTERALL.htm#MWALK_MASTERALL>MWALK_MASTERALL</A><BR> <A HREF=MWALK_ON.htm#MWALK_ON>MWALK_ON</A><BR> <A HREF=MWALK_NOREADONLY.htm#MWALK_NOREADONLY>MWALK_NOREADONLY</A><BR> 
+<A HREF=MWALK_NONESTED.htm#MWALK_NONESTED>MWALK_NONESTED</A><BR> <A HREF=MWALK_MATRIXSTACK.htm#MWALK_MATRIXSTACK>MWALK_MATRIXSTACK</A></DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns a record list containing all the nodes visited for which the 
+<I>matchFunc</I> function returned <A HREF=mgbool.htm#mgbool>MG_TRUE</A>.
+</DD></DL><DL><DT><H3>EXAMPLE</H3></DT><DD><DL><DT>The following examples (in C and Python) collect all visible 
+polygons in a database.</DT></DL></DD></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">static mgbool MatchPolygon (mgrec* db, mgrec* parent, mgrec* rec, void* userData)
+{
+   if (mgGetCode (rec) == fltPolygon)
+      return MG_TRUE;
+   else
+      return MG_FALSE;
+}
+
+mgreclist polygonList = mgFind (db, MatchPolygon, MG_NULL, MWALK_ON);
+
+// do something with polygonList, free it when done
+mgFreeRecList (polygonList);</PRE></DT></DL></DD></DL>
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT><PRE CLASS="EXAMPLE">def MatchPolygon (db, parent, rec, userData):
+   if (mgGetCode (rec) == fltPolygon):
+      return MG_TRUE
+   else:
+      return MG_FALSE
+
+polygonList = mgFind (db, MatchPolygon, None, MWALK_ON)
+
+# do something with polygonList, don't have to free in Python</PRE></DT></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgFindEx.htm#mgFindEx>mgFindEx</A>, <A HREF=mgWalk.htm#mgWalk>mgWalk</A>, <A HREF=mgWalkEx.htm#mgWalkEx>mgWalkEx</A>, <A HREF=mgWalkRecList.htm#mgWalkRecList>mgWalkRecList</A>, <A HREF=mgWalkGetMatrix.htm#mgWalkGetMatrix>mgWalkGetMatrix</A>, 
+<A HREF=mgIterateRecList.htm#mgIterateRecList>mgIterateRecList</A></DD></DL></BODY>
+
+</HTML>

@@ -1,0 +1,151 @@
+<HTML>
+<HEAD>
+<TITLE>mgReadImage</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgReadImage><H1 CLASS="APISYMBOL">mgReadImage</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgReadImage</B> - reads an image from disk.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>int <B>mgReadImage</B> (</TD><TD>const char*</TD><TD><I>textureName</I>,</TD></TR>
+<TR><TD></TD><TD>unsigned char**</TD><TD><I>pixels</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>type</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>width</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>height</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>status, pixels, type, width, height <B>mgReadImage</B> (</TD><TD><A HREF=#string>string</A></TD><TD><I>textureName</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P>Given an image file name, <B>mgReadImage</B> allocates a pixel array 
+to hold the texels of the image, reads the image from disk into the pixel 
+array allocated and returns information about the image read.</P></DD><DD><P>It is the responsibility of the caller to deallocate 
+the <I>pixels</I> returned when they are no longer needed using 
+the function <A HREF=mgFree.htm#mgFree>mgFree</A>.</P></DD><DD><P>The image <I>pixels</I>, <I>type</I>, <I>width</I> and <I>height</I> are 
+returned through arguments.</P></DD><DD><P>The memory layout for <I>pixels</I> is described here: 
+<TABLE CLASS="SIMPLE">
+ 
+<TR CLASS="HEADER">
+ 
+<TD CLASS="BORDER">
+ Image Type </TD>
+ 
+<TD CLASS="BORDER">
+ Memory Layout </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=MIMG_INT.htm#MIMG_INT>MIMG_INT</A> </TD>
+ 
+<TD CLASS="BORDER">
+ These are single band grayscale images. A texel value of 0 is 
+black and a value of 255 is white. The texels are stored in a 
+contiguous array with the origin (texel 0, 0) in the lower-left 
+corner of the image. </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=MIMG_INTA.htm#MIMG_INTA>MIMG_INTA</A> </TD>
+ 
+<TD CLASS="BORDER">
+ These are two-band grayscale images with an alpha 
+(transparency) channel. In the intensity channel, a texel value of 
+0 is black and a value of 255 is white. In the alpha channel, a 
+texel value of 0 is transparent and a value of 255 is opaque. 
+Texels are stored in a contiguous array with the origin (texel 0, 
+0) in the lower-left corner of the image. All the intensity values 
+are stored contiguously, followed by all the alpha values. </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=MIMG_RGB.htm#MIMG_RGB>MIMG_RGB</A> </TD>
+ 
+<TD CLASS="BORDER">
+ These are three-band color (Red, Green, Blue) images. The 
+intensity of each color component for a texel value of 0 is 
+black; a value of 255 is full intensity. Texels are stored in a 
+contiguous array with the origin (texel 0, 0) in the lower-left 
+corner of the image. All the red values are stored contiguously, 
+followed by all the green values, followed by all the blue 
+values. </TD>
+ 
+</TR>
+<P>
+<TR>
+ 
+<TD CLASS="BORDER">
+ <A HREF=MIMG_RGBA.htm#MIMG_RGBA>MIMG_RGBA</A> </TD>
+ 
+<TD CLASS="BORDER">
+ These are three-band color (Red, Green, Blue) images with an 
+alpha (transparency) channel. The intensity of each color 
+component for a texel value of 0 is black; 255 is full intensity. 
+In the alpha channel, a texel value of 0 is transparent and a 
+value of 255 is opaque. The texels are stored in a contiguous 
+array with the origin (texel 0, 0) in the lower-left corner of the 
+image. For this image type the components are interleaved (all 
+four components of each texel are stored contiguously in 
+RGBA order). For example, the first four texels in an image 
+would be stored as RGBARGBARGBARGBA. </TD>
+ 
+</TR>
+ 
+</TABLE>
+</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>textureName</I></DT><DD>the name of the image file on disk</DD><DT><I>pixels</I></DT><DD>address of pixels read from disk</DD><DT><I>type</I></DT><DD>address of value to receive image type, 
+possible values returned are <A HREF=MIMG_INT.htm#MIMG_INT>MIMG_INT</A>, 
+<A HREF=MIMG_INTA.htm#MIMG_INTA>MIMG_INTA</A>, <A HREF=MIMG_RGB.htm#MIMG_RGB>MIMG_RGB</A>, and <A HREF=MIMG_RGBA.htm#MIMG_RGBA>MIMG_RGBA</A></DD><DT><I>width</I></DT><DD>address of value to receive image width</DD><DT><I>height</I></DT><DD>address of value to receive image height</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>status</DT><DD>Returns <A HREF=MIMG_NO_ERROR.htm#MIMG_NO_ERROR>MIMG_NO_ERROR</A> if successful, otherwise applicable 
+texture error code.</DD><DT>pixels</DT><DD>pixels read from disk.</DD><DT>type</DT><DD>image type - possible values returned are <A HREF=MIMG_INT.htm#MIMG_INT>MIMG_INT</A>, 
+<A HREF=MIMG_INTA.htm#MIMG_INTA>MIMG_INTA</A>, <A HREF=MIMG_RGB.htm#MIMG_RGB>MIMG_RGB</A>, and <A HREF=MIMG_RGBA.htm#MIMG_RGBA>MIMG_RGBA</A></DD><DT>width</DT><DD>image width.</DD><DT>height</DT><DD>image height.</DD></DL></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgWriteImage.htm#mgWriteImage>mgWriteImage</A>, <A HREF=mgReadImageHeader.htm#mgReadImageHeader>mgReadImageHeader</A>, <A HREF=mgReadTexture.htm#mgReadTexture>mgReadTexture</A>, 
+<A HREF=mgInsertTexture.htm#mgInsertTexture>mgInsertTexture</A>, <A HREF=mgFree.htm#mgFree>mgFree</A></DD></DL></BODY>
+
+</HTML>

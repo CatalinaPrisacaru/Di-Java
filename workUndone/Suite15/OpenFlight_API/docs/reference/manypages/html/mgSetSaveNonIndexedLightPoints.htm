@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>mgSetSaveNonIndexedLightPoints</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgSetSaveNonIndexedLightPoints><H1 CLASS="APISYMBOL">mgSetSaveNonIndexedLightPoints</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgSetSaveNonIndexedLightPoints</B> - sets the preference that 
+determines how light point records are saved in an OpenFlight file.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>void <B>mgSetSaveNonIndexedLightPoints</B> (</TD><TD><A HREF=mgbool.htm#mgbool>mgbool</A></TD><TD><I>flag</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgSetSaveNonIndexedLightPoints</B> tells <A HREF=mgWriteDb.htm#mgWriteDb>mgWriteDb</A> and <A HREF=mgSaveAsDb.htm#mgSaveAsDb>mgSaveAsDb</A> 
+how to write light point records in the OpenFlight file.  If <I>flag</I> is 
+<A HREF=mgbool.htm#mgbool>MG_TRUE</A>, light points will be saved in the "non-indexed" format 
+used in OpenFlight 15.7 and earlier.  This format is represented in the 
+OpenFlight format as raw record code 111.  If <I>flag</I> is <A HREF=mgbool.htm#mgbool>MG_FALSE</A> 
+(the default), light points will be saved in the "indexed" format introduced 
+in OpenFlight 15.8.  This format is represented in the 
+OpenFlight format as raw record code 130.</P></DD><DD><P>The default value for this preference is <A HREF=mgbool.htm#mgbool>MG_FALSE</A>.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>flag</I></DT><DD>whether or not to save light points in the 
+non-indexed format</DD></DL></DD></DL>
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgWriteDb.htm#mgWriteDb>mgWriteDb</A>, <A HREF=mgSaveAsDb.htm#mgSaveAsDb>mgSaveAsDb</A></DD></DL></BODY>
+
+</HTML>

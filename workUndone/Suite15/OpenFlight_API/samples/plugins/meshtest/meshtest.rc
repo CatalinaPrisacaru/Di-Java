@@ -1,0 +1,239 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+MESHVIEWERDIALOG DIALOGEX 0, 0, 545, 314
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mesh Viewer"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Eye:",IDC_STATIC,5,6,15,8
+    COMBOBOX        IDC_DRAWPLANE,22,4,43,113,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Draw:",IDC_STATIC,69,6,20,8
+    COMBOBOX        IDC_DRAWSTYLE,91,4,56,58,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Custom1",IDC_COLORDRAW,"GLCONTROL",WS_TABSTOP,152,3,16,15
+    PUSHBUTTON      "Update",IDC_UPDATE,173,4,37,13
+    CONTROL         "Draw Triangles",IDC_DRAWTRIANGLES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,216,7,64,10
+    CONTROL         "Debug Colors",IDC_DRAWDEBUG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,287,7,56,10
+    CONTROL         "Draw All",IDC_DRAWALLMESH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,350,7,43,10
+    CONTROL         "Custom1",IDC_IMAGEDRAW,"GLCONTROL",0x0,5,23,268,270
+    GROUPBOX        "Mesh Info",IDC_STATIC,278,19,121,99
+    LTEXT           "Num Primitives:",IDC_STATIC,285,31,53,8
+    LTEXT           "Static",IDC_NUMPRIMITIVES,343,31,53,8
+    LTEXT           "Num Vertices:",IDC_STATIC,285,43,53,8
+    LTEXT           "Static",IDC_NUMVTX,343,43,53,8
+    LTEXT           "Vertex Stride:",IDC_STATIC,285,55,53,8
+    LTEXT           "Static",IDC_VTXSTRIDE,343,55,53,8
+    LTEXT           "Vertex Mask:",IDC_STATIC,285,67,53,8
+    LTEXT           "Static",IDC_VTXMASK,343,67,53,8
+    CONTROL         "Position",IDC_VTXCOORD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,285,78,41,10
+    CONTROL         "Color Index",IDC_VTXCOLOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,339,78,51,10
+    CONTROL         "Normal",IDC_VTXNORMAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,285,90,38,10
+    CONTROL         "Color RGB",IDC_VTXCOLORRGB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,339,90,49,10
+    LTEXT           "UV:",IDC_STATIC,285,104,13,8
+    CONTROL         "0",IDC_VTXUV0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,302,104,8,10
+    CONTROL         "1",IDC_VTXUV1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,314,104,8,10
+    CONTROL         "2",IDC_VTXUV2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,326,104,8,10
+    CONTROL         "3",IDC_VTXUV3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,338,104,8,10
+    CONTROL         "4",IDC_VTXUV4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,350,104,8,10
+    CONTROL         "5",IDC_VTXUV5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,362,104,8,10
+    CONTROL         "6",IDC_VTXUV6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,374,104,8,10
+    CONTROL         "7",IDC_VTXUV7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,386,104,8,10
+    LISTBOX         IDC_PRIMITIVELIST,278,121,121,107,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Mesh Primitive Info",IDC_STATIC,278,230,121,63
+    LTEXT           "Number:",IDC_STATIC,285,241,50,8
+    LTEXT           "Static",IDC_PRIMITIVENO,338,241,57,8
+    LTEXT           "Type:",IDC_STATIC,285,253,50,8
+    LTEXT           "Static",IDC_PRIMITIVETYPE,338,253,57,8
+    LTEXT           "Num Vertices:",IDC_STATIC,285,265,50,8
+    LTEXT           "Static",IDC_PRIMITIVENUMVTX,338,265,57,8
+    EDITTEXT        IDC_INDEXARRAYINDEX,338,275,35,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_INDEXARRAYINDEXSPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,364,275,11,14
+    GROUPBOX        "Vertex Pool",IDC_STATIC,404,2,136,291
+    LTEXT           "Vertex Number:",IDC_STATIC,419,14,55,8
+    EDITTEXT        IDC_VTXNUM,476,11,48,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_VTXNUMSPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,513,11,10,14
+    GROUPBOX        "Position",IDC_STATIC,409,25,125,46
+    RTEXT           "x:",IDC_STATIC,413,36,11,8
+    LTEXT           "Pos X",IDC_POSX,430,36,99,8
+    RTEXT           "y:",IDC_STATIC,413,48,11,8
+    LTEXT           "Pos Y",IDC_POSY,430,48,99,8
+    RTEXT           "z:",IDC_STATIC,413,60,11,8
+    LTEXT           "Pos Z",IDC_POSZ,430,60,99,8
+    GROUPBOX        "Normal",IDC_STATIC,409,72,125,48
+    RTEXT           "i:",IDC_STATIC,413,83,11,8
+    LTEXT           "Norm I",IDC_NORMI,430,83,99,8
+    RTEXT           "j:",IDC_STATIC,413,95,11,8
+    LTEXT           "Norm J",IDC_NORMJ,430,95,99,8
+    RTEXT           "k:",IDC_STATIC,413,107,11,8
+    LTEXT           "Norm K",IDC_NORMK,430,107,99,8
+    GROUPBOX        "Color",IDC_STATIC,409,123,125,53
+    RTEXT           "r:",IDC_STATIC,414,133,10,8
+    LTEXT           "RRR",IDC_COLORR,430,133,16,8
+    RTEXT           "g:",IDC_STATIC,414,143,10,8
+    LTEXT           "GGG",IDC_COLORG,430,143,16,8
+    RTEXT           "b:",IDC_STATIC,414,153,10,8
+    LTEXT           "BBB",IDC_COLORB,430,153,16,8
+    RTEXT           "a:",IDC_STATIC,414,163,10,8
+    LTEXT           "AAA",IDC_COLORA,430,163,16,8
+    RTEXT           "Index:",IDC_STATIC,461,141,26,8
+    LTEXT           "Color Index",IDC_COLORINDEX,491,141,32,8
+    RTEXT           "Intensity:",IDC_STATIC,455,154,32,8
+    LTEXT           "Intensity",IDC_COLORINTENSITY,491,154,38,8
+    GROUPBOX        "UV",IDC_STATIC,409,181,125,105
+    LTEXT           "Layer",IDC_STATIC,415,190,18,8
+    LTEXT           "U",IDC_STATIC,441,190,8,8
+    LTEXT           "V",IDC_STATIC,489,190,8,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,414,201,115,1
+    RTEXT           "0:",IDC_STATIC,414,204,14,8
+    LTEXT           "U0",IDC_U0,441,204,41,8
+    LTEXT           "V0",IDC_V0,489,204,41,8
+    RTEXT           "1:",IDC_STATIC,414,214,14,8
+    LTEXT           "U1",IDC_U1,441,214,41,8
+    LTEXT           "V1",IDC_V1,489,214,41,8
+    RTEXT           "2:",IDC_STATIC,414,224,14,8
+    LTEXT           "U2",IDC_U2,441,224,41,8
+    LTEXT           "V2",IDC_V2,489,224,41,8
+    RTEXT           "3:",IDC_STATIC,414,234,14,8
+    LTEXT           "U3",IDC_U3,441,234,41,8
+    LTEXT           "V3",IDC_V3,489,234,41,8
+    RTEXT           "4:",IDC_STATIC,414,244,14,8
+    LTEXT           "U4",IDC_U4,441,244,41,8
+    LTEXT           "V4",IDC_V4,489,244,41,8
+    RTEXT           "5:",IDC_STATIC,414,254,14,8
+    LTEXT           "U5",IDC_U5,441,254,41,8
+    LTEXT           "V5",IDC_V5,489,254,41,8
+    RTEXT           "6:",IDC_STATIC,414,264,14,8
+    LTEXT           "U6",IDC_U6,441,264,41,8
+    LTEXT           "V6",IDC_V6,489,264,41,8
+    RTEXT           "7:",IDC_STATIC,414,274,14,8
+    LTEXT           "U7",IDC_U7,441,274,41,8
+    LTEXT           "V7",IDC_V7,489,274,41,8
+    PUSHBUTTON      "Close",IDC_CLOSE,488,295,52,14
+    LTEXT           "Vertex Index:",IDC_STATIC,285,277,50,8
+END
+
+MESHEDITORDIALOG DIALOGEX 0, 0, 180, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mesh Editor"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "Enter Mesh Parameters, Click OK to Build Mesh",MGID_PROMPT,5,4,170,9,SS_SUNKEN
+    GROUPBOX        "Primitives",IDC_STATIC,5,17,170,56
+    LTEXT           "Type:",IDC_STATIC,41,30,19,8
+    COMBOBOX        IDC_PRIMITIVETYPE,65,27,83,78,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Triangle Rule:",IDC_STATIC,15,46,45,8
+    CONTROL         "Lower Left / Upper Right",IDC_LLUR,"Button",BS_AUTORADIOBUTTON | WS_GROUP,66,47,104,8
+    CONTROL         "Upper Left / Lower Right",IDC_ULLR,"Button",BS_AUTORADIOBUTTON,66,59,104,8
+    GROUPBOX        "Attributes",IDC_STATIC,5,75,170,46
+    CONTROL         "Texture",IDC_HASTEXTURE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,89,40,8
+    CONTROL         "Colors",IDC_HASCOLOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,79,89,34,8
+    LTEXT           "Static",IDC_COLORTYPE,120,89,41,8
+    CONTROL         "Normals",IDC_HASNORMAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,105,41,8
+    LTEXT           "Alpha:",IDC_STATIC,79,105,21,8
+    EDITTEXT        IDC_ALPHA,105,102,43,14,ES_AUTOHSCROLL
+    GROUPBOX        "Dimensions",IDC_STATIC,5,127,170,59
+    LTEXT           "Num Divisions",IDC_STATIC,27,138,46,8
+    LTEXT           "Dimension per Division",IDC_STATIC,80,138,72,8
+    LTEXT           "X:",IDC_STATIC,13,152,8,8
+    EDITTEXT        IDC_XNUMDIV,27,149,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_XDIMENSION,80,149,88,14,ES_AUTOHSCROLL
+    LTEXT           "Y:",IDC_STATIC,13,170,8,8
+    EDITTEXT        IDC_YNUMDIV,27,167,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_YDIMENSION,80,167,88,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",MGID_OK,63,191,54,14
+    PUSHBUTTON      "Cancel",MGID_CANCEL,121,191,54,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    MESHVIEWERDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 540
+        BOTTOMMARGIN, 309
+    END
+
+    MESHEDITORDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 175
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

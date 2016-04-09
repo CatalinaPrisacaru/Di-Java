@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>mgNewTabRuler</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgNewTabRuler><H1 CLASS="APISYMBOL">mgNewTabRuler</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgNewTabRuler</B> - creates a new tab ruler control.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgNewTabRuler</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>control</I>,</TD></TR>
+<TR><TD></TD><TD><A HREF=#></A></TD><TD><I>...</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgNewTabRuler</B> allocates and initializes a new tab ruler <I>control</I>. 
+<I>control</I> is the GL control to associate the tab ruler control with.</P></DD><DD><P>The variable arguments are a set of key/value pairs, where key is a 32-bit value. The 
+key/value list MUST be terminated with a tag of 'MG_NULL'.</P></DD><DD><P>Use <A HREF=mgFreeTabRuler.htm#mgFreeTabRuler>mgFreeTabRuler</A> when you are done with the tab ruler control. 
+Typically you will do this when you handle the <A HREF=MGCB_DESTROY.htm#MGCB_DESTROY>MGCB_DESTROY</A> dialog event 
+for the dialog containing this control.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>control</I></DT><DD>GL control to associate with a tab ruler control</DD><DT><I>...</I></DT><DD>optional input parameters in variable 
+argument style using <A HREF=mgtabruleroption.htm#mgtabruleroption>mgtabruleroption</A> as the keys</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success. If the function succeeds, 
+the tab ruler control was successfully created and associated with the GL control.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgTabRulerSetOptions.htm#mgTabRulerSetOptions>mgTabRulerSetOptions</A>, <A HREF=mgFreeTabRuler.htm#mgFreeTabRuler>mgFreeTabRuler</A>, <A HREF=mgTabRulerGetTabCount.htm#mgTabRulerGetTabCount>mgTabRulerGetTabCount</A>, <A HREF=mgTabRulerGetTabPosition.htm#mgTabRulerGetTabPosition>mgTabRulerGetTabPosition</A>, 
+<A HREF=mgTabRulerSetTabPosition.htm#mgTabRulerSetTabPosition>mgTabRulerSetTabPosition</A>, <A HREF=mgTabRulerSetTabFrozen.htm#mgTabRulerSetTabFrozen>mgTabRulerSetTabFrozen</A>, 
+<A HREF=mgTabRulerNewTab.htm#mgTabRulerNewTab>mgTabRulerNewTab</A>, <A HREF=mgTabRulerDeleteTab.htm#mgTabRulerDeleteTab>mgTabRulerDeleteTab</A>, 
+<A HREF=mgTabRulerGetSelectedTab.htm#mgTabRulerGetSelectedTab>mgTabRulerGetSelectedTab</A>, <A HREF=mgTabRulerSelectTab.htm#mgTabRulerSelectTab>mgTabRulerSelectTab</A>, <A HREF=mgtabruleroption.htm#mgtabruleroption>mgtabruleroption</A></DD></DL></BODY>
+
+</HTML>

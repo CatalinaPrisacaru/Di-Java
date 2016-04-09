@@ -1,0 +1,147 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+TOOLACTIONTESTDIALOG DIALOGEX 0, 0, 234, 296
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tool Action Test"
+MENU IDR_MENU1
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Push Buttons",IDC_STATIC,5,4,224,35
+    PUSHBUTTON      "1",IDC_ACTION1,15,17,18,14
+    PUSHBUTTON      "2",IDC_ACTION2,38,17,18,14
+    PUSHBUTTON      "3",IDC_ACTION3,61,17,18,14
+    PUSHBUTTON      "4",IDC_ACTION4,84,17,18,14
+    PUSHBUTTON      "5",IDC_ACTION5,107,17,18,14
+    PUSHBUTTON      "6",IDC_ACTION6,130,17,18,14
+    PUSHBUTTON      "7",IDC_ACTION7,153,17,18,14
+    PUSHBUTTON      "8",IDC_ACTION8,176,17,18,14
+    PUSHBUTTON      "9",IDC_ACTION9,199,17,18,14
+    GROUPBOX        "Radio Buttons",IDC_STATIC,5,41,131,35
+    CONTROL         "10",IDC_ACTION10,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,57,24,10
+    CONTROL         "11",IDC_ACTION11,"Button",BS_AUTORADIOBUTTON,57,57,24,10
+    CONTROL         "12",IDC_ACTION12,"Button",BS_AUTORADIOBUTTON,99,57,24,10
+    GROUPBOX        "Toggle Buttons",IDC_STATIC,143,41,86,35
+    CONTROL         "13",IDC_ACTION13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,159,57,24,10
+    CONTROL         "14",IDC_ACTION14,"Button",BS_AUTOCHECKBOX | BS_BITMAP | BS_PUSHLIKE | WS_TABSTOP,193,53,20,18
+    LISTBOX         IDC_LIST,5,81,224,189,LBS_NOINTEGRALHEIGHT | WS_VSCROLL
+    PUSHBUTTON      "Refresh",IDC_REFRESH,118,277,52,14
+    DEFPUSHBUTTON   "Close",MGID_OK,177,277,52,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,0,234,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    TOOLACTIONTESTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 229
+        BOTTOMMARGIN, 291
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ACTION14            ICON                    "action14.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Close",                       IDC_FILE_CLOSE
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "15",                          IDC_ACTION15
+        MENUITEM SEPARATOR
+        MENUITEM "16",                          IDC_ACTION16, CHECKED
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

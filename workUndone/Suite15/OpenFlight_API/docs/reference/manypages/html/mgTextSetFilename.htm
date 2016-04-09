@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>mgTextSetFilename</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgTextSetFilename><H1 CLASS="APISYMBOL">mgTextSetFilename</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgTextSetFilename</B> - displays a file name in a text control.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION &nbsp; &nbsp; &nbsp; (Not Available For Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgstatus <B>mgTextSetFilename</B> (</TD><TD><A HREF=mggui.htm#mggui>mggui</A></TD><TD><I>control</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>fileName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgTextSetFilename</B> displays the specified <I>fileName</I> string in the 
+specified text <I>control</I> in such a way that the name and extension parts of 
+the file name are guaranteed to be visible.</P></DD><DD><P>This function is useful when used with left justified static text controls 
+that may not be "wide" enough to display the full file name (including path, name 
+and extension parts).  In such a control, the name and extension parts of long 
+file names may get truncated and may become unviewable.</P></DD><DD><P>If you use this function to display 
+a file name in a text control and the file name is too long to fit completely, 
+the name is truncated from the left until the remainder can be displayed, ensuring 
+that the name and extension parts are visible.</P></DD><DD><P>When a file name is truncated in this way, it is prepended with "..." 
+to indicate to the user that the full name is not displayed.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>control</I></DT><DD>the text control</DD><DT><I>fileName</I></DT><DD>the file name string to load into the control</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Use <A HREF=MSTAT_ISOK.htm#MSTAT_ISOK>MSTAT_ISOK</A> to check return value for success.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 4</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgTextSetString.htm#mgTextSetString>mgTextSetString</A>, <A HREF=mgTextSetInteger.htm#mgTextSetInteger>mgTextSetInteger</A>, <A HREF=mgTextSetFloat.htm#mgTextSetFloat>mgTextSetFloat</A>, 
+<A HREF=mgTextSetDouble.htm#mgTextSetDouble>mgTextSetDouble</A>, <A HREF=mgTextSetDMS.htm#mgTextSetDMS>mgTextSetDMS</A></DD></DL></BODY>
+
+</HTML>

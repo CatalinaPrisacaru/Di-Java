@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<TITLE>mgGetFirstTexture</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgGetFirstTexture><H1 CLASS="APISYMBOL">mgGetFirstTexture</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgGetFirstTexture</B> - gets the first entry in a texture palette.<P></DD>
+</DL>
+<DL>
+<DT><H3>C SPECIFICATION</H3></DT>
+<DD>
+<TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgGetFirstTexture</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I>,</TD></TR>
+<TR><TD></TD><TD>int*</TD><TD><I>index</I>,</TD></TR>
+<TR><TD></TD><TD>char*</TD><TD><I>textureName</I> );</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+<DL>
+<DT><H3>PYTHON SPECIFICATION</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool, index, name <B>mgGetFirstTexture</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>db</I> )</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgGetFirstTexture</B> gets the index and name of the first texture 
+contained in the texture palette of database <I>db</I>.</P></DD><DD><P>If the texture was located when it was loaded, the <I>textureName</I> 
+includes the full path specification of the file where it was found 
+on disk.  If the texture was not located at load time, the <I>textureName</I> 
+returned by this function will be the same name returned by 
+<A HREF=mgGetTextureSaveName.htm#mgGetTextureSaveName>mgGetTextureSaveName</A>.</P></DD><DD><P>If you pass <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for <I>index</I>, the index of the texture is not returned.</P></DD><DD><P>If you pass <A HREF=MG_NULL.htm#MG_NULL>MG_NULL</A> for <I>textureName</I>, the name of the texture is 
+not returned.  If you do pass a character string for <I>textureName</I>, the buffer 
+should be at least 1024 characters.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>db</I></DT><DD>the database</DD><DT><I>index</I></DT><DD>address of value to receive index</DD><DT><I>textureName</I></DT><DD>address of string to receive texture name</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD><DL><DT>mgbool</DT><DD><A HREF=mgbool.htm#mgbool>MG_TRUE</A> if the first texture palette entry is found, 
+<A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.</DD><DT>index</DT><DD>If function is successful, index contains the retrieved index, otherwise 
+index is undefined.</DD><DT>name</DT><DD>If function is successful, name contains the retrieved name, otherwise 
+name is undefined.</DD></DL></DL>
+<DL><DT><H3>C EXAMPLE</H3></DT><DD><DL><DT>The following example traverses all the texture palette entries for 
+database <I>db</I>.</DT><DT><PRE CLASS="EXAMPLE">mgbool gotOne;
+int index;
+char name[1024];
+
+gotOne = mgGetFirstTexture (db, &index, name);
+while (gotOne == MG_TRUE)
+{
+   // do something with texture palette entry
+   gotOne = mgGetNextTexture (db, &index, name);
+}</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>PYTHON EXAMPLE</H3></DT><DD><DL><DT>The following example traverses all the texture palette entries for 
+database <I>db</I>.</DT><DT><PRE CLASS="EXAMPLE">gotOne,index,name = mgGetFirstTexture (db)
+while (gotOne == MG_TRUE):
+   # do something with texture palette entry
+   gotOne,index,name = mgGetNextTexture (db)</PRE></DT></DL></DD></DL>
+
+<DL><DT><H3>ACCESS LEVEL</H3><DD>Level 1</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgGetNextTexture.htm#mgGetNextTexture>mgGetNextTexture</A>, <A HREF=mgGetTextureCount.htm#mgGetTextureCount>mgGetTextureCount</A>, 
+<A HREF=mgGetSelectedTextureCount.htm#mgGetSelectedTextureCount>mgGetSelectedTextureCount</A>, <A HREF=mgGetFirstSelectedTexture.htm#mgGetFirstSelectedTexture>mgGetFirstSelectedTexture</A>, 
+<A HREF=mgGetNextSelectedTexture.htm#mgGetNextSelectedTexture>mgGetNextSelectedTexture</A></DD></DL></BODY>
+
+</HTML>

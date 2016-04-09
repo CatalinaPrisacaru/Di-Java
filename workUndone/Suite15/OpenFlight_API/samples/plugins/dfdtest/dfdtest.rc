@@ -1,0 +1,158 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include <mgapires.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include <mgapires.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DFDPRINTDIALOG DIALOGEX 0, 0, 404, 378
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "DFD Test"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "DFD Filename:",IDC_STATIC,5,6,48,8
+    EDITTEXT        MGID_FILE,5,16,375,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",MGID_BROWSE,383,16,16,14
+    CONTROL         "Custom1",MGID_FOREBACK,"GlControl",WS_TABSTOP,5,37,16,
+                    16
+    CONTROL         "",MGID_PICK,"Button",BS_AUTORADIOBUTTON | BS_BITMAP | 
+                    BS_PUSHLIKE,23,37,16,16
+    CONTROL         "",MGID_ZOOM,"Button",BS_AUTORADIOBUTTON | BS_BITMAP | 
+                    BS_PUSHLIKE,41,37,16,16
+    CONTROL         "",MGID_PAN,"Button",BS_AUTORADIOBUTTON | BS_BITMAP | 
+                    BS_PUSHLIKE,59,37,16,16
+    PUSHBUTTON      "Reset",MGID_RESET,161,37,26,16,WS_GROUP
+    PUSHBUTTON      "Fit",MGID_FIT,189,37,20,16,WS_GROUP
+    CONTROL         "Custom1",MGID_VIEW,"GlControl",WS_TABSTOP,5,56,204,189
+    LTEXT           "Points:",MGID_LEGEND_POINT,11,256,22,8
+    LTEXT           "",MGID_POINT_FIELD,37,256,23,8,SS_CENTERIMAGE
+    CONTROL         "Custom1",MGID_LEGEND_POINT_COLOR,"GlControl",WS_TABSTOP,
+                    11,267,12,11
+    CONTROL         "Show",MGID_LEGEND_POINT_SHOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,268,34,10
+    LTEXT           "Linears:",MGID_LEGEND_LINEAR,82,256,26,8
+    LTEXT           "",MGID_LINEAR_FIELD,112,256,23,8,SS_CENTERIMAGE
+    CONTROL         "Custom1",MGID_LEGEND_LINEAR_COLOR,"GlControl",
+                    WS_TABSTOP,82,267,12,11
+    CONTROL         "Show",MGID_LEGEND_LINEAR_SHOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,96,268,34,10
+    LTEXT           "Areals:",MGID_LEGEND_AREAL,153,256,22,8
+    LTEXT           "",MGID_AREAL_FIELD,180,256,23,8,SS_CENTERIMAGE
+    CONTROL         "Custom1",MGID_LEGEND_AREAL_COLOR,"GlControl",WS_TABSTOP,
+                    153,267,12,11
+    CONTROL         "Show",MGID_LEGEND_AREAL_SHOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,167,268,32,10
+    LTEXT           "Feature List:",MGID_LABEL1,220,49,40,8
+    LTEXT           "",MGID_FEATURES_FIELD,265,49,30,8,SS_CENTERIMAGE
+    PUSHBUTTON      "Button1",MGID_PREV_FTR,358,41,16,16,BS_BITMAP
+    PUSHBUTTON      "Button1",MGID_NEXT_FTR,377,41,16,16,BS_BITMAP
+    LISTBOX         MGID_LIST,220,60,173,118,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Selected Feature Attributes:",MGID_LABEL2,220,183,88,8
+    CONTROL         "",MGID_ATTRIBUTES,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_SUNKEN | WS_GROUP,220,193,173,86
+    GROUPBOX        " DFD File Summary ",MGID_FRAME2,5,286,394,69
+    LTEXT           "",MGID_SUMMARY,10,298,384,51,SS_SUNKEN
+    DEFPUSHBUTTON   "Close",MGID_OK,356,359,43,14
+    GROUPBOX        " Features ",MGID_FRAME1,214,33,185,251
+    GROUPBOX        " Legend ",MGID_LEGEND_FRAME,5,246,204,38,0,
+                    WS_EX_TRANSPARENT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    DFDPRINTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 399
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 373
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PICK                BITMAP  DISCARDABLE     "pick.bmp"
+IDB_ZOOM                BITMAP  DISCARDABLE     "zoom.bmp"
+IDB_PAN                 BITMAP  DISCARDABLE     "pan.bmp"
+IDB_NEXT                BITMAP  DISCARDABLE     "right.bmp"
+IDB_PREV                BITMAP  DISCARDABLE     "left.bmp"
+IDB_NEXT_D              BITMAP  DISCARDABLE     "right_d.bmp"
+IDB_PREV_D              BITMAP  DISCARDABLE     "left_d.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

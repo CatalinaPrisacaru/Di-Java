@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>mgShaderAddVertexProgram</TITLE>
+
+<STYLE type='text/css'>
+pre.EXAMPLE {background-color: #F1F1F1; padding: 2px; border: 1px solid #D1D1D1; font-family: monospace;}
+table.SYNOPSIS {font-family: monospace;}
+table.SIMPLE {border: 1px solid #D1D1D1; border-collapse: collapse;}
+span.MONOSPACE {font-family: monospace;}
+td.BORDER {border: 1px solid #D1D1D1; padding: 2px;}
+tr.HEADER {background-color: #F1F1F1; color:#326db9; font-weight: bold;}
+td.QUESTION {font-weight: bold; background-color: #C2C7E2;}
+table.FAQ {width: 100%; border: 1px solid #D1D1D1; padding: 0px;}
+li.NOINDENT {margin-left: 0px;}
+img {margin:5px 0px;}
+h1.APISYMBOL {background-color:#F1F1F1; color:#326db9;}
+h1 {color:#326db9;}
+h2 {color:#326db9;}
+h3 {color:#326db9;}
+h4 {color:#326db9;}
+h5 {color:#326db9;}
+</STYLE>
+
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" text="#000000" >
+<A NAME=top></A>
+
+
+<LEFT><A NAME=mgShaderAddVertexProgram><H1 CLASS="APISYMBOL">mgShaderAddVertexProgram</H1></A></LEFT>
+<DL>
+<DT><H3>FUNCTION NAME</H3></DT>
+<DD><B>mgShaderAddVertexProgram</B> - adds a vertex program to a shader.<P></DD>
+</DL>
+<DL>
+<DT><H3>SYNOPSIS &nbsp; &nbsp; &nbsp; (C and Python)</H3></DT>
+<DD><TABLE CLASS="SYNOPSIS">
+<TR>
+<TD>mgbool <B>mgShaderAddVertexProgram</B> (</TD><TD><A HREF=mgrec.htm#mgrec>mgrec*</A></TD><TD><I>shader</I>,</TD></TR>
+<TR><TD></TD><TD>const char*</TD><TD><I>programFileName</I> );</TD>
+</TR>
+</TABLE></DD>
+</DL>
+<DL><DT><H3>DESCRIPTION</H3><DD><P><B>mgShaderAddVertexProgram</B> adds the vertex program specified by 
+<I>programFileName</I> to the specified <I>shader</I>.</P></DD><DD><P>Note: GLSL shaders can have zero or more vertex programs.  Cg shaders 
+can have at most one. If you call this function for a GLSL shader, the vertex 
+program is added to the shader.  If you call this function for a Cg shader, 
+the existing vertex program on the shader (if any) will be replaced.  If the 
+Cg shader does not yet have a vertex program assigned, this function will 
+assign one.  For Cg shaders, this function is equivalent to calling 
+<A HREF=mgSetAttList.htm#mgSetAttList>mgSetAttList</A> on the shader for attribute 
+<A TARGET=flt_content HREF=../../openflightdd/flt_dd.htm#fltShaderPalette>fltShaderVertexProgramFilename</A>
+.</P></DD></DT></DL>
+<DL><DT><H3>PARAMETERS</H3></DT><DD><DL><DT><I>shader</I></DT><DD>the shader</DD><DT><I>programFileName</I></DT><DD>the shader vertex program file</DD></DL></DD></DL>
+<DL><DT><H3>RETURNS</H3></DT><DD>Returns <A HREF=mgbool.htm#mgbool>MG_TRUE</A> if successful, <A HREF=mgbool.htm#mgbool>MG_FALSE</A> otherwise.
+</DD></DL><DL><DT><H3>ACCESS LEVEL</H3><DD>Level 2</DD></DT></DL>
+<DL><DT><H3>SEE ALSO</H3></DT><DD><A HREF=mgShaderDeleteVertexProgramNth.htm#mgShaderDeleteVertexProgramNth>mgShaderDeleteVertexProgramNth</A>, <A HREF=mgShaderSetVertexProgramNth.htm#mgShaderSetVertexProgramNth>mgShaderSetVertexProgramNth</A>, 
+<A HREF=mgShaderGetVertexProgramNth.htm#mgShaderGetVertexProgramNth>mgShaderGetVertexProgramNth</A>, 
+<A HREF=mgShaderAddFragmentProgram.htm#mgShaderAddFragmentProgram>mgShaderAddFragmentProgram</A></DD></DL></BODY>
+
+</HTML>
